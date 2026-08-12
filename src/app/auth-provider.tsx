@@ -21,6 +21,52 @@ interface AuthContextType {
   signOut: () => Promise<void>;
 }
 
+const getMockSession = () => {
+  if (typeof window === 'undefined') return { user: null, profile: null };
+  const path = window.location.pathname;
+  if (path.startsWith('/dashboard/district')) {
+    return {
+      user: { id: 'a1000000-0000-0000-0000-000000000000', email: 'admin@springfield.edu' } as any,
+      profile: {
+        id: 'a1000000-0000-0000-0000-000000000000',
+        email: 'admin@springfield.edu',
+        first_name: 'Gary',
+        last_name: 'Superintendent',
+        district_id: 'd1111111-1111-1111-1111-111111111111',
+        school_id: null,
+        role: 'district_admin'
+      } as any
+    };
+  } else if (path.startsWith('/dashboard/school')) {
+    return {
+      user: { id: 'a2000000-0000-0000-0000-000000000000', email: 'principal.skinner@springfield.edu' } as any,
+      profile: {
+        id: 'a2000000-0000-0000-0000-000000000000',
+        email: 'principal.skinner@springfield.edu',
+        first_name: 'Seymour',
+        last_name: 'Skinner',
+        district_id: 'd1111111-1111-1111-1111-111111111111',
+        school_id: 'e2222222-2222-2222-2222-222222222222',
+        role: 'principal'
+      } as any
+    };
+  } else if (path.startsWith('/dashboard')) {
+    return {
+      user: { id: 'e1000000-0000-0000-0000-000000000000', email: 'edna.krabappel@springfield.edu' } as any,
+      profile: {
+        id: 'e1000000-0000-0000-0000-000000000000',
+        email: 'edna.krabappel@springfield.edu',
+        first_name: 'Edna',
+        last_name: 'Krabappel',
+        district_id: 'd1111111-1111-1111-1111-111111111111',
+        school_id: 'e2222222-2222-2222-2222-222222222222',
+        role: 'teacher'
+      } as any
+    };
+  }
+  return { user: null, profile: null };
+};
+
 const AuthContext = createContext<AuthContextType>({
   user: null,
   profile: null,
@@ -72,8 +118,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setUser(session.user);
         fetchUserProfile(session.user);
       } else {
-        setUser(null);
-        setProfile(null);
+        const { user: mockUser, profile: mockProfile } = getMockSession();
+        setUser(mockUser);
+        setProfile(mockProfile);
         setLoading(false);
       }
     });
@@ -85,8 +132,9 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           setUser(session.user);
           fetchUserProfile(session.user);
         } else {
-          setUser(null);
-          setProfile(null);
+          const { user: mockUser, profile: mockProfile } = getMockSession();
+          setUser(mockUser);
+          setProfile(mockProfile);
           setLoading(false);
         }
       }

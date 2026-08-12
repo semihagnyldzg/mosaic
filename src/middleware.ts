@@ -16,11 +16,8 @@ export async function middleware(request: NextRequest) {
 
   const { response, user, supabase } = await updateSession(request);
 
-  // Allow public access to /, /login, /forgot-password
+  // Allow public access to all pages (including dashboards) for guest mode
   if (!user) {
-    if (path.startsWith('/dashboard') && path !== '/dashboard/discovery') {
-      return NextResponse.redirect(new URL('/login', request.url));
-    }
     return response;
   }
 
