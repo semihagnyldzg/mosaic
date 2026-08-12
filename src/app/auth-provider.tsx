@@ -1,6 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { User } from '@supabase/supabase-js';
 
@@ -21,9 +22,9 @@ interface AuthContextType {
   signOut: () => Promise<void>;
 }
 
-const getMockSession = () => {
+const getMockSession = (path) => {
   if (typeof window === 'undefined') return { user: null, profile: null };
-  const path = window.location.pathname;
+  if (!path) return { user: null, profile: null };
   if (path.startsWith('/dashboard/district')) {
     return {
       user: { id: 'a1000000-0000-0000-0000-000000000000', email: 'admin@springfield.edu' } as any,
@@ -80,6 +81,8 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [loading, setLoading] = useState(true);
   const supabase = createClient();
 
+  const pathname = usePathname();
+
   useEffect(() => {
     const fetchUserProfile = async (currentUser: User) => {
       try {
@@ -118,7 +121,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         setUser(session.user);
         fetchUserProfile(session.user);
       } else {
-        const { user: mockUser, profile: mockProfile } = getMockSession();
+        const { user: mockUser, profile: mockProfile } = getMockSession(pathname);
         setUser(mockUser);
         setProfile(mockProfile);
         setLoading(false);
@@ -132,7 +135,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
           setUser(session.user);
           fetchUserProfile(session.user);
         } else {
-          const { user: mockUser, profile: mockProfile } = getMockSession();
+          const { user: mockUser, profile: mockProfile } = getMockSession(pathname);
           setUser(mockUser);
           setProfile(mockProfile);
           setLoading(false);
@@ -143,7 +146,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     return () => {
       subscription.unsubscribe();
     };
-  }, [supabase]);
+  }, [supabase, pathname]);
 
   const signOut = async () => {
     setLoading(true);
