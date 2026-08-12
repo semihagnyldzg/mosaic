@@ -83,6 +83,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const pathname = usePathname();
 
+  // Reset loading state synchronously during render when route transition starts to prevent race condition
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setLoading(true);
+  }
+
   useEffect(() => {
     const fetchUserProfile = async (currentUser: User) => {
       try {
