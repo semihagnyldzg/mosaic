@@ -180,28 +180,28 @@ export default function PrincipalDashboard() {
 
   if (authLoading || loading) {
     return (
-      <div className="min-h-screen bg-[#0A192F] flex items-center justify-center">
-        <span className="w-8 h-8 border-4 border-[#64ffda]/30 border-t-[#64ffda] rounded-full animate-spin"></span>
+      <div className="min-h-screen bg-[#F9F8FC] flex items-center justify-center">
+        <span className="w-8 h-8 border-4 border-[#5C2483]/30 border-t-[#5C2483] rounded-full animate-spin"></span>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0A192F] p-6 lg:p-10 text-white">
+    <div className="min-h-screen bg-[#F9F8FC] p-6 lg:p-10 text-zinc-900">
             {/* APPCIRCLE STYLE NAVIGATION HEADER */}
             {/* OTUS STYLE TOP ANNOUNCEMENT BAR (LIGHT LAVENDER #F3EEFF) */}
       <div className="bg-[#F3EEFF] text-[#5C2483] py-2 px-6 shadow-sm border-b border-[#E6DBFF]">
         <div className="max-w-7xl mx-auto w-full flex justify-end items-center gap-3">
           <Link
             href="/login"
-            className="border-2 border-[#5C2483] hover:bg-[#5C2483] hover:text-white text-[#5C2483] font-bold px-4 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 cursor-pointer bg-transparent shadow-sm"
+            className="border-2 border-[#5C2483] hover:bg-[#5C2483] hover:text-zinc-900 text-[#5C2483] font-bold px-4 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 cursor-pointer bg-transparent shadow-sm"
           >
             <span>📅</span>
             <span>Book a Demo</span>
           </Link>
           <Link
             href="/login"
-            className="border-2 border-[#5C2483] hover:bg-[#5C2483] hover:text-white text-[#5C2483] font-bold px-4 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 cursor-pointer bg-transparent shadow-sm"
+            className="border-2 border-[#5C2483] hover:bg-[#5C2483] hover:text-zinc-900 text-[#5C2483] font-bold px-4 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 cursor-pointer bg-transparent shadow-sm"
           >
             <span>➔</span>
             <span>Log In</span>
@@ -215,7 +215,7 @@ export default function PrincipalDashboard() {
           
           {/* Logo Mark */}
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-2xl bg-[#5C2483] flex items-center justify-center font-black text-white text-xl shadow-md shadow-[#5C2483]/30">
+            <div className="w-9 h-9 rounded-2xl bg-[#5C2483] flex items-center justify-center font-black text-zinc-900 text-xl shadow-md shadow-[#5C2483]/30">
               m
             </div>
             <span className="font-extrabold text-2xl tracking-tight text-[#2D183B]">mosaic</span>
@@ -294,32 +294,32 @@ export default function PrincipalDashboard() {
       <main className="max-w-7xl mx-auto space-y-8">
         {/* School Overview Metrics */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-[#172A45] border border-white/5 rounded-xl p-6 shadow-xl">
-            <h3 className="text-[#8892B0] text-sm font-semibold tracking-wider uppercase">School Staff</h3>
-            <p className="text-3xl font-extrabold text-white mt-2">{teachers.length} Teachers</p>
+          <div className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-6 shadow-xl">
+            <h3 className="text-zinc-600 text-sm font-semibold tracking-wider uppercase">School Staff</h3>
+            <p className="text-3xl font-extrabold text-zinc-900 mt-2">{teachers.length} Teachers</p>
           </div>
-          <div className="bg-[#172A45] border border-white/5 rounded-xl p-6 shadow-xl">
-            <h3 className="text-[#8892B0] text-sm font-semibold tracking-wider uppercase">Classrooms</h3>
-            <p className="text-3xl font-extrabold text-white mt-2">{classes.length} Classes</p>
+          <div className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-6 shadow-xl">
+            <h3 className="text-zinc-600 text-sm font-semibold tracking-wider uppercase">Classrooms</h3>
+            <p className="text-3xl font-extrabold text-zinc-900 mt-2">{classes.length} Classes</p>
           </div>
-          <div className="bg-[#172A45] border border-white/5 rounded-xl p-6 shadow-xl">
-            <h3 className="text-[#8892B0] text-sm font-semibold tracking-wider uppercase">Students Enrolled</h3>
-            <p className="text-3xl font-extrabold text-white mt-2">
+          <div className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-6 shadow-xl">
+            <h3 className="text-zinc-600 text-sm font-semibold tracking-wider uppercase">Students Enrolled</h3>
+            <p className="text-3xl font-extrabold text-zinc-900 mt-2">
               {classes.reduce((acc, curr) => acc + (curr.student_count || 0), 0)} Students
             </p>
           </div>
         </section>
 
         {/* Competency matrix card */}
-        <section className="bg-[#172A45] border border-white/5 rounded-xl p-6 shadow-xl">
-          <h2 className="text-xl font-bold text-white mb-6">Learning Competency Matrix</h2>
+        <section className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-6 shadow-xl">
+          <h2 className="text-xl font-bold text-zinc-900 mb-6">Learning Competency Matrix</h2>
           {classes.length === 0 ? (
-            <div className="text-center py-12 text-[#8892B0]">No classrooms recorded.</div>
+            <div className="text-center py-12 text-zinc-600">No classrooms recorded.</div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-white/10 text-xs font-bold text-[#64ffda] uppercase tracking-wider">
+                  <tr className="border-b border-zinc-200 text-xs font-bold text-[#5C2483] uppercase tracking-wider">
                     <th className="pb-4 pr-4">Classroom Name</th>
                     <th className="pb-4 px-4 text-center">Enrolled</th>
                     {skills.map(sk => (
@@ -334,21 +334,21 @@ export default function PrincipalDashboard() {
                       id={'class-row-' + cls.id}
                       className={`transition-all duration-500 ${
                         highlightedClassId === cls.id 
-                          ? 'bg-[#64ffda]/10 border-l-4 border-[#64ffda]' 
+                          ? 'bg-[#5C2483]/10 border-l-4 border-[#5C2483]' 
                           : 'hover:bg-white/[0.01]'
                       }`}
                     >
                       <td className="py-4 pr-4">
-                        <span className="font-semibold text-white block">{cls.name}</span>
-                        <span className="text-xs text-[#8892B0]">Taught by {cls.teacher_name}</span>
+                        <span className="font-semibold text-zinc-900 block">{cls.name}</span>
+                        <span className="text-xs text-zinc-600">Taught by {cls.teacher_name}</span>
                       </td>
-                      <td className="py-4 px-4 text-center text-[#8892B0] font-semibold">{cls.student_count}</td>
+                      <td className="py-4 px-4 text-center text-zinc-600 font-semibold">{cls.student_count}</td>
                       {skills.map(sk => {
                         const scoreStr = cls.skill_averages?.[sk.name] || 'N/A';
                         const scoreVal = parseFloat(scoreStr);
-                        let badgeColor = 'bg-white/5 text-[#8892B0]';
+                        let badgeColor = 'bg-zinc-100 border border-zinc-200/50 text-zinc-600';
                         if (!isNaN(scoreVal)) {
-                          if (scoreVal >= 3.5) badgeColor = 'bg-[#64ffda]/10 text-[#64ffda] border border-[#64ffda]/20';
+                          if (scoreVal >= 3.5) badgeColor = 'bg-[#5C2483]/10 text-[#5C2483] border border-[#5C2483]/20';
                           else if (scoreVal >= 2.5) badgeColor = 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
                           else if (scoreVal >= 1.5) badgeColor = 'bg-amber-500/10 text-amber-400 border border-amber-500/20';
                           else badgeColor = 'bg-red-500/10 text-red-400 border border-red-500/20';
@@ -370,15 +370,15 @@ export default function PrincipalDashboard() {
         </section>
 
         {/* Teachers List table */}
-        <section className="bg-[#172A45] border border-white/5 rounded-xl p-6 shadow-xl">
-          <h2 className="text-xl font-bold text-white mb-6">Teacher Directory</h2>
+        <section className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-6 shadow-xl">
+          <h2 className="text-xl font-bold text-zinc-900 mb-6">Teacher Directory</h2>
           {teachers.length === 0 ? (
-            <div className="text-center py-12 text-[#8892B0]">No teachers registered at this school.</div>
+            <div className="text-center py-12 text-zinc-600">No teachers registered at this school.</div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-white/10 text-xs font-bold text-[#64ffda] uppercase tracking-wider">
+                  <tr className="border-b border-zinc-200 text-xs font-bold text-[#5C2483] uppercase tracking-wider">
                     <th className="pb-3 pr-4">Name</th>
                     <th className="pb-3 pl-4">Email</th>
                   </tr>
@@ -386,10 +386,10 @@ export default function PrincipalDashboard() {
                 <tbody className="divide-y divide-white/5 text-base">
                   {teachers.map(teacher => (
                     <tr key={teacher.id}>
-                      <td className="py-4 pr-4 font-semibold text-white">
+                      <td className="py-4 pr-4 font-semibold text-zinc-900">
                         {teacher.first_name} {teacher.last_name}
                       </td>
-                      <td className="py-4 pl-4 text-[#8892B0]">{teacher.email}</td>
+                      <td className="py-4 pl-4 text-zinc-600">{teacher.email}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -400,41 +400,41 @@ export default function PrincipalDashboard() {
 
         {/* PLC Meetings Modal */}
         {showPlcModal && (
-          <div className="fixed inset-0 bg-[#0A192F]/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
-            <div className="bg-[#172A45] border border-white/10 rounded-xl p-6 max-w-2xl w-full shadow-2xl space-y-4">
-              <div className="flex justify-between items-center border-b border-white/5 pb-3">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">📅 Professional Learning Community (PLC) Logs</h3>
+          <div className="fixed inset-0 bg-[#F9F8FC]/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
+            <div className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200 rounded-xl p-6 max-w-2xl w-full shadow-2xl space-y-4">
+              <div className="flex justify-between items-center border-b border-zinc-200/60 pb-3">
+                <h3 className="text-lg font-bold text-zinc-900 flex items-center gap-2">📅 Professional Learning Community (PLC) Logs</h3>
                 <button 
                   onClick={() => setShowPlcModal(false)}
-                  className="text-[#8892B0] hover:text-white text-xl font-bold cursor-pointer"
+                  className="text-zinc-600 hover:text-zinc-900 text-xl font-bold cursor-pointer"
                 >
                   &times;
                 </button>
               </div>
               <div className="space-y-4 max-h-[400px] overflow-y-auto pr-1">
-                <div className="bg-[#0A192F]/60 p-4 rounded-lg border border-white/5 space-y-2">
+                <div className="bg-[#F9F8FC]/60 p-4 rounded-lg border border-zinc-200/60 space-y-2">
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-[#64ffda] font-bold">Grade 3 & 4 Skill Alignment</span>
-                    <span className="text-[#8892B0]">July 15, 2026</span>
+                    <span className="text-[#5C2483] font-bold">Grade 3 & 4 Skill Alignment</span>
+                    <span className="text-zinc-600">July 15, 2026</span>
                   </div>
                   <h4 
                     onClick={() => scrollToAndHighlightClass('c0000001-0000-0000-0000-000000000000')}
-                    className="font-bold text-[#64ffda] hover:underline text-sm cursor-pointer"
+                    className="font-bold text-[#5C2483] hover:underline text-sm cursor-pointer"
                   >
                     Target: Systems Thinking Rubrics (3rd Grade English)
                   </h4>
-                  <p className="text-xs text-[#8892B0] leading-relaxed">
+                  <p className="text-xs text-zinc-600 leading-relaxed">
                     Attendees: Seymour Skinner (Principal), Semih Yildiz (Teacher). Aligned on third-grade metrics. Agreed that evaluating "Systems Thinking" requires pupils to recognize causal relationships in natural science loops rather than simply repeating facts.
                   </p>
                 </div>
                 
-                <div className="bg-[#0A192F]/60 p-4 rounded-lg border border-white/5 space-y-2">
+                <div className="bg-[#F9F8FC]/60 p-4 rounded-lg border border-zinc-200/60 space-y-2">
                   <div className="flex justify-between items-center text-xs">
-                    <span className="text-[#64ffda] font-bold">Inter-disciplinary Review</span>
-                    <span className="text-[#8892B0]">July 08, 2026</span>
+                    <span className="text-[#5C2483] font-bold">Inter-disciplinary Review</span>
+                    <span className="text-zinc-600">July 08, 2026</span>
                   </div>
-                  <h4 className="font-semibold text-white text-sm">Focus: Collaboration Skills</h4>
-                  <p className="text-xs text-[#8892B0] leading-relaxed">
+                  <h4 className="font-semibold text-zinc-900 text-sm">Focus: Collaboration Skills</h4>
+                  <p className="text-xs text-zinc-600 leading-relaxed">
                     Discussed grouping strategies for science lab teams. Skinner recommended structuring peer leadership responsibilities to support student agency benchmarks.
                   </p>
                 </div>
@@ -442,7 +442,7 @@ export default function PrincipalDashboard() {
               <div className="pt-2 flex justify-end">
                 <button 
                   onClick={() => setShowPlcModal(false)}
-                  className="bg-[#64ffda] text-[#0A192F] hover:bg-[#52e0c2] font-bold py-2 px-5 rounded-md text-sm cursor-pointer"
+                  className="bg-[#5C2483] text-white hover:bg-[#4A154B] font-bold py-2 px-5 rounded-md text-sm cursor-pointer"
                 >
                   Close
                 </button>
@@ -453,49 +453,49 @@ export default function PrincipalDashboard() {
 
         {/* Differentiation Strategies Modal */}
         {showDiffModal && (
-          <div className="fixed inset-0 bg-[#0A192F]/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
-            <div className="bg-[#172A45] border border-white/10 rounded-xl p-6 max-w-2xl w-full shadow-2xl space-y-4">
-              <div className="flex justify-between items-center border-b border-white/5 pb-3">
-                <h3 className="text-lg font-bold text-white flex items-center gap-2">🎯 Recommended Classroom Differentiation</h3>
+          <div className="fixed inset-0 bg-[#F9F8FC]/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
+            <div className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200 rounded-xl p-6 max-w-2xl w-full shadow-2xl space-y-4">
+              <div className="flex justify-between items-center border-b border-zinc-200/60 pb-3">
+                <h3 className="text-lg font-bold text-zinc-900 flex items-center gap-2">🎯 Recommended Classroom Differentiation</h3>
                 <button 
                   onClick={() => setShowDiffModal(false)}
-                  className="text-[#8892B0] hover:text-white text-xl font-bold cursor-pointer"
+                  className="text-zinc-600 hover:text-zinc-900 text-xl font-bold cursor-pointer"
                 >
                   &times;
                 </button>
               </div>
               <div className="space-y-4 max-h-[400px] overflow-y-auto pr-1">
                 <div className="space-y-3">
-                  <p className="text-xs text-[#8892B0]">
+                  <p className="text-xs text-zinc-600">
                     Generated strategies based on current class averages and student competencies logs:
                   </p>
                   
-                  <div className="bg-[#0A192F]/60 p-4 rounded-lg border border-[#64ffda]/10 space-y-2">
+                  <div className="bg-[#F9F8FC]/60 p-4 rounded-lg border border-[#5C2483]/10 space-y-2">
                     <div className="flex justify-between items-center">
                       <span 
                       onClick={() => scrollToAndHighlightClass('c0000001-0000-0000-0000-000000000000')}
-                      className="text-white hover:text-[#64ffda] hover:underline font-bold text-sm cursor-pointer"
+                      className="text-zinc-900 hover:text-[#5C2483] hover:underline font-bold text-sm cursor-pointer"
                     >
                       Lisa Simpson (3rd Grade English)
                     </span>
-                      <span className="bg-[#64ffda]/10 text-[#64ffda] text-[10px] font-bold px-2 py-0.5 rounded">EXCELPATH (Level 4)</span>
+                      <span className="bg-[#5C2483]/10 text-[#5C2483] text-[10px] font-bold px-2 py-0.5 rounded">EXCELPATH (Level 4)</span>
                     </div>
-                    <p className="text-xs text-[#8892B0] leading-relaxed">
+                    <p className="text-xs text-zinc-600 leading-relaxed">
                       **Systems Thinking:** Lisa is at advanced mastery. Recommendation: Provide independent projects mapping multi-layered ecosystems with external resource limits.
                     </p>
                   </div>
 
-                  <div className="bg-[#0A192F]/60 p-4 rounded-lg border border-amber-500/10 space-y-2">
+                  <div className="bg-[#F9F8FC]/60 p-4 rounded-lg border border-amber-500/10 space-y-2">
                     <div className="flex justify-between items-center">
                       <span 
                       onClick={() => scrollToAndHighlightClass('c0000001-0000-0000-0000-000000000000')}
-                      className="text-white hover:text-[#64ffda] hover:underline font-bold text-sm cursor-pointer"
+                      className="text-zinc-900 hover:text-[#5C2483] hover:underline font-bold text-sm cursor-pointer"
                     >
                       Bart Simpson (3rd Grade English)
                     </span>
                       <span className="bg-amber-500/10 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded">SCAFFOLDING (Level 2)</span>
                     </div>
-                    <p className="text-xs text-[#8892B0] leading-relaxed">
+                    <p className="text-xs text-zinc-600 leading-relaxed">
                       **Systems Thinking:** Bart demonstrates developing capabilities. Recommendation: Pair with structured peer modeling helpers. Provide graphic organizers detailing system nodes.
                     </p>
                   </div>
@@ -504,7 +504,7 @@ export default function PrincipalDashboard() {
               <div className="pt-2 flex justify-end">
                 <button 
                   onClick={() => setShowDiffModal(false)}
-                  className="bg-[#64ffda] text-[#0A192F] hover:bg-[#52e0c2] font-bold py-2 px-5 rounded-md text-sm cursor-pointer"
+                  className="bg-[#5C2483] text-white hover:bg-[#4A154B] font-bold py-2 px-5 rounded-md text-sm cursor-pointer"
                 >
                   Close
                 </button>

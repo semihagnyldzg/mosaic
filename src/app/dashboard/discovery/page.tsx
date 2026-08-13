@@ -8,7 +8,7 @@ import { discoveryCss } from './styles';
 
 export default function DiscoveryLabPage() {
   return (
-    <div className="discovery-lab-container min-h-screen text-zinc-100 flex flex-col justify-between relative" style={{ background: '#07030f' }}>
+    <div className="discovery-lab-container min-h-screen text-zinc-800 flex flex-col justify-between relative" style={{ background: '#07030f' }}>
       {/* Scope the custom global dark theme styles in a standard style block */}
       <style dangerouslySetInnerHTML={{ __html: discoveryCss }} />
 

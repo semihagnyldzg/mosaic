@@ -222,35 +222,35 @@ export default function TeacherDashboard() {
       case 1: return 'bg-red-500';
       case 2: return 'bg-amber-500';
       case 3: return 'bg-emerald-500';
-      case 4: return 'bg-[#64ffda]';
-      default: return 'bg-white/10';
+      case 4: return 'bg-[#5C2483]';
+      default: return 'bg-zinc-100';
     }
   };
 
   if (authLoading || loading) {
     return (
-      <div className="min-h-screen bg-[#0A192F] flex items-center justify-center">
-        <span className="w-8 h-8 border-4 border-[#64ffda]/30 border-t-[#64ffda] rounded-full animate-spin"></span>
+      <div className="min-h-screen bg-[#F9F8FC] flex items-center justify-center">
+        <span className="w-8 h-8 border-4 border-[#5C2483]/30 border-t-[#5C2483] rounded-full animate-spin"></span>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0A192F] p-6 lg:p-10 text-white">
+    <div className="min-h-screen bg-[#F9F8FC] p-6 lg:p-10 text-zinc-900">
             {/* APPCIRCLE STYLE NAVIGATION HEADER */}
             {/* OTUS STYLE TOP ANNOUNCEMENT BAR (LIGHT LAVENDER #F3EEFF) */}
       <div className="bg-[#F3EEFF] text-[#5C2483] py-2 px-6 shadow-sm border-b border-[#E6DBFF]">
         <div className="max-w-7xl mx-auto w-full flex justify-end items-center gap-3">
           <Link
             href="/login"
-            className="border-2 border-[#5C2483] hover:bg-[#5C2483] hover:text-white text-[#5C2483] font-bold px-4 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 cursor-pointer bg-transparent shadow-sm"
+            className="border-2 border-[#5C2483] hover:bg-[#5C2483] hover:text-zinc-900 text-[#5C2483] font-bold px-4 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 cursor-pointer bg-transparent shadow-sm"
           >
             <span>📅</span>
             <span>Book a Demo</span>
           </Link>
           <Link
             href="/login"
-            className="border-2 border-[#5C2483] hover:bg-[#5C2483] hover:text-white text-[#5C2483] font-bold px-4 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 cursor-pointer bg-transparent shadow-sm"
+            className="border-2 border-[#5C2483] hover:bg-[#5C2483] hover:text-zinc-900 text-[#5C2483] font-bold px-4 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 cursor-pointer bg-transparent shadow-sm"
           >
             <span>➔</span>
             <span>Log In</span>
@@ -264,7 +264,7 @@ export default function TeacherDashboard() {
           
           {/* Logo Mark */}
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-2xl bg-[#5C2483] flex items-center justify-center font-black text-white text-xl shadow-md shadow-[#5C2483]/30">
+            <div className="w-9 h-9 rounded-2xl bg-[#5C2483] flex items-center justify-center font-black text-zinc-900 text-xl shadow-md shadow-[#5C2483]/30">
               m
             </div>
             <span className="font-extrabold text-2xl tracking-tight text-[#2D183B]">mosaic</span>
@@ -342,7 +342,7 @@ export default function TeacherDashboard() {
 
       <main className="max-w-7xl mx-auto">
         {classes.length === 0 ? (
-          <div className="bg-[#172A45] border border-white/5 rounded-xl p-12 text-center text-[#8892B0] shadow-xl">
+          <div className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-12 text-center text-zinc-600 shadow-xl">
             You do not have any classrooms assigned.
           </div>
         ) : (
@@ -351,7 +351,7 @@ export default function TeacherDashboard() {
             {/* Sidebar List of Classes (3 cols) */}
             <div className="lg:col-span-3 space-y-4">
               <div>
-                <h2 className="text-sm font-bold text-[#64ffda] uppercase tracking-wider mb-3">My Classes</h2>
+                <h2 className="text-sm font-bold text-[#5C2483] uppercase tracking-wider mb-3">My Classes</h2>
                 <div className="space-y-2">
                   {classes.map(cls => (
                     <button
@@ -359,8 +359,8 @@ export default function TeacherDashboard() {
                       onClick={() => setSelectedClass(cls)}
                       className={`w-full text-left p-4 rounded-lg border transition-all ${
                         selectedClass?.id === cls.id
-                          ? 'bg-[#172A45] border-[#64ffda] text-white shadow-md'
-                          : 'bg-[#172A45]/30 border-white/5 text-[#8892B0] hover:bg-[#172A45]/50 hover:text-white'
+                          ? 'bg-white border border-zinc-200/80 shadow-sm border-[#5C2483] text-zinc-900 shadow-md'
+                          : 'bg-white border border-zinc-200/80 shadow-sm/30 border-zinc-200/60 text-zinc-600 hover:bg-white border border-zinc-200/80 shadow-sm/50 hover:text-zinc-900'
                       }`}
                     >
                       <span className="block text-[10px] font-bold uppercase tracking-wider mb-0.5">{cls.grade_level}</span>
@@ -372,20 +372,20 @@ export default function TeacherDashboard() {
 
               {/* Class roster list */}
               {selectedClass && (
-                <div className="bg-[#172A45]/30 border border-white/5 rounded-xl p-4">
+                <div className="bg-white border border-zinc-200/80 shadow-sm/30 border border-zinc-200/60 rounded-xl p-4">
                   <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-xs font-bold text-[#64ffda] uppercase tracking-wider">Class Roster</h3>
-                    <span className="bg-white/5 text-xs px-2 py-0.5 rounded text-[#8892B0]">
+                    <h3 className="text-xs font-bold text-[#5C2483] uppercase tracking-wider">Class Roster</h3>
+                    <span className="bg-zinc-100 border border-zinc-200/50 text-xs px-2 py-0.5 rounded text-zinc-600">
                       {students.length} students
                     </span>
                   </div>
                   
                   {studentsLoading ? (
                     <div className="py-8 flex justify-center">
-                      <span className="w-5 h-5 border-2 border-[#64ffda]/30 border-t-[#64ffda] rounded-full animate-spin"></span>
+                      <span className="w-5 h-5 border-2 border-[#5C2483]/30 border-t-[#5C2483] rounded-full animate-spin"></span>
                     </div>
                   ) : students.length === 0 ? (
-                    <div className="text-center py-6 text-sm text-[#8892B0]">Roster empty.</div>
+                    <div className="text-center py-6 text-sm text-zinc-600">Roster empty.</div>
                   ) : (
                     <div className="space-y-1">
                       {students.map(student => (
@@ -394,12 +394,12 @@ export default function TeacherDashboard() {
                           onClick={() => setSelectedStudent(student)}
                           className={`w-full text-left py-2.5 px-3 rounded-md transition-colors text-sm flex justify-between items-center ${
                             selectedStudent?.id === student.id
-                              ? 'bg-[#64ffda] text-[#0A192F] font-bold'
-                              : 'text-white hover:bg-white/5'
+                              ? 'bg-[#5C2483] text-white font-bold'
+                              : 'text-zinc-900 hover:bg-zinc-100 border border-zinc-200/50'
                           }`}
                         >
                           <span>{student.first_name} {student.last_name}</span>
-                          <span className={selectedStudent?.id === student.id ? 'text-[#0A192F]' : 'text-[#8892B0]'}>→</span>
+                          <span className={selectedStudent?.id === student.id ? 'text-white' : 'text-zinc-600'}>→</span>
                         </button>
                       ))}
                     </div>
@@ -411,24 +411,24 @@ export default function TeacherDashboard() {
             {/* Right student skill logs detail workspace (9 cols) */}
             <div className="lg:col-span-9">
               {!selectedStudent ? (
-                <div className="bg-[#172A45] border border-white/5 rounded-xl p-16 text-center text-[#8892B0] shadow-xl min-h-[400px] flex flex-col justify-center items-center">
+                <div className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-16 text-center text-zinc-600 shadow-xl min-h-[400px] flex flex-col justify-center items-center">
                   <span className="text-4xl mb-4">📈</span>
-                  <h3 className="text-lg font-bold text-white">Student Skill Tracker</h3>
+                  <h3 className="text-lg font-bold text-zinc-900">Student Skill Tracker</h3>
                   <p className="max-w-md text-sm mt-1">Select a student from the class roster sidebar to view skill metrics, log classroom evidence, and track growth portfolios.</p>
                 </div>
               ) : (
                 <div className="space-y-8">
                   {/* Student Title header */}
-                  <div className="bg-[#172A45] border border-white/5 rounded-xl p-6 shadow-xl">
+                  <div className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-6 shadow-xl">
                     <div className="flex justify-between items-start">
                       <div>
-                        <div className="text-[#64ffda] text-xs font-bold tracking-wider uppercase mb-1">SELECTED STUDENT PROFILE</div>
-                        <h2 className="text-2xl font-extrabold text-white">{selectedStudent.first_name} {selectedStudent.last_name}</h2>
-                        <p className="text-[#8892B0] text-sm mt-1">{selectedClass?.name}</p>
+                        <div className="text-[#5C2483] text-xs font-bold tracking-wider uppercase mb-1">SELECTED STUDENT PROFILE</div>
+                        <h2 className="text-2xl font-extrabold text-zinc-900">{selectedStudent.first_name} {selectedStudent.last_name}</h2>
+                        <p className="text-zinc-600 text-sm mt-1">{selectedClass?.name}</p>
                       </div>
                       <button 
                         onClick={() => setSelectedStudent(null)}
-                        className="text-xs font-bold text-[#8892B0] hover:text-white border border-white/10 hover:border-white/20 py-1.5 px-3 rounded-md transition-colors"
+                        className="text-xs font-bold text-zinc-600 hover:text-zinc-900 border border-zinc-200 hover:border-white/20 py-1.5 px-3 rounded-md transition-colors"
                       >
                         ✕ Deselect Student
                       </button>
@@ -437,10 +437,10 @@ export default function TeacherDashboard() {
 
                   <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
                     {/* Left Column: Skill progress bars (5 cols) */}
-                    <div className="md:col-span-5 bg-[#172A45] border border-white/5 rounded-xl p-6 shadow-xl space-y-6">
-                      <h3 className="text-base font-bold text-white border-b border-white/5 pb-3">Skill Competencies</h3>
+                    <div className="md:col-span-5 bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-6 shadow-xl space-y-6">
+                      <h3 className="text-base font-bold text-zinc-900 border-b border-zinc-200/60 pb-3">Skill Competencies</h3>
                       {skills.length === 0 ? (
-                        <div className="text-[#8892B0] text-sm py-4">No skills configured.</div>
+                        <div className="text-zinc-600 text-sm py-4">No skills configured.</div>
                       ) : (
                         <div className="space-y-5">
                           {skills.map(skill => {
@@ -449,18 +449,18 @@ export default function TeacherDashboard() {
                             return (
                               <div key={skill.id} className="space-y-2">
                                 <div className="flex justify-between items-center text-sm">
-                                  <span className="font-semibold text-white">{skill.name}</span>
-                                  <span className={`text-xs font-bold px-2 py-0.5 rounded text-[#0A192F] ${latestScore ? getScoreColor(latestScore) : 'bg-white/10 text-white'}`}>
+                                  <span className="font-semibold text-zinc-900">{skill.name}</span>
+                                  <span className={`text-xs font-bold px-2 py-0.5 rounded text-white ${latestScore ? getScoreColor(latestScore) : 'bg-zinc-100 text-zinc-900'}`}>
                                     {latestScore ? getScoreName(latestScore) : 'No Log'}
                                   </span>
                                 </div>
-                                <div className="bg-[#0A192F] h-2.5 rounded-full overflow-hidden border border-white/5">
+                                <div className="bg-[#F9F8FC] h-2.5 rounded-full overflow-hidden border border-zinc-200/60">
                                   <div 
                                     className={`h-full rounded-full transition-all duration-500 ${latestScore ? getScoreColor(latestScore) : 'w-0'}`}
                                     style={{ width: `${widthPercent}%` }}
                                   ></div>
                                 </div>
-                                <p className="text-[10px] text-[#8892B0] leading-normal">{skill.description}</p>
+                                <p className="text-[10px] text-zinc-600 leading-normal">{skill.description}</p>
                               </div>
                             );
                           })}
@@ -471,8 +471,8 @@ export default function TeacherDashboard() {
                     {/* Right Column: Log evidence form & timeline (7 cols) */}
                     <div className="md:col-span-7 space-y-8">
                       {/* Log Evidence Form */}
-                      <div className="bg-[#172A45] border border-white/5 rounded-xl p-6 shadow-xl">
-                        <h3 className="text-base font-bold text-white border-b border-white/5 pb-3 mb-4">Log Skill Evidence</h3>
+                      <div className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-6 shadow-xl">
+                        <h3 className="text-base font-bold text-zinc-900 border-b border-zinc-200/60 pb-3 mb-4">Log Skill Evidence</h3>
                         {submitError && (
                           <div className="bg-red-500/10 border border-red-500/20 text-red-400 text-xs p-3 rounded-md mb-4 font-medium">
                             {submitError}
@@ -486,11 +486,11 @@ export default function TeacherDashboard() {
 
                         <form onSubmit={handleLogEvidence} className="space-y-4">
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wider text-[#8892B0] mb-2">Target Competency</label>
+                            <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">Target Competency</label>
                             <select 
                               value={newSkillId}
                               onChange={(e) => setNewSkillId(e.target.value)}
-                              className="w-full bg-[#0A192F]/60 border border-white/10 rounded-md py-2 px-3 text-white text-sm focus:border-[#64ffda] focus:outline-none"
+                              className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded-md py-2 px-3 text-zinc-900 text-sm focus:border-[#5C2483] focus:outline-none"
                               required
                             >
                               {skills.map(skill => (
@@ -500,15 +500,15 @@ export default function TeacherDashboard() {
                           </div>
 
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wider text-[#8892B0] mb-2">Evaluation Rubric Level</label>
+                            <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">Evaluation Rubric Level</label>
                             <div className="grid grid-cols-4 gap-2">
                               {[1, 2, 3, 4].map(scoreVal => (
                                 <label 
                                   key={scoreVal}
                                   className={`border rounded-md py-2.5 text-center cursor-pointer text-xs font-semibold transition-all ${
                                     newScore === scoreVal 
-                                      ? 'border-[#64ffda] bg-[#64ffda]/10 text-[#64ffda]'
-                                      : 'border-white/10 bg-[#0A192F]/40 text-[#8892B0] hover:border-white/20'
+                                      ? 'border-[#5C2483] bg-[#5C2483]/10 text-[#5C2483]'
+                                      : 'border-zinc-200 bg-[#F9F8FC]/40 text-zinc-600 hover:border-white/20'
                                   }`}
                                 >
                                   <input 
@@ -527,12 +527,12 @@ export default function TeacherDashboard() {
                           </div>
 
                           <div>
-                            <label className="block text-xs font-bold uppercase tracking-wider text-[#8892B0] mb-2">Classroom Evidence Notes</label>
+                            <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">Classroom Evidence Notes</label>
                             <textarea 
                               value={newEvidence}
                               onChange={(e) => setNewEvidence(e.target.value)}
                               placeholder="e.g. Bart mapped soil compaction near the main tree but failed to link it to canopy moisture levels."
-                              className="w-full h-24 bg-[#0A192F]/60 border border-white/10 rounded-md p-3 text-white text-sm focus:border-[#64ffda] focus:outline-none resize-none"
+                              className="w-full h-24 bg-[#F9F8FC]/60 border border-zinc-200 rounded-md p-3 text-zinc-900 text-sm focus:border-[#5C2483] focus:outline-none resize-none"
                               required
                             ></textarea>
                           </div>
@@ -540,7 +540,7 @@ export default function TeacherDashboard() {
                           <button 
                             type="submit"
                             disabled={submitting}
-                            className="w-full bg-[#64ffda] text-[#0A192F] hover:bg-[#52e0c2] transition-colors py-2.5 rounded-md font-bold text-sm disabled:opacity-50 flex justify-center items-center gap-2"
+                            className="w-full bg-[#5C2483] text-white hover:bg-[#4A154B] transition-colors py-2.5 rounded-md font-bold text-sm disabled:opacity-50 flex justify-center items-center gap-2"
                           >
                             {submitting ? 'Submitting...' : '✓ Log Evidence Entry'}
                           </button>
@@ -548,30 +548,30 @@ export default function TeacherDashboard() {
                       </div>
 
                       {/* Evidence History timeline */}
-                      <div className="bg-[#172A45] border border-white/5 rounded-xl p-6 shadow-xl">
-                        <h3 className="text-base font-bold text-white border-b border-white/5 pb-3 mb-4">Evidence History Feed</h3>
+                      <div className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-6 shadow-xl">
+                        <h3 className="text-base font-bold text-zinc-900 border-b border-zinc-200/60 pb-3 mb-4">Evidence History Feed</h3>
                         {evalsLoading ? (
                           <div className="py-8 flex justify-center">
-                            <span className="w-5 h-5 border-2 border-[#64ffda]/30 border-t-[#64ffda] rounded-full animate-spin"></span>
+                            <span className="w-5 h-5 border-2 border-[#5C2483]/30 border-t-[#5C2483] rounded-full animate-spin"></span>
                           </div>
                         ) : studentEvaluations.length === 0 ? (
-                          <div className="text-center py-8 text-[#8892B0] text-sm">No evidence logs recorded yet.</div>
+                          <div className="text-center py-8 text-zinc-600 text-sm">No evidence logs recorded yet.</div>
                         ) : (
                           <div className="space-y-4 max-h-[350px] overflow-y-auto pr-1">
                             {studentEvaluations.map(ev => (
-                              <div key={ev.id} className="bg-[#0A192F]/40 border border-white/5 rounded-lg p-4 space-y-2">
+                              <div key={ev.id} className="bg-[#F9F8FC]/40 border border-zinc-200/60 rounded-lg p-4 space-y-2">
                                 <div className="flex justify-between items-center">
-                                  <span className="text-[#64ffda] text-xs font-bold uppercase">{ev.skill.name}</span>
+                                  <span className="text-[#5C2483] text-xs font-bold uppercase">{ev.skill.name}</span>
                                   <div className="flex gap-2 items-center">
-                                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded text-[#0A192F] ${getScoreColor(ev.score)}`}>
+                                    <span className={`text-[10px] font-bold px-2 py-0.5 rounded text-white ${getScoreColor(ev.score)}`}>
                                       Level {ev.score}
                                     </span>
-                                    <span className="text-[10px] text-[#8892B0]">
+                                    <span className="text-[10px] text-zinc-600">
                                       {new Date(ev.created_at).toLocaleDateString()}
                                     </span>
                                   </div>
                                 </div>
-                                <p className="text-sm text-white/95 leading-relaxed font-medium italic">{"\"" + ev.evidence + "\""}</p>
+                                <p className="text-sm text-zinc-900/95 leading-relaxed font-medium italic">{"\"" + ev.evidence + "\""}</p>
                               </div>
                             ))}
                           </div>

@@ -85,21 +85,21 @@ export default function DistrictDashboard() {
 
   if (authLoading || loading) {
     return (
-      <div className="min-h-screen bg-[#0A192F] flex items-center justify-center">
-        <span className="w-8 h-8 border-4 border-[#64ffda]/30 border-t-[#64ffda] rounded-full animate-spin"></span>
+      <div className="min-h-screen bg-[#F9F8FC] flex items-center justify-center">
+        <span className="w-8 h-8 border-4 border-[#5C2483]/30 border-t-[#5C2483] rounded-full animate-spin"></span>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-[#0A192F] p-6 lg:p-10">
-      <header className="max-w-6xl mx-auto flex justify-between items-center border-b border-white/5 pb-6 mb-8">
+    <div className="min-h-screen bg-[#F9F8FC] p-6 lg:p-10">
+      <header className="max-w-6xl mx-auto flex justify-between items-center border-b border-zinc-200/60 pb-6 mb-8">
         <div>
-          <div className="text-[#64ffda] text-xs font-bold tracking-wider uppercase">⚡ DISTRICT ADMIN PORTAL</div>
-          <h1 className="text-3xl font-extrabold text-white tracking-tight mt-1">
+          <div className="text-[#5C2483] text-xs font-bold tracking-wider uppercase">⚡ DISTRICT ADMIN PORTAL</div>
+          <h1 className="text-3xl font-extrabold text-zinc-900 tracking-tight mt-1">
             {districtName || 'Springfield District'}
           </h1>
-          <p className="text-[#8892B0] text-sm mt-1">Signed in as {profile?.first_name} {profile?.last_name}</p>
+          <p className="text-zinc-600 text-sm mt-1">Signed in as {profile?.first_name} {profile?.last_name}</p>
         </div>
         <button
           onClick={handleLogout}
@@ -110,7 +110,7 @@ export default function DistrictDashboard() {
         <a
           href="/index.html"
           target="_blank"
-          className="ml-4 bg-[#64ffda]/10 border border-[#64ffda]/20 text-[#64ffda] hover:bg-[#64ffda]/20 py-2.5 px-5 rounded-md font-semibold text-sm transition-colors"
+          className="ml-4 bg-[#5C2483]/10 border border-[#5C2483]/20 text-[#5C2483] hover:bg-[#5C2483]/20 py-2.5 px-5 rounded-md font-semibold text-sm transition-colors"
         >
           📚 Explore Curriculum
         </a>
@@ -119,34 +119,34 @@ export default function DistrictDashboard() {
       <main className="max-w-6xl mx-auto space-y-8">
         {/* District Overview Metrics */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-[#172A45] border border-white/5 rounded-xl p-6 shadow-xl">
-            <h3 className="text-[#8892B0] text-sm font-semibold tracking-wider uppercase">District Schools</h3>
-            <p className="text-3xl font-extrabold text-white mt-2">{schools.length}</p>
+          <div className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-6 shadow-xl">
+            <h3 className="text-zinc-600 text-sm font-semibold tracking-wider uppercase">District Schools</h3>
+            <p className="text-3xl font-extrabold text-zinc-900 mt-2">{schools.length}</p>
           </div>
-          <div className="bg-[#172A45] border border-white/5 rounded-xl p-6 shadow-xl">
-            <h3 className="text-[#8892B0] text-sm font-semibold tracking-wider uppercase">Total Classrooms</h3>
-            <p className="text-3xl font-extrabold text-white mt-2">
+          <div className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-6 shadow-xl">
+            <h3 className="text-zinc-600 text-sm font-semibold tracking-wider uppercase">Total Classrooms</h3>
+            <p className="text-3xl font-extrabold text-zinc-900 mt-2">
               {schools.reduce((acc, curr) => acc + (curr.class_count || 0), 0)}
             </p>
           </div>
-          <div className="bg-[#172A45] border border-white/5 rounded-xl p-6 shadow-xl">
-            <h3 className="text-[#8892B0] text-sm font-semibold tracking-wider uppercase">Total Student Roster</h3>
-            <p className="text-3xl font-extrabold text-white mt-2">
+          <div className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-6 shadow-xl">
+            <h3 className="text-zinc-600 text-sm font-semibold tracking-wider uppercase">Total Student Roster</h3>
+            <p className="text-3xl font-extrabold text-zinc-900 mt-2">
               {schools.reduce((acc, curr) => acc + (curr.student_count || 0), 0)}
             </p>
           </div>
         </section>
 
         {/* School Directory table */}
-        <section className="bg-[#172A45] border border-white/5 rounded-xl p-6 shadow-xl">
-          <h2 className="text-xl font-bold text-white mb-6">School Directory</h2>
+        <section className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-6 shadow-xl">
+          <h2 className="text-xl font-bold text-zinc-900 mb-6">School Directory</h2>
           {schools.length === 0 ? (
-            <div className="text-center py-12 text-[#8892B0]">No schools enrolled in this district.</div>
+            <div className="text-center py-12 text-zinc-600">No schools enrolled in this district.</div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-white/10 text-xs font-bold text-[#64ffda] uppercase tracking-wider">
+                  <tr className="border-b border-zinc-200 text-xs font-bold text-[#5C2483] uppercase tracking-wider">
                     <th className="pb-3 pr-4">School Name</th>
                     <th className="pb-3 px-4">Classrooms</th>
                     <th className="pb-3 pl-4">Students Enrolled</th>
@@ -155,9 +155,9 @@ export default function DistrictDashboard() {
                 <tbody className="divide-y divide-white/5 text-base">
                   {schools.map(school => (
                     <tr key={school.id} className="hover:bg-white/[0.02] transition-colors">
-                      <td className="py-4 pr-4 font-semibold text-white">{school.name}</td>
-                      <td className="py-4 px-4 text-[#8892B0]">{school.class_count} classes</td>
-                      <td className="py-4 pl-4 text-[#8892B0]">{school.student_count} students</td>
+                      <td className="py-4 pr-4 font-semibold text-zinc-900">{school.name}</td>
+                      <td className="py-4 px-4 text-zinc-600">{school.class_count} classes</td>
+                      <td className="py-4 pl-4 text-zinc-600">{school.student_count} students</td>
                     </tr>
                   ))}
                 </tbody>

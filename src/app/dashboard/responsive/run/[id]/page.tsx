@@ -336,8 +336,8 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
 
   if (authLoading || loading) {
     return (
-      <div className="min-h-screen bg-[#0A192F] flex items-center justify-center">
-        <span className="w-8 h-8 border-4 border-[#64ffda]/30 border-t-[#64ffda] rounded-full animate-spin"></span>
+      <div className="min-h-screen bg-[#F9F8FC] flex items-center justify-center">
+        <span className="w-8 h-8 border-4 border-[#5C2483]/30 border-t-[#5C2483] rounded-full animate-spin"></span>
       </div>
     );
   }
@@ -351,19 +351,19 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
   ];
 
   return (
-    <div className="min-h-screen bg-[#0A192F] p-6 lg:p-10 text-white">
-      <header className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center border-b border-white/5 pb-6 mb-8 gap-4">
+    <div className="min-h-screen bg-[#F9F8FC] p-6 lg:p-10 text-zinc-900">
+      <header className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center border-b border-zinc-200/60 pb-6 mb-8 gap-4">
         <div>
-          <div className="text-[#64ffda] text-xs font-bold tracking-wider uppercase">⚡ RESPONSIVE LEARNING CYCLE</div>
+          <div className="text-[#5C2483] text-xs font-bold tracking-wider uppercase">⚡ RESPONSIVE LEARNING CYCLE</div>
           <h1 className="text-2xl font-extrabold tracking-tight mt-1">Intervention & Extension Wizard</h1>
-          <p className="text-[#8892B0] text-sm mt-1">{cycle?.subject} • Grade 3</p>
+          <p className="text-zinc-600 text-sm mt-1">{cycle?.subject} • Grade 3</p>
         </div>
         <button
           onClick={async () => {
             await handleSaveStep();
             router.push('/dashboard/responsive');
           }}
-          className="bg-white/5 border border-white/10 text-white hover:bg-white/10 py-2.5 px-5 rounded-md font-semibold text-sm transition-colors cursor-pointer"
+          className="bg-zinc-100 border border-zinc-200/50 border border-zinc-200 text-zinc-900 hover:bg-zinc-100 py-2.5 px-5 rounded-md font-semibold text-sm transition-colors cursor-pointer"
         >
           Save Draft & Exit
         </button>
@@ -371,7 +371,7 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
 
       {/* Progress tracker */}
       <div className="max-w-6xl mx-auto mb-8">
-        <div className="flex justify-between items-center bg-[#172A45]/40 border border-white/5 rounded-lg p-2 max-w-2xl mx-auto">
+        <div className="flex justify-between items-center bg-white border border-zinc-200/80 shadow-sm/40 border border-zinc-200/60 rounded-lg p-2 max-w-2xl mx-auto">
           {stepsList.map((stepLabel, idx) => (
             <button
               key={idx}
@@ -380,7 +380,7 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
                 setStep(idx + 1);
               }}
               className={`flex-1 py-2 px-3 rounded-md text-xs font-bold transition-all cursor-pointer ${
-                step === idx + 1 ? 'bg-[#64ffda] text-[#0A192F]' : 'text-[#8892B0] hover:text-white'
+                step === idx + 1 ? 'bg-[#5C2483] text-white' : 'text-zinc-600 hover:text-zinc-900'
               }`}
             >
               {stepLabel}
@@ -389,23 +389,23 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
         </div>
       </div>
 
-      <main className="max-w-4xl mx-auto bg-[#172A45] border border-white/5 rounded-xl p-8 shadow-2xl space-y-6">
+      <main className="max-w-4xl mx-auto bg-white border border-zinc-200/80 shadow-sm border border-zinc-200/60 rounded-xl p-8 shadow-2xl space-y-6">
         
         {/* STEP 1: Target & Evidence */}
         {step === 1 && (
           <div className="space-y-6">
-            <h2 className="text-xl font-bold text-white border-b border-white/5 pb-2">Step 1: Targets & Evidence</h2>
+            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-200/60 pb-2">Step 1: Targets & Evidence</h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#8892B0] mb-2">Subject</label>
+                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">Subject</label>
                 <select
                   value={subject}
                   onChange={(e) => {
                     setSubject(e.target.value);
                     setStandard('');
                   }}
-                  className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-2 px-3 text-white text-xs focus:outline-none"
+                  className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2 px-3 text-zinc-900 text-xs focus:outline-none"
                 >
                   <option value="Mathematics">Mathematics</option>
                   <option value="Science">Science</option>
@@ -413,11 +413,11 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
                 </select>
               </div>
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#8892B0] mb-2">Standard Code</label>
+                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">Standard Code</label>
                 <select 
                   value={standard} 
                   onChange={(e) => setStandard(e.target.value)} 
-                  className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-2.5 px-3 text-white text-xs focus:outline-none"
+                  className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2.5 px-3 text-zinc-900 text-xs focus:outline-none"
                 >
                   <option value="">Select Standard...</option>
                   {standardsList.filter(s => s.subject === subject).map(s => (
@@ -429,7 +429,7 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
                   const associatedSkill = selected ? skillsList.find(sk => sk.id === selected.skill_id) : null;
                   if (!associatedSkill) return null;
                   return (
-                    <div className="mt-2 text-xs text-[#64ffda] bg-[#64ffda]/10 border border-[#64ffda]/20 py-1.5 px-3 rounded flex items-center gap-2">
+                    <div className="mt-2 text-xs text-[#5C2483] bg-[#5C2483]/10 border border-[#5C2483]/20 py-1.5 px-3 rounded flex items-center gap-2">
                       <span>🎯 Associated Skill/Practice:</span>
                       <span className="font-bold uppercase tracking-wider">{associatedSkill.name}</span>
                     </div>
@@ -440,61 +440,61 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#8892B0] mb-2">Lesson / Unit</label>
+                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">Lesson / Unit</label>
                 <input 
                   type="text" 
                   value={lessonUnit} 
                   onChange={(e) => setLessonUnit(e.target.value)} 
                   placeholder="e.g. Fractions Unit 2"
-                  className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-2 px-3 text-white text-xs focus:outline-none"
+                  className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2 px-3 text-zinc-900 text-xs focus:outline-none"
                 />
               </div>
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#8892B0] mb-2">Learning Target</label>
+                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">Learning Target</label>
                 <input 
                   type="text" 
                   value={learningTarget} 
                   onChange={(e) => setLearningTarget(e.target.value)} 
                   placeholder="e.g. Represent fractions on a number line"
-                  className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-2 px-3 text-white text-xs focus:outline-none"
+                  className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2 px-3 text-zinc-900 text-xs focus:outline-none"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-bold uppercase tracking-wider text-[#8892B0] mb-2">Success Criteria</label>
+              <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">Success Criteria</label>
               <textarea 
                 value={successCriteria} 
                 onChange={(e) => setSuccessCriteria(e.target.value)} 
                 placeholder="Describe how students demonstrate mastery..."
-                className="w-full h-20 bg-[#0A192F]/60 border border-white/10 rounded p-3 text-white text-xs focus:outline-none resize-none"
+                className="w-full h-20 bg-[#F9F8FC]/60 border border-zinc-200 rounded p-3 text-zinc-900 text-xs focus:outline-none resize-none"
               />
             </div>
 
             {/* Evidence Logger */}
-            <div className="border-t border-white/5 pt-6 space-y-4">
-              <h3 className="text-base font-bold text-white">Log Student Evidence</h3>
+            <div className="border-t border-zinc-200/60 pt-6 space-y-4">
+              <h3 className="text-base font-bold text-zinc-900">Log Student Evidence</h3>
               {evidenceList.length > 0 && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {evidenceList.map(ev => (
-                    <div key={ev.id} className="bg-[#0A192F]/40 p-3 rounded border border-white/5 text-xs">
-                      <div className="flex justify-between items-center text-[10px] text-[#64ffda] font-bold">
+                    <div key={ev.id} className="bg-[#F9F8FC]/40 p-3 rounded border border-zinc-200/60 text-xs">
+                      <div className="flex justify-between items-center text-[10px] text-[#5C2483] font-bold">
                         <span>{ev.student?.first_name} {ev.student?.last_name}</span>
-                        <span className="uppercase text-white/50">{ev.evidence_type}</span>
+                        <span className="uppercase text-zinc-900/50">{ev.evidence_type}</span>
                       </div>
-                      <p className="text-[#8892B0] mt-1.5 leading-relaxed">"{ev.notes}"</p>
+                      <p className="text-zinc-600 mt-1.5 leading-relaxed">"{ev.notes}"</p>
                     </div>
                   ))}
                 </div>
               )}
 
-              <form onSubmit={handleAddEvidence} className="bg-[#0A192F]/20 p-4 rounded border border-white/5 grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
+              <form onSubmit={handleAddEvidence} className="bg-[#F9F8FC]/20 p-4 rounded border border-zinc-200/60 grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
                 <div className="md:col-span-4">
-                  <label className="block text-[10px] font-bold uppercase tracking-wider text-[#8892B0] mb-1.5">Select Student</label>
+                  <label className="block text-[10px] font-bold uppercase tracking-wider text-zinc-600 mb-1.5">Select Student</label>
                   <select 
                     value={newEvidenceStudent}
                     onChange={(e) => setNewEvidenceStudent(e.target.value)}
-                    className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-1.5 px-3 text-white text-xs"
+                    className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-1.5 px-3 text-zinc-900 text-xs"
                     required
                   >
                     <option value="">Choose Student...</option>
@@ -504,11 +504,11 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
                   </select>
                 </div>
                 <div className="md:col-span-4">
-                  <label className="block text-[10px] font-bold uppercase tracking-wider text-[#8892B0] mb-1.5">Evidence Source</label>
+                  <label className="block text-[10px] font-bold uppercase tracking-wider text-zinc-600 mb-1.5">Evidence Source</label>
                   <select 
                     value={newEvidenceType}
                     onChange={(e) => setNewEvidenceType(e.target.value)}
-                    className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-1.5 px-3 text-white text-xs"
+                    className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-1.5 px-3 text-zinc-900 text-xs"
                   >
                     <option value="exit_ticket">Exit Ticket</option>
                     <option value="observation">Observation Log</option>
@@ -517,18 +517,18 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
                   </select>
                 </div>
                 <div className="md:col-span-4">
-                  <label className="block text-[10px] font-bold uppercase tracking-wider text-[#8892B0] mb-1.5">Observational Notes</label>
+                  <label className="block text-[10px] font-bold uppercase tracking-wider text-zinc-600 mb-1.5">Observational Notes</label>
                   <input 
                     type="text" 
                     value={newEvidenceNotes}
                     onChange={(e) => setNewEvidenceNotes(e.target.value)}
-                    className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-1.5 px-3 text-white text-xs focus:outline-none"
+                    className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-1.5 px-3 text-zinc-900 text-xs focus:outline-none"
                     required
                   />
                 </div>
                 <button 
                   type="submit" 
-                  className="md:col-span-12 w-full bg-[#64ffda]/10 border border-[#64ffda]/20 text-[#64ffda] hover:bg-[#64ffda]/20 py-2 rounded text-xs font-bold cursor-pointer"
+                  className="md:col-span-12 w-full bg-[#5C2483]/10 border border-[#5C2483]/20 text-[#5C2483] hover:bg-[#5C2483]/20 py-2 rounded text-xs font-bold cursor-pointer"
                 >
                   ➕ Log Evidence Card
                 </button>
@@ -540,37 +540,37 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
         {/* STEP 2: Learning Needs & Groups */}
         {step === 2 && (
           <div className="space-y-6">
-            <h2 className="text-xl font-bold text-white border-b border-white/5 pb-2">Step 2: Learning Needs & Flexible Groups</h2>
-            <div className="flex gap-3 bg-[#0A192F]/20 p-4 rounded border border-white/5">
+            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-200/60 pb-2">Step 2: Learning Needs & Flexible Groups</h2>
+            <div className="flex gap-3 bg-[#F9F8FC]/20 p-4 rounded border border-zinc-200/60">
               <input 
                 type="text" 
                 value={newGroupName}
                 onChange={(e) => setNewGroupName(e.target.value)}
                 placeholder="e.g. Fraction Partitioning..."
-                className="flex-1 bg-[#0A192F]/60 border border-white/10 rounded py-2 px-3 text-white text-xs focus:outline-none"
+                className="flex-1 bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2 px-3 text-zinc-900 text-xs focus:outline-none"
               />
               <button 
                 onClick={handleCreateGroup}
-                className="bg-[#64ffda] text-[#0A192F] hover:bg-[#52e0c2] font-bold py-2 px-4 rounded text-xs cursor-pointer"
+                className="bg-[#5C2483] text-white hover:bg-[#4A154B] font-bold py-2 px-4 rounded text-xs cursor-pointer"
               >
                 Create Group
               </button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-              <div className="md:col-span-4 bg-[#0A192F]/40 border border-white/5 rounded-lg p-4 space-y-3">
-                <h4 className="text-xs font-bold uppercase tracking-wider text-[#64ffda]">Student Roster</h4>
+              <div className="md:col-span-4 bg-[#F9F8FC]/40 border border-zinc-200/60 rounded-lg p-4 space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#5C2483]">Student Roster</h4>
                 <div className="space-y-3 max-h-[300px] overflow-y-auto pr-1">
                   {students.map(s => (
-                    <div key={s.id} className="bg-[#172A45] p-2.5 rounded border border-white/5 space-y-2">
-                      <span className="font-bold text-white text-xs block">{s.first_name} {s.last_name}</span>
+                    <div key={s.id} className="bg-white border border-zinc-200/80 shadow-sm p-2.5 rounded border border-zinc-200/60 space-y-2">
+                      <span className="font-bold text-zinc-900 text-xs block">{s.first_name} {s.last_name}</span>
                       
                       <div className="grid grid-cols-2 gap-1 text-[9px]">
                         <div>
-                          <label className="text-[#8892B0] block mb-0.5">Need Group</label>
+                          <label className="text-zinc-600 block mb-0.5">Need Group</label>
                           <select 
                             onChange={(e) => handleAssignStudentToGroup(s.id, e.target.value, studentLevels[s.id] || 'Beginning')}
-                            className="w-full bg-[#0A192F]/60 border border-white/10 rounded text-white p-0.5"
+                            className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded text-zinc-900 p-0.5"
                             defaultValue=""
                           >
                             <option value="" disabled>Assign...</option>
@@ -580,7 +580,7 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
                           </select>
                         </div>
                         <div>
-                          <label className="text-[#8892B0] block mb-0.5">Rating Level</label>
+                          <label className="text-zinc-600 block mb-0.5">Rating Level</label>
                           <select 
                             onChange={(e) => {
                               const assignedGroupId = Object.keys(groupStudents).find(k => groupStudents[k].some(item => item.id === s.id));
@@ -591,7 +591,7 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
                               }
                             }}
                             value={studentLevels[s.id] || 'Beginning'}
-                            className="w-full bg-[#0A192F]/60 border border-white/10 rounded text-white p-0.5"
+                            className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded text-zinc-900 p-0.5"
                           >
                             <option value="Beginning">Beginning</option>
                             <option value="Developing">Developing</option>
@@ -603,7 +603,7 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
                       </div>
 
                       {studentLevels[s.id] === 'Advanced' && (
-                        <div className="bg-[#64ffda]/10 border border-[#64ffda]/20 rounded p-1.5 text-[9px] text-[#64ffda] font-bold text-center">
+                        <div className="bg-[#5C2483]/10 border border-[#5C2483]/20 rounded p-1.5 text-[9px] text-[#5C2483] font-bold text-center">
                           🎯 Pathway: Ready for Extension!
                         </div>
                       )}
@@ -614,17 +614,17 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
 
               <div className="md:col-span-8 space-y-3">
                 {groups.map(grp => (
-                  <div key={grp.id} className="bg-[#0A192F]/20 border border-white/5 rounded-lg p-4 space-y-3">
-                    <div className="flex justify-between items-center text-xs border-b border-white/5 pb-2">
-                      <span className="font-bold text-[#64ffda]">{grp.name}</span>
-                      <span className="text-[10px] text-[#8892B0]">{(groupStudents[grp.id] || []).length} Students</span>
+                  <div key={grp.id} className="bg-[#F9F8FC]/20 border border-zinc-200/60 rounded-lg p-4 space-y-3">
+                    <div className="flex justify-between items-center text-xs border-b border-zinc-200/60 pb-2">
+                      <span className="font-bold text-[#5C2483]">{grp.name}</span>
+                      <span className="text-[10px] text-zinc-600">{(groupStudents[grp.id] || []).length} Students</span>
                     </div>
                     
                     <div className="flex flex-wrap gap-2">
                       {((groupStudents[grp.id] || [])).map(s => (
-                        <div key={s.id} className="bg-[#172A45] border border-white/10 rounded-full px-3 py-1 text-[10px] flex items-center gap-2">
-                          <span className="font-bold text-white">{s.first_name} {s.last_name}</span>
-                          <span className="text-[#8892B0] text-[8px] bg-white/5 px-1.5 py-0.5 rounded-full">{studentLevels[s.id]}</span>
+                        <div key={s.id} className="bg-white border border-zinc-200/80 shadow-sm border border-zinc-200 rounded-full px-3 py-1 text-[10px] flex items-center gap-2">
+                          <span className="font-bold text-zinc-900">{s.first_name} {s.last_name}</span>
+                          <span className="text-zinc-600 text-[8px] bg-zinc-100 border border-zinc-200/50 px-1.5 py-0.5 rounded-full">{studentLevels[s.id]}</span>
                         </div>
                       ))}
                     </div>
@@ -638,15 +638,15 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
         {/* STEP 3: Strategies & Actions */}
         {step === 3 && (
           <div className="space-y-6">
-            <h2 className="text-xl font-bold text-white border-b border-white/5 pb-2">Step 3: Strategies & Actions</h2>
+            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-200/60 pb-2">Step 3: Strategies & Actions</h2>
             
             <div className="space-y-3">
-              <h3 className="text-base font-bold text-white">Instructional Strategy Plan</h3>
+              <h3 className="text-base font-bold text-zinc-900">Instructional Strategy Plan</h3>
               {strategies.map((strat, idx) => (
-                <div key={idx} className="bg-[#0A192F]/40 border border-white/5 p-3 rounded-lg flex justify-between items-center text-xs">
+                <div key={idx} className="bg-[#F9F8FC]/40 border border-zinc-200/60 p-3 rounded-lg flex justify-between items-center text-xs">
                   <div>
-                    <p className="font-semibold text-white">{strat.strategy_name}</p>
-                    <span className="text-[10px] text-[#8892B0]">Due: {new Date(strat.followup_date).toLocaleDateString()}</span>
+                    <p className="font-semibold text-zinc-900">{strat.strategy_name}</p>
+                    <span className="text-[10px] text-zinc-600">Due: {new Date(strat.followup_date).toLocaleDateString()}</span>
                   </div>
                   <span className="bg-amber-500/10 text-amber-400 font-bold px-2 py-0.5 rounded text-[10px]">
                     {strat.status}
@@ -655,27 +655,27 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
               ))}
             </div>
 
-            <form onSubmit={handleAddStrategy} className="bg-[#0A192F]/20 p-4 rounded border border-white/5 space-y-4">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-[#64ffda]">Add Strategy Action</h4>
+            <form onSubmit={handleAddStrategy} className="bg-[#F9F8FC]/20 p-4 rounded border border-zinc-200/60 space-y-4">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#5C2483]">Add Strategy Action</h4>
               <div className="space-y-3">
                 <div>
-                  <label className="block text-[10px] font-bold uppercase tracking-wider text-[#8892B0] mb-1.5">Strategy Name</label>
+                  <label className="block text-[10px] font-bold uppercase tracking-wider text-zinc-600 mb-1.5">Strategy Name</label>
                   <input 
                     type="text" 
                     value={newStrategyName} 
                     onChange={(e) => setNewStrategyName(e.target.value)} 
                     placeholder="e.g. Manipulatives & Number Line Tiles..."
-                    className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-2 px-3 text-white text-xs focus:outline-none"
+                    className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2 px-3 text-zinc-900 text-xs focus:outline-none"
                     required
                   />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[10px] font-bold uppercase tracking-wider text-[#8892B0] mb-1.5">Responsible Owner</label>
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-zinc-600 mb-1.5">Responsible Owner</label>
                     <select 
                       value={newStrategyOwner}
                       onChange={(e) => setNewStrategyOwner(e.target.value)}
-                      className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-2 px-3 text-white text-xs"
+                      className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2 px-3 text-zinc-900 text-xs"
                       required
                     >
                       <option value="">Choose User...</option>
@@ -683,12 +683,12 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
                     </select>
                   </div>
                   <div>
-                    <label className="block text-[10px] font-bold uppercase tracking-wider text-[#8892B0] mb-1.5">Follow-Up Date</label>
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-zinc-600 mb-1.5">Follow-Up Date</label>
                     <input 
                       type="date" 
                       value={newStrategyDeadline} 
                       onChange={(e) => setNewStrategyDeadline(e.target.value)} 
-                      className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-2 px-3 text-white text-xs"
+                      className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2 px-3 text-zinc-900 text-xs"
                       required
                     />
                   </div>
@@ -696,7 +696,7 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
               </div>
               <button 
                 type="submit"
-                className="w-full bg-[#64ffda]/10 border border-[#64ffda]/20 text-[#64ffda] hover:bg-[#64ffda]/20 py-2 rounded text-xs font-bold cursor-pointer"
+                className="w-full bg-[#5C2483]/10 border border-[#5C2483]/20 text-[#5C2483] hover:bg-[#5C2483]/20 py-2 rounded text-xs font-bold cursor-pointer"
               >
                 Save Strategy to Group
               </button>
@@ -707,26 +707,26 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
         {/* STEP 4: Progress Check */}
         {step === 4 && (
           <div className="space-y-6">
-            <h2 className="text-xl font-bold text-white border-b border-white/5 pb-2">Step 4: Progress Check</h2>
+            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-200/60 pb-2">Step 4: Progress Check</h2>
             <div className="space-y-4">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#8892B0] mb-2">What new evidence was collected?</label>
+                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">What new evidence was collected?</label>
                 <textarea
                   value={checkEvidence}
                   onChange={(e) => setCheckEvidence(e.target.value)}
                   placeholder="e.g. Classroom diagnostic logs show correct partitioning..."
-                  className="w-full h-24 bg-[#0A192F]/60 border border-white/10 rounded p-3 text-white text-xs focus:outline-none resize-none"
+                  className="w-full h-24 bg-[#F9F8FC]/60 border border-zinc-200 rounded p-3 text-zinc-900 text-xs focus:outline-none resize-none"
                   required
                 />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-[#8892B0] mb-2">Progress Rating</label>
+                  <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">Progress Rating</label>
                   <select
                     value={checkRating}
                     onChange={(e) => setCheckRating(e.target.value)}
-                    className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-2 px-3 text-white text-xs focus:outline-none"
+                    className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2 px-3 text-zinc-900 text-xs focus:outline-none"
                   >
                     <option value="No Evidence Yet">No Evidence Yet</option>
                     <option value="Limited Progress">Limited Progress</option>
@@ -763,15 +763,15 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
         {/* STEP 5: Next Learning Path & Reflections */}
         {step === 5 && (
           <div className="space-y-6">
-            <h2 className="text-xl font-bold text-white border-b border-white/5 pb-2">Step 5: Next Learning Path</h2>
+            <h2 className="text-xl font-bold text-zinc-900 border-b border-zinc-200/60 pb-2">Step 5: Next Learning Path</h2>
             
             <div className="space-y-4">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-[#8892B0] mb-2">Next Instructional Decision</label>
+                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">Next Instructional Decision</label>
                 <select
                   value={nextDecision}
                   onChange={(e) => setNextDecision(e.target.value)}
-                  className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-2.5 px-3 text-white text-xs focus:outline-none"
+                  className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2.5 px-3 text-zinc-900 text-xs focus:outline-none"
                 >
                   <option value="Continue the current strategy">Continue the current strategy</option>
                   <option value="Adjust the current strategy">Adjust the current strategy</option>
@@ -785,43 +785,43 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
               </div>
 
               {/* Reflection Questions */}
-              <div className="border-t border-white/5 pt-6 space-y-4">
-                <h3 className="text-base font-bold text-white">Teacher Reflections</h3>
+              <div className="border-t border-zinc-200/60 pt-6 space-y-4">
+                <h3 className="text-base font-bold text-zinc-900">Teacher Reflections</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-[10px] font-bold uppercase tracking-wider text-[#8892B0] mb-1.5">What worked well?</label>
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-zinc-600 mb-1.5">What worked well?</label>
                     <input 
                       type="text" 
                       value={reflectionWorked} 
                       onChange={(e) => setReflectionWorked(e.target.value)}
-                      className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-2 px-3 text-white text-xs focus:outline-none"
+                      className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2 px-3 text-zinc-900 text-xs focus:outline-none"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] font-bold uppercase tracking-wider text-[#8892B0] mb-1.5">What did NOT work?</label>
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-zinc-600 mb-1.5">What did NOT work?</label>
                     <input 
                       type="text" 
                       value={reflectionNotWorked} 
                       onChange={(e) => setReflectionNotWorked(e.target.value)}
-                      className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-2 px-3 text-white text-xs focus:outline-none"
+                      className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2 px-3 text-zinc-900 text-xs focus:outline-none"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] font-bold uppercase tracking-wider text-[#8892B0] mb-1.5">What did the student response reveal?</label>
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-zinc-600 mb-1.5">What did the student response reveal?</label>
                     <input 
                       type="text" 
                       value={reflectionReveal} 
                       onChange={(e) => setReflectionReveal(e.target.value)}
-                      className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-2 px-3 text-white text-xs focus:outline-none"
+                      className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2 px-3 text-zinc-900 text-xs focus:outline-none"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] font-bold uppercase tracking-wider text-[#8892B0] mb-1.5">What will you change next?</label>
+                    <label className="block text-[10px] font-bold uppercase tracking-wider text-zinc-600 mb-1.5">What will you change next?</label>
                     <input 
                       type="text" 
                       value={reflectionChange} 
                       onChange={(e) => setReflectionChange(e.target.value)}
-                      className="w-full bg-[#0A192F]/60 border border-white/10 rounded py-2 px-3 text-white text-xs focus:outline-none"
+                      className="w-full bg-[#F9F8FC]/60 border border-zinc-200 rounded py-2 px-3 text-zinc-900 text-xs focus:outline-none"
                     />
                   </div>
                 </div>
@@ -829,7 +829,7 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
 
               <button
                 onClick={handleCompleteCycle}
-                className="w-full bg-emerald-500 text-[#0A192F] hover:bg-emerald-400 font-extrabold py-3.5 rounded-md text-xs transition-colors shadow-lg cursor-pointer mt-4"
+                className="w-full bg-emerald-500 text-white hover:bg-emerald-400 font-extrabold py-3.5 rounded-md text-xs transition-colors shadow-lg cursor-pointer mt-4"
               >
                 💾 Lock Cycle & Create Learning Pathways
               </button>
@@ -838,7 +838,7 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
         )}
 
         {/* Wizard navigation */}
-        <div className="flex justify-between items-center border-t border-white/5 pt-6 mt-6">
+        <div className="flex justify-between items-center border-t border-zinc-200/60 pt-6 mt-6">
           <button
             onClick={async () => {
               if (step > 1) {
@@ -847,7 +847,7 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
               }
             }}
             disabled={step === 1}
-            className="bg-white/5 border border-white/10 text-white hover:bg-white/10 py-2 px-5 rounded font-semibold text-xs transition-colors disabled:opacity-30 cursor-pointer"
+            className="bg-zinc-100 border border-zinc-200/50 border border-zinc-200 text-zinc-900 hover:bg-zinc-100 py-2 px-5 rounded font-semibold text-xs transition-colors disabled:opacity-30 cursor-pointer"
           >
             ← Previous Stage
           </button>
@@ -858,7 +858,7 @@ export default function ResponsiveCycleWizard({ params }: { params: Promise<Page
                 await handleSaveStep();
                 setStep(step + 1);
               }}
-              className="bg-[#64ffda] text-[#0A192F] hover:bg-[#52e0c2] font-bold py-2 px-6 rounded text-xs transition-colors cursor-pointer"
+              className="bg-[#5C2483] text-white hover:bg-[#4A154B] font-bold py-2 px-6 rounded text-xs transition-colors cursor-pointer"
             >
               Next Stage →
             </button>
