@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { User } from '@supabase/supabase-js';
@@ -22,7 +22,7 @@ interface AuthContextType {
   signOut: () => Promise<void>;
 }
 
-const getMockSession = (path) => {
+const getMockSession = (path: string) => {
   if (typeof window === 'undefined') return { user: null, profile: null };
   if (!path) return { user: null, profile: null };
   if (path.startsWith('/dashboard/district')) {
@@ -79,21 +79,19 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
+  const [isGuest, setIsGuest] = useState(true);
   const supabase = createClient();
-
   const pathname = usePathname();
 
-  // Reset loading state synchronously during render when route transition starts to prevent race condition
-  const [prevPathname, setPrevPathname] = useState(pathname);
-  if (pathname !== prevPathname) {
-    setPrevPathname(pathname);
-    setLoading(true);
-  }
+  // Keep a ref to the real user profile so we can cache it
+  const realProfileRef = useRef<UserProfile | null>(null);
+  const realUserRef = useRef<User | null>(null);
 
   useEffect(() => {
+    let active = true;
+
     const fetchUserProfile = async (currentUser: User) => {
       try {
-        // Query both public.users profile and public.user_roles role assignment
         const { data: userData, error: userError } = await supabase
           .from('users')
           .select('id, email, first_name, last_name, district_id, school_id')
@@ -110,24 +108,37 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
         if (roleError) throw roleError;
 
-        setProfile({
-          ...userData,
-          role: roleData.role as 'district_admin' | 'principal' | 'teacher',
-        });
+        if (active) {
+          const prof = {
+            ...userData,
+            role: roleData.role as 'district_admin' | 'principal' | 'teacher',
+          };
+          realProfileRef.current = prof;
+          realUserRef.current = currentUser;
+          setUser(currentUser);
+          setProfile(prof);
+          setIsGuest(false);
+          setLoading(false);
+        }
       } catch (err) {
         console.error('Error fetching user profile:', err);
-        setProfile(null);
-      } finally {
-        setLoading(false);
+        if (active) {
+          setIsGuest(true);
+          const { user: mockUser, profile: mockProfile } = getMockSession(pathname);
+          setUser(mockUser);
+          setProfile(mockProfile);
+          setLoading(false);
+        }
       }
     };
 
-    // Initialize session check
+    // Initialize session check ONCE on mount
     supabase.auth.getSession().then(({ data: { session } }) => {
+      if (!active) return;
       if (session?.user) {
-        setUser(session.user);
         fetchUserProfile(session.user);
       } else {
+        setIsGuest(true);
         const { user: mockUser, profile: mockProfile } = getMockSession(pathname);
         setUser(mockUser);
         setProfile(mockProfile);
@@ -138,10 +149,13 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     // Listen for auth state changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (event, session) => {
+        if (!active) return;
         if (session?.user) {
-          setUser(session.user);
           fetchUserProfile(session.user);
         } else {
+          realProfileRef.current = null;
+          realUserRef.current = null;
+          setIsGuest(true);
           const { user: mockUser, profile: mockProfile } = getMockSession(pathname);
           setUser(mockUser);
           setProfile(mockProfile);
@@ -151,13 +165,36 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     );
 
     return () => {
+      active = false;
       subscription.unsubscribe();
     };
-  }, [supabase, pathname]);
+  }, [supabase]); // Run only on mount/supabase reference change
+
+  // Synchronously update mock session during render on pathname changes if in guest mode.
+  // This prevents any transition delays or flashing of mismatched mock data.
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    if (isGuest) {
+      const { user: mockUser, profile: mockProfile } = getMockSession(pathname);
+      setUser(mockUser);
+      setProfile(mockProfile);
+      // No loading spinner reset is needed in guest mode because mock state changes are synchronous
+    } else {
+      // Ensure real user and profile remain set to the cached values during navigation
+      if (realUserRef.current && realProfileRef.current) {
+        setUser(realUserRef.current);
+        setProfile(realProfileRef.current);
+      }
+    }
+  }
 
   const signOut = async () => {
     setLoading(true);
     await supabase.auth.signOut();
+    realProfileRef.current = null;
+    realUserRef.current = null;
+    setIsGuest(true);
     setUser(null);
     setProfile(null);
     setLoading(false);
