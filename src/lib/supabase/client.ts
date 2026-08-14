@@ -5,11 +5,13 @@ import { User } from '@supabase/supabase-js';
 const MOCK_DATA: Record<string, any[]> = {
   users: [
     { id: 'e1000000-0000-0000-0000-000000000000', email: 'edna.krabappel@springfield.edu', first_name: 'Edna', last_name: 'Krabappel', district_id: 'd1111111-1111-1111-1111-111111111111', school_id: 'e2222222-2222-2222-2222-222222222222' },
+    { id: 'e5555555-5555-5555-5555-555555555555', email: 'semihagnyldz@gmail.com', first_name: 'Semih', last_name: 'Yildiz', district_id: 'd1111111-1111-1111-1111-111111111111', school_id: 'e2222222-2222-2222-2222-222222222222' },
     { id: 'a2000000-0000-0000-0000-000000000000', email: 'principal.skinner@springfield.edu', first_name: 'Seymour', last_name: 'Skinner', district_id: 'd1111111-1111-1111-1111-111111111111', school_id: 'e2222222-2222-2222-2222-222222222222' },
     { id: 'a1000000-0000-0000-0000-000000000000', email: 'admin@springfield.edu', first_name: 'Gary', last_name: 'Superintendent', district_id: 'd1111111-1111-1111-1111-111111111111', school_id: null }
   ],
   user_roles: [
     { user_id: 'e1000000-0000-0000-0000-000000000000', role: 'teacher' },
+    { user_id: 'e5555555-5555-5555-5555-555555555555', role: 'teacher' },
     { user_id: 'a2000000-0000-0000-0000-000000000000', role: 'principal' },
     { user_id: 'a1000000-0000-0000-0000-000000000000', role: 'district_admin' }
   ],
@@ -21,7 +23,7 @@ const MOCK_DATA: Record<string, any[]> = {
     { id: 'e3333333-3333-3333-3333-333333333333', district_id: 'd1111111-1111-1111-1111-111111111111', name: 'Shelbyville Elementary' }
   ],
   classes: [
-    { id: 'c0000001-0000-0000-0000-000000000000', school_id: 'e2222222-2222-2222-2222-222222222222', teacher_id: 'e1000000-0000-0000-0000-000000000000', name: '4th Grade English', grade_level: 'Grade 4' },
+    { id: 'c0000001-0000-0000-0000-000000000000', school_id: 'e2222222-2222-2222-2222-222222222222', teacher_id: 'e5555555-5555-5555-5555-555555555555', name: '4th Grade English', grade_level: 'Grade 4' },
     { id: 'c0000002-0000-0000-0000-000000000000', school_id: 'e2222222-2222-2222-2222-222222222222', teacher_id: 'e2000000-0000-0000-0000-000000000000', name: 'High School Band', grade_level: 'Grade 9' }
   ],
   students: [
@@ -46,32 +48,40 @@ const MOCK_DATA: Record<string, any[]> = {
     { id: 'ea111111-1111-1111-1111-111111111111', school_id: 'e2222222-2222-2222-2222-222222222222', name: 'Grade 3 ELA PLC' }
   ],
   plc_team_members: [
-    { team_id: 'ea111111-1111-1111-1111-111111111111', user_id: 'e1000000-0000-0000-0000-000000000000', is_leader: true, team: { id: 'ea111111-1111-1111-1111-111111111111', name: 'Grade 3 ELA PLC' } }
+    { team_id: 'ea111111-1111-1111-1111-111111111111', user_id: 'e1000000-0000-0000-0000-000000000000', is_leader: true, team: { id: 'ea111111-1111-1111-1111-111111111111', name: 'Grade 3 ELA PLC' } },
+    { team_id: 'ea111111-1111-1111-1111-111111111111', user_id: 'e5555555-5555-5555-5555-555555555555', is_leader: true, team: { id: 'ea111111-1111-1111-1111-111111111111', name: 'Grade 3 ELA PLC' } }
   ],
   plc_meetings: [
     { id: 'm-1', team_id: 'ea111111-1111-1111-1111-111111111111', date: '2026-08-10', objective: 'Analyze NC.3.RL.1 learning metrics', standard: 'NC.3.RL.1', learning_target: 'Identify character motivations', success_criteria: 'Write a short summary paragraph', status: 'completed', team: { name: 'Grade 3 ELA PLC' } },
     { id: 'm-2', team_id: 'ea111111-1111-1111-1111-111111111111', date: '2026-08-20', objective: 'Plan next geometry unit', standard: 'NC.3.G.1', learning_target: 'Categorize quadrilaterals', success_criteria: 'Define 4-sided shapes', status: 'draft', team: { name: 'Grade 3 ELA PLC' } }
   ],
   plc_action_items: [
-    { id: 'act-1', owner_id: 'e1000000-0000-0000-0000-000000000000', action: 'Create Frayer Model templates for lesson vocabulary', deadline: '2026-08-16', status: 'pending', evidence_to_collect: 'Student graphic organizers', meeting_id: 'm-1', meeting: { standard: 'NC.3.RL.1' } }
+    { id: 'act-1', owner_id: 'e1000000-0000-0000-0000-000000000000', action: 'Create Frayer Model templates for lesson vocabulary', deadline: '2026-08-16', status: 'pending', evidence_to_collect: 'Student graphic organizers', meeting_id: 'm-1', meeting: { standard: 'NC.3.RL.1' } },
+    { id: 'act-2', owner_id: 'e5555555-5555-5555-5555-555555555555', action: 'Create Frayer Model templates for lesson vocabulary', deadline: '2026-08-16', status: 'pending', evidence_to_collect: 'Student graphic organizers', meeting_id: 'm-1', meeting: { standard: 'NC.3.RL.1' } }
   ],
   responsive_cycles: [
-    { id: 'rc-1', teacher_id: 'e1000000-0000-0000-0000-000000000000', subject: 'Mathematics', grade_level: '3rd Grade', standard: 'NC.3.NF.2', lesson_unit: 'Fractions on a Number Line', learning_target: 'Partition a number line into equal intervals and represent thirds', success_criteria: 'Represent thirds on a number line', status: 'active', created_at: '2026-08-11', updated_at: '2026-08-13' }
+    { id: 'rc-1', teacher_id: 'e1000000-0000-0000-0000-000000000000', subject: 'Mathematics', grade_level: '3rd Grade', standard: 'NC.3.NF.2', lesson_unit: 'Fractions on a Number Line', learning_target: 'Partition a number line into equal intervals and represent thirds', success_criteria: 'Represent thirds on a number line', status: 'active', created_at: '2026-08-11', updated_at: '2026-08-13' },
+    { id: 'rc-2', teacher_id: 'e5555555-5555-5555-5555-555555555555', subject: 'Mathematics', grade_level: '3rd Grade', standard: 'NC.3.NF.2', lesson_unit: 'Fractions on a Number Line', learning_target: 'Partition a number line into equal intervals and represent thirds', success_criteria: 'Represent thirds on a number line', status: 'active', created_at: '2026-08-11', updated_at: '2026-08-13' }
   ],
   responsive_student_groups: [
-    { id: 'rg-1', cycle_id: 'rc-1', name: 'Strategic Guided Small Groups (Concrete CRA)', notes: 'Requires extra tactile fraction tiles practice' }
+    { id: 'rg-1', cycle_id: 'rc-1', name: 'Strategic Guided Small Groups (Concrete CRA)', notes: 'Requires extra tactile fraction tiles practice' },
+    { id: 'rg-2', cycle_id: 'rc-2', name: 'Strategic Guided Small Groups (Concrete CRA)', notes: 'Requires extra tactile fraction tiles practice' }
   ],
   responsive_group_members: [
-    { group_id: 'rg-1', student_id: 'a000001-0000-0000-0000-000000000000', performance_level: 'developing' }
+    { group_id: 'rg-1', student_id: 'a000001-0000-0000-0000-000000000000', performance_level: 'developing' },
+    { group_id: 'rg-2', student_id: 'a000001-0000-0000-0000-000000000000', performance_level: 'developing' }
   ],
   responsive_strategies: [
-    { group_id: 'rg-1', strategy_name: 'Concrete-Representational-Abstract (CRA) Sequence', responsible_teacher_id: 'e1000000-0000-0000-0000-000000000000', start_date: '2026-08-12', followup_date: '2026-08-19', status: 'active', notes: 'Using 3D printed fraction blocks' }
+    { group_id: 'rg-1', strategy_name: 'Concrete-Representational-Abstract (CRA) Sequence', responsible_teacher_id: 'e1000000-0000-0000-0000-000000000000', start_date: '2026-08-12', followup_date: '2026-08-19', status: 'active', notes: 'Using 3D printed fraction blocks' },
+    { group_id: 'rg-2', strategy_name: 'Concrete-Representational-Abstract (CRA) Sequence', responsible_teacher_id: 'e5555555-5555-5555-5555-555555555555', start_date: '2026-08-12', followup_date: '2026-08-19', status: 'active', notes: 'Using 3D printed fraction blocks' }
   ],
   responsive_student_paths: [
-    { id: 'path-1', student_id: 'a000001-0000-0000-0000-000000000000', cycle_id: 'rc-1', status: 'active', notes: 'Needs scaffolding' }
+    { id: 'path-1', student_id: 'a000001-0000-0000-0000-000000000000', cycle_id: 'rc-1', status: 'active', notes: 'Needs scaffolding' },
+    { id: 'path-2', student_id: 'a000001-0000-0000-0000-000000000000', cycle_id: 'rc-2', status: 'active', notes: 'Needs scaffolding' }
   ],
   responsive_progress_checks: [
-    { id: 'pc-1', student_id: 'a000001-0000-0000-0000-000000000000', cycle_id: 'rc-1', score: 75, notes: 'Improved from 40%' }
+    { id: 'pc-1', student_id: 'a000001-0000-0000-0000-000000000000', cycle_id: 'rc-1', score: 75, notes: 'Improved from 40%' },
+    { id: 'pc-2', student_id: 'a000001-0000-0000-0000-000000000000', cycle_id: 'rc-2', score: 75, notes: 'Improved from 40%' }
   ],
   responsive_strategies_library: [
     { id: 'strat-lib-1', name: 'Concrete-Representational-Abstract (CRA) Sequence', description: 'Multi-sensory math scaffolding sequence.', evidence_base: 'What Works Clearinghouse (WWC) Strong Evidence' }
