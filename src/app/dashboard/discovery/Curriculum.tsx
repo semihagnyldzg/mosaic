@@ -66,12 +66,21 @@ const printingResources = {
     { id: 'bb-res-loop-exit-ticket', category: 'Student Learning Resources', title: 'Exit Ticket', part: 'part4', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: '10 individual reflection questions mapping loop concepts to Grades 4-5.' },
     
     // Student Learning Resources (Unit Share)
-    { id: 'bb-res-eng-check', category: 'Student Learning Resources', title: 'Final Engineering Checklist', part: 'share', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: '9-point final check list covering problem definition, target user, knowledge lists, variables, and improvements.' },
-    { id: 'bb-res-user-test', category: 'Student Learning Resources', title: 'User Testing Form', part: 'share', pages: 2, ratio: '1 per pair', mode: 'Digital + Printable', directions: 'Authentic user test logs for outside peers to record questions asked, confusion points, and helpful comments.' },
-    { id: 'bb-res-iteration', category: 'Student Learning Resources', title: 'Final Iteration Canvas', part: 'share', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Design improvement template to document before/after code adjustments based on user observations.' },
-    { id: 'bb-res-expo-guide', category: 'Student Learning Resources', title: 'Design Expo Presentation Guide', part: 'share', pages: 2, ratio: '1 per team', mode: 'Digital + Printable', directions: '10-step speech structure guide covering problem, user, algorithm, variables, live demo, and version 2 plans.' },
-    { id: 'bb-res-peer-feed', category: 'Student Learning Resources', title: 'Peer Feedback Form', part: 'share', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Audience evaluation sheets tracking Strength, Idea, and Question (S-I-Q) metrics.' },
-    { id: 'bb-res-individual-ref', category: 'Student Learning Resources', title: 'Individual AI Engineer Reflection', part: 'share', pages: 2, ratio: '1 per student', mode: 'Digital + Printable', directions: '10-question metacognitive evaluation worksheet covering personal contribution and coding concepts.' }
+    { id: 'bb-res-share-mission', category: 'Student Learning Resources', title: 'AI BotBuilder Final Mission Card', part: 'share', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Outlines the final chatbot challenge mission: DATA + ALGORITHMS + VARIABLES + LOOPS.' },
+    { id: 'bb-res-share-check', category: 'Student Learning Resources', title: 'Four-Part System Check', part: 'share', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Compliance inspection checklist verifying data, algorithm flow, username variable, and message repetition.' },
+    { id: 'bb-res-share-canvas', category: 'Student Learning Resources', title: 'Final Chatbot Planning Canvas', part: 'share', pages: 2, ratio: '1 per team', mode: 'Printable Recommended', directions: 'System design canvas mapping chatbot logic, keywords, variables, and repetition boundaries.' },
+    { id: 'bb-res-share-protocol', category: 'Student Learning Resources', title: 'AI System Test Protocol', part: 'share', pages: 1, ratio: '1 per pair', mode: 'Digital + Printable', directions: 'Detailed instructions for testing data accuracy, fallback paths, variables, and loop exit safety.' },
+    { id: 'bb-res-share-report', category: 'Student Learning Resources', title: 'AI System Test Report', part: 'share', pages: 1, ratio: '1 per pair', mode: 'Digital + Printable', directions: 'Grades 4-5 test audit sheet tracking Expected vs. Actual results and category errors.' },
+    { id: 'bb-res-share-personas', category: 'Student Learning Resources', title: 'User Persona Cards', part: 'share', pages: 1, ratio: '1 set per pair', mode: 'Printable Recommended', directions: 'Persona profile cards (New Student, Parent, Confused User, Fast User) for target testing.' },
+    { id: 'bb-res-share-revision', category: 'Student Learning Resources', title: 'Revision Sprint Sheet', part: 'share', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Sprint log to record the selected Technical Improvement and UX Improvement.' },
+    { id: 'bb-res-share-pitch', category: 'Student Learning Resources', title: 'Engineering Pitch Card', part: 'share', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: '60-90 second pitch structure covering problem, target user, technical features, and upgrades.' },
+    { id: 'bb-res-share-feedback', category: 'Student Learning Resources', title: 'Showcase Feedback Cards', part: 'share', pages: 1, ratio: '1 per student', mode: 'Printable Recommended', directions: 'Stickers or cards for logging classmate reviews using the S-I-Q (Strength-Idea-Question) framework.' },
+    { id: 'bb-res-share-reflection', category: 'Student Learning Resources', title: 'Final Reflection Sheet', part: 'share', pages: 2, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Exit reflection sheet mapping chatbot learnings to personal contributions and computer science concepts.' },
+    { id: 'bb-res-share-assessment', category: 'Student Learning Resources', title: 'Student Self-Assessment Rubric', part: 'share', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Student rubric rating personal growth across data, algorithms, variables, loops, and engineering.' },
+    { id: 'bb-res-share-concept', category: 'Student Learning Resources', title: 'Concept Cards', part: 'share', pages: 2, ratio: '1 set per team', mode: 'Optional Print', directions: 'Summary cards defining data (KNOW), algorithms (DO), variables (REMEMBER), and loops (REPEAT).' },
+    { id: 'bb-res-share-responsible', category: 'Student Learning Resources', title: 'Responsible AI Discussion Card', part: 'share', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Prompts for discussing information accuracy, system fairness, and human oversight.' },
+    { id: 'bb-res-share-responsible-2', category: 'Student Learning Resources', title: 'Responsible AI Discussion Card 2', part: 'share', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Prompts for discussing information accuracy, system fairness, and human oversight.' },
+    { id: 'bb-res-share-hackathon', category: 'Student Learning Resources', title: 'Final Hack-a-Thon Challenge Card', part: 'share', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Extension transfer challenge card for prototyping a new STEAM Night chatbot in 20 minutes.' }
   ],
   ecoengineering: [
     { id: 'eco-res-runoff', category: 'Student Learning Resources', title: 'Runoff Drainage Simulation Sheet', part: 'part1', pages: 2, ratio: '1 per student', mode: 'Printable Recommended', directions: 'Guides students through physical soil layers, recording porosity variables, and testing infiltration rates.' },
@@ -137,10 +146,15 @@ const prepChecklist = {
       'Print School Recycling Rush Challenge Cards & Exit Tickets.'
     ],
     share: [
-      'Read PD guides: "Facilitating Presentations" and "Peer Feedback Protocols".',
-      'Print User Testing Form (1 set per pair).',
-      'Print Final Engineering Checklist (1 per team).',
-      'Prepare peer evaluation cards and sentence starters.'
+      'Read PD guides: "Product Launches" and "User Persona Testing Protocols".',
+      'Print AI BotBuilder Final Mission Cards (1 per team).',
+      'Print Four-Part System Check sheets and Final Planning Canvases.',
+      'Print AI System Test Protocols and Reports (1 set per pair).',
+      'Print User Persona Cards (1 set per pair).',
+      'Print Revision Sprint Sheets (1 per student).',
+      'Print Showcase Feedback Cards and Engineering Pitch Cards.',
+      'Print Student Self-Assessments and Final Reflections.',
+      'Print Hack-a-Thon Challenge Cards & Exit Tickets.'
     ]
   },
   ecoengineering: {
@@ -378,6 +392,7 @@ const [activePart1SubTab, setActivePart1SubTab] = useState('overview');
   const [activePart2SubTab, setActivePart2SubTab] = useState('overview');
   const [activePart3SubTab, setActivePart3SubTab] = useState('overview');
   const [activePart4SubTab, setActivePart4SubTab] = useState('overview');
+  const [activeShareSubTab, setActiveShareSubTab] = useState('overview');
   const [chatbotMissions, setChatbotMissions] = useState({
     c2Blocks: [
       { id: '3', text: '3. Identify matching information.' },
@@ -2496,254 +2511,338 @@ You safely managed the hazard using titration variables. Click "Finish Week" to 
   )}
 {/* --- MIDDLE SCHOOL WEEK 3: Water Purification --- */}
 {activeChallenge === 'share' && (
-    <div>
-      {/* Day 21: Engineering Check & User Testing */}
-      {activeDay === 1 && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
-          <div>
-            <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 21: Final Checks & User Tests</h4>
-            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '12px' }}>
-              <strong style={{ color: 'var(--secondary-light)', fontSize: '0.75rem', display: 'block', marginBottom: '6px' }}>🏁 Mission 1: Final Engineering Check</strong>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', fontSize: '0.65rem' }}>
-                {[
-                  { key: 'problem', text: 'Solves clear problem' },
-                  { key: 'user', text: 'Identified user target' },
-                  { key: 'data', text: 'Clean list database' },
-                  { key: 'algorithm', text: 'Search algorithm coded' },
-                  { key: 'variable', text: 'Used userName variable' },
-                  { key: 'conditional', text: 'Coded IF/ELSE keyword rules' },
-                  { key: 'testing', text: 'Tested edge case entries' },
-                  { key: 'limitation', text: 'Identified system limits' },
-                  { key: 'iteration', text: 'Improved based on logs' }
-                ].map(item => (
-                  <label key={item.key} style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer' }}>
-                    <input type="checkbox" checked={chatbotMissions.c5Checklist[item.key] || false} onChange={e => updateMissionField('c5Checklist', { ...chatbotMissions.c5Checklist, [item.key]: e.target.checked })} />
-                    <span>{item.text}</span>
-                  </label>
-                ))}
+  <div>
+    {/* Day 21: Mission Launch & System Integration Check */}
+    {activeDay === 1 && (
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '32px' }}>
+        <div>
+          <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 21: Phase 1 — Mission Launch</h4>
+          <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', marginBottom: '12px' }}>
+            Welcome to your final engineering integration cycle! You are no longer practicing skills one by one. Today, we bring our system components together:
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', fontSize: '0.75rem' }}>
+            <strong style={{ color: 'var(--primary-light)' }}>🛠️ AI System Architecture Checklist:</strong>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px', marginTop: '4px' }}>
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px', borderRadius: '4px' }}>
+                <span style={{ display: 'block', color: 'var(--secondary-light)', fontSize: '0.65rem', fontWeight: 'bold' }}>🗂️ DATA</span>
+                What does it KNOW?
               </div>
-              <button
-                onClick={() => {
-                  const check = chatbotMissions.c5Checklist;
-                  const allDone = Object.values(check).every(v => v === true);
-                  if (allDone) {
-                    updateMissionField('c5ChecklistDone', true);
-                  } else {
-                    alert("Complete all 9 compliance items before submitting!");
-                  }
-                }}
-                style={{ background: 'var(--secondary)', border: 'none', padding: '6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold', color: '#fff', cursor: 'pointer', marginTop: '8px', width: '100%' }}
-              >
-                Submit Engineering Audit
-              </button>
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px', borderRadius: '4px' }}>
+                <span style={{ display: 'block', color: 'var(--secondary-light)', fontSize: '0.65rem', fontWeight: 'bold' }}>🧠 ALGORITHM</span>
+                What does it DO?
+              </div>
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px', borderRadius: '4px' }}>
+                <span style={{ display: 'block', color: 'var(--secondary-light)', fontSize: '0.65rem', fontWeight: 'bold' }}>📦 VARIABLE</span>
+                What does it REMEMBER?
+              </div>
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px', borderRadius: '4px' }}>
+                <span style={{ display: 'block', color: 'var(--secondary-light)', fontSize: '0.65rem', fontWeight: 'bold' }}>🔁 LOOP</span>
+                What does it REPEAT?
+              </div>
             </div>
-          </div>
-          <div>
-            <span style={{ fontSize: '0.75rem', color: 'var(--primary-light)', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>👥 Mission 2: User Testing Lab</span>
-            <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: '10px' }}>
-              Have another student team test your chatbot without giving them hints. Document observations:
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px' }}>
-              <div>
-                <label style={{ fontSize: '0.6rem', color: 'var(--text-secondary)' }}>What did they ask?</label>
-                <input type="text" value={chatbotMissions.c5TestAsk || ''} onChange={e => updateMissionField('c5TestAsk', e.target.value)} placeholder="e.g. Wednesday menu" style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', borderRadius: '4px' }} />
-              </div>
-              <div>
-                <label style={{ fontSize: '0.6rem', color: 'var(--text-secondary)' }}>What worked well?</label>
-                <input type="text" value={chatbotMissions.c5TestSuccess || ''} onChange={e => updateMissionField('c5TestSuccess', e.target.value)} placeholder="e.g. Greeted them by name immediately" style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', borderRadius: '4px' }} />
-              </div>
-              <div>
-                <label style={{ fontSize: '0.6rem', color: 'var(--text-secondary)' }}>What confused them?</label>
-                <input type="text" value={chatbotMissions.c5TestConfused || ''} onChange={e => updateMissionField('c5TestConfused', e.target.value)} placeholder="e.g. Typos caused the fallback to trigger" style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', borderRadius: '4px' }} />
-              </div>
-              {!chatbotMissions.c5UserTestDone ? (
-                <button onClick={() => updateMissionField('c5UserTestDone', true)} style={{ background: 'var(--secondary)', border: 'none', padding: '6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold', color: '#fff', cursor: 'pointer', marginTop: '4px' }}>Save Test Feedback</button>
-              ) : (
-                <div style={{ color: 'var(--success)', fontSize: '0.7rem', fontWeight: 'bold', marginTop: '4px' }}>✓ Testing Feedback Logged!</div>
-              )}
-            </div>
-            {chatbotMissions.c5ChecklistDone && chatbotMissions.c5UserTestDone && (
-              <button onClick={() => setActiveDay(2)} className="btn btn-primary" style={{ width: '100%', marginTop: '16px' }}>Go to Day 22 ➜</button>
-            )}
           </div>
         </div>
-      )}
 
-      {/* Day 22: Final Upgrade & Expo Preparation */}
-      {activeDay === 2 && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '32px' }}>
-          <div>
-            <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 22: Code Upgrades & Pitch Prep</h4>
-            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '12px' }}>
-              <strong style={{ color: 'var(--secondary-light)', fontSize: '0.75rem', display: 'block', marginBottom: '6px' }}>🛠️ Mission 3: Final Upgrade</strong>
-              <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', lineHeight: '1.4', marginBottom: '8px' }}>
-                Review feedback from Day 21 and make one final coding or database correction in Scratch.
-              </p>
-              <textarea
-                value={chatbotMissions.c5UpgradeNotes || ''}
-                onChange={e => updateMissionField('c5UpgradeNotes', e.target.value)}
-                placeholder="e.g. Added a contains rule for 'cost' to resolve price search confusion..."
-                style={{ width: '100%', height: '65px', padding: '6px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', borderRadius: '4px', resize: 'none' }}
-              />
-              {!chatbotMissions.c5UpgradeDone ? (
-                <button onClick={() => updateMissionField('c5UpgradeDone', true)} style={{ background: 'var(--secondary)', border: 'none', padding: '6px 12px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold', color: '#fff', cursor: 'pointer', marginTop: '6px' }}>Log Final Upgrade</button>
-              ) : (
-                <div style={{ color: 'var(--success)', fontSize: '0.7rem', fontWeight: 'bold', marginTop: '6px' }}>✓ Final Upgrade Logged!</div>
-              )}
-            </div>
-          </div>
-          <div>
-            <span style={{ fontSize: '0.75rem', color: 'var(--primary-light)', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>🎤 Mission 4: Prepare Expo Presentation</span>
-            <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: '10px' }}>
-              Draft your design pitch talking points:
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px' }}>
-              <div>
-                <label style={{ fontSize: '0.6rem', color: 'var(--text-secondary)' }}>Chatbot Title:</label>
-                <input type="text" value={chatbotMissions.c5ExpoTitle || ''} onChange={e => updateMissionField('c5ExpoTitle', e.target.value)} placeholder="e.g. LunchBot 2000" style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', borderRadius: '4px' }} />
-              </div>
-              <div>
-                <label style={{ fontSize: '0.6rem', color: 'var(--text-secondary)' }}>Target User:</label>
-                <input type="text" value={chatbotMissions.c5ExpoUser || ''} onChange={e => updateMissionField('c5ExpoUser', e.target.value)} placeholder="e.g. Students in the cafeteria" style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', borderRadius: '4px' }} />
-              </div>
-              <div>
-                <label style={{ fontSize: '0.6rem', color: 'var(--text-secondary)' }}>Key Tech Used:</label>
-                <input type="text" value={chatbotMissions.c5ExpoTech || ''} onChange={e => updateMissionField('c5ExpoTech', e.target.value)} placeholder="e.g. userName variable and IF/ELSE keyword matches" style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', borderRadius: '4px' }} />
-              </div>
-              {!chatbotMissions.c5ExpoDone ? (
-                <button onClick={() => updateMissionField('c5ExpoDone', true)} style={{ background: 'var(--secondary)', border: 'none', padding: '6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold', color: '#fff', cursor: 'pointer', marginTop: '4px' }}>Save Pitch Notes</button>
-              ) : (
-                <div style={{ color: 'var(--success)', fontSize: '0.7rem', fontWeight: 'bold', marginTop: '4px' }}>✓ Pitch Notes Saved! Ready to present.</div>
-              )}
-            </div>
-            {chatbotMissions.c5UpgradeDone && chatbotMissions.c5ExpoDone && (
-              <button onClick={() => setActiveDay(3)} className="btn btn-primary" style={{ width: '100%', marginTop: '16px' }}>Go to Day 23 ➜</button>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* Day 23: Live Expo Presentations */}
-      {activeDay === 3 && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
-          <div>
-            <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 23: Design Expo Presentation</h4>
-            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '12px' }}>
-              <strong style={{ color: 'var(--secondary-light)', fontSize: '0.75rem', display: 'block', marginBottom: '6px' }}>🎤 Mission 5: Present to the Expo</strong>
-              <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', lineHeight: '1.5', marginBottom: '10px' }}>
-                Present your 3-5 minute live demonstration covering the Problem, the User, the Data, the Search Sequence, Variables, and the Live test run.
-              </p>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
-                <input type="checkbox" checked={chatbotMissions.c5PresentationDone || false} onChange={e => updateMissionField('c5PresentationDone', e.target.checked)} style={{ accentColor: 'var(--primary)' }} />
-                <span>Our team completed our live Design Expo showcase.</span>
+        <div>
+          <span style={{ fontSize: '0.75rem', color: 'var(--primary-light)', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>🏁 Phase 2 — System Integration Check:</span>
+          <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+            Inspect your chatbot against compliance standards before starting the final build sprint:
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', fontSize: '0.75rem' }}>
+            {[
+              { key: 'data', text: '🗂️ DATA Check: Accurate keywords & complete answers in knowledge lists.' },
+              { key: 'algorithm', text: '🧠 ALGORITHM Check: Clear logic flowcharts & unexpected inputs fallback.' },
+              { key: 'variable', text: '📦 VARIABLE Check: System remembers username or session state values.' },
+              { key: 'loop', text: '🔁 LOOP Check: Loop allows users to keep asking questions without stopping.' }
+            ].map(item => (
+              <label key={item.key} style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', color: '#fff' }}>
+                <input type="checkbox" checked={chatbotMissions.c5Checklist?.[item.key] || false} onChange={e => updateMissionField('c5Checklist', { ...chatbotMissions.c5Checklist, [item.key]: e.target.checked })} style={{ accentColor: 'var(--primary)' }} />
+                <span>{item.text}</span>
               </label>
-            </div>
-            {chatbotMissions.c5PresentationDone && (
-              <button onClick={() => setActiveDay(4)} className="btn btn-primary" style={{ width: '100%', marginTop: '16px' }}>Go to Day 24 ➜</button>
-            )}
+            ))}
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', background: 'rgba(255,255,255,0.01)', border: '1px dashed rgba(255,255,255,0.08)', borderRadius: '8px', padding: '24px' }}>
-            <span style={{ fontSize: '2.5rem', marginBottom: '8px' }}>🚀</span>
-            <span style={{ fontSize: '0.85rem', color: '#fff', fontWeight: 'bold' }}>Live Showcase Stage</span>
-            <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '4px' }}>
-              Showcase variables, database queries, and invite classmates to test unexpected edge cases!
-            </span>
+
+          <button
+            onClick={() => {
+              const check = chatbotMissions.c5Checklist || {};
+              const allDone = ['data', 'algorithm', 'variable', 'loop'].every(k => check[k] === true);
+              if (allDone) {
+                updateMissionField('c5ChecklistDone', true);
+                setActiveDay(2);
+              } else {
+                alert("Please check off all 4 compliance check items first!");
+              }
+            }}
+            className="btn btn-primary"
+            style={{ marginTop: '14px', width: '100%', padding: '8px', borderRadius: '6px', fontWeight: 'bold', fontSize: '0.75rem' }}
+          >
+            Submit System Check ➜
+          </button>
+        </div>
+      </div>
+    )}
+
+    {/* Day 22: Final Build & Engineering Test Lab */}
+    {activeDay === 2 && (
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '32px' }}>
+        <div>
+          <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 22: Phase 3 — Final Build & Improvement</h4>
+          <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '12px' }}>
+            <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', lineHeight: '1.4', marginBottom: '8px' }}>
+              Open Scratch and build your final features. Ensure all compliance elements work together. Document what problem your team is solving:
+            </p>
+            <textarea
+              value={chatbotMissions.c5UpgradeNotes || ''}
+              onChange={e => updateMissionField('c5UpgradeNotes', e.target.value)}
+              placeholder="Describe your chatbot's goal (e.g. Help new students find activities, libraries FAQ, event schedules...)"
+              style={{ width: '100%', height: '65px', padding: '6px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', borderRadius: '4px', resize: 'none', marginBottom: '8px' }}
+            />
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer', color: '#fff' }}>
+              <input type="checkbox" checked={chatbotMissions.c5UpgradeDone || false} onChange={e => updateMissionField('c5UpgradeDone', e.target.checked)} style={{ accentColor: 'var(--primary)' }} />
+              <span>We completed our integrated final build in Scratch!</span>
+            </label>
           </div>
         </div>
-      )}
 
-      {/* Day 24: Audience Feedback Collection */}
-      {activeDay === 4 && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '32px' }}>
-          <div>
-            <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 24: Peer Review & Feedback</h4>
-            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '12px' }}>
-              <strong style={{ color: 'var(--secondary-light)', fontSize: '0.75rem', display: 'block', marginBottom: '6px' }}>💡 Mission 6: Strength-Idea-Question (S-I-Q)</strong>
-              <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: '10px' }}>
-                Collect or write feedback for another team's chatbot:
-              </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.7rem' }}>
-                <div>
-                  <label style={{ display: 'block', color: 'var(--text-secondary)' }}>⭐ One Strength (I noticed that...):</label>
-                  <input type="text" value={chatbotMissions.c5FeedbackStrength || ''} onChange={e => updateMissionField('c5FeedbackStrength', e.target.value)} placeholder="e.g. The database menu pricing is completely clean and matching." style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px' }} />
-                </div>
-                <div>
-                  <label style={{ display: 'block', color: 'var(--text-secondary)' }}>💡 One Idea (One upgrade to consider is...):</label>
-                  <input type="text" value={chatbotMissions.c5FeedbackIdea || ''} onChange={e => updateMissionField('c5FeedbackIdea', e.target.value)} placeholder="e.g. Add a variable to track how many times the user asks a question." style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px' }} />
-                </div>
-                <div>
-                  <label style={{ display: 'block', color: 'var(--text-secondary)' }}>❓ One Question (I wonder what happens if...):</label>
-                  <input type="text" value={chatbotMissions.c5FeedbackQuestion || ''} onChange={e => updateMissionField('c5FeedbackQuestion', e.target.value)} placeholder="e.g. What happens if you type capital letters?" style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px' }} />
-                </div>
-              </div>
-              {!chatbotMissions.c5FeedbackDone ? (
-                <button onClick={() => updateMissionField('c5FeedbackDone', true)} style={{ background: 'var(--secondary)', border: 'none', padding: '6px 12px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold', color: '#fff', cursor: 'pointer', marginTop: '8px' }}>Log Peer Review</button>
-              ) : (
-                <div style={{ color: 'var(--success)', fontSize: '0.7rem', fontWeight: 'bold', marginTop: '6px' }}>✓ Peer Review Logged!</div>
-              )}
-            </div>
-            {chatbotMissions.c5FeedbackDone && (
-              <button onClick={() => setActiveDay(5)} className="btn btn-primary" style={{ width: '100%', marginTop: '16px' }}>Go to Day 25 ➜</button>
-            )}
+        <div>
+          <span style={{ fontSize: '0.75rem', color: 'var(--primary-light)', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>🧪 Phase 4 — Engineering Test Lab:</span>
+          <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+            Run a system-level audit of your chatbot. Verify all four components are functioning correctly:
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', fontSize: '0.75rem' }}>
+            {[
+              { key: 'testData', text: '1. DATA TEST: Answers match different keyword inputs.' },
+              { key: 'testAlgo', text: '2. ALGORITHM TEST: Unknown questions trigger fallback else.' },
+              { key: 'testVar', text: '3. VARIABLE TEST: Username/counts store and reset correctly.' },
+              { key: 'testLoop', text: '4. LOOP TEST: Conversation loop restarts and exits safely.' }
+            ].map(item => (
+              <label key={item.key} style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', color: '#fff' }}>
+                <input type="checkbox" checked={chatbotMissions.c5TestChecklist?.[item.key] || false} onChange={e => updateMissionField('c5TestChecklist', { ...chatbotMissions.c5TestChecklist, [item.key]: e.target.checked })} style={{ accentColor: 'var(--primary)' }} />
+                <span>{item.text}</span>
+              </label>
+            ))}
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', fontSize: '0.75rem', lineHeight: '1.4' }}>
-            <span style={{ fontWeight: 'bold', color: '#fff', display: 'block', marginBottom: '6px' }}>Constructive Review Prompts:</span>
+
+          <button
+            onClick={() => {
+              if (chatbotMissions.c5UpgradeDone && chatbotMissions.c5TestChecklist?.testData && chatbotMissions.c5TestChecklist?.testAlgo && chatbotMissions.c5TestChecklist?.testVar && chatbotMissions.c5TestChecklist?.testLoop) {
+                updateMissionField('c5UserTestDone', true);
+                setActiveDay(3);
+              } else {
+                alert("Make sure final Scratch build is checked and all 4 System Tests are verified!");
+              }
+            }}
+            className="btn btn-primary"
+            style={{ marginTop: '14px', width: '100%', padding: '8px', borderRadius: '4px', fontWeight: 'bold', fontSize: '0.75rem' }}
+          >
+            Submit System Tests ➜
+          </button>
+        </div>
+      </div>
+    )}
+
+    {/* Day 23: Real User Challenge & Revision Sprint */}
+    {activeDay === 3 && (
+      <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '32px' }}>
+        <div>
+          <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 23: Phase 5 — Real User Challenge</h4>
+          <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', lineHeight: '1.4', marginBottom: '10px' }}>
+            Choose a User Persona to test your chatbot. Interact with it acting as this person and rate their User Experience (UX):
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', fontSize: '0.75rem', marginBottom: '10px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-around', gap: '6px' }}>
+              {[
+                { id: 'student', label: '👧 New Student' },
+                { id: 'parent', label: '👨‍👩‍👧 Parent' },
+                { id: 'confused', label: '🤔 Confused User' }
+              ].map(persona => (
+                <button
+                  key={persona.id}
+                  onClick={() => updateMissionField('c5SelectedPersona', persona.id)}
+                  style={{
+                    flex: 1,
+                    padding: '6px 8px',
+                    fontSize: '0.65rem',
+                    borderRadius: '4px',
+                    border: 'none',
+                    cursor: 'pointer',
+                    background: chatbotMissions.c5SelectedPersona === persona.id ? 'var(--primary)' : 'rgba(255,255,255,0.05)',
+                    color: '#fff',
+                    fontWeight: chatbotMissions.c5SelectedPersona === persona.id ? 'bold' : 'normal'
+                  }}
+                >
+                  {persona.label}
+                </button>
+              ))}
+            </div>
+            <div style={{ marginTop: '8px', background: 'rgba(0,0,0,0.15)', padding: '8px', borderRadius: '4px', fontSize: '0.7rem' }}>
+              {chatbotMissions.c5SelectedPersona === 'student' && <span>👧 <strong>New Student:</strong> "I just started at this school. I don't know where activities are."</span>}
+              {chatbotMissions.c5SelectedPersona === 'parent' && <span>👨‍👩‍👧 <strong>Parent:</strong> "I need quick information about upcoming school events."</span>}
+              {chatbotMissions.c5SelectedPersona === 'confused' && <span>🤔 <strong>Confused User:</strong> "I don't know exactly what to type or how to ask my question."</span>}
+              {!chatbotMissions.c5SelectedPersona && <span style={{ color: 'var(--text-muted)' }}>Select a persona above to view their challenge profile.</span>}
+            </div>
+          </div>
+
+          <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <label style={{ fontSize: '0.65rem', color: 'var(--text-secondary)' }}>How did the chatbot perform? Was the UX easy for them?</label>
+            <input type="text" value={chatbotMissions.c5UserTestConfused || ''} onChange={e => updateMissionField('c5UserTestConfused', e.target.value)} placeholder="e.g. Chatbot gave clear room directions, but spelling errors caused fallbacks." style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', borderRadius: '4px', marginTop: '4px' }} />
+          </div>
+        </div>
+
+        <div>
+          <span style={{ fontSize: '0.75rem', color: 'var(--secondary-light)', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>⚡ Phase 6 — Revision Sprint:</span>
+          <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+            Make two high-value improvements based on user tests: one technical fix and one UX fix.
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', fontSize: '0.75rem' }}>
+            <div>
+              <label style={{ fontSize: '0.6rem', color: 'var(--text-secondary)' }}>🛠️ 1. Technical Improvement (Fix data, logic, or loop):</label>
+              <input type="text" value={chatbotMissions.c5FeedbackStrength || ''} onChange={e => updateMissionField('c5FeedbackStrength', e.target.value)} placeholder="e.g. Added a repeat check to prevent infinite answer loops." style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px', marginTop: '2px' }} />
+            </div>
+            <div>
+              <label style={{ fontSize: '0.6rem', color: 'var(--text-secondary)' }}>🎨 2. User Experience (UX) Improvement (Clear instructions/replies):</label>
+              <input type="text" value={chatbotMissions.c5FeedbackIdea || ''} onChange={e => updateMissionField('c5FeedbackIdea', e.target.value)} placeholder="e.g. Rewrote the greeting to say: Ask me about Monday or Friday." style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px', marginTop: '2px' }} />
+            </div>
+          </div>
+
+          <button
+            onClick={() => {
+              if (chatbotMissions.c5UserTestConfused && chatbotMissions.c5FeedbackStrength && chatbotMissions.c5FeedbackIdea) {
+                updateMissionField('c5ExpoDone', true);
+                setActiveDay(4);
+              } else {
+                alert("Please log your User Persona performance and both Revision Sprint details first!");
+              }
+            }}
+            className="btn btn-primary"
+            style={{ marginTop: '14px', width: '100%', padding: '8px', borderRadius: '4px', fontWeight: 'bold', fontSize: '0.75rem' }}
+          >
+            Submit Revisions ➜
+          </button>
+        </div>
+      </div>
+    )}
+
+    {/* Day 24: AI BotBuilder Showcase */}
+    {activeDay === 4 && (
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+        <div>
+          <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 24: Phase 7 — AI BotBuilder Showcase</h4>
+          <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', lineHeight: '1.4', marginBottom: '10px' }}>
+            It is time to pitch your product! Set up your showcase workstation and present your chatbot using your pitch cards.
+          </p>
+
+          <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', fontSize: '0.75rem' }}>
+            <strong style={{ color: 'var(--secondary-light)', display: 'block', marginBottom: '6px' }}>🎤 Sorter Presentation Pitch:</strong>
             <ul style={{ margin: 0, paddingLeft: '16px', display: 'flex', flexDirection: 'column', gap: '4px', color: 'var(--text-secondary)' }}>
-              <li>• "Your chatbot was effective when..."</li>
-              <li>• "I wonder what would happen if you input..."</li>
-              <li>• "One logic pathway improvement is..."</li>
+              <li>🚀 <strong>Problem:</strong> What problem does your chatbot solve?</li>
+              <li>👥 <strong>User:</strong> Who did your team design it for?</li>
+              <li>🗂️ <strong>System Architecture:</strong> Explain what it KNOWS, DOES, REMEMBERS, and REPEATS.</li>
+              <li>🔧 <strong>Improvements:</strong> What upgrades did you apply from testing?</li>
             </ul>
           </div>
         </div>
-      )}
 
-      {/* Day 25: Metacognitive & Career Reflection */}
-      {activeDay === 5 && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
-          <div>
-            <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 25: Individual Reflection</h4>
-            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '12px', maxHeight: '350px', overflowY: 'auto' }}>
-              <strong style={{ color: '#fff', fontSize: '0.75rem', display: 'block', marginBottom: '6px' }}>📝 Mission 7: AI Engineer Reflection</strong>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.7rem' }}>
-                <div>
-                  <label style={{ display: 'block', color: 'var(--text-secondary)' }}>What real-world problem did your chatbot solve?</label>
-                  <input type="text" value={chatbotMissions.c5RefProblem || ''} onChange={e => updateMissionField('c5RefProblem', e.target.value)} style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px' }} />
-                </div>
-                <div>
-                  <label style={{ display: 'block', color: 'var(--text-secondary)' }}>What did you learn about algorithms and code sequencing?</label>
-                  <textarea value={chatbotMissions.c5RefAlgo || ''} onChange={e => updateMissionField('c5RefAlgo', e.target.value)} style={{ width: '100%', height: '40px', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px', resize: 'none' }} />
-                </div>
-                <div>
-                  <label style={{ display: 'block', color: 'var(--text-secondary)' }}>Which engineering role did you enjoy most and why?</label>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', margin: '4px 0' }}>
-                    {['AI Engineer', 'Data Engineer', 'Scratch Developer', 'AI Tester'].map(role => (
-                      <button key={role} type="button" onClick={() => updateMissionField('c5SelectedRole', role)} style={{ padding: '3px 8px', fontSize: '0.65rem', borderRadius: '12px', border: 'none', background: chatbotMissions.c5SelectedRole === role ? 'var(--primary)' : 'rgba(255,255,255,0.05)', color: '#fff', cursor: 'pointer' }}>{role}</button>
-                    ))}
-                  </div>
-                  <textarea value={chatbotMissions.c5RoleReason || ''} onChange={e => updateMissionField('c5RoleReason', e.target.value)} placeholder="Explain why..." style={{ width: '100%', height: '40px', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px', resize: 'none' }} />
-                </div>
-              </div>
-              {!chatbotMissions.c5RefDone ? (
-                <button onClick={() => updateMissionField('c5RefDone', true)} style={{ background: 'var(--secondary)', border: 'none', padding: '6px 12px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold', color: '#fff', cursor: 'pointer', marginTop: '8px' }}>Submit Expo Reflection</button>
-              ) : (
-                <div style={{ color: 'var(--success)', fontSize: '0.7rem', fontWeight: 'bold', marginTop: '6px' }}>✓ Reflection Logged!</div>
-              )}
-            </div>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <span style={{ fontSize: '3.5rem', marginBottom: '12px' }}>🎓✨</span>
-            <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Curriculum Completed!</h4>
-            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '240px', lineHeight: '1.4', marginBottom: '16px' }}>
-              You have completed the entire Grades 4-5 AI BotBuilder curriculum!
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <span style={{ fontSize: '0.75rem', color: 'var(--primary-light)', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>📝 Showcase Feedback:</span>
+          <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', margin: 0 }}>
+              Collect feedback from peer reviewers. Check this box when your presentation and reviews are complete:
             </p>
-            {chatbotMissions.c5RefDone && (
-              <button onClick={() => handleFinishWeek(10)} className="btn btn-primary" style={{ padding: '10px 24px', borderRadius: '6px' }}>Finish Expo Challenge! 🎓</button>
-            )}
+            <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer', color: '#fff' }}>
+              <input type="checkbox" checked={chatbotMissions.c5PresentationDone || false} onChange={e => updateMissionField('c5PresentationDone', e.target.checked)} style={{ accentColor: 'var(--primary)' }} />
+              <span>We completed our presentation and collected peer reviews!</span>
+            </label>
+          </div>
+
+          {chatbotMissions.c5PresentationDone && (
+            <button onClick={() => setActiveDay(5)} className="btn btn-primary" style={{ width: '100%', marginTop: '16px', padding: '8px', borderRadius: '4px', fontWeight: 'bold', fontSize: '0.75rem' }}>Go to Day 25 ➜</button>
+          )}
+        </div>
+      </div>
+    )}
+
+    {/* Day 25: Reflection & Self-Assessment */}
+    {activeDay === 5 && (
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '32px' }}>
+        <div>
+          <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 25: Phase 8 — Reflection</h4>
+          <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '8px', maxHeight: '360px', overflowY: 'auto' }}>
+            <strong style={{ color: '#fff', fontSize: '0.75rem' }}>📝 Exit Reflection Ticket:</strong>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.7rem' }}>
+              <div>
+                <label style={{ display: 'block', color: 'var(--text-secondary)' }}>1. What was the most important DATA your chatbot needed?</label>
+                <input type="text" value={chatbotMissions.c5RefProblem || ''} onChange={e => updateMissionField('c5RefProblem', e.target.value)} style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', color: 'var(--text-secondary)' }}>2. Describe one ALGORITHM your chatbot used to make a decision.</label>
+                <input type="text" value={chatbotMissions.c5RefSolution || ''} onChange={e => updateMissionField('c5RefSolution', e.target.value)} style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', color: 'var(--text-secondary)' }}>3. What did your VARIABLE remember? What did your LOOP repeat?</label>
+                <input type="text" value={chatbotMissions.c5FeedbackQuestion || ''} onChange={e => updateMissionField('c5FeedbackQuestion', e.target.value)} style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px' }} />
+              </div>
+              <div>
+                <label style={{ display: 'block', color: 'var(--text-secondary)' }}>4. Responsible AI: Who is responsible for checking if chatbot data is correct?</label>
+                <input type="text" value={chatbotMissions.c5RefTest || ''} onChange={e => updateMissionField('c5RefTest', e.target.value)} style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px' }} />
+              </div>
+            </div>
+            
+            <button
+              onClick={() => {
+                if (chatbotMissions.c5RefProblem && chatbotMissions.c5RefSolution && chatbotMissions.c5FeedbackQuestion && chatbotMissions.c5RefTest) {
+                  updateMissionField('c5ReflectionDone', true);
+                } else {
+                  alert("Please fill in all 4 exit reflection answers first!");
+                }
+              }}
+              style={{ background: 'var(--secondary)', border: 'none', padding: '6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold', color: '#fff', cursor: 'pointer', marginTop: '4px' }}
+            >
+              Submit Exit Reflection
+            </button>
           </div>
         </div>
-      )}
-    </div>
-  )}
+
+        <div>
+          <span style={{ fontSize: '0.75rem', color: 'var(--primary-light)', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>🏆 Final Self-Assessment Rubric:</span>
+          <p style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+            Rate your team's engineering skills at the end of the AI BotBuilder unit:
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', fontSize: '0.75rem' }}>
+            {[
+              { key: 'asData', text: '🗂️ DATA: I can organize accurate information lists for a system.' },
+              { key: 'asAlgo', text: '🧠 ALGORITHMS: I can create clear sequential instructions.' },
+              { key: 'asVar', text: '📦 VARIABLES: I can use variables to store changing data.' },
+              { key: 'asLoop', text: '🔁 LOOPS: I can use repeat loops to run tasks efficiently.' },
+              { key: 'asTest', text: '🧪 TESTING: I can audit systems to discover and debug bugs.' },
+              { key: 'asEng', text: '🤝 ENGINEERING: I can use user feedback to improve designs.' }
+            ].map(item => (
+              <label key={item.key} style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', color: '#fff' }}>
+                <input type="checkbox" checked={chatbotMissions.c5SelfAssessment?.[item.key] || false} onChange={e => updateMissionField('c5SelfAssessment', { ...chatbotMissions.c5SelfAssessment, [item.key]: e.target.checked })} style={{ accentColor: 'var(--primary)' }} />
+                <span>{item.text}</span>
+              </label>
+            ))}
+          </div>
+
+          {chatbotMissions.c5ReflectionDone && chatbotMissions.c5SelfAssessment?.asData && chatbotMissions.c5SelfAssessment?.asAlgo && chatbotMissions.c5SelfAssessment?.asVar && chatbotMissions.c5SelfAssessment?.asLoop && chatbotMissions.c5SelfAssessment?.asTest && chatbotMissions.c5SelfAssessment?.asEng ? (
+            <button onClick={() => {
+              handleFinishWeek(10);
+            }} className="btn btn-primary" style={{ padding: '10px 24px', borderRadius: '6px', width: '100%', marginTop: '16px', fontWeight: 'bold' }}>Complete Unit Share Expo! 🏆</button>
+          ) : (
+            <div style={{ color: 'var(--warning)', fontSize: '0.75rem', padding: '8px', background: 'rgba(245,158,11,0.05)', border: '1px solid rgba(245,158,11,0.2)', borderRadius: '4px', textAlign: 'center', fontWeight: 'bold', marginTop: '16px' }}>
+              🔒 Complete Exit Reflection and check off all 6 self-assessments to finish the unit!
+            </div>
+          )}
+        </div>
+      </div>
+    )}
+  </div>
+)}
+
 
 {activeChallenge === 'water' && (
 <div>
@@ -5437,39 +5536,220 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
 {activeTeacherTab === 'share' && (
   <div style={{ animation: 'slideUp 0.2s' }}>
     <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px', textAlign: 'left' }}>
-      {teacherUnit === 'botbuilder' ? 'Unit Share: AI BotBuilder Design Expo' : 'Unit Share: Sustainable City Map'}
+      {teacherUnit === 'botbuilder' ? 'Unit Share: AI BotBuilder Design Expo (AI BotBuilder)' : 'Unit Share: Sustainable City Map'}
     </h3>
     {teacherUnit === 'botbuilder' ? (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
-        <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
-          <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Unit Share Roadmap</span>
-          <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Design Expo Cycle</h4>
-          <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
-            Guide students through the 6-phase engineering share cycle:
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '8px', marginTop: '10px', fontSize: '0.75rem', color: '#fff' }}>
-            <div style={{ background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '4px' }}>1. Verification Audit</div>
-            <div style={{ background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '4px' }}>2. User Testing</div>
-            <div style={{ background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '4px' }}>3. Final Upgrades</div>
-            <div style={{ background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '4px' }}>4. Pitch Planning</div>
-            <div style={{ background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '4px' }}>5. Live Expo Demo</div>
-            <div style={{ background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '4px' }}>6. S-I-Q Peer Review</div>
+        {/* Sub-Tab Navigation */}
+        <div style={{ display: 'flex', gap: '8px', background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          {[
+            { id: 'overview', label: '📋 Mission & Careers' },
+            { id: 'hour1', label: '💭 Hour 1: Think' },
+            { id: 'hour2', label: '💻 Hour 2: Build & Test' }
+          ].map(subTab => (
+            <button
+              key={subTab.id}
+              onClick={() => setActiveShareSubTab(subTab.id)}
+              style={{
+                flex: 1,
+                padding: '8px 12px',
+                fontSize: '0.75rem',
+                borderRadius: '6px',
+                border: 'none',
+                cursor: 'pointer',
+                background: activeShareSubTab === subTab.id ? 'var(--primary)' : 'transparent',
+                color: activeShareSubTab === subTab.id ? '#fff' : 'var(--text-secondary)',
+                transition: 'all 0.2s',
+                fontWeight: activeShareSubTab === subTab.id ? 'bold' : 'normal'
+              }}
+            >
+              {subTab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* SUBTAB CONTENT: OVERVIEW */}
+        {activeShareSubTab === 'overview' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            {/* System Integration Hook */}
+            <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
+              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Phase 1 — Mission Launch Hook</span>
+              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>AI BotBuilder Design Challenge</h4>
+              <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
+                Bring everything together:
+                <em style={{ display: 'block', margin: '8px 0', color: '#fff', borderLeft: '3px solid var(--primary)', paddingLeft: '10px', fontStyle: 'normal' }}>
+                  "Your engineering team has learned how computer systems store information, follow algorithms, remember changing information, and repeat tasks. Now it is time to bring those ideas together. Your mission is to design, improve, test, and present a chatbot that helps a real user solve a real problem."
+                </em>
+                Ask the big inquiry question: <strong>"Can we use DATA + ALGORITHMS + VARIABLES + LOOPS to design a chatbot that solves a real problem for a real user?"</strong> Allow choice: school helpers, library bots, new student faq guides, event schedulers, homework resources.
+              </p>
+            </div>
+
+            {/* STEAM Career Spotlight */}
+            <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>💼 STEAM Career Connections</strong>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '8px' }}>
+                {['AI Product Manager', 'Software Engineer', 'UX Designer', 'Systems Tester', 'Responsible AI Lead'].map(career => (
+                  <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
+                    {career}
+                  </span>
+                ))}
+              </div>
+              <p style={{ fontSize: '0.75rem', margin: 0, lineHeight: '1.4' }}>
+                Technology teams do not simply write code and release it. They coordinate data structures, write algorithm decisions, implement variables memory, verify loop bounds, collect peer reviews, iterate, and check responsible use boundaries before deploy.
+              </p>
+            </div>
           </div>
-        </div>
+        )}
 
-        <div style={{ background: 'rgba(255, 255, 255, 0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
-          <strong style={{ color: '#fff', fontSize: '0.8rem', display: 'block', marginBottom: '4px' }}>🏫 Facilitation Guide: Expo Presentations</strong>
-          <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: '1.4' }}>
-            Enforce the 10-point presentation structure (Problem, User, Data, Algorithm, Variable, Conditional, Live Demo, Limitations, Next Version). Provide Strength-Idea-Question (S-I-Q) cards for constructive feedback.
-          </p>
-        </div>
+        {/* SUBTAB CONTENT: HOUR 1 (THINK) */}
+        {activeShareSubTab === 'hour1' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Phase 2: System Integration Check */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Phase 2: System Integration Check</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams use a <strong>Four-Part System Check</strong> sheet to evaluate their chatbot database lists, decision flowcharts, variable parameters, and conversation loop controls. Identify what needs final build work.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Four-Part System Check sheet, Planning Canvases</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Is your database information accurate? When does your conversation loop exit?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Students tracing their flowcharts and keyword triggers before editing code.</div>
+              </div>
+            </div>
 
-        <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
-          <strong style={{ color: '#fbbf24', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>🧠 Final Exit Reflection</strong>
-          <p style={{ fontSize: '0.75rem', margin: 0, lineHeight: '1.4' }}>
-            Students choose their favorite engineering role (AI Engineer, Data Engineer, Scratch Developer, AI Tester) and write a reflection justifying their contribution.
-          </p>
-        </div>
+            {/* Phase 3: Final Build & Improvement */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Phase 3: Final Build & Improvement</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams work in Scratch to integrate organized data, clear decision loops, dynamic username or attempt count variables, and fallback replies for unknown inputs.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 25 mins | 🛠️ <strong>Materials:</strong> Computers with Scratch, planning canvases</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Why does this specific loop repeat? What does your variable remember?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Checking that students compile code based on their system check, rather than copy-pasting.</div>
+              </div>
+            </div>
+
+            {/* Phase 4: Engineering Test Lab */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Phase 4: Engineering Test Lab (System Testing)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams swap chatbots and run a structured <strong>AI System Test Protocol</strong>: testing data accuracy (keyword matches), algorithm branches (fallback paths), variables (storage/resets), and loops (safeties).
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 20 mins | 🛠️ <strong>Materials:</strong> AI System Test Protocol & Test Report sheets</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Did the variable update? Did the loop exit safely without crashing?"</div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* SUBTAB CONTENT: HOUR 2 (BUILD & TEST) */}
+        {activeShareSubTab === 'hour2' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Phase 5: Real User Challenge */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Phase 5: Real User Challenge (UX Persona Testing)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Testers pull a <strong>User Persona Card</strong> (e.g., New Student, Parent, Confused User, Fast User) and test the chatbot acting as that persona. Rate the overall <strong>User Experience (UX)</strong>.
+              </p>
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '4px', fontSize: '0.75rem', color: 'var(--primary-light)' }}>
+                User Experience (UX) = What it is like for a real human to use your system.
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> User Persona cards, UX evaluation sheet</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Was the greeting easy to read? Did you know what questions the chatbot could answer?"</div>
+              </div>
+            </div>
+
+            {/* Phase 6: Revision Sprint */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Phase 6: Revision Sprint</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams receive their Test Reports. Spend limited time making exactly <strong>ONE Technical Improvement</strong> (fix loop, data lists, variable resets) and <strong>ONE User Experience (UX) Improvement</strong> (clearer instructions, clean replies).
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Revision Sprint log sheet</div>
+                <div>🔍 <strong>Look-fors:</strong> Students using feedback constructively to make changes rather than starting over.</div>
+              </div>
+            </div>
+
+            {/* Phase 7: AI BotBuilder Showcase */}
+            <div style={{ background: 'rgba(139, 92, 246, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(139, 92, 246, 0.15)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Phase 7: AI BotBuilder Showcase</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Interactive science-fair expo. Half of the teams present their chatbot using a 60-90 second <strong>Engineering Pitch</strong> (Problem, User, Data, Algorithm, Variable, Loop, Improvements). Reviewers leave <strong>S-I-Q reviews</strong> (Strength, Idea, Question). Rotate roles.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 25 mins | 🛠️ <strong>Materials:</strong> Showcase Pitch cards, S-I-Q feedback stickers</div>
+              </div>
+            </div>
+
+            {/* Phase 8: Reflection & Assessment */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Phase 8: Reflection & Self-Assessment</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students complete individual reflections on system thinking, and complete their 6-part self-assessment rubric (Data, Algorithms, Variables, Loops, Testing, Engineering).
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Exit reflections, Self-assessment cards</div>
+              </div>
+            </div>
+
+            {/* Responsible AI Discussion */}
+            <div style={{ background: 'rgba(245, 158, 11, 0.03)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(245, 158, 11, 0.15)' }}>
+              <span style={{ color: 'var(--warning)', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>⚖️ Responsible AI Discussion Prompts</span>
+              <ul style={{ margin: '6px 0 0 0', paddingLeft: '16px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px', lineHeight: '1.4', color: '#fff' }}>
+                <li>🗣️ "Who is responsible for making sure your chatbot data is correct?"</li>
+                <li>🗣️ "What happens if your data list contains wrong information?"</li>
+                <li>🗣️ "Why should humans test computer systems before people depend on them?"</li>
+              </ul>
+              <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', display: 'block', marginTop: '6px' }}>
+                💡 <em>Key Takeaway:</em> Humans design and test computer systems. We are responsible for validating they work fairly and help users.
+              </span>
+            </div>
+
+            {/* Final Hack-a-Thon Extension */}
+            <div style={{ background: 'rgba(16, 185, 129, 0.04)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+              <span style={{ color: '#34d399', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>🚀 Optional Hack-a-Thon Extension (Transfer Challenge)</span>
+              <p style={{ margin: '4px 0 8px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Give teams a brand-new user problem:
+                <em style={{ display: 'block', margin: '8px 0', color: '#fff', borderLeft: '3px solid var(--success)', paddingLeft: '10px', fontStyle: 'normal' }}>
+                  "Our school is hosting a large family STEAM night. Hundreds of parents and visitors need help finding activities, timetables, maps, and events. Your team has 20 minutes to design and prototype a new helper chatbot."
+                </em>
+                Teams must quickly map: What is the DATA? What is the ALGORITHM? What VARIABLE remembers changes? What LOOP repeats tasks?
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 25 mins | 🛠️ <strong>Materials:</strong> STEAM Night hackathon cards, paper prototypes</div>
+              </div>
+            </div>
+
+            {/* Common Misconceptions */}
+            <div style={{ background: 'rgba(245, 158, 11, 0.03)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(245, 158, 11, 0.15)' }}>
+              <span style={{ color: 'var(--warning)', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>⚠️ Common Misconceptions & Facilitation Tips</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '8px', fontSize: '0.75rem', lineHeight: '1.4' }}>
+                <div>
+                  <strong style={{ color: '#fff' }}>1. "If my code compiles once, it is finished."</strong><br/>
+                  <em>Clarify:</em> Compiling is step 1. You must stress-test it with weird inputs, typo variations, and user personas.
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>2. "A tester is trying to prove my project is bad."</strong><br/>
+                  <em>Clarify:</em> Testers help engineers find logical bugs before users see them. Feedback drives engineering improvement.
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>3. "Feedback means my team failed."</strong><br/>
+                  <em>Clarify:</em> Feedback is a valuable resource. It provides engineers with data to optimize designs.
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>4. "AI bots know things automatically."</strong><br/>
+                  <em>Clarify:</em> Bots only know what is programmed into their knowledge base databases (Data).
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     ) : (
       <div>
@@ -5481,6 +5761,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
     )}
   </div>
 )}
+
 </div>
 </div>
 </div>
