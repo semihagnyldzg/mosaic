@@ -329,13 +329,32 @@ const createMockClient = () => {
   } as any;
 };
 
+let browserClientInstance: any = null;
+
 export const createClient = () => {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-  if (url.includes('wjdowtmrbomhejcunajc.supabase.co') || !url) {
+  const isSuspendedUrl = url.includes('wjdowtmrbomhejcunajc.supabase.co');
+  const shouldMock = !url || isSuspendedUrl || process.env.NEXT_PUBLIC_USE_REAL_SUPABASE !== 'true';
+
+  if (typeof window === 'undefined') {
+    if (!shouldMock) {
+      return createBrowserClient(
+        url,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key'
+      );
+    }
     return createMockClient();
   }
-  return createBrowserClient(
-    url,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key'
-  );
+
+  if (!browserClientInstance) {
+    if (!shouldMock) {
+      browserClientInstance = createBrowserClient(
+        url,
+        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key'
+      );
+    } else {
+      browserClientInstance = createMockClient();
+    }
+  }
+  return browserClientInstance;
 };
