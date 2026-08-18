@@ -7,7 +7,7 @@ const printingResources = {
     { id: 'bb-notebook-p1', category: 'Student Lab Notebooks', title: 'Part 1: Data, Data, Data Notebook', part: 'part1', pages: 12, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Records role definitions, cleaned lunch menus, and logic sequence maps.' },
     { id: 'bb-notebook-p2', category: 'Student Lab Notebooks', title: 'Part 2: All About Algorithms Notebook', part: 'part2', pages: 10, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Guides students through step-by-step algorithms, flowcharting, and sequence tracing.' },
     { id: 'bb-notebook-p3', category: 'Student Lab Notebooks', title: 'Part 3: Introduction to Variables Notebook', part: 'part3', pages: 10, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Focuses on variable storage, naming rules, and dynamic inputs.' },
-    { id: 'bb-notebook-p4', category: 'Student Lab Notebooks', title: 'Part 4: Crazy About Conditionals Notebook', part: 'part4', pages: 12, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Teaches nested conditionals, decision rules, and test tables.' },
+    { id: 'bb-notebook-p4', category: 'Student Lab Notebooks', title: 'Part 4: Loops & Repetition Notebook', part: 'part4', pages: 12, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Teaches nested conditionals, decision rules, and test tables.' },
     { id: 'bb-notebook-share', category: 'Student Lab Notebooks', title: 'Unit Share / Reflection Notebook', part: 'share', pages: 6, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Final reflection worksheets, user surveys, and peer feedback metrics.' },
 
     // Student Learning Resources (Part 1)
@@ -46,12 +46,25 @@ const printingResources = {
     { id: 'bb-res-var-exit-ticket', category: 'Student Learning Resources', title: 'Exit Ticket', part: 'part3', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Individual exit ticket with 8 conceptual and reflection questions for Grades 4-5.' },
     
     // Student Learning Resources (Part 4)
-    { id: 'bb-res-cond-cards', category: 'Student Learning Resources', title: 'IF/THEN Scenario Cards', part: 'part4', pages: 2, ratio: '1 per pair', mode: 'Optional Print', directions: 'Cards with real-world conditional scenarios (weather, battery life, traffic signs) for coding hooks.' },
-    { id: 'bb-res-tree-canvas', category: 'Student Learning Resources', title: 'Decision Tree Canvas', part: 'part4', pages: 2, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Tree diagram template for mapping out nested chatbot keywords and fallback outputs.' },
-    { id: 'bb-res-cond-plan', category: 'Student Learning Resources', title: 'Conditional Planning Sheet', part: 'part4', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Blueprint for writing IF/THEN and IF/THEN/ELSE conditional blocks in Scratch.' },
-    { id: 'bb-res-path-test', category: 'Student Learning Resources', title: 'Decision Path Testing Table', part: 'part4', pages: 2, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Audit table logging INPUT | EXPECTED PATH | ACTUAL PATH | RESULT across known/unknown queries.' },
-    { id: 'bb-res-edge-test', category: 'Student Learning Resources', title: 'Edge Case Testing Sheet', part: 'part4', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Stress testing checklist for entering weird, long, or nonsense queries to check program stability.' },
-
+    { id: 'bb-res-recycling-mission', category: 'Student Learning Resources', title: 'Smart Recycling Sorter Mission Card', part: 'part4', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Introduction to the school conveyor belt challenge, waste categories, and roles.' },
+    { id: 'bb-res-recycling-items', category: 'Student Learning Resources', title: 'Recycling Item Cards', part: 'part4', pages: 2, ratio: '1 set per team', mode: 'Printable Recommended', directions: 'Conveyor belt item cards representing plastic bottles, paper, cans, and food waste.' },
+    { id: 'bb-res-bin-labels', category: 'Student Learning Resources', title: 'Sorting Bin Labels', part: 'part4', pages: 1, ratio: '1 set per team', mode: 'Printable Recommended', directions: 'Labels for Plastic, Paper, Can, and Food Waste physical sorting bins.' },
+    { id: 'bb-res-20-items', category: 'Student Learning Resources', title: '20-Item Challenge Card', part: 'part4', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Problem-solving activity card demonstrating the inefficiency of copy-pasting code blocks.' },
+    { id: 'bb-res-repeated-instructions', category: 'Student Learning Resources', title: 'Repeated Instruction Cards', part: 'part4', pages: 1, ratio: '1 set per team', mode: 'Printable Recommended', directions: 'Shorthand code block templates for identifying patterns in repeated execution.' },
+    { id: 'bb-res-loop-detective', category: 'Student Learning Resources', title: 'Loop Detective Cards', part: 'part4', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Auditing sheet for mapping everyday routines to REPEAT loop structures.' },
+    { id: 'bb-res-unknown-items', category: 'Student Learning Resources', title: 'Unknown Number of Items Card', part: 'part4', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Lesson hook introducing unknown stream counts and conditional loop rules.' },
+    { id: 'bb-res-count-constraint', category: 'Student Learning Resources', title: 'Count the Items Constraint Card', part: 'part4', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Instructional card explaining how variables increment inside conveyor loops.' },
+    { id: 'bb-res-counter-cards', category: 'Student Learning Resources', title: 'Recycling Counter Cards', part: 'part4', pages: 1, ratio: '1 set per pair', mode: 'Optional Print', directions: 'Memory registry card tracking variable totals for plastic, paper, and cans.' },
+    { id: 'bb-res-infinite-loop', category: 'Student Learning Resources', title: 'Infinite Loop Challenge Card', part: 'part4', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Diagnostics sheet showing what causes frozen loops and how to fix them.' },
+    { id: 'bb-res-sorter-canvas', category: 'Student Learning Resources', title: 'Smart Sorter Design Canvas', part: 'part4', pages: 2, ratio: '1 per team', mode: 'Printable Recommended', directions: '10-point system canvas outlining loop boundaries, variables, and error paths.' },
+    { id: 'bb-res-loop-plan', category: 'Student Learning Resources', title: 'Loop Planning Sheet', part: 'part4', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Scratch loop implementation blueprint for building conveyor cycles.' },
+    { id: 'bb-res-stress-scenarios-loop', category: 'Student Learning Resources', title: 'Recycling Scenario Cards', part: 'part4', pages: 1, ratio: '1 set per team', mode: 'Optional Print', directions: 'Sorter stress test items to check loop counts, categories, and stops.' },
+    { id: 'bb-res-loop-test-log', category: 'Student Learning Resources', title: 'Loop Test Log', part: 'part4', pages: 2, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Auditing log tracking Expected vs. Actual Repeats, counts, and errors.' },
+    { id: 'bb-res-loop-debug', category: 'Student Learning Resources', title: 'Loop Debugging Sheet', part: 'part4', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Troubleshooting sheet for infinite loops, early-stops, and incorrect variables.' },
+    { id: 'bb-res-recycling-rush', category: 'Student Learning Resources', title: 'School Recycling Rush Card', part: 'part4', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Final conveyor rush challenge card evaluating automation efficiency.' },
+    { id: 'bb-res-loop-gallery', category: 'Student Learning Resources', title: 'Gallery Walk Feedback Sheet', part: 'part4', pages: 1, ratio: '1 per student', mode: 'Printable Recommended', directions: 'Peer review form tracking observations, wonders, and ideas.' },
+    { id: 'bb-res-loop-exit-ticket', category: 'Student Learning Resources', title: 'Exit Ticket', part: 'part4', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: '10 individual reflection questions mapping loop concepts to Grades 4-5.' },
+    
     // Student Learning Resources (Unit Share)
     { id: 'bb-res-eng-check', category: 'Student Learning Resources', title: 'Final Engineering Checklist', part: 'share', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: '9-point final check list covering problem definition, target user, knowledge lists, variables, and improvements.' },
     { id: 'bb-res-user-test', category: 'Student Learning Resources', title: 'User Testing Form', part: 'share', pages: 2, ratio: '1 per pair', mode: 'Digital + Printable', directions: 'Authentic user test logs for outside peers to record questions asked, confusion points, and helpful comments.' },
@@ -112,10 +125,16 @@ const prepChecklist = {
       'Print Water-Saving Challenge Cards & Exit Tickets.'
     ],
     part4: [
-      'Read PD guides: "Teaching Conditionals" and "Decision Trees".',
-      'Print IF/THEN Scenario Cards (1 set per pair).',
-      'Print Decision Tree Canvas (1 per team).',
-      'Print Conditional Planning sheets (1 per student).'
+      'Read PD guides: "Understanding Loops" and "Repetition in Programming".',
+      'Print Smart Recycling Sorter Mission Cards (1 per team).',
+      'Print Sorting Bin Labels and waste item cards (plastic, paper, can, food).',
+      'Print 20-Item Challenge cards and Loop Detective Sheets.',
+      'Prepare physical bins (labeled Plastic, Paper, Can, Food) for Hour 1 activity.',
+      'Print Smart Sorter Design Canvas (1 per team).',
+      'Print Loop Planning Sheets (1 per student).',
+      'Print Recycling Stress-Test Scenario Cards & Loop Test Logs.',
+      'Print Loop Debugging Sheets (1 per student).',
+      'Print School Recycling Rush Challenge Cards & Exit Tickets.'
     ],
     share: [
       'Read PD guides: "Facilitating Presentations" and "Peer Feedback Protocols".',
@@ -658,6 +677,130 @@ const [isBotTyping, setIsBotTyping] = useState(false);
   const [ghG1, setGhG1] = useState(false);
   const [ghG2, setGhG2] = useState(false);
   const [ghG3, setGhG3] = useState(false);
+  /* --- Smart Recycling Sorter (Part 4 / Day 5) States --- */
+  const [rsBelt, setRsBelt] = useState(['plastic', 'paper', 'can', 'food', 'unknown']);
+  const [rsPlasticCount, setRsPlasticCount] = useState(0);
+  const [rsPaperCount, setRsPaperCount] = useState(0);
+  const [rsCanCount, setRsCanCount] = useState(0);
+  const [rsFoodCount, setRsFoodCount] = useState(0);
+  const [rsTotalCount, setRsTotalCount] = useState(0);
+  const [rsCurrentItem, setRsCurrentItem] = useState(null);
+  const [rsLoopType, setRsLoopType] = useState('step');
+  const [rsStatus, setRsStatus] = useState('idle');
+  const [rsG1, setRsG1] = useState(false);
+  const [rsG2, setRsG2] = useState(false);
+  const [rsG3, setRsG3] = useState(false);
+  const [rsG4, setRsG4] = useState(false);
+
+  const processNextRecyclingItem = (isInfiniteBug = false) => {
+    if (rsBelt.length === 0) {
+      setRsStatus('idle');
+      return;
+    }
+    const nextItem = rsBelt[0];
+    setRsCurrentItem(nextItem);
+    
+    if (nextItem === 'plastic') {
+      setRsPlasticCount(p => p + 1);
+    } else if (nextItem === 'paper') {
+      setRsPaperCount(p => p + 1);
+    } else if (nextItem === 'can') {
+      setRsCanCount(p => p + 1);
+    } else if (nextItem === 'food') {
+      setRsFoodCount(p => p + 1);
+    } else {
+      setRsG3(true);
+    }
+    setRsTotalCount(t => t + 1);
+
+    if (isInfiniteBug) {
+      setRsStatus('infinite');
+    } else {
+      setRsBelt(prev => prev.slice(1));
+    }
+  };
+
+  const handleRunSorter = () => {
+    if (rsBelt.length === 0) {
+      alert("Conveyor belt is empty! Please load some items first.");
+      return;
+    }
+    
+    if (rsLoopType === 'step') {
+      processNextRecyclingItem();
+    } else if (rsLoopType === 'repeat5') {
+      setRsStatus('running');
+      setRsG1(true);
+      let count = 0;
+      const interval = setInterval(() => {
+        setRsBelt(prev => {
+          if (prev.length === 0 || count >= 5) {
+            clearInterval(interval);
+            setRsStatus('idle');
+            return prev;
+          }
+          const item = prev[0];
+          setRsCurrentItem(item);
+          if (item === 'plastic') setRsPlasticCount(p => p + 1);
+          else if (item === 'paper') setRsPaperCount(p => p + 1);
+          else if (item === 'can') setRsCanCount(p => p + 1);
+          else if (item === 'food') setRsFoodCount(p => p + 1);
+          else setRsG3(true);
+          setRsTotalCount(t => t + 1);
+          count++;
+          return prev.slice(1);
+        });
+      }, 600);
+    } else if (rsLoopType === 'untilEmpty') {
+      setRsStatus('running');
+      setRsG2(true);
+      const interval = setInterval(() => {
+        setRsBelt(prev => {
+          if (prev.length === 0) {
+            clearInterval(interval);
+            setRsStatus('idle');
+            return prev;
+          }
+          const item = prev[0];
+          setRsCurrentItem(item);
+          if (item === 'plastic') setRsPlasticCount(p => p + 1);
+          else if (item === 'paper') setRsPaperCount(p => p + 1);
+          else if (item === 'can') setRsCanCount(p => p + 1);
+          else if (item === 'food') setRsFoodCount(p => p + 1);
+          else setRsG3(true);
+          setRsTotalCount(t => t + 1);
+          return prev.slice(1);
+        });
+      }, 600);
+    }
+  };
+
+  const triggerInfiniteLoopBug = () => {
+    setRsStatus('infinite');
+    const interval = setInterval(() => {
+      setRsStatus(current => {
+        if (current !== 'infinite') {
+          clearInterval(interval);
+          return current;
+        }
+        setRsTotalCount(t => t + 1);
+        const rand = Math.random();
+        if (rand < 0.25) setRsPlasticCount(p => p + 1);
+        else if (rand < 0.5) setRsPaperCount(p => p + 1);
+        else if (rand < 0.75) setRsCanCount(p => p + 1);
+        else setRsFoodCount(f => f + 1);
+        return current;
+      });
+    }, 100);
+  };
+
+  const fixInfiniteLoop = () => {
+    if (rsStatus === 'infinite') {
+      setRsStatus('idle');
+      setRsG4(true);
+      setRsBelt(prev => prev.slice(1));
+    }
+  };
 const chatEndRef = useRef(null);
 /* --- Elementary Challenge 2 States --- */
 const [solarAngle, setSolarAngle] = useState(20);
@@ -892,11 +1035,11 @@ transition: 'all 0.2s'
         {/* BotBuilder Card 4 */}
         <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
           <div>
-            <span style={{ fontSize: '2rem' }}>🔀❓🛠️</span>
+            <span style={{ fontSize: '2rem' }}>🔀♻️📊</span>
             <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 4 (Day 5)</span>
-            <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 4: Conditionals</h3>
+            <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 4: Loops & Repetition</h3>
             <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
-              Establish rule-based decision trees and program "Break the Bot" stress test challenges.
+              Program an automated recycling sorter to process items. Use repetition loops to sort waste, count items with variables, and handle errors.
             </p>
           </div>
           <button onClick={() => { setActiveChallenge('chatbot'); setActiveDay(5); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Lab 🚀</button>
@@ -2168,43 +2311,187 @@ You safely managed the hazard using titration variables. Click "Finish Week" to 
 
       {/* Day 20: Week 4 Reflection */}
       {activeDay === 5 && (
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
-          <div>
-            <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 20: Conditionals Reflection</h4>
-            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '12px' }}>
-              <strong style={{ color: '#fff', fontSize: '0.75rem', display: 'block', marginBottom: '6px' }}>📝 Exit Ticket: Decision Reflection</strong>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.7rem', marginBottom: '8px' }}>
-                <div>
-                  <label style={{ display: 'block', color: 'var(--text-secondary)' }}>Identify one conditional statement inside your chatbot:</label>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginTop: '4px' }}>
-                    <strong>IF</strong>
-                    <input type="text" value={chatbotMissions.c4IfRef || ''} onChange={e => updateMissionField('c4IfRef', e.target.value)} placeholder="e.g. question contains lunch" style={{ flex: 1, padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px' }} />
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginTop: '4px' }}>
-                    <strong>THEN</strong>
-                    <input type="text" value={chatbotMissions.c4ThenRef || ''} onChange={e => updateMissionField('c4ThenRef', e.target.value)} placeholder="e.g. say Cheese Pizza entree" style={{ flex: 1, padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px' }} />
-                  </div>
-                </div>
-              </div>
-              {!chatbotMissions.c4ReflectionDone ? (
-                <button onClick={() => updateMissionField('c4ReflectionDone', true)} style={{ background: 'var(--secondary)', border: 'none', padding: '6px 12px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold', color: '#fff', cursor: 'pointer' }}>Submit Reflection</button>
-              ) : (
-                <div style={{ color: 'var(--success)', fontSize: '0.7rem', fontWeight: 'bold', marginTop: '6px' }}>✓ Reflection Submitted!</div>
-              )}
-            </div>
+  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '32px' }}>
+    <div>
+      <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 5: Smart Recycling Sorter Challenge</h4>
+      <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', marginBottom: '12px' }}>
+        Program an automated recycling sorter to process items on a conveyor belt. Use a loop to repeat the sorting cycle, tracking counts with variables, and avoiding infinite loop freezes!
+      </p>
+
+      {/* Sorter Dashboard (Variables in Memory) */}
+      <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '12px' }}>
+        <strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem' }}>📊 Sorter Variable Counters (Memory):</strong>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '6px' }}>
+          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--text-secondary)' }}>🧴 Plastic</span>
+            <strong style={{ color: '#fff', fontSize: '1.1rem' }}>{rsPlasticCount}</strong>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <span style={{ fontSize: '3rem', marginBottom: '12px' }}>🏆</span>
-            <h4 style={{ color: '#fff', fontSize: '1.1rem', marginBottom: '8px' }}>Week 4 Completed!</h4>
-            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '240px', lineHeight: '1.4', marginBottom: '16px' }}>
-              Your chatbot has structured conditional decisions and fallback pathways to handle errors!
-            </p>
-            {chatbotMissions.c4ReflectionDone && (
-              <button onClick={() => handleFinishWeek(10)} className="btn btn-primary" style={{ padding: '10px 24px', borderRadius: '6px' }}>Finish Week 4! 🏆</button>
-            )}
+          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--text-secondary)' }}>📰 Paper</span>
+            <strong style={{ color: '#fff', fontSize: '1.1rem' }}>{rsPaperCount}</strong>
+          </div>
+          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--text-secondary)' }}>🥫 Can</span>
+            <strong style={{ color: '#fff', fontSize: '1.1rem' }}>{rsCanCount}</strong>
+          </div>
+          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--text-secondary)' }}>🍎 Food</span>
+            <strong style={{ color: '#fff', fontSize: '1.1rem' }}>{rsFoodCount}</strong>
+          </div>
+          <div style={{ background: 'rgba(0,0,0,0.25)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid var(--primary)' }}>
+            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--primary-light)' }}>🔢 Total</span>
+            <strong style={{ color: 'var(--primary-light)', fontSize: '1.1rem' }}>{rsTotalCount}</strong>
           </div>
         </div>
+      </div>
+
+      {/* Sorter Loop Logic Settings */}
+      <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '12px' }}>
+        <strong style={{ color: 'var(--secondary-light)', fontSize: '0.75rem' }}>🔁 Loop Instruction Rules:</strong>
+        
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer', color: '#fff' }}>
+            <input type="radio" name="loopType" checked={rsLoopType === 'step'} onChange={() => setRsLoopType('step')} style={{ accentColor: 'var(--primary)' }} />
+            <span>Single Cycle (No Loop - Manual sorting one-by-one)</span>
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer', color: '#fff' }}>
+            <input type="radio" name="loopType" checked={rsLoopType === 'repeat5'} onChange={() => setRsLoopType('repeat5')} style={{ accentColor: 'var(--primary)' }} />
+            <span>REPEAT 5 TIMES (Processes next 5 items)</span>
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer', color: '#fff' }}>
+            <input type="radio" name="loopType" checked={rsLoopType === 'untilEmpty'} onChange={() => setRsLoopType('untilEmpty')} style={{ accentColor: 'var(--primary)' }} />
+            <span>REPEAT UNTIL conveyor_belt = empty (Process everything)</span>
+          </label>
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '8px', marginTop: '4px' }}>
+          <span style={{ fontSize: '0.75rem' }}>Sorter Status:</span>
+          <strong style={{ 
+            fontSize: '0.75rem', 
+            color: rsStatus === 'infinite' ? 'var(--danger)' : rsStatus === 'running' ? 'var(--success)' : 'var(--text-muted)' 
+          }}>
+            {rsStatus === 'infinite' ? '🚨 INFINITE LOOP FREEZE' : rsStatus === 'running' ? 'RUNNING 🔄' : 'IDLE ⚪'}
+          </strong>
+        </div>
+
+        {rsStatus === 'infinite' ? (
+          <button onClick={fixInfiniteLoop} className="btn" style={{ background: 'var(--success)', border: 'none', color: '#fff', padding: '8px', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.75rem' }}>
+            🔧 Apply Loop Fix (Advance Conveyor Belt)
+          </button>
+        ) : (
+          <button onClick={handleRunSorter} disabled={rsStatus === 'running'} className="btn btn-primary" style={{ padding: '8px', borderRadius: '4px', fontWeight: 'bold', fontSize: '0.75rem' }}>
+            {rsLoopType === 'step' ? 'Sort Next Item ➡️' : 'Run Sorter Loop 🔄'}
+          </button>
+        )}
+      </div>
+
+      {rsG1 && rsG2 && rsG3 && rsG4 ? (
+        <button onClick={() => {
+          handleFinishWeek(10);
+        }} className="btn btn-primary" style={{ padding: '10px 20px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Finish Week 4 Challenge! 🏆</button>
+      ) : (
+        <div style={{ color: 'var(--warning)', fontSize: '0.75rem', padding: '8px', background: 'rgba(245,158,11,0.05)', border: '1px solid rgba(245,158,11,0.2)', borderRadius: '4px', textAlign: 'center', fontWeight: 'bold' }}>
+          🔒 Unlock Final Reward by completing all four engineering test objectives!
+        </div>
       )}
+    </div>
+
+    {/* Conveyor Belt Simulation & Objectives */}
+    <div>
+      <span style={{ fontSize: '0.75rem', color: 'var(--secondary-light)', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>
+        Conveyor Belt (Next items waiting):
+      </span>
+      
+      {/* Visual conveyor belt */}
+      <div style={{ background: 'rgba(0,0,0,0.3)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '14px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ display: 'flex', gap: '8px', minHeight: '60px', alignItems: 'center' }}>
+          {rsBelt.length === 0 ? (
+            <div style={{ color: 'var(--text-muted)', fontSize: '0.75rem', margin: 'auto', fontStyle: 'italic' }}>
+              Conveyor belt is empty. Load a batch!
+            </div>
+          ) : (
+            rsBelt.map((item, idx) => (
+              <div key={idx} style={{ 
+                background: idx === 0 ? 'rgba(99, 102, 241, 0.15)' : 'rgba(255,255,255,0.04)', 
+                border: idx === 0 ? '2px solid var(--primary)' : '1px solid rgba(255,255,255,0.08)',
+                padding: '8px 12px',
+                borderRadius: '6px',
+                textAlign: 'center',
+                minWidth: '70px',
+                fontSize: '0.7rem',
+                position: 'relative',
+                animation: 'slideUp 0.2s',
+                color: '#fff'
+              }}>
+                {idx === 0 && <span style={{ position: 'absolute', top: '-10px', left: '50%', transform: 'translateX(-50%)', background: 'var(--primary)', color: '#fff', fontSize: '0.5rem', padding: '1px 4px', borderRadius: '4px', fontWeight: 'bold' }}>SENSOR</span>}
+                <div style={{ fontSize: '1.2rem', marginBottom: '2px' }}>
+                  {item === 'plastic' ? '🧴' : item === 'paper' ? '📰' : item === 'can' ? '🥫' : item === 'food' ? '🍎' : '❓'}
+                </div>
+                <div style={{ fontSize: '0.55rem', color: 'var(--text-secondary)', textTransform: 'capitalize' }}>
+                  {item === 'can' ? 'aluminum' : item}
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+        <div style={{ height: '4px', background: 'rgba(255,255,255,0.1)', marginTop: '8px', borderStyle: 'dashed', borderWidth: '1px 0 0 0' }}></div>
+      </div>
+
+      {/* Simulator Actions */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '14px' }}>
+        <button onClick={() => {
+          setRsBelt(prev => [...prev, 'plastic', 'paper', 'can', 'food']);
+        }} className="btn" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', padding: '6px', borderRadius: '4px', cursor: 'pointer' }}>
+          ➕ Load Normal Batch
+        </button>
+        <button onClick={() => {
+          setRsBelt(prev => [...prev, 'unknown']);
+        }} className="btn" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', padding: '6px', borderRadius: '4px', cursor: 'pointer' }}>
+          ❓ Add Unknown Item
+        </button>
+        <button onClick={triggerInfiniteLoopBug} disabled={rsStatus === 'running' || rsBelt.length === 0} className="btn" style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.2)', color: 'var(--danger-light)', fontSize: '0.7rem', padding: '6px', borderRadius: '4px', cursor: 'pointer' }}>
+          ⚠️ Trigger Infinite Loop Bug
+        </button>
+        <button onClick={() => {
+          setRsPlasticCount(0);
+          setRsPaperCount(0);
+          setRsCanCount(0);
+          setRsFoodCount(0);
+          setRsTotalCount(0);
+          setRsCurrentItem(null);
+          setRsBelt(['plastic', 'paper', 'can', 'food', 'unknown']);
+          setRsStatus('idle');
+        }} className="btn" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', padding: '6px', borderRadius: '4px', cursor: 'pointer' }}>
+          🔄 Reset Sorter
+        </button>
+      </div>
+
+      {/* Objectives Checkbox checklist */}
+      <div style={{ background: 'rgba(0,0,0,0.15)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.08)' }}>
+        <strong style={{ color: '#fff', fontSize: '0.75rem', display: 'block', marginBottom: '8px' }}>🎯 Sorter Testing Objectives:</strong>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
+            <input type="checkbox" checked={rsG1} readOnly style={{ accentColor: 'var(--primary)' }} />
+            <span style={{ color: rsG1 ? 'var(--success)' : '#fff' }}>1. Run a REPEAT 5 TIMES Sorter Loop</span>
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
+            <input type="checkbox" checked={rsG2} readOnly style={{ accentColor: 'var(--primary)' }} />
+            <span style={{ color: rsG2 ? 'var(--success)' : '#fff' }}>2. Run a REPEAT UNTIL EMPTY Loop to clear a batch</span>
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
+            <input type="checkbox" checked={rsG3} readOnly style={{ accentColor: 'var(--primary)' }} />
+            <span style={{ color: rsG3 ? 'var(--success)' : '#fff' }}>3. Sort an Unknown Item safely without stopping</span>
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
+            <input type="checkbox" checked={rsG4} readOnly style={{ accentColor: 'var(--primary)' }} />
+            <span style={{ color: rsG4 ? 'var(--success)' : '#fff' }}>4. Diagnose and Fix an Infinite Sorter Loop Bug</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   )}
 {/* --- MIDDLE SCHOOL WEEK 3: Water Purification --- */}
@@ -2760,7 +3047,7 @@ flexShrink: 0
 { id: 'part1', text: teacherUnit === 'botbuilder' ? 'Part 1: Data, Data, Data' : 'Part 1: Irrigation & Soil Codes' },
 { id: 'part2', text: teacherUnit === 'botbuilder' ? 'Part 2: All About Algorithms' : 'Part 2: Wind Forces' },
 { id: 'part3', text: teacherUnit === 'botbuilder' ? 'Part 3: Introduction to Variables' : 'Part 3: Chemical Filtration' },
-{ id: 'part4', text: teacherUnit === 'botbuilder' ? 'Part 4: Crazy About Conditionals' : 'Part 4: Seismic Structural Loads' },
+{ id: 'part4', text: teacherUnit === 'botbuilder' ? 'Part 4: Loops & Repetition' : 'Part 4: Seismic Structural Loads' },
 { id: 'share', text: 'Unit Share' }
 ].map((item) => {
 const isActive = activeTeacherTab === item.id;
@@ -3039,7 +3326,7 @@ Adjust pacing to fit your class scheduling. Standard path represents a total of 
 <strong>2 Instructional Hours</strong>
 </div>
 <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.04)', paddingBottom: '4px' }}>
-<span>Part 4: Conditionals / Seismic brace</span>
+<span>Part 4: Loops & Repetition / Seismic brace</span>
 <strong>2 Instructional Hours</strong>
 </div>
 <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.04)', paddingBottom: '4px' }}>
@@ -4726,7 +5013,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
 {activeTeacherTab === 'part4' && (
   <div style={{ animation: 'slideUp 0.2s' }}>
     <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px', textAlign: 'left' }}>
-      {teacherUnit === 'botbuilder' ? 'Part 4: Crazy About Conditionals (AI BotBuilder)' : 'Part 4: Bridge Structural Loads'}
+      {teacherUnit === 'botbuilder' ? 'Part 4: Loops & Repetition (AI BotBuilder)' : 'Part 4: Seismic Structural Loads'}
     </h3>
     {teacherUnit === 'botbuilder' ? (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
@@ -4761,27 +5048,57 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
         {/* SUBTAB CONTENT: OVERVIEW */}
         {activePart4SubTab === 'overview' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            {/* Smart Recycling Sorter Hook */}
             <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
-              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>AI Engineer Mission Hook</span>
-              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: Decision Making Logic</h4>
+              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Automation Engineer Mission Hook</span>
+              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: Redesign the Recycling Machine</h4>
               <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
-                Introduce the lesson:
-                <em style={{ display: 'block', margin: '8px 0', color: '#fff', borderLeft: '3px solid var(--primary)', paddingLeft: '10px' }}>
-                  "To behave intelligently, computers follow rules. Today, we step into the role of Logic Developers to write branch trees that trigger different responses based on input checks."
+                Introduce the school waste challenge:
+                <em style={{ display: 'block', margin: '8px 0', color: '#fff', borderLeft: '3px solid var(--primary)', paddingLeft: '10px', fontStyle: 'normal' }}>
+                  "Our school wants to recycle, but sorting waste takes too long. We have a conveyor belt machine, but right now it only sorts ONE object and then stops! Your engineering team must program the system so it repeats the sorting process automatically without us having to click start for every single item."
                 </em>
+                Set the big inquiry question: <strong>"How can a computer repeat a task without us giving the same instructions again and again?"</strong> Let students feel the frustration of manual duplication first.
               </p>
             </div>
+
+            {/* Automation Team Roles */}
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '8px' }}>Sorter System Team Roles</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#60a5fa', fontSize: '0.75rem', display: 'block' }}>⚙️ Automation Engineer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Designs how the conveyor belt interacts with sensors and decides how items move through the system.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block' }}>🔁 Process Engineer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Looks for repeated steps in the sorting sequence and configures loop rules for maximum efficiency.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#a78bfa', fontSize: '0.75rem', display: 'block' }}>🧪 Systems Tester</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Runs stress tests with mixed recycling streams and diagnoses early-stopping or infinite loop bugs.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#f59e0b', fontSize: '0.75rem', display: 'block' }}>💻 Scratch Developer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Translates approved conveyor loops, category sensors, and variable count logs into Scratch block logic.</span>
+                </div>
+              </div>
+              <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', display: 'block', marginTop: '6px' }}>
+                💡 <em>Facilitator Tip:</em> Ensure students rotate roles as they transition from physical flow exercises to Scratch implementation.
+              </span>
+            </div>
+
+            {/* STEAM Career Spotlight */}
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
               <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>💼 STEAM Career Spotlight</strong>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {['Logic Systems Engineer', 'AI Prompt Architect', 'Decision Scientist'].map(career => (
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '8px' }}>
+                {['Automation Engineer', 'Robotics Engineer', 'Environmental Engineer', 'Manufacturing Engineer', 'Software Engineer'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
                     {career}
                   </span>
                 ))}
               </div>
-              <p style={{ fontSize: '0.75rem', margin: '8px 0 0 0', lineHeight: '1.4' }}>
-                Explain that decision trees and logic branches form the foundation of intelligent automated workflows.
+              <p style={{ fontSize: '0.75rem', margin: 0, lineHeight: '1.4' }}>
+                Automation Engineers design robotic systems that sort luggage at airport baggage systems, pack orders at fulfillment warehouses, assemble cars on factory conveyor belts, and process materials at recycling facilities.
               </p>
             </div>
           </div>
@@ -4790,21 +5107,145 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
         {/* SUBTAB CONTENT: HOUR 1 (THINK) */}
         {activePart4SubTab === 'hour1' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 1: Human Sorter */}
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: Scenario Cards Inquiry</span>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: Human Recycling Sorter</span>
               <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
-                Guide students to trace decision conditions (e.g. IF raining, wear coat). Discuss what fallback action triggers when no rules match.
+                One student acts as the machine. Given 5 sequential instructions (Pick up item ➔ Inspect ➔ Decide category ➔ Sort into bin ➔ Stop). The machine processes 1 item and freezes. Give it a second item.
               </p>
-              <strong style={{ color: '#fff', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>Inquiry Prompt:</strong>
-              <p style={{ fontStyle: 'italic', margin: 0, fontSize: '0.75rem', lineHeight: '1.4' }}>
-                "How does a computer choose? When is the ELSE statement needed? Let's discuss logic branches."
-              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Item cards (plastic, paper, can, food), 4 bin labels</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Our code worked for one item, but why did it stop when another item arrived? How do we tell it to continue?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Students recognizing that the algorithm's exit code (`Stop`) terminates the process too early.</div>
+                <div>⚠️ <strong>Misconceptions:</strong> Students might suggest copy-pasting the instructions again and again. Do not teach loops yet; let them hit the barrier.</div>
+              </div>
             </div>
+
+            {/* Activity 2: The 20-Item Problem */}
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: Command Action Game</span>
-              <p style={{ margin: '6px 0 0 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
-                Perform physical classroom actions based on conditional command lines.
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: The 20-Item Challenge</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Ask teams to write instructions to process 20 items. Let them write a few entries (Cycle 1: Pick up ➔ Sort; Cycle 2: Pick up ➔ Sort...) until they realize it's tedious. Ask them to find a pattern.
               </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Writing sheets, Repeated Instruction cards</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Which exact blocks are we duplicating? Is there a shorthand way to write this pattern?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Identifying the repeated sub-sequence of instructions.</div>
+              </div>
+            </div>
+
+            {/* Activity 3: Introduce the Loop */}
+            <div style={{ background: 'rgba(239, 68, 68, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(239, 68, 68, 0.15)' }}>
+              <span style={{ color: '#f87171', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 3: Introduce the Loop Concept</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Introduce the definition: <strong>LOOP = An instruction that repeats a block of code.</strong> Model the conversion: Instead of copy-pasting 20 times, wrap the core cycle inside a <code>REPEAT 20 TIMES</code> container block.
+              </p>
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '4px', fontSize: '0.75rem', fontFamily: 'monospace', color: '#fff', marginBottom: '8px' }}>
+                REPEAT 20 TIMES [ Pick up item ➔ Inspect ➔ Sort item ]
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Loop reference card</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Did the final output change? Why is this design easier to read and modify?"</div>
+              </div>
+            </div>
+
+            {/* Activity 4: Loop Detective */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 4: Loop Detective</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students inspect common routines (e.g., doing 10 jumping jacks, watering 5 flowers, brushing teeth, blinking lights 6 times). Teams identify the repeating action and rewrite using <code>REPEAT X TIMES</code> format.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Loop Detective cards</div>
+              </div>
+            </div>
+
+            {/* Activity 5: Unknown Number of Items */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 5: Unknown Number of Items</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Introduce new conditions: 🚨 <strong>NEW INFORMATION: We do not know how many items are arriving today.</strong> Can we still use a fixed number loop? Introduce conditional loops: <code>REPEAT UNTIL conveyor is empty</code>.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Unknown Item count event card</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "What condition tells this machine when it can safely stop? How does this differ from a fixed count?"</div>
+              </div>
+            </div>
+
+            {/* Activity 6: Count the Items */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 6: Count the Items (Connect Variables)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                School request: 📊 <strong>NEW CONSTRAINT: Count total items sorted.</strong> Connect back to variables: Initialize <code>items_sorted = 0</code>. Inside the loop, change value by <code>+1</code> on every cycle.
+              </p>
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '4px', fontSize: '0.75rem', color: 'var(--primary-light)', textAlign: 'center' }}>
+                🔁 LOOP = Repeats the Job | 💾 VARIABLE = Remembers the Counts
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Sorter Counter card, Variable chips</div>
+              </div>
+            </div>
+
+            {/* Activity 7: Count Each Category */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 7: Count Each Category</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Introduce separate tracking variables: <code>plastic count</code>, <code>paper count</code>, <code>aluminum count</code>, <code>food count</code>. Ensure variables increment only when that specific category is sorted.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Category count trackers</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Where should we place the variable increment blocks? Should they be inside or outside the category checks?"</div>
+              </div>
+            </div>
+
+            {/* Activity 8: Infinite Loop Challenge */}
+            <div style={{ background: 'rgba(239, 68, 68, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(239, 68, 68, 0.15)' }}>
+              <span style={{ color: '#f87171', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 8: Infinite Loop Challenge</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Give teams a broken loop rule: <code>REPEAT FOREVER [ Inspect item ➔ Sort item ]</code> but without removing the sorted item. The conveyor belt stays full, processing the same item infinitely.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Infinite Loop card</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Why did our machine freeze? What is missing from the loop body to let it advance and terminate?"</div>
+              </div>
+            </div>
+
+            {/* Activity 9: Sorter Efficiency */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 9: Sorter Efficiency Challenge</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Compare two pseudocode systems sorting 15 items: System A write steps 15 times; System B uses a single loop block. Discuss which is easier to write, inspect, debug, or change.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Efficiency cards</div>
+              </div>
+            </div>
+
+            {/* Activity 10: Smart Sorter Design Canvas */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 10: Smart Sorter Design Canvas</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams compile their structural system plan: categories to sort, repeated cycle steps, loop start/stop rules, variable counter names, and debugging checklists.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 20 mins | 🛠️ <strong>Materials:</strong> Smart Sorter Design Canvas</div>
+              </div>
+            </div>
+
+            {/* Hour 1 Checkpoint */}
+            <div style={{ background: 'rgba(16, 185, 129, 0.04)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+              <span style={{ color: '#34d399', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Hour 1 Checkpoint Requirements</span>
+              <ul style={{ margin: '6px 0 0 0', paddingLeft: '16px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px', lineHeight: '1.4' }}>
+                <li>✅ Defined sorting rules for plastic, paper, can, and food waste.</li>
+                <li>✅ A repeating cycle sequence wrapped in loop block logic.</li>
+                <li>✅ A clear, logical condition that stops the loop when the belt is empty.</li>
+                <li>✅ Labeled variables for tracking total counts and category totals.</li>
+                <li>✅ Completed Smart Sorter Design Canvas signed by the facilitator.</li>
+              </ul>
+              <span style={{ fontSize: '0.7rem', color: '#34d399', display: 'block', marginTop: '8px' }}>
+                🗣️ <em>Facilitator Inquiry:</em> Ask: "When does your loop stop? Show me which variable counts your plastic cans."
+              </span>
             </div>
           </div>
         )}
@@ -4812,17 +5253,173 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
         {/* SUBTAB CONTENT: HOUR 2 (BUILD & TEST) */}
         {activePart4SubTab === 'hour2' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 11: Build One Cycle */}
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 3: Scratch Logic Branching</span>
-              <p style={{ margin: '6px 0 0 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
-                Coded nested IF/THEN and ELSE blocks in Scratch. Guide students to check spelling typos and unexpected inputs using testing logs.
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 11: Build One Sorting Cycle</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students program Scratch to process exactly ONE item. The system checks sensor inputs (using <code>IF/ELSE</code> blocks) and moves the item sprite to the correct bin. Test with one item.
               </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Computers with Scratch, Design Canvas</div>
+                <div>🔍 <strong>Look-fors:</strong> Students validating single cycle logic before wrapping it inside a loop block.</div>
+              </div>
             </div>
-            <div style={{ background: 'rgba(139, 92, 246, 0.05)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#a78bfa', display: 'block', fontSize: '0.75rem' }}>🚀 Level-Up Challenge (Extension)</strong>
-              <p style={{ margin: '4px 0 0 0', fontSize: '0.7rem', lineHeight: '1.4' }}>
-                Configure multi-nested conditionals or double variable parameters (e.g. IF keyword AND day=Monday).
+
+            {/* Activity 12: Add the Loop */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 12: Add the Sorter Loop</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students wrap their sorting blocks in a loop: first test with <code>repeat 5</code>, then program a conditional <code>repeat until</code> block to run until the conveyor list is empty.
               </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Scratch Editor</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "How many blocks did you save by wrapping this in a loop? What controls when it stops?"</div>
+              </div>
+            </div>
+
+            {/* Activity 13: Add the Counters */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 13: Add the Counters (Variables)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students create variables (<code>total items</code>, <code>plastic</code>, <code>paper</code>, <code>can</code>, <code>food</code>). Program blocks to set all counters to 0 when flag is clicked, and increment correctly inside the loop.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 20 mins | 🛠️ <strong>Materials:</strong> Scratch Variable blocks</div>
+                <div>🔍 <strong>Look-fors:</strong> Ensuring counter variable increments are placed inside the loop body, not outside.</div>
+              </div>
+            </div>
+
+            {/* Activity 14: Sorting Stress Test */}
+            <div style={{ background: 'rgba(139, 92, 246, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(139, 92, 246, 0.15)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 14: Sorter Stress Test</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams swap computers. Testers run the system with specified Scenario Cards (A to F) containing different sequences (e.g., empty belt, unknown items, mixed items) and log results in the <strong>Loop Test Log</strong>.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '0.7rem', color: '#fff', background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <div>• Scenario A: 3 plastic bottles (Counts correct?)</div>
+                <div>• Scenario B: Paper ➔ Can ➔ Bottle (Correct order?)</div>
+                <div>• Scenario C: 10 mixed items (Loop runs completely?)</div>
+                <div>• Scenario D: Empty belt (Does not crash?)</div>
+                <div>• Scenario E: One unknown item (Handle safely?)</div>
+                <div>• Scenario F: Long continuous stream (Loops run?)</div>
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 20 mins | 🛠️ <strong>Materials:</strong> Loop Test Log, Scenario Cards</div>
+              </div>
+            </div>
+
+            {/* Activity 15: Debug the Loop */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 15: Debug the Loop</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams debug common loops bugs: loop stopping too early (some items remain), loop running too many times (trying to sort empty air), infinite loops (belt stuck), or double counting.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Loop Debugging Sheet</div>
+              </div>
+            </div>
+
+            {/* Activity 16: School Recycling Rush */}
+            <div style={{ background: 'rgba(139, 92, 246, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(139, 92, 246, 0.15)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 16: School Recycling Rush</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Conveyor belt receives a fast, mixed, unknown sequence of school waste. Sorter must run automatically, sort every item into correct categories, increment counts, handle unknown cards safely, and terminate when clear.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 20 mins | 🛠️ <strong>Materials:</strong> Recycling Rush cards, Scratch environment</div>
+              </div>
+            </div>
+
+            {/* Activity 17: Sorter Simplification */}
+            <div style={{ background: 'rgba(139, 92, 246, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(139, 92, 246, 0.15)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 17: Sorter Simplification (Make It Better)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Challenge: Reduce instructions count without altering system actions. Clean up repeated code blocks outside loops or duplicate checks. Compare designs on efficiency metrics.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Code cleanup checklist</div>
+              </div>
+            </div>
+
+            {/* Gallery Walk */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Gallery Walk & Peer Review</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams showcase sorter design canvases, loop test logs, and running simulations. Peers record: "I noticed...", "I wonder...", "Have you considered...?" Formulate iteration plan.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Gallery Walk Feedback Sheet</div>
+              </div>
+            </div>
+
+            {/* Final Connection to AI BotBuilder */}
+            <div style={{ background: 'rgba(16, 185, 129, 0.04)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+              <span style={{ color: '#34d399', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Final Connection to AI BotBuilder</span>
+              <p style={{ margin: '6px 0 8px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                How do loops connect to chatbot systems? A chatbot must run continuously to process user questions. It loops: Wait for User Input ➔ Search Knowledge ➔ Respond ➔ Repeat.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '6px', fontSize: '0.65rem', color: '#fff', background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', textAlign: 'center' }}>
+                <div><strong>Part 1: DATA</strong><br/>What system KNOWS</div>
+                <div><strong>Part 2: ALGORITHMS</strong><br/>What system DOES</div>
+                <div><strong>Part 3: VARIABLES</strong><br/>What system REMEMBERS</div>
+                <div><strong>Part 4: LOOPS</strong><br/>What system REPEATS efficiently</div>
+              </div>
+            </div>
+
+            {/* Reflection Exit Ticket */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fff', fontSize: '0.75rem', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>📝 Exit Ticket & Evaluation</span>
+              <ul style={{ margin: 0, paddingLeft: '16px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px', lineHeight: '1.4' }}>
+                <li>1. What is a loop?</li>
+                <li>2. Why do programmers use loops?</li>
+                <li>3. What repeated inside your recycling conveyor belt algorithm?</li>
+                <li>4. What condition told your loop when it should stop?</li>
+                <li>5. What variable did your loop update during each cycle?</li>
+                <li>6. What is an infinite loop and how did you debug it?</li>
+              </ul>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Exit Ticket Sheet</div>
+              </div>
+            </div>
+
+            {/* Level-Up Challenges */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <strong style={{ color: '#a78bfa', display: 'block', fontSize: '0.75rem', marginBottom: '6px' }}>🚀 Level-Up Challenges (Extensions)</strong>
+              <ul style={{ margin: 0, paddingLeft: '16px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px', lineHeight: '1.4' }}>
+                <li><strong>Level 1:</strong> Add an <code>energy cost</code> variable decrementing by 1 per item sorted.</li>
+                <li><strong>Level 2:</strong> Sort a 5th category <code>cardboard</code> and allocate a new count variable.</li>
+                <li><strong>Level 3:</strong> sound warning buzzer if <code>unknown item</code> is detected.</li>
+                <li><strong>Level 4:</strong> Design a system that stops sorting if any single category bin is full (count &gt;= 10).</li>
+                <li><strong>Level 5:</strong> Optimize code block counts to the absolute minimal set.</li>
+              </ul>
+            </div>
+
+            {/* Common Misconceptions */}
+            <div style={{ background: 'rgba(245, 158, 11, 0.03)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(245, 158, 11, 0.15)' }}>
+              <span style={{ color: 'var(--warning)', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>⚠️ Common Misconceptions & Facilitation Tips</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '8px', fontSize: '0.75rem', lineHeight: '1.4' }}>
+                <div>
+                  <strong style={{ color: '#fff' }}>1. "Loops make computer execute code faster."</strong><br/>
+                  <em>Clarify:</em> Loop instructions save coding effort and file size; execution time is controlled by system hardware speed.
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>2. "REPEAT 10 means do 10 different tasks."</strong><br/>
+                  <em>Clarify:</em> It executes the exact same task sequence 10 times.
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>3. "All loops repeat forever."</strong><br/>
+                  <em>Clarify:</em> Loops have exit constraints (number of counts or conditional changes). Unintentional forever runs are infinite loops.
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>4. "Loop and variable are similar coding items."</strong><br/>
+                  <em>Clarify:</em> 🔁 LOOP = repeats the task | 💾 VARIABLE = remembers values.
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>5. "If my code compiles, it works under all situations."</strong><br/>
+                  <em>Clarify:</em> Run stress tests with edge inputs (e.g. empty lists, weird sizes) to audit loop boundaries.
+                </div>
+              </div>
             </div>
           </div>
         )}
@@ -4831,7 +5428,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
       <div>
         <h4 style={{ color: '#a78bfa', fontSize: '0.9rem', margin: '14px 0 6px 0', textAlign: 'left' }}>Challenge Solution Cheatsheet</h4>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', lineHeight: '1.5', textAlign: 'left' }}>
-          Middle School Challenge 4 (Earthquake Resistant Tower): Select steel trusses as support materials and calibrate height to 20 levels to sustain shake vibrations.
+          Middle School Challenge 4 (Seismic Structural Loads): Select steel cross braces as reinforcement materials and calibrate frequency bounds to sustain simulation vibrations.
         </p>
       </div>
     )}
