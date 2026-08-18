@@ -279,6 +279,17 @@ export default function PrincipalDashboard() {
                     <div className="text-[10px] text-zinc-500">District trends with privacy safeguards</div>
                   </div>
                 </Link>
+
+                <Link
+                  href="/dashboard/discovery"
+                  className="flex items-start gap-3 p-2.5 rounded-lg hover:bg-purple-50 transition-colors group/item"
+                >
+                  <span className="text-xl">🤖</span>
+                  <div>
+                    <div className="font-bold text-[#2D183B] text-xs group-hover/item:text-[#5C2483]">Discovery Lab</div>
+                    <div className="text-[10px] text-zinc-500">Interactive standard simulations & lab journals</div>
+                  </div>
+                </Link>
               </div>
             </div>
 
