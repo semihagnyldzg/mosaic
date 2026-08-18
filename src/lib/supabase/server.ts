@@ -1,11 +1,40 @@
 import { createServerClient } from '@supabase/ssr';
 import { cookies } from 'next/headers';
 
+const createMockServerClient = () => {
+  return {
+    auth: {
+      async getUser() {
+        return { data: { user: null }, error: null };
+      },
+      async getSession() {
+        return { data: { session: null }, error: null };
+      }
+    },
+    from(table: string) {
+      return {
+        select() {
+          return {
+            async then(onfulfilled: any) {
+              onfulfilled({ data: [], error: null });
+            }
+          };
+        }
+      } as any;
+    }
+  } as any;
+};
+
 export const createClient = async () => {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+  if (url.includes('wjdowtmrbomhejcunajc.supabase.co') || !url) {
+    return createMockServerClient();
+  }
+
   const cookieStore = await cookies();
 
   return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co',
+    url,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key',
     {
       cookies: {

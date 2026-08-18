@@ -105,9 +105,8 @@ const saveTableData = (table: string, data: any[]) => {
 
 class MockQueryResolved {
   constructor(private data: any) {}
-  async then(onfulfilled: (value: any) => void) {
-    onfulfilled({ data: this.data, error: null });
-    return { data: this.data, error: null };
+  then(onfulfilled: (value: any) => void, onrejected?: (reason: any) => void) {
+    return Promise.resolve({ data: this.data, error: null }).then(onfulfilled, onrejected);
   }
 }
 
@@ -124,7 +123,7 @@ class MockQueryPendingUpdate {
     return this;
   }
 
-  async then(onfulfilled: (value: any) => void) {
+  then(onfulfilled: (value: any) => void, onrejected?: (reason: any) => void) {
     const tableData = getTableData(this.table);
     const updated: any[] = [];
     const newTableData = tableData.map(item => {
@@ -140,9 +139,7 @@ class MockQueryPendingUpdate {
       return item;
     });
     saveTableData(this.table, newTableData);
-    const res = { data: updated, error: null };
-    onfulfilled(res);
-    return res;
+    return Promise.resolve({ data: updated, error: null }).then(onfulfilled, onrejected);
   }
 }
 
@@ -159,7 +156,7 @@ class MockQueryPendingDelete {
     return this;
   }
 
-  async then(onfulfilled: (value: any) => void) {
+  then(onfulfilled: (value: any) => void, onrejected?: (reason: any) => void) {
     const tableData = getTableData(this.table);
     const newTableData = tableData.filter(item => {
       let matches = true;
@@ -169,9 +166,7 @@ class MockQueryPendingDelete {
       return !matches;
     });
     saveTableData(this.table, newTableData);
-    const res = { data: null, error: null };
-    onfulfilled(res);
-    return res;
+    return Promise.resolve({ data: null, error: null }).then(onfulfilled, onrejected);
   }
 }
 
@@ -265,11 +260,8 @@ class MockQuery {
     return list;
   }
 
-  async then(onfulfilled: (value: any) => void) {
-    const data = this.execute();
-    const res = { data, error: null };
-    onfulfilled(res);
-    return res;
+  then(onfulfilled: (value: any) => void, onrejected?: (reason: any) => void) {
+    return Promise.resolve({ data: this.execute(), error: null }).then(onfulfilled, onrejected);
   }
 }
 

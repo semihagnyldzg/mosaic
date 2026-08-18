@@ -1,6 +1,19 @@
 import { createServerClient } from '@supabase/ssr';
 import { type NextRequest, NextResponse } from 'next/server';
 
+const createMockServerClient = () => {
+  return {
+    auth: {
+      async getUser() {
+        return { data: { user: null }, error: null };
+      },
+      async getSession() {
+        return { data: { session: null }, error: null };
+      }
+    }
+  } as any;
+};
+
 export const updateSession = async (request: NextRequest) => {
   let response = NextResponse.next({
     request: {
@@ -8,8 +21,14 @@ export const updateSession = async (request: NextRequest) => {
     },
   });
 
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
+  if (url.includes('wjdowtmrbomhejcunajc.supabase.co') || !url) {
+    const supabase = createMockServerClient();
+    return { response, user: null, supabase };
+  }
+
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co',
+    url,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key',
     {
       cookies: {
