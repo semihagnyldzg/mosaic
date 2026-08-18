@@ -31,12 +31,20 @@ const printingResources = {
     { id: 'bb-res-exit-ticket', category: 'Student Learning Resources', title: 'AI Engineer Exit Ticket', part: 'part2', pages: 2, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Individual metacognitive exit ticket covering algorithms, sequence, and efficiency.' },
 
     // Student Learning Resources (Part 3)
-    { id: 'bb-res-var-box', category: 'Student Learning Resources', title: 'Variable Box Cards', part: 'part3', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Physical variable labels (userName, userQuestion, selectedTopic, score) and empty value boxes for classroom simulations.' },
-    { id: 'bb-res-var-role', category: 'Student Learning Resources', title: 'Human Variable Cards', part: 'part3', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Name tags and variables badge cards to act out dynamic greeting updates.' },
-    { id: 'bb-res-var-canvas', category: 'Student Learning Resources', title: 'Variable Planning Canvas', part: 'part3', pages: 2, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Planning template to define variable names, data types, and purposes for the Scratch project.' },
-    { id: 'bb-res-mem-test', category: 'Student Learning Resources', title: 'Memory Test Sheet', part: 'part3', pages: 1, ratio: '1 per pair', mode: 'Digital + Printable', directions: 'Test logs for auditing whether the chatbot stores, updates, and retrieves distinct names correctly.' },
-    { id: 'bb-res-var-debug', category: 'Student Learning Resources', title: 'Variable Debugging Sheet', part: 'part3', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Bugs diagnostic checklist focusing on uninitialized variables, container mismatches, or reset timing.' },
-
+    { id: 'bb-res-greenhouse-mission', category: 'Student Learning Resources', title: 'Smart Greenhouse Mission Card', part: 'part3', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Introduction sheet outlining the smart greenhouse challenge and plant health conditions.' },
+    { id: 'bb-res-sort-cards', category: 'Student Learning Resources', title: 'Stays the Same / Can Change Cards', part: 'part3', pages: 1, ratio: '1 set per team', mode: 'Printable Recommended', directions: 'Sorting cards for classifying greenhouse name, windows, temperature, soil moisture, and water tank variables.' },
+    { id: 'bb-res-mem-box', category: 'Student Learning Resources', title: 'Variable Memory Box Cards', part: 'part3', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Physical labels for Temperature, Soil Moisture, and Water Level memory cups or envelopes.' },
+    { id: 'bb-res-event-cards', category: 'Student Learning Resources', title: 'Greenhouse Event Cards', part: 'part3', pages: 2, ratio: '1 set per team', mode: 'Printable Recommended', directions: 'Scenario event cards (Sun, Plant uses water, Water turns on, Night) that trigger changes to variables.' },
+    { id: 'bb-res-conditions-timeline', category: 'Student Learning Resources', title: 'Changing Conditions Timeline', part: 'part3', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'A worksheet timeline tracking variable changes from morning to afternoon.' },
+    { id: 'bb-res-greenhouse-canvas', category: 'Student Learning Resources', title: 'Smart Greenhouse Design Canvas', part: 'part3', pages: 2, ratio: '1 per team', mode: 'Printable Recommended', directions: 'System design canvas with 10 questions covering plant protection rules and logic checkpoints.' },
+    { id: 'bb-res-var-plan', category: 'Student Learning Resources', title: 'Variable Planning Sheet', part: 'part3', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'A simple sheet mapping variable names to starting values and events.' },
+    { id: 'bb-res-stress-scenarios', category: 'Student Learning Resources', title: 'Greenhouse Scenario Cards', part: 'part3', pages: 1, ratio: '1 set per pair', mode: 'Optional Print', directions: 'Stress-testing scenarios (A to E) to audit greenhouse reaction rules.' },
+    { id: 'bb-res-greenhouse-test-log', category: 'Student Learning Resources', title: 'Variable Test Log', part: 'part3', pages: 2, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Audit table logging Starting Values | What Changed? | Expected New Value | Expected Response.' },
+    { id: 'bb-res-greenhouse-debug', category: 'Student Learning Resources', title: 'Debugging Sheet', part: 'part3', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Diagnostics checklist for tracing variable bugs, resets, and checks.' },
+    { id: 'bb-res-water-saving', category: 'Student Learning Resources', title: 'Water-Saving Challenge Card', part: 'part3', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Optimization card explaining the water-saving rules and trade-offs.' },
+    { id: 'bb-res-var-gallery-walk', category: 'Student Learning Resources', title: 'Gallery Walk Feedback Sheet', part: 'part3', pages: 1, ratio: '1 per student', mode: 'Printable Recommended', directions: 'Peer review sheets with I noticed, I wonder, and Have you considered columns.' },
+    { id: 'bb-res-var-exit-ticket', category: 'Student Learning Resources', title: 'Exit Ticket', part: 'part3', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Individual exit ticket with 8 conceptual and reflection questions for Grades 4-5.' },
+    
     // Student Learning Resources (Part 4)
     { id: 'bb-res-cond-cards', category: 'Student Learning Resources', title: 'IF/THEN Scenario Cards', part: 'part4', pages: 2, ratio: '1 per pair', mode: 'Optional Print', directions: 'Cards with real-world conditional scenarios (weather, battery life, traffic signs) for coding hooks.' },
     { id: 'bb-res-tree-canvas', category: 'Student Learning Resources', title: 'Decision Tree Canvas', part: 'part4', pages: 2, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Tree diagram template for mapping out nested chatbot keywords and fallback outputs.' },
@@ -93,9 +101,15 @@ const prepChecklist = {
     ],
     part3: [
       'Read PD guides: "Understanding Variables" and "Scratch Variables".',
-      'Prepare physical boxes/envelopes and card labels for the Variable Box Challenge.',
-      'Print Variable Planning Canvas (1 per team).',
-      'Verify students can create variables inside their Scratch project.'
+      'Print Smart Greenhouse Mission Cards (1 per team).',
+      'Print Stays the Same / Can Change Sorting Cards (1 set per team).',
+      'Prepare physical Memory Boxes/envelopes and label cards.',
+      'Print Greenhouse Event Cards & limited water constraint cards.',
+      'Print Changing Conditions Timeline worksheets.',
+      'Print Smart Greenhouse Design Canvas (1 per team).',
+      'Print Variable Planning Sheets & Scenario Cards.',
+      'Print Variable Test Logs and Debugging Sheets (1 per team).',
+      'Print Water-Saving Challenge Cards & Exit Tickets.'
     ],
     part4: [
       'Read PD guides: "Teaching Conditionals" and "Decision Trees".',
@@ -637,6 +651,13 @@ const [userName, setUserName] = useState('');
 const [chatMessages, setChatMessages] = useState([]);
 const [chatInput, setChatInput] = useState('');
 const [isBotTyping, setIsBotTyping] = useState(false);
+  /* --- Smart Greenhouse Challenge (Part 3 / Day 4) States --- */
+  const [ghTemp, setGhTemp] = useState(72);
+  const [ghMoisture, setGhMoisture] = useState(70);
+  const [ghWater, setGhWater] = useState(80);
+  const [ghG1, setGhG1] = useState(false);
+  const [ghG2, setGhG2] = useState(false);
+  const [ghG3, setGhG3] = useState(false);
 const chatEndRef = useRef(null);
 /* --- Elementary Challenge 2 States --- */
 const [solarAngle, setSolarAngle] = useState(20);
@@ -1264,43 +1285,123 @@ Connect Database Cable 🔌
 )}
 {/* Day 4: Variables & Architecture */}
 {activeDay === 4 && (
-<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
-<div>
-<h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '12px' }}>Day 4: Storing Variables & Flow</h4>
-<p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.5', marginBottom: '12px' }}>
-Variables are memory storage boxes. We greet users dynamically using the <code>userName</code> box variable.
-</p>
-<div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '16px' }}>
-<strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>System Lookup Architecture:</strong>
-<span style={{ fontSize: '0.7rem', fontFamily: 'monospace', color: '#fff' }}>
-User Input ➔ Match Keywords ➔ Search List Records ➔ Return Result
-</span>
-</div>
-<p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.5', marginBottom: '20px' }}>
-Type your name on the right and click "Save Variable" to define user properties in memory.
-</p>
-{userName && (
-<button onClick={() => {
-setActiveDay(5);
-// Pre-fill simulator chat
-setChatMessages([
-{ id: 1, sender: 'bot', text: 'Systems calibrated! Hello ' + userName + '. I\'m your school lunch chatbot. Ask me "Monday" or test typo tolerances!' }
-]);
-}} className="btn btn-primary" style={{ padding: '10px 20px', borderRadius: '6px' }}>Go to Day 5 ➜</button>
+  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '32px' }}>
+    <div>
+      <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 4: Smart Greenhouse Challenge</h4>
+      <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', marginBottom: '12px' }}>
+        Program a Smart Greenhouse to keep plants healthy under changing conditions. You must test the system rules by triggering all three engineering test objectives below!
+      </p>
+
+      {/* Sensor Dashboard (Variables in Memory) */}
+      <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '12px' }}>
+        <strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem' }}>🌱 Variable Memory Boxes (Current State):</strong>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '8px' }}>
+          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <span style={{ fontSize: '0.65rem', display: 'block', color: 'var(--text-secondary)' }}>🌡️ Temp</span>
+            <strong style={{ color: ghTemp > 85 ? 'var(--warning)' : '#fff', fontSize: '1.1rem' }}>{ghTemp}°F</strong>
+          </div>
+          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <span style={{ fontSize: '0.65rem', display: 'block', color: 'var(--text-secondary)' }}>🌱 Moisture</span>
+            <strong style={{ color: ghMoisture < 30 ? 'var(--danger)' : '#fff', fontSize: '1.1rem' }}>{ghMoisture}%</strong>
+          </div>
+          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <span style={{ fontSize: '0.65rem', display: 'block', color: 'var(--text-secondary)' }}>💧 Water Level</span>
+            <strong style={{ color: ghWater < 20 ? 'var(--danger)' : '#fff', fontSize: '1.1rem' }}>{ghWater}%</strong>
+          </div>
+        </div>
+      </div>
+
+      {/* Actuators (System actions based on variables) */}
+      <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '12px' }}>
+        <strong style={{ color: 'var(--secondary-light)', fontSize: '0.75rem' }}>⚙️ System Responses (Rules):</strong>
+        <div style={{ fontSize: '0.75rem', color: '#fff', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <span>🌀 Ventilator Fan (IF temp &gt; 85°F):</span>
+            <strong style={{ color: ghTemp > 85 ? 'var(--warning)' : 'var(--text-muted)' }}>{ghTemp > 85 ? 'RUNNING 🟢' : 'STANDBY ⚪'}</strong>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <span>💧 Irrigation Pump (IF moisture &lt; 30% AND water &gt; 20%):</span>
+            <strong style={{ color: (ghMoisture < 30 && ghWater > 20) ? 'var(--success)' : 'var(--text-muted)' }}>{(ghMoisture < 30 && ghWater > 20) ? 'ACTIVE 🟢' : 'STANDBY ⚪'}</strong>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <span>🚨 Water Alert (IF water level &lt; 20%):</span>
+            <strong style={{ color: ghWater < 20 ? 'var(--danger)' : 'var(--text-muted)' }}>{ghWater < 20 ? 'LOW WATER ALARM 🔴' : 'SAFE ⚪'}</strong>
+          </div>
+        </div>
+      </div>
+
+      {ghG1 && ghG2 && ghG3 ? (
+        <button onClick={() => {
+          setActiveDay(5);
+          setChatMessages([
+            { id: 1, sender: 'bot', text: 'Systems calibrated! Smart Greenhouse variables tested. Let\'s proceed to Conditionals!' }
+          ]);
+        }} className="btn btn-primary" style={{ padding: '10px 20px', borderRadius: '6px', width: '100%' }}>Go to Day 5 ➜</button>
+      ) : (
+        <div style={{ color: 'var(--warning)', fontSize: '0.75rem', padding: '8px', background: 'rgba(245,158,11,0.05)', border: '1px solid rgba(245,158,11,0.2)', borderRadius: '4px', textAlign: 'center', fontWeight: 'bold' }}>
+          🔒 Unlock Day 5 by triggering all three engineering test objectives!
+        </div>
+      )}
+    </div>
+
+    {/* Simulation Controller & Objectives */}
+    <div>
+      <span style={{ fontSize: '0.75rem', color: 'var(--secondary-light)', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>Environmental Controls:</span>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '14px' }}>
+        <button onClick={() => {
+          setGhTemp(prev => Math.min(100, prev + 15));
+          setGhMoisture(prev => Math.max(0, prev - 15));
+          if (ghTemp + 15 > 85) setGhG1(true);
+        }} className="btn" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', padding: '8px', borderRadius: '4px', cursor: 'pointer' }}>
+          ☀️ Heat Wave (Temp +15, Moist -15)
+        </button>
+        <button onClick={() => {
+          if (ghWater > 20) {
+            setGhMoisture(prev => Math.min(100, prev + 25));
+            setGhWater(prev => Math.max(0, prev - 15));
+            setGhG2(true);
+            if (ghWater - 15 < 20) setGhG3(true);
+          } else {
+            alert('Cannot water plants: Water tank is empty!');
+          }
+        }} className="btn" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', padding: '8px', borderRadius: '4px', cursor: 'pointer' }}>
+          💧 Water Plants (Moist +25, Water -15)
+        </button>
+        <button onClick={() => {
+          setGhWater(90);
+        }} className="btn" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', padding: '8px', borderRadius: '4px', cursor: 'pointer' }}>
+          🌧️ Refill Tank (Water = 90%)
+        </button>
+        <button onClick={() => {
+          setGhTemp(prev => Math.max(40, prev - 12));
+          setGhMoisture(prev => Math.min(100, prev + 5));
+        }} className="btn" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', padding: '8px', borderRadius: '4px', cursor: 'pointer' }}>
+          🌙 Cool Night (Temp -12, Moist +5)
+        </button>
+      </div>
+
+      {/* Objectives Checkbox checklist */}
+      <div style={{ background: 'rgba(0,0,0,0.15)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.08)' }}>
+        <strong style={{ color: '#fff', fontSize: '0.75rem', display: 'block', marginBottom: '8px' }}>🎯 Engineering Test Objectives:</strong>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
+            <input type="checkbox" checked={ghG1} readOnly style={{ accentColor: 'var(--primary)' }} />
+            <span style={{ color: ghG1 ? 'var(--success)' : '#fff' }}>1. Trigger Ventilator Fan (Temp &gt; 85°F)</span>
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
+            <input type="checkbox" checked={ghG2} readOnly style={{ accentColor: 'var(--primary)' }} />
+            <span style={{ color: ghG2 ? 'var(--success)' : '#fff' }}>2. Trigger Irrigation Pump (Moist &lt; 30%, Water &gt; 20%)</span>
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
+            <input type="checkbox" checked={ghG3} readOnly style={{ accentColor: 'var(--primary)' }} />
+            <span style={{ color: ghG3 ? 'var(--success)' : '#fff' }}>3. Trigger Low Water Warning (Water &lt; 20%)</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
 )}
-</div>
-<div style={{ display: 'flex', flexDirection: 'column', gap: '16px', background: 'rgba(0,0,0,0.15)', borderRadius: '8px', padding: '20px' }}>
-<div style={{ display: 'flex', gap: '8px' }}>
-<input type="text" placeholder="Type name..." value={userNameInput} onChange={e => setUserNameInput(e.target.value)} style={{ flexGrow: 1, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', padding: '6px', color: '#fff', fontSize: '0.8rem', outline: 'none' }} />
-<button onClick={saveName} className="btn btn-primary" style={{ padding: '6px 12px', fontSize: '0.75rem' }}>Save Variable</button>
-</div>
-<div style={{ height: '80px', border: '1px dashed rgba(255,255,255,0.15)', borderRadius: '6px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-<span style={{ fontSize: '0.65rem', color: 'var(--text-muted)', fontFamily: 'monospace' }}>variable: userName</span>
-{userName ? <strong style={{ color: 'var(--success)', marginTop: '4px', fontSize: '1.1rem' }}>"{userName}"</strong> : <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>[ Box is Empty ]</span>}
-</div>
-</div>
-</div>
-)}
+
 {/* Day 5: Break the Bot Test Challenge */}
 {activeDay === 5 && (
 <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '32px' }}>
@@ -4250,27 +4351,57 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
         {/* SUBTAB CONTENT: OVERVIEW */}
         {activePart3SubTab === 'overview' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            {/* Smart Greenhouse Mission Hook */}
             <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
-              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>AI Engineer Mission Hook</span>
-              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: Storing User Context</h4>
+              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Smart Systems Engineer Hook</span>
+              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: Keep the Plant Healthy</h4>
               <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
-                Introduce the lesson:
-                <em style={{ display: 'block', margin: '8px 0', color: '#fff', borderLeft: '3px solid var(--primary)', paddingLeft: '10px' }}>
-                  "To build a personalized helper, our chatbot must remember details. Today, we step into the role of Database Developers to configure variables that act as labeled storage boxes."
+                Introduce the greenhouse challenge:
+                <em style={{ display: 'block', margin: '8px 0', color: '#fff', borderLeft: '3px solid var(--primary)', paddingLeft: '10px', fontStyle: 'normal' }}>
+                  "Our school wants to grow healthy plants in a smart greenhouse. But the greenhouse keeps changing. It can get hotter, the soil can become dry, and the water tank can become low. Your engineering team must design a smart system that can keep track of these changes and help protect the plant."
                 </em>
+                Set the foundational inquiry: <strong>"How does a computer system remember information that can change?"</strong> Avoid introducing the word <em>variable</em> immediately. Let students discover the need for a system memory first.
               </p>
             </div>
+
+            {/* Smart Systems Team Roles */}
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '8px' }}>Smart Systems Collaborative Roles</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#60a5fa', fontSize: '0.75rem', display: 'block' }}>🌱 Smart Systems Engineer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Thinks about the whole greenhouse design and decides what conditions the computer needs to monitor.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block' }}>📊 Data Monitor</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Keeps track of changing values (temperatures, moisture levels) and updates the memory indicators.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#a78bfa', fontSize: '0.75rem', display: 'block' }}>🧪 Systems Tester</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Triggers environmental changes (heat waves, dry spells) and audits if the system responds correctly.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#f59e0b', fontSize: '0.75rem', display: 'block' }}>💻 Scratch Developer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Translates the approved sensors, memory logic, and response rules into Scratch code variables.</span>
+                </div>
+              </div>
+              <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', display: 'block', marginTop: '6px' }}>
+                💡 <em>Facilitator Tip:</em> Rotate team roles during activities so every student experiences physical monitoring, logic auditing, and code building.
+              </span>
+            </div>
+
+            {/* STEAM Career Spotlight */}
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
               <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>💼 STEAM Career Spotlight</strong>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {['Database Administrator', 'Data Engineer', 'Memory Systems Designer'].map(career => (
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '8px' }}>
+                {['Agricultural Engineer', 'Environmental Engineer', 'Software Engineer', 'Automation Engineer', 'Smart Systems Engineer'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
                     {career}
                   </span>
                 ))}
               </div>
-              <p style={{ fontSize: '0.75rem', margin: '8px 0 0 0', lineHeight: '1.4' }}>
-                Highlight that memory variables are essential for database configurations and session states across all software architectures.
+              <p style={{ fontSize: '0.75rem', margin: 0, lineHeight: '1.4' }}>
+                Smart Systems Engineers build technology that automates farms, regulates vertical greenhouse setups, records weather dynamics, and designs energy-efficient systems for smart homes.
               </p>
             </div>
           </div>
@@ -4279,21 +4410,122 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
         {/* SUBTAB CONTENT: HOUR 1 (THINK) */}
         {activePart3SubTab === 'hour1' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 1: What Changes? */}
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: Variable Box Challenge</span>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: What Changes? (Information Sort)</span>
               <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
-                Model variables using envelopes/boxes containing value cards. Labels stay constant; contents change.
+                Teams sort six greenhouse information cards into two groups: <strong>STAYS THE SAME</strong> (Greenhouse Name, Windows, Plant Type) and <strong>CAN CHANGE</strong> (Temperature, Soil Moisture, Water Tank).
               </p>
-              <strong style={{ color: '#fff', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>Inquiry Prompt:</strong>
-              <p style={{ fontStyle: 'italic', margin: 0, fontSize: '0.75rem', lineHeight: '1.4' }}>
-                "What changes about a variable? What stays the same? Why does memory matter?"
-              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Info Sorting Cards, Stays/Changes Sheet</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "What changes in one hour? What changes when the sun comes out? Why does the name stay the same?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Students classifying dynamic values apart from static configuration tags.</div>
+                <div>⚠️ <strong>Misconceptions:</strong> Thinking all information is variable. Emphasize if the system needs to constantly update it.</div>
+              </div>
             </div>
+
+            {/* Activity 2: Human Memory Box */}
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: Human Variable Roleplay</span>
-              <p style={{ margin: '6px 0 0 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
-                Students act out dynamic greetings using index badge name cards.
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: Human Memory Box Challenge</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams use labeled boxes (Temp, Moisture, Water) with starting values (72, 70, 80). Introduce weather events sequentially. Students physically replace cards with new values as conditions fluctuate.
               </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> 3 labeled cups/envelopes, value card slips</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Where did we put the new value? What happened to the old number? Did the box label change?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Data Monitors removing old cards and inserting new numbers.</div>
+              </div>
+            </div>
+
+            {/* Activity 3: Unexpected Change */}
+            <div style={{ background: 'rgba(239, 68, 68, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(239, 68, 68, 0.15)' }}>
+              <span style={{ color: '#f87171', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 3: Unexpected Change — It's Getting Hot!</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Event card: ☀️ <strong>Temperature rises to 88°F.</strong> Guide students to update the Temperature box without adding a new cup. Formally define <strong>VARIABLE</strong> as a named memory container holding changeable values.
+              </p>
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '4px', fontSize: '0.75rem', fontFamily: 'monospace', color: '#fff', marginBottom: '8px' }}>
+                temperature = 88 ➔ [Name: temperature] [Value: 88]
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Event Card, Concept Reference Card</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "How does a program store changing information? What is the difference between a variable's name and its value?"</div>
+              </div>
+            </div>
+
+            {/* Activity 4: Variable Detective */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 4: Variable Detective</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students review items (Game Score, School Address, Lives count, Class number, Battery level) and identify whether they should be stored in variables. Teams justify their reasoning.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Detective card list</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Does this value change during the program? Why does the computer need to remember it?"</div>
+              </div>
+            </div>
+
+            {/* Activity 5: Connect Variables to Algorithms */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 5: Connect Variables to Algorithms</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Explain the interaction: <strong>Variables REMEMBER, Algorithms DECIDE based on memory.</strong> Model the rule: <code>IF temperature &gt; 85°F ➔ Turn on Fan</code>. Students map variables to decisions on a planner.
+              </p>
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '4px', fontSize: '0.75rem', color: 'var(--primary-light)', textAlign: 'center', fontFamily: 'monospace' }}>
+                OBSERVE (Variable) ➔ CHECK (Algorithm) ➔ ACT (Output)
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Link-up Worksheets</div>
+              </div>
+            </div>
+
+            {/* Activity 6: New Constraint */}
+            <div style={{ background: 'rgba(239, 68, 68, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(239, 68, 68, 0.15)' }}>
+              <span style={{ color: '#f87171', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 6: New Constraint (Limited Water)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Introduce limited resources: 🚨 <strong>NEW CONSTRAINT: Water tank has only 20% water left.</strong> Students combine checks: <code>IF soil moisture is dry AND water tank &gt; 20% ➔ water plant</code>. Otherwise, sound warning alert.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Limited Water Constraint Cards</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "How do we write a rule that checks two things? What happens if only one is true?"</div>
+              </div>
+            </div>
+
+            {/* Activity 7: Conditions Keep Changing */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 7: Conditions Keep Changing Timeline</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students trace changing parameters from morning (Temp 70, Moist 60) to midday (Temp +10, Moist -10) to afternoon. Students log values and observe that variables hold the state representing right now.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Timeline Log Worksheet</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Which number should the system use - the start number or the newest number? Why?"</div>
+              </div>
+            </div>
+
+            {/* Activity 8: Design Canvas */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 8: Smart Greenhouse Design Canvas</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams compile their plan before coding. Design rules must answer: What are we protecting? What 3 variables do we track? What are the start values? What rules regulate the fan, pump, and low-water alerts?
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 20 mins | 🛠️ <strong>Materials:</strong> Smart Greenhouse Design Canvas</div>
+              </div>
+            </div>
+
+            {/* Hour 1 Checkpoint */}
+            <div style={{ background: 'rgba(16, 185, 129, 0.04)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+              <span style={{ color: '#34d399', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Hour 1 Checkpoint Requirements</span>
+              <ul style={{ margin: '6px 0 0 0', paddingLeft: '16px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px', lineHeight: '1.4' }}>
+                <li>✅ Three clearly named variables (temperature, soil moisture, water level).</li>
+                <li>✅ Defined starting values and logic change triggers for each variable.</li>
+                <li>✅ System rules utilizing decisions with at least two checks.</li>
+                <li>✅ Completed Smart Greenhouse Design Canvas signed by the facilitator.</li>
+              </ul>
+              <span style={{ fontSize: '0.7rem', color: '#34d399', display: 'block', marginTop: '8px' }}>
+                🗣️ <em>Facilitator Prompt:</em> Ask students: "What does this variable represent? Show me how your algorithm makes decisions using this value."
+              </span>
             </div>
           </div>
         )}
@@ -4301,17 +4533,182 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
         {/* SUBTAB CONTENT: HOUR 2 (BUILD & TEST) */}
         {activePart3SubTab === 'hour2' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 9: Build the Memory */}
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 3: Scratch Variable Implementation</span>
-              <p style={{ margin: '6px 0 0 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
-                Program orange Scratch SET blocks to store userName. Guide students to check uninitialized variables and reset states.
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 9: Build the Greenhouse Memory in Scratch</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students create three variables (<code>temperature</code>, <code>soil moisture</code>, <code>water level</code>) and set starting values (72, 70, 80) under the initial program launch trigger.
               </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Computers with Scratch, Variable Planning Canvas</div>
+                <div>🔍 <strong>Look-fors:</strong> Students naming variables lowercase without spaces to ensure Scratch compatibility.</div>
+              </div>
             </div>
-            <div style={{ background: 'rgba(139, 92, 246, 0.05)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#a78bfa', display: 'block', fontSize: '0.75rem' }}>🚀 Level-Up Challenge (Extension)</strong>
-              <p style={{ margin: '4px 0 0 0', fontSize: '0.7rem', lineHeight: '1.4' }}>
-                Store multiple user fields or score counters inside custom lists.
+
+            {/* Activity 10: Make It Change */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 10: Make the Greenhouse Change</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students program keys or event buttons to update variables (Sun event: temp +5; Plant dry event: moisture -10; Water event: moisture +20, water tank -10; Night event: temp -5).
               </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Scratch Editor</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Did one event change multiple variables? What happened to the old values?"</div>
+              </div>
+            </div>
+
+            {/* Activity 11: Make It Respond */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 11: Make the Greenhouse Respond</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Connect variables to actuators using IF blocks (IF temp &gt; 85 ➔ Fan ON; IF moisture &lt; 30 ➔ Water ON; IF water &lt; 10 ➔ Refill warning). Trace execution loops.
+              </p>
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '4px', fontSize: '0.75rem', color: '#fff', fontFamily: 'monospace' }}>
+                OBSERVE (Variable) ➔ REMEMBER ➔ CHECK (Condition) ➔ ACT (Response)
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 20 mins | 🛠️ <strong>Materials:</strong> Scratch logic blocks</div>
+              </div>
+            </div>
+
+            {/* Activity 12: Stress Test */}
+            <div style={{ background: 'rgba(139, 92, 246, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(139, 92, 246, 0.15)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 12: Greenhouse Stress Test</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams swap computers. Testers feed environmental parameters (Scenarios A to E) to verify if indicators, alerts, and actuators respond correctly. Results are logged in the <strong>Variable Test Log</strong>.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '0.7rem', color: '#fff', background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <div>• Scenario A: Temp 90, Moisture 60, Water 70 (Fan ON)</div>
+                <div>• Scenario B: Temp 70, Moisture 20, Water 80 (Pump ON)</div>
+                <div>• Scenario C: Temp 70, Moisture 20, Water 5 (Warning ON, Pump OFF)</div>
+                <div>• Scenario D: Temp 92, Moisture 15, Water 5 (Fan ON, Warning ON, Pump OFF)</div>
+                <div>• Scenario E: Consecutive temperature shifts to check value resets</div>
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 20 mins | 🛠️ <strong>Materials:</strong> Scenario Cards, Variable Test Log</div>
+              </div>
+            </div>
+
+            {/* Activity 13: Debug the Memory */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 13: Debug the Memory</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams diagnose and repair logical errors: values updating the wrong variable, checks comparing outdated values, reset failures, or missing initial sets. Revisions are logged on the debugging sheet.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Variable Debugging Sheet</div>
+                <div>⚠️ <strong>Look-fors:</strong> Code check confirming variables are reset when the green flag is clicked.</div>
+              </div>
+            </div>
+
+            {/* Activity 14: Protect the Plant */}
+            <div style={{ background: 'rgba(139, 92, 246, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(139, 92, 246, 0.15)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 14: Protect the Plant for One Day</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Smart Greenhouse must run automatically to protect the tomato plant. Safe bounds: Temperature (65-85°F), Soil Moisture (30-80%), and Water Level kept above 10%. Verify if the system handles the timeline.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 20 mins | 🛠️ <strong>Materials:</strong> Map/Timeline guide, Simulation workspace</div>
+              </div>
+            </div>
+
+            {/* Activity 15: Make It Better */}
+            <div style={{ background: 'rgba(139, 92, 246, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(139, 92, 246, 0.15)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 15: Make It Better (Water-Saving Challenge)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Challenge: Keep the plant safe while using the least water possible. Compare rules: watering only when critical vs. preemptive watering. Discuss efficiency and resource trade-offs.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 20 mins | 🛠️ <strong>Materials:</strong> Water-saving challenge card, Planning Sheet</div>
+              </div>
+            </div>
+
+            {/* Gallery Walk */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Gallery Walk & Peer Review</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams show their smart greenhouse canvas, test logs, and simulations. Peer feedback uses sticky notes with three columns: "I noticed...", "I wonder...", "Have you considered...?"
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Gallery Walk Feedback Sheet</div>
+              </div>
+            </div>
+
+            {/* Final Connection to AI BotBuilder */}
+            <div style={{ background: 'rgba(16, 185, 129, 0.04)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+              <span style={{ color: '#34d399', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Final Connection to AI BotBuilder</span>
+              <p style={{ margin: '6px 0 8px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Reconnect: What does a chatbot need to remember? (e.g. userName, question index, score, or dynamic topics). Summarize the unit story:
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '8px', fontSize: '0.7rem', color: '#fff', background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', textAlign: 'center' }}>
+                <div><strong>Part 1: DATA</strong><br/>What does a system KNOW?</div>
+                <div><strong>Part 2: ALGORITHMS</strong><br/>What does a system DO?</div>
+                <div><strong>Part 3: VARIABLES</strong><br/>What does a system REMEMBER as things change?</div>
+              </div>
+            </div>
+
+            {/* Reflection Exit Ticket */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fff', fontSize: '0.75rem', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>📝 Exit Ticket & Evaluation</span>
+              <ul style={{ margin: 0, paddingLeft: '16px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px', lineHeight: '1.4' }}>
+                <li>1. What is a variable?</li>
+                <li>2. What is the difference between a variable name and its value?</li>
+                <li>3. Name one variable from your greenhouse and what caused it to change.</li>
+                <li>4. How did your algorithm use a variable to make a decision?</li>
+                <li>5. Describe a bug you found and how you debugged it.</li>
+                <li>6. Why do smart systems need variables?</li>
+              </ul>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Exit Ticket Sheet</div>
+              </div>
+            </div>
+
+            {/* Level-Up Challenges */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <strong style={{ color: '#a78bfa', display: 'block', fontSize: '0.75rem', marginBottom: '6px' }}>🚀 Level-Up Challenges (Extensions)</strong>
+              <ul style={{ margin: 0, paddingLeft: '16px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px', lineHeight: '1.4' }}>
+                <li><strong>Level 1:</strong> Add a <code>plant growth</code> variable tracking heights.</li>
+                <li><strong>Level 2:</strong> Add a <code>day/time</code> clock simulation tracking elapsed time.</li>
+                <li><strong>Level 3:</strong> Program plant growth rates to change based on Temp and Moisture.</li>
+                <li><strong>Level 4:</strong> Show warnings when multiple parameters are simultaneously unsafe.</li>
+                <li><strong>Level 5:</strong> Keep plant healthy using the absolute minimal water.</li>
+              </ul>
+            </div>
+
+            {/* Common Misconceptions */}
+            <div style={{ background: 'rgba(245, 158, 11, 0.03)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(245, 158, 11, 0.15)' }}>
+              <span style={{ color: 'var(--warning)', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>⚠️ Common Misconceptions & Facilitation Tips</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '8px', fontSize: '0.75rem', lineHeight: '1.4' }}>
+                <div>
+                  <strong style={{ color: '#fff' }}>1. "A variable is just a number."</strong><br/>
+                  <em>Clarify:</em> A variable is the named box in memory (container). The number is the value inside. E.g. <code>temperature = 72</code>.
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>2. "Name and value are the same thing."</strong><br/>
+                  <em>Clarify:</em> <code>temperature</code> stays constant, but its value changes from 72 to 88.
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>3. "We need a new variable when numbers change."</strong><br/>
+                  <em>Clarify:</em> The same variable updates its contents. Old data is overwritten.
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>4. "Variables change on their own."</strong><br/>
+                  <em>Clarify:</em> Ask: "What instruction or event changed this number?"
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>5. "Variables and algorithms are the same."</strong><br/>
+                  <em>Clarify:</em> Variables REMEMBER, algorithms DECIDE.
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>6. "More water is always better."</strong><br/>
+                  <em>Clarify:</em> Discuss engineering trade-offs and natural balances.
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>7. "If code runs, it is correct."</strong><br/>
+                  <em>Clarify:</em> Ask: "Have you tested extreme hot or dry conditions?"
+                </div>
+              </div>
             </div>
           </div>
         )}
