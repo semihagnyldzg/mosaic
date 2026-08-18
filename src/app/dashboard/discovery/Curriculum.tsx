@@ -1562,91 +1562,185 @@ Connect Database Cable 🔌
 
 {/* Day 5: Break the Bot Test Challenge */}
 {activeDay === 5 && (
-<div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr', gap: '32px' }}>
-<div>
-<h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 5: "Break the Bot" Test</h4>
-<p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', marginBottom: '12px' }}>
-Play the role of an <strong>AI Tester</strong>. Send these queries in the chat console to test your logic tolerances and check them off:
-</p>
-<div style={{ display: 'flex', flexDirection: 'column', gap: '6px', background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', marginBottom: '16px' }}>
-<label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
-<input type="checkbox" checked={c1TestExpected} readOnly style={{ accentColor: 'var(--primary)' }} />
-<span style={{ color: c1TestExpected ? 'var(--success)' : '#fff' }}>1. Expected Question (type "Monday")</span>
-</label>
-<label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
-<input type="checkbox" checked={c1TestPhrasing} readOnly style={{ accentColor: 'var(--primary)' }} />
-<span style={{ color: c1TestPhrasing ? 'var(--success)' : '#fff' }}>2. Phrasing Variation (type "menu")</span>
-</label>
-<label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
-<input type="checkbox" checked={c1TestTypo} readOnly style={{ accentColor: 'var(--primary)' }} />
-<span style={{ color: c1TestTypo ? 'var(--success)' : '#fff' }}>3. Spelling Typo (type "mondy")</span>
-</label>
-<label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
-<input type="checkbox" checked={c1TestUnexpected} readOnly style={{ accentColor: 'var(--primary)' }} />
-<span style={{ color: c1TestUnexpected ? 'var(--success)' : '#fff' }}>4. Unknown Request (type "hello")</span>
-</label>
-</div>
-{c1TestExpected && c1TestPhrasing && c1TestTypo && c1TestUnexpected ? (
-<div style={{ background: 'rgba(16, 185, 129, 0.08)', borderLeft: '4px solid #10b981', padding: '10px', borderRadius: '4px', marginBottom: '12px' }}>
-<strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block' }}>✓ Verification Completed!</strong>
-<span style={{ fontSize: '0.7rem' }}>Exit ticket ready. You are certified for Level 2!</span>
-</div>
-) : null}
-{c1TestExpected && c1TestPhrasing && c1TestTypo && c1TestUnexpected && (
-<button onClick={() => handleFinishWeek(10)} className="btn btn-primary" style={{ padding: '10px 20px', borderRadius: '6px' }}>Finish Week 1! 🏆</button>
-)}
-</div>
-<div style={{ background: 'rgba(0,0,0,0.2)', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', padding: '14px', display: 'flex', flexDirection: 'column', height: '260px' }}>
-<div style={{ flexGrow: 1, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: '6px', paddingRight: '4px' }}>
-{chatMessages.map(m => (
-<div key={m.id} style={{ alignSelf: m.sender === 'user' ? 'flex-end' : 'flex-start', padding: '6px 10px', borderRadius: '8px', fontSize: '0.7rem', background: m.sender === 'user' ? 'var(--primary)' : 'rgba(255,255,255,0.05)', color: '#fff' }}>
-{m.text}
-</div>
-))}
-{isBotTyping && <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>Lunchie is typing...</div>}
-<div ref={chatEndRef} />
-</div>
-<div style={{ display: 'flex', gap: '6px', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '6px', marginTop: '6px' }}>
-<input
-type="text"
-value={chatInput}
-onChange={e => setChatInput(e.target.value)}
-onKeyDown={e => {
-if (e.key === 'Enter') {
-e.preventDefault();
-const text = chatInput.trim().toLowerCase();
-if (!text) return;
-// Track checklist triggers
-if (text.includes('monday')) setC1TestExpected(true);
-if (text.includes('menu')) setC1TestPhrasing(true);
-if (text.includes('mondy')) setC1TestTypo(true);
-if (text.includes('hello')) setC1TestUnexpected(true);
-const userMsg = { id: Date.now(), sender: 'user', text: chatInput };
-setChatMessages(prev => [...prev, userMsg]);
-setChatInput('');
-setIsBotTyping(true);
-setTimeout(() => {
-setIsBotTyping(false);
-let botResponse = '';
-if (text.includes('monday') || text.includes('mondy')) {
-botResponse = 'Hi ' + (userName || 'Student') + '! Monday\'s cleaned entree is Cheese Pizza!';
-} else if (text.includes('menu')) {
-botResponse = 'Hi ' + (userName || 'Student') + '! I searched my database lists. Our entrees are Cheese Pizza, Chicken Nuggets, and Salad!';
-} else if (text.includes('hello')) {
-botResponse = 'Hello ' + (userName || 'Student') + '! I registered your hello token. Let\'s start the test check!';
-} else {
-botResponse = 'Unknown input: "' + chatInput + '". I checked my lists, but that query returned 0 matches.';
-}
-setChatMessages(prev => [...prev, { id: Date.now() + 1, sender: 'bot', text: botResponse }]);
-}, 600);
-}
-}}
-placeholder="Press Enter to send (e.g. monday, menu)..."
-style={{ flexGrow: 1, background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', padding: '6px 8px', color: '#fff', fontSize: '0.7rem', outline: 'none' }}
-/>
-</div>
-</div>
-</div>
+  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '32px' }}>
+    <div>
+      <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 5: Smart Recycling Sorter Challenge</h4>
+      <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', marginBottom: '12px' }}>
+        Program an automated recycling sorter to process items on a conveyor belt. Use a loop to repeat the sorting cycle, tracking counts with variables, and avoiding infinite loop freezes!
+      </p>
+
+      {/* Sorter Dashboard (Variables in Memory) */}
+      <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '12px' }}>
+        <strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem' }}>📊 Sorter Variable Counters (Memory):</strong>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '6px' }}>
+          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--text-secondary)' }}>🧴 Plastic</span>
+            <strong style={{ color: '#fff', fontSize: '1.1rem' }}>{rsPlasticCount}</strong>
+          </div>
+          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--text-secondary)' }}>📰 Paper</span>
+            <strong style={{ color: '#fff', fontSize: '1.1rem' }}>{rsPaperCount}</strong>
+          </div>
+          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--text-secondary)' }}>🥫 Can</span>
+            <strong style={{ color: '#fff', fontSize: '1.1rem' }}>{rsCanCount}</strong>
+          </div>
+          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--text-secondary)' }}>🍎 Food</span>
+            <strong style={{ color: '#fff', fontSize: '1.1rem' }}>{rsFoodCount}</strong>
+          </div>
+          <div style={{ background: 'rgba(0,0,0,0.25)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid var(--primary)' }}>
+            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--primary-light)' }}>🔢 Total</span>
+            <strong style={{ color: 'var(--primary-light)', fontSize: '1.1rem' }}>{rsTotalCount}</strong>
+          </div>
+        </div>
+      </div>
+
+      {/* Sorter Loop Logic Settings */}
+      <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '12px' }}>
+        <strong style={{ color: 'var(--secondary-light)', fontSize: '0.75rem' }}>🔁 Loop Instruction Rules:</strong>
+        
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer', color: '#fff' }}>
+            <input type="radio" name="loopType" checked={rsLoopType === 'step'} onChange={() => setRsLoopType('step')} style={{ accentColor: 'var(--primary)' }} />
+            <span>Single Cycle (No Loop - Manual sorting one-by-one)</span>
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer', color: '#fff' }}>
+            <input type="radio" name="loopType" checked={rsLoopType === 'repeat5'} onChange={() => setRsLoopType('repeat5')} style={{ accentColor: 'var(--primary)' }} />
+            <span>REPEAT 5 TIMES (Processes next 5 items)</span>
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer', color: '#fff' }}>
+            <input type="radio" name="loopType" checked={rsLoopType === 'untilEmpty'} onChange={() => setRsLoopType('untilEmpty')} style={{ accentColor: 'var(--primary)' }} />
+            <span>REPEAT UNTIL conveyor_belt = empty (Process everything)</span>
+          </label>
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '8px', marginTop: '4px' }}>
+          <span style={{ fontSize: '0.75rem' }}>Sorter Status:</span>
+          <strong style={{ 
+            fontSize: '0.75rem', 
+            color: rsStatus === 'infinite' ? 'var(--danger)' : rsStatus === 'running' ? 'var(--success)' : 'var(--text-muted)' 
+          }}>
+            {rsStatus === 'infinite' ? '🚨 INFINITE LOOP FREEZE' : rsStatus === 'running' ? 'RUNNING 🔄' : 'IDLE ⚪'}
+          </strong>
+        </div>
+
+        {rsStatus === 'infinite' ? (
+          <button onClick={fixInfiniteLoop} className="btn" style={{ background: 'var(--success)', border: 'none', color: '#fff', padding: '8px', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.75rem' }}>
+            🔧 Apply Loop Fix (Advance Conveyor Belt)
+          </button>
+        ) : (
+          <button onClick={handleRunSorter} disabled={rsStatus === 'running'} className="btn btn-primary" style={{ padding: '8px', borderRadius: '4px', fontWeight: 'bold', fontSize: '0.75rem' }}>
+            {rsLoopType === 'step' ? 'Sort Next Item ➡️' : 'Run Sorter Loop 🔄'}
+          </button>
+        )}
+      </div>
+
+      {rsG1 && rsG2 && rsG3 && rsG4 ? (
+        <button onClick={() => {
+          handleFinishWeek(10);
+        }} className="btn btn-primary" style={{ padding: '10px 20px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Finish Week 4 Challenge! 🏆</button>
+      ) : (
+        <div style={{ color: 'var(--warning)', fontSize: '0.75rem', padding: '8px', background: 'rgba(245,158,11,0.05)', border: '1px solid rgba(245,158,11,0.2)', borderRadius: '4px', textAlign: 'center', fontWeight: 'bold' }}>
+          🔒 Unlock Final Reward by completing all four engineering test objectives!
+        </div>
+      )}
+    </div>
+
+    {/* Conveyor Belt Simulation & Objectives */}
+    <div>
+      <span style={{ fontSize: '0.75rem', color: 'var(--secondary-light)', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>
+        Conveyor Belt (Next items waiting):
+      </span>
+      
+      {/* Visual conveyor belt */}
+      <div style={{ background: 'rgba(0,0,0,0.3)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '14px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ display: 'flex', gap: '8px', minHeight: '60px', alignItems: 'center' }}>
+          {rsBelt.length === 0 ? (
+            <div style={{ color: 'var(--text-muted)', fontSize: '0.75rem', margin: 'auto', fontStyle: 'italic' }}>
+              Conveyor belt is empty. Load a batch!
+            </div>
+          ) : (
+            rsBelt.map((item, idx) => (
+              <div key={idx} style={{ 
+                background: idx === 0 ? 'rgba(99, 102, 241, 0.15)' : 'rgba(255,255,255,0.04)', 
+                border: idx === 0 ? '2px solid var(--primary)' : '1px solid rgba(255,255,255,0.08)',
+                padding: '8px 12px',
+                borderRadius: '6px',
+                textAlign: 'center',
+                minWidth: '70px',
+                fontSize: '0.7rem',
+                position: 'relative',
+                animation: 'slideUp 0.2s',
+                color: '#fff'
+              }}>
+                {idx === 0 && <span style={{ position: 'absolute', top: '-10px', left: '50%', transform: 'translateX(-50%)', background: 'var(--primary)', color: '#fff', fontSize: '0.5rem', padding: '1px 4px', borderRadius: '4px', fontWeight: 'bold' }}>SENSOR</span>}
+                <div style={{ fontSize: '1.2rem', marginBottom: '2px' }}>
+                  {item === 'plastic' ? '🧴' : item === 'paper' ? '📰' : item === 'can' ? '🥫' : item === 'food' ? '🍎' : '❓'}
+                </div>
+                <div style={{ fontSize: '0.55rem', color: 'var(--text-secondary)', textTransform: 'capitalize' }}>
+                  {item === 'can' ? 'aluminum' : item}
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+        <div style={{ height: '4px', background: 'rgba(255,255,255,0.1)', marginTop: '8px', borderStyle: 'dashed', borderWidth: '1px 0 0 0' }}></div>
+      </div>
+
+      {/* Simulator Actions */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '14px' }}>
+        <button onClick={() => {
+          setRsBelt(prev => [...prev, 'plastic', 'paper', 'can', 'food']);
+        }} className="btn" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', padding: '6px', borderRadius: '4px', cursor: 'pointer' }}>
+          ➕ Load Normal Batch
+        </button>
+        <button onClick={() => {
+          setRsBelt(prev => [...prev, 'unknown']);
+        }} className="btn" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', padding: '6px', borderRadius: '4px', cursor: 'pointer' }}>
+          ❓ Add Unknown Item
+        </button>
+        <button onClick={triggerInfiniteLoopBug} disabled={rsStatus === 'running' || rsBelt.length === 0} className="btn" style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.2)', color: 'var(--danger-light)', fontSize: '0.7rem', padding: '6px', borderRadius: '4px', cursor: 'pointer' }}>
+          ⚠️ Trigger Infinite Loop Bug
+        </button>
+        <button onClick={() => {
+          setRsPlasticCount(0);
+          setRsPaperCount(0);
+          setRsCanCount(0);
+          setRsFoodCount(0);
+          setRsTotalCount(0);
+          setRsCurrentItem(null);
+          setRsBelt(['plastic', 'paper', 'can', 'food', 'unknown']);
+          setRsStatus('idle');
+        }} className="btn" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', padding: '6px', borderRadius: '4px', cursor: 'pointer' }}>
+          🔄 Reset Sorter
+        </button>
+      </div>
+
+      {/* Objectives Checkbox checklist */}
+      <div style={{ background: 'rgba(0,0,0,0.15)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.08)' }}>
+        <strong style={{ color: '#fff', fontSize: '0.75rem', display: 'block', marginBottom: '8px' }}>🎯 Sorter Testing Objectives:</strong>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
+            <input type="checkbox" checked={rsG1} readOnly style={{ accentColor: 'var(--primary)' }} />
+            <span style={{ color: rsG1 ? 'var(--success)' : '#fff' }}>1. Run a REPEAT 5 TIMES Sorter Loop</span>
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
+            <input type="checkbox" checked={rsG2} readOnly style={{ accentColor: 'var(--primary)' }} />
+            <span style={{ color: rsG2 ? 'var(--success)' : '#fff' }}>2. Run a REPEAT UNTIL EMPTY Loop to clear a batch</span>
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
+            <input type="checkbox" checked={rsG3} readOnly style={{ accentColor: 'var(--primary)' }} />
+            <span style={{ color: rsG3 ? 'var(--success)' : '#fff' }}>3. Sort an Unknown Item safely without stopping</span>
+          </label>
+          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
+            <input type="checkbox" checked={rsG4} readOnly style={{ accentColor: 'var(--primary)' }} />
+            <span style={{ color: rsG4 ? 'var(--success)' : '#fff' }}>4. Diagnose and Fix an Infinite Sorter Loop Bug</span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
 )}
 </div>
 )}{activeChallenge === 'solar' && (
@@ -2326,186 +2420,43 @@ You safely managed the hazard using titration variables. Click "Finish Week" to 
 
       {/* Day 20: Week 4 Reflection */}
       {activeDay === 5 && (
-  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '32px' }}>
-    <div>
-      <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 5: Smart Recycling Sorter Challenge</h4>
-      <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', marginBottom: '12px' }}>
-        Program an automated recycling sorter to process items on a conveyor belt. Use a loop to repeat the sorting cycle, tracking counts with variables, and avoiding infinite loop freezes!
-      </p>
-
-      {/* Sorter Dashboard (Variables in Memory) */}
-      <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '12px' }}>
-        <strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem' }}>📊 Sorter Variable Counters (Memory):</strong>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '6px' }}>
-          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
-            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--text-secondary)' }}>🧴 Plastic</span>
-            <strong style={{ color: '#fff', fontSize: '1.1rem' }}>{rsPlasticCount}</strong>
-          </div>
-          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
-            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--text-secondary)' }}>📰 Paper</span>
-            <strong style={{ color: '#fff', fontSize: '1.1rem' }}>{rsPaperCount}</strong>
-          </div>
-          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
-            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--text-secondary)' }}>🥫 Can</span>
-            <strong style={{ color: '#fff', fontSize: '1.1rem' }}>{rsCanCount}</strong>
-          </div>
-          <div style={{ background: 'rgba(0,0,0,0.2)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid rgba(255,255,255,0.05)' }}>
-            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--text-secondary)' }}>🍎 Food</span>
-            <strong style={{ color: '#fff', fontSize: '1.1rem' }}>{rsFoodCount}</strong>
-          </div>
-          <div style={{ background: 'rgba(0,0,0,0.25)', padding: '6px 4px', borderRadius: '4px', textAlign: 'center', border: '1px solid var(--primary)' }}>
-            <span style={{ fontSize: '0.6rem', display: 'block', color: 'var(--primary-light)' }}>🔢 Total</span>
-            <strong style={{ color: 'var(--primary-light)', fontSize: '1.1rem' }}>{rsTotalCount}</strong>
-          </div>
-        </div>
-      </div>
-
-      {/* Sorter Loop Logic Settings */}
-      <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '12px' }}>
-        <strong style={{ color: 'var(--secondary-light)', fontSize: '0.75rem' }}>🔁 Loop Instruction Rules:</strong>
-        
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer', color: '#fff' }}>
-            <input type="radio" name="loopType" checked={rsLoopType === 'step'} onChange={() => setRsLoopType('step')} style={{ accentColor: 'var(--primary)' }} />
-            <span>Single Cycle (No Loop - Manual sorting one-by-one)</span>
-          </label>
-          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer', color: '#fff' }}>
-            <input type="radio" name="loopType" checked={rsLoopType === 'repeat5'} onChange={() => setRsLoopType('repeat5')} style={{ accentColor: 'var(--primary)' }} />
-            <span>REPEAT 5 TIMES (Processes next 5 items)</span>
-          </label>
-          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer', color: '#fff' }}>
-            <input type="radio" name="loopType" checked={rsLoopType === 'untilEmpty'} onChange={() => setRsLoopType('untilEmpty')} style={{ accentColor: 'var(--primary)' }} />
-            <span>REPEAT UNTIL conveyor_belt = empty (Process everything)</span>
-          </label>
-        </div>
-
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '8px', marginTop: '4px' }}>
-          <span style={{ fontSize: '0.75rem' }}>Sorter Status:</span>
-          <strong style={{ 
-            fontSize: '0.75rem', 
-            color: rsStatus === 'infinite' ? 'var(--danger)' : rsStatus === 'running' ? 'var(--success)' : 'var(--text-muted)' 
-          }}>
-            {rsStatus === 'infinite' ? '🚨 INFINITE LOOP FREEZE' : rsStatus === 'running' ? 'RUNNING 🔄' : 'IDLE ⚪'}
-          </strong>
-        </div>
-
-        {rsStatus === 'infinite' ? (
-          <button onClick={fixInfiniteLoop} className="btn" style={{ background: 'var(--success)', border: 'none', color: '#fff', padding: '8px', borderRadius: '4px', cursor: 'pointer', fontWeight: 'bold', fontSize: '0.75rem' }}>
-            🔧 Apply Loop Fix (Advance Conveyor Belt)
-          </button>
-        ) : (
-          <button onClick={handleRunSorter} disabled={rsStatus === 'running'} className="btn btn-primary" style={{ padding: '8px', borderRadius: '4px', fontWeight: 'bold', fontSize: '0.75rem' }}>
-            {rsLoopType === 'step' ? 'Sort Next Item ➡️' : 'Run Sorter Loop 🔄'}
-          </button>
-        )}
-      </div>
-
-      {rsG1 && rsG2 && rsG3 && rsG4 ? (
-        <button onClick={() => {
-          handleFinishWeek(10);
-        }} className="btn btn-primary" style={{ padding: '10px 20px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Finish Week 4 Challenge! 🏆</button>
-      ) : (
-        <div style={{ color: 'var(--warning)', fontSize: '0.75rem', padding: '8px', background: 'rgba(245,158,11,0.05)', border: '1px solid rgba(245,158,11,0.2)', borderRadius: '4px', textAlign: 'center', fontWeight: 'bold' }}>
-          🔒 Unlock Final Reward by completing all four engineering test objectives!
-        </div>
-      )}
-    </div>
-
-    {/* Conveyor Belt Simulation & Objectives */}
-    <div>
-      <span style={{ fontSize: '0.75rem', color: 'var(--secondary-light)', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>
-        Conveyor Belt (Next items waiting):
-      </span>
-      
-      {/* Visual conveyor belt */}
-      <div style={{ background: 'rgba(0,0,0,0.3)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.08)', marginBottom: '14px', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ display: 'flex', gap: '8px', minHeight: '60px', alignItems: 'center' }}>
-          {rsBelt.length === 0 ? (
-            <div style={{ color: 'var(--text-muted)', fontSize: '0.75rem', margin: 'auto', fontStyle: 'italic' }}>
-              Conveyor belt is empty. Load a batch!
-            </div>
-          ) : (
-            rsBelt.map((item, idx) => (
-              <div key={idx} style={{ 
-                background: idx === 0 ? 'rgba(99, 102, 241, 0.15)' : 'rgba(255,255,255,0.04)', 
-                border: idx === 0 ? '2px solid var(--primary)' : '1px solid rgba(255,255,255,0.08)',
-                padding: '8px 12px',
-                borderRadius: '6px',
-                textAlign: 'center',
-                minWidth: '70px',
-                fontSize: '0.7rem',
-                position: 'relative',
-                animation: 'slideUp 0.2s',
-                color: '#fff'
-              }}>
-                {idx === 0 && <span style={{ position: 'absolute', top: '-10px', left: '50%', transform: 'translateX(-50%)', background: 'var(--primary)', color: '#fff', fontSize: '0.5rem', padding: '1px 4px', borderRadius: '4px', fontWeight: 'bold' }}>SENSOR</span>}
-                <div style={{ fontSize: '1.2rem', marginBottom: '2px' }}>
-                  {item === 'plastic' ? '🧴' : item === 'paper' ? '📰' : item === 'can' ? '🥫' : item === 'food' ? '🍎' : '❓'}
-                </div>
-                <div style={{ fontSize: '0.55rem', color: 'var(--text-secondary)', textTransform: 'capitalize' }}>
-                  {item === 'can' ? 'aluminum' : item}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+          <div>
+            <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 20: Conditionals Reflection</h4>
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '12px' }}>
+              <strong style={{ color: '#fff', fontSize: '0.75rem', display: 'block', marginBottom: '6px' }}>📝 Exit Ticket: Decision Reflection</strong>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.7rem', marginBottom: '8px' }}>
+                <div>
+                  <label style={{ display: 'block', color: 'var(--text-secondary)' }}>Identify one conditional statement inside your chatbot:</label>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginTop: '4px' }}>
+                    <strong>IF</strong>
+                    <input type="text" value={chatbotMissions.c4IfRef || ''} onChange={e => updateMissionField('c4IfRef', e.target.value)} placeholder="e.g. question contains lunch" style={{ flex: 1, padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px' }} />
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '4px', marginTop: '4px' }}>
+                    <strong>THEN</strong>
+                    <input type="text" value={chatbotMissions.c4ThenRef || ''} onChange={e => updateMissionField('c4ThenRef', e.target.value)} placeholder="e.g. say Cheese Pizza entree" style={{ flex: 1, padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', borderRadius: '4px' }} />
+                  </div>
                 </div>
               </div>
-            ))
-          )}
+              {!chatbotMissions.c4ReflectionDone ? (
+                <button onClick={() => updateMissionField('c4ReflectionDone', true)} style={{ background: 'var(--secondary)', border: 'none', padding: '6px 12px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold', color: '#fff', cursor: 'pointer' }}>Submit Reflection</button>
+              ) : (
+                <div style={{ color: 'var(--success)', fontSize: '0.7rem', fontWeight: 'bold', marginTop: '6px' }}>✓ Reflection Submitted!</div>
+              )}
+            </div>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+            <span style={{ fontSize: '3rem', marginBottom: '12px' }}>🏆</span>
+            <h4 style={{ color: '#fff', fontSize: '1.1rem', marginBottom: '8px' }}>Week 4 Completed!</h4>
+            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', textAlign: 'center', maxWidth: '240px', lineHeight: '1.4', marginBottom: '16px' }}>
+              Your chatbot has structured conditional decisions and fallback pathways to handle errors!
+            </p>
+            {chatbotMissions.c4ReflectionDone && (
+              <button onClick={() => handleFinishWeek(10)} className="btn btn-primary" style={{ padding: '10px 24px', borderRadius: '6px' }}>Finish Week 4! 🏆</button>
+            )}
+          </div>
         </div>
-        <div style={{ height: '4px', background: 'rgba(255,255,255,0.1)', marginTop: '8px', borderStyle: 'dashed', borderWidth: '1px 0 0 0' }}></div>
-      </div>
-
-      {/* Simulator Actions */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '14px' }}>
-        <button onClick={() => {
-          setRsBelt(prev => [...prev, 'plastic', 'paper', 'can', 'food']);
-        }} className="btn" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', padding: '6px', borderRadius: '4px', cursor: 'pointer' }}>
-          ➕ Load Normal Batch
-        </button>
-        <button onClick={() => {
-          setRsBelt(prev => [...prev, 'unknown']);
-        }} className="btn" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', padding: '6px', borderRadius: '4px', cursor: 'pointer' }}>
-          ❓ Add Unknown Item
-        </button>
-        <button onClick={triggerInfiniteLoopBug} disabled={rsStatus === 'running' || rsBelt.length === 0} className="btn" style={{ background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.2)', color: 'var(--danger-light)', fontSize: '0.7rem', padding: '6px', borderRadius: '4px', cursor: 'pointer' }}>
-          ⚠️ Trigger Infinite Loop Bug
-        </button>
-        <button onClick={() => {
-          setRsPlasticCount(0);
-          setRsPaperCount(0);
-          setRsCanCount(0);
-          setRsFoodCount(0);
-          setRsTotalCount(0);
-          setRsCurrentItem(null);
-          setRsBelt(['plastic', 'paper', 'can', 'food', 'unknown']);
-          setRsStatus('idle');
-        }} className="btn" style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', padding: '6px', borderRadius: '4px', cursor: 'pointer' }}>
-          🔄 Reset Sorter
-        </button>
-      </div>
-
-      {/* Objectives Checkbox checklist */}
-      <div style={{ background: 'rgba(0,0,0,0.15)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.08)' }}>
-        <strong style={{ color: '#fff', fontSize: '0.75rem', display: 'block', marginBottom: '8px' }}>🎯 Sorter Testing Objectives:</strong>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
-            <input type="checkbox" checked={rsG1} readOnly style={{ accentColor: 'var(--primary)' }} />
-            <span style={{ color: rsG1 ? 'var(--success)' : '#fff' }}>1. Run a REPEAT 5 TIMES Sorter Loop</span>
-          </label>
-          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
-            <input type="checkbox" checked={rsG2} readOnly style={{ accentColor: 'var(--primary)' }} />
-            <span style={{ color: rsG2 ? 'var(--success)' : '#fff' }}>2. Run a REPEAT UNTIL EMPTY Loop to clear a batch</span>
-          </label>
-          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
-            <input type="checkbox" checked={rsG3} readOnly style={{ accentColor: 'var(--primary)' }} />
-            <span style={{ color: rsG3 ? 'var(--success)' : '#fff' }}>3. Sort an Unknown Item safely without stopping</span>
-          </label>
-          <label style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.75rem', cursor: 'pointer' }}>
-            <input type="checkbox" checked={rsG4} readOnly style={{ accentColor: 'var(--primary)' }} />
-            <span style={{ color: rsG4 ? 'var(--success)' : '#fff' }}>4. Diagnose and Fix an Infinite Sorter Loop Bug</span>
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-)}
+      )}
 
     </div>
   )}
