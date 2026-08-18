@@ -624,11 +624,11 @@ const [printFilter, setPrintFilter] = useState('all');
 const [previewResource, setPreviewResource] = useState(null);
 const [checkedPrepItems, setCheckedPrepItems] = useState({});
 const initialBlocks = [
-{ id: '3', text: '3. Show entree and side choices.' },
-{ id: '1', text: '1. Say "Hello" to the user.' },
-{ id: '5', text: '5. Ask if they need more help.' },
-{ id: '2', text: '2. Ask the date of the menu.' },
-{ id: '4', text: '4. Say, "Yes, I can provide the menu for date."' }
+  { id: '3', text: '3. IF (hallway open) ➔ Go straight; ELSE ➔ Take alternate route' },
+  { id: '1', text: "1. START: Pick up package at Nurse's office" },
+  { id: '5', text: '5. END: Delivery complete, return to standby' },
+  { id: '2', text: '2. IF (battery < 20%) ➔ Go to charging station; ELSE ➔ Continue' },
+  { id: '4', text: '4. IF (door open) ➔ Deliver package; ELSE ➔ Wait and alert' }
 ];
 const [blocks, setBlocks] = useState(initialBlocks);
 const [isAlgoCorrect, setIsAlgoCorrect] = useState(false);
@@ -706,13 +706,13 @@ updated[index + 1] = temp;
 setBlocks(updated);
 };
 const verifyAlgorithm = () => {
-const sequence = blocks.map(b => b.id).join('');
-if (sequence === '12435°°°') {
-setIsAlgoCorrect(true);
-alert("🎉 Algorithm logic verified! Click 'Next Day' to learn about Variables.");
-} else {
-alert("⚠️ Logic Error: The robot got confused! Re-read the steps and try again.");
-}
+  const sequence = blocks.map(b => b.id).join('');
+  if (sequence === '12345') {
+    setIsAlgoCorrect(true);
+    alert("🎉 Robot navigation algorithm verified! The route is safe and efficient. Click 'Go to Day 4' to learn about Variables.");
+  } else {
+    alert("⚠️ Logic Error: The robot got confused or ran out of battery! Re-read the steps and try again.");
+  }
 };
 return (
 <section id="curriculum" style={{ padding: '80px 0', position: 'relative' }}>
@@ -822,76 +822,147 @@ transition: 'all 0.2s'
 // Week Dashboard selection
 <div>
 {schoolLevel === 'elementary' ? (
-<div style={{
-display: 'grid',
-gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-gap: '20px'
-}}>
-{/* Elementary Card 1 */}
-<div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
-<div>
-<span style={{ fontSize: '2rem' }}>🤖💬</span>
-<span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Week 1 (Days 1-5)</span>
-<h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 1: Data, Data, Data</h3>
-<p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
-Determine chatbot goals, organize databases, clean menu entries, and trace list lookups.
-</p>
-</div>
-<button onClick={() => { setActiveChallenge('chatbot'); setActiveDay(1); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Lab 🚀</button>
-</div>
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+    gap: '20px'
+  }}>
+    {teacherUnit === 'botbuilder' ? (
+      <>
+        {/* BotBuilder Card 1 */}
+        <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+          <div>
+            <span style={{ fontSize: '2rem' }}>🤖💬</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 1 (Days 1-2)</span>
+            <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 1: Data, Data, Data</h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+              Determine chatbot goals, organize databases, clean menu entries, and identify keywords.
+            </p>
+          </div>
+          <button onClick={() => { setActiveChallenge('chatbot'); setActiveDay(1); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Lab 🚀</button>
+        </div>
 
-{/* Elementary Card 2 */}
-<div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
-<div>
-<span style={{ fontSize: '2rem' }}>⚙️📊📋</span>
-<span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Week 2 (Days 6-10)</span>
-<h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 2: All About Algorithms</h3>
-<p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
-Investigate literal steps, scramble logic sequences, build flows, and write block algorithms.
-</p>
-</div>
-<button onClick={() => { setActiveChallenge('solar'); setActiveDay(1); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Lab 🚀</button>
-</div>
+        {/* BotBuilder Card 2 */}
+        <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+          <div>
+            <span style={{ fontSize: '2rem' }}>⚙️🗺️🔋</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 2 (Day 3)</span>
+            <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 2: All About Algorithms</h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+              Program an autonomous school robot using sequences, obstacles, IF/ELSE decision logic, and efficiency loops.
+            </p>
+          </div>
+          <button onClick={() => { setActiveChallenge('chatbot'); setActiveDay(3); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Lab 🚀</button>
+        </div>
 
-{/* Elementary Card 3 */}
-<div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
-<div>
-<span style={{ fontSize: '2rem' }}>📦💾📥</span>
-<span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Week 3 (Days 11-15)</span>
-<h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 3: Variables & Memory</h3>
-<p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
-Configure containers to store information, dynamically greet users, and run memory testing.
-</p>
-</div>
-<button onClick={() => { setActiveChallenge('chemistry'); setActiveDay(1); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Lab 🚀</button>
-</div>
+        {/* BotBuilder Card 3 */}
+        <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+          <div>
+            <span style={{ fontSize: '2rem' }}>📦💾📥</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 3 (Day 4)</span>
+            <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 3: Variables & Memory</h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+              Configure memory containers, store usernames, and run dynamic chatbot greeting tests.
+            </p>
+          </div>
+          <button onClick={() => { setActiveChallenge('chatbot'); setActiveDay(4); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Lab 🚀</button>
+        </div>
 
-{/* Elementary Card 4 */}
-<div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
-<div>
-<span style={{ fontSize: '2rem' }}>🔀❓🛠️</span>
-<span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Week 4 (Days 16-20)</span>
-<h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 4: Conditionals</h3>
-<p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
-Establish rule-based decision trees, program IF/THEN choices, and address edge case limits.
-</p>
-</div>
-<button onClick={() => { setActiveChallenge('bridge'); setActiveDay(1); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Lab 🚀</button>
-</div>
+        {/* BotBuilder Card 4 */}
+        <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+          <div>
+            <span style={{ fontSize: '2rem' }}>🔀❓🛠️</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 4 (Day 5)</span>
+            <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 4: Conditionals</h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+              Establish rule-based decision trees and program "Break the Bot" stress test challenges.
+            </p>
+          </div>
+          <button onClick={() => { setActiveChallenge('chatbot'); setActiveDay(5); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Lab 🚀</button>
+        </div>
 
-{/* Elementary Card 5 */}
-<div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
-<div>
-<span style={{ fontSize: '2rem' }}>🏆🎤✨</span>
-<span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Week 5 (Days 21-25)</span>
-<h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Unit Share: Expo</h3>
-<p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
-Conduct user testing, iterate on feedback, and present your chatbot at the final expo.
-</p>
-</div>
-<button onClick={() => { setActiveChallenge('share'); setActiveDay(1); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Expo 🚀</button>
-</div></div>
-) : (
+        {/* BotBuilder Card 5 */}
+        <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+          <div>
+            <span style={{ fontSize: '2rem' }}>🏆🎤✨</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Unit Share (Day 5+)</span>
+            <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Unit Share: Expo</h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+              Conduct user testing, iterate on feedback, and present your chatbot at the final expo.
+            </p>
+          </div>
+          <button onClick={() => { setActiveChallenge('share'); setActiveDay(1); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Expo 🚀</button>
+        </div>
+      </>
+    ) : (
+      <>
+        {/* EcoEngineering Elementary Card 1 */}
+        <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', opacity: 0.5, boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+          <div>
+            <span style={{ fontSize: '2rem' }}>💧🌱</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 1</span>
+            <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 1: Smart Irrigation</h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+              Irrigation lab is only available in Middle School mode. Focus on solar energy below!
+            </p>
+          </div>
+          <button disabled className="btn btn-secondary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem', cursor: 'not-allowed' }}>Locked 🔒</button>
+        </div>
+
+        {/* EcoEngineering Elementary Card 2 */}
+        <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+          <div>
+            <span style={{ fontSize: '2rem' }}>☀️🌱🔋</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 2</span>
+            <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 2: Greenhouse Solar</h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+              Investigate solar panel angle alignments and battery voltage limits in the greenhouse lab.
+            </p>
+          </div>
+          <button onClick={() => { setActiveChallenge('solar'); setActiveDay(1); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Lab 🚀</button>
+        </div>
+
+        {/* EcoEngineering Elementary Card 3 */}
+        <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+          <div>
+            <span style={{ fontSize: '2rem' }}>🧪🎨📊</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 3</span>
+            <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 3: Chemistry Lab</h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+              Neutralize acidic water elements using chemical base drops and record pH variable metrics.
+            </p>
+          </div>
+          <button onClick={() => { setActiveChallenge('chemistry'); setActiveDay(1); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Lab 🚀</button>
+        </div>
+
+        {/* EcoEngineering Elementary Card 4 */}
+        <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+          <div>
+            <span style={{ fontSize: '2rem' }}>🌉🪵🗼</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 4</span>
+            <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 4: Bridge Building</h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+              Design support trusses and test load vectors under physical weights and forces.
+            </p>
+          </div>
+          <button onClick={() => { setActiveChallenge('bridge'); setActiveDay(1); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Lab 🚀</button>
+        </div>
+
+        {/* EcoEngineering Elementary Card 5 */}
+        <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+          <div>
+            <span style={{ fontSize: '2rem' }}>🏆🎤✨</span>
+            <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Unit Share</span>
+            <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Unit Share: Expo</h3>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+              Compile your engineering data maps, prepare charts, and present at the expo.
+            </p>
+          </div>
+          <button onClick={() => { setActiveChallenge('share'); setActiveDay(1); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Launch Expo 🚀</button>
+        </div>
+      </>
+    )}
+  </div>) : (
 <div style={{
 display: 'grid',
 gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
@@ -1148,48 +1219,48 @@ Connect Database Cable 🔌
 )}
 {/* Day 3: Design Canvas & Sorting */}
 {activeDay === 3 && (
-<div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '32px' }}>
-<div>
-<h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 3: Design Canvas & Logic</h4>
-<div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '12px' }}>
-<strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem' }}>📄 Knowledge Base Design Canvas:</strong>
-<div>
-<label style={{ fontSize: '0.65rem', display: 'block', color: 'var(--text-secondary)' }}>1. Our chatbot helps:</label>
-<input type="text" value={c1CanvasBotHelp} onChange={e => setC1CanvasBotHelp(e.target.value)} placeholder="e.g. students find the lunch menu..." style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', borderRadius: '4px' }} />
-</div>
-<div>
-<label style={{ fontSize: '0.65rem', display: 'block', color: 'var(--text-secondary)' }}>2. The problem it solves is:</label>
-<input type="text" value={c1CanvasBotProblem} onChange={e => setC1CanvasBotProblem(e.target.value)} placeholder="e.g. website is down or paper menu lost..." style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', borderRadius: '4px' }} />
-</div>
-{!c1CanvasApproved ? (
-<button onClick={() => setC1CanvasApproved(true)} style={{ background: 'var(--secondary)', border: 'none', padding: '6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold', color: '#fff', cursor: 'pointer' }}>Save Design Canvas</button>
-) : (
-<div style={{ color: 'var(--success)', fontSize: '0.7rem', fontWeight: 'bold' }}>✓ Design Canvas Approved! Now sort the logic loop.</div>
-)}
-</div>
-<p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', lineHeight: '1.4', marginBottom: '10px' }}>
-Sort the algorithm steps on the right into the correct search logic sequence to unlock Day 4.
-</p>
-{isAlgoCorrect && c1CanvasApproved && (
-<button onClick={() => setActiveDay(4)} className="btn btn-primary" style={{ padding: '10px 20px', borderRadius: '6px' }}>Go to Day 4 ➜</button>
-)}
-</div>
-<div>
-<span style={{ fontSize: '0.75rem', color: 'var(--secondary-light)', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>Search Engine Sequence:</span>
-<div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-{blocks.map((block, idx) => (
-<div key={block.id} style={{ padding: '6px 12px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.75rem', color: '#fff' }}>
-<span>{block.text}</span>
-<div style={{ display: 'flex', gap: '3px' }}>
-<button type="button" onClick={() => moveBlock(idx, 'up')} style={{ background: 'rgba(255,255,255,0.1)', border: 'none', color: '#fff', width: '20px', height: '20px', borderRadius: '3px', cursor: 'pointer' }}>▲</button>
-<button type="button" onClick={() => moveBlock(idx, 'down')} style={{ background: 'rgba(255,255,255,0.1)', border: 'none', color: '#fff', width: '20px', height: '20px', borderRadius: '3px', cursor: 'pointer' }}>▼</button>
-</div>
-</div>
-))}
-</div>
-<button onClick={verifyAlgorithm} className="btn btn-primary" style={{ marginTop: '14px', width: '100%', padding: '10px', fontSize: '0.8rem' }}>Verify Logic Gate</button>
-</div>
-</div>
+  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '32px' }}>
+    <div>
+      <h4 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>Day 3: Robot Algorithm Planning Canvas</h4>
+      <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', marginBottom: '12px' }}>
+        Students act as Algorithm Engineers. Program the school otonom delivery robot to safely carry a package from the Nurse's Office to Room 205. Complete the design rules on the left, then sort the robot instructions on the right.
+      </p>
+      <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '12px' }}>
+        <strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem' }}>📋 Robot Navigation Design Rules:</strong>
+        <div>
+          <label style={{ fontSize: '0.65rem', display: 'block', color: 'var(--text-secondary)' }}>1. Package Destination Room (e.g. Room 205):</label>
+          <input type="text" value={c1CanvasBotHelp} onChange={e => setC1CanvasBotHelp(e.target.value)} placeholder="e.g. Room 205..." style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', borderRadius: '4px' }} />
+        </div>
+        <div>
+          <label style={{ fontSize: '0.65rem', display: 'block', color: 'var(--text-secondary)' }}>2. Low Battery Recharge Threshold (e.g. 20%):</label>
+          <input type="text" value={c1CanvasBotProblem} onChange={e => setC1CanvasBotProblem(e.target.value)} placeholder="e.g. 20%..." style={{ width: '100%', padding: '4px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', fontSize: '0.7rem', borderRadius: '4px' }} />
+        </div>
+        {!c1CanvasApproved ? (
+          <button onClick={() => setC1CanvasApproved(true)} style={{ background: 'var(--secondary)', border: 'none', padding: '6px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 'bold', color: '#fff', cursor: 'pointer' }}>Save Design Canvas</button>
+        ) : (
+          <div style={{ color: 'var(--success)', fontSize: '0.7rem', fontWeight: 'bold' }}>✓ Design Canvas Approved! Now sort the logic sequence.</div>
+        )}
+      </div>
+      {isAlgoCorrect && c1CanvasApproved && (
+        <button onClick={() => setActiveDay(4)} className="btn btn-primary" style={{ padding: '10px 20px', borderRadius: '6px' }}>Go to Day 4 ➜</button>
+      )}
+    </div>
+    <div>
+      <span style={{ fontSize: '0.75rem', color: 'var(--secondary-light)', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>Robot Instruction Sequence:</span>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginBottom: '14px' }}>
+        {blocks.map((block, idx) => (
+          <div key={block.id} style={{ padding: '6px 12px', background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.75rem', color: '#fff' }}>
+            <span>{block.text}</span>
+            <div style={{ display: 'flex', gap: '3px' }}>
+              <button type="button" onClick={() => moveBlock(idx, 'up')} style={{ background: 'rgba(255,255,255,0.1)', border: 'none', color: '#fff', width: '20px', height: '20px', borderRadius: '3px', cursor: 'pointer' }}>▲</button>
+              <button type="button" onClick={() => moveBlock(idx, 'down')} style={{ background: 'rgba(255,255,255,0.1)', border: 'none', color: '#fff', width: '20px', height: '20px', borderRadius: '3px', cursor: 'pointer' }}>▼</button>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button onClick={verifyAlgorithm} className="btn btn-primary" style={{ width: '100%', padding: '10px', fontSize: '0.8rem' }}>Verify Logic Gate</button>
+    </div>
+  </div>
 )}
 {/* Day 4: Variables & Architecture */}
 {activeDay === 4 && (
