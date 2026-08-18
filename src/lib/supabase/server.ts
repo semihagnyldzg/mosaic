@@ -27,7 +27,10 @@ const createMockServerClient = () => {
 
 export const createClient = async () => {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
-  if (url.includes('wjdowtmrbomhejcunajc.supabase.co') || !url) {
+  const isSuspendedUrl = url.includes('wjdowtmrbomhejcunajc.supabase.co');
+  const shouldMock = !url || isSuspendedUrl || process.env.NEXT_PUBLIC_USE_REAL_SUPABASE !== 'true';
+
+  if (shouldMock) {
     return createMockServerClient();
   }
 
