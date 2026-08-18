@@ -17,11 +17,18 @@ const printingResources = {
     { id: 'bb-res-brainstorm', category: 'Student Learning Resources', title: 'Real-World Problem Brainstorm', part: 'part1', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Structured brainstorm map using the Problem -> User -> Data -> Solution framework.' },
 
     // Student Learning Resources (Part 2)
-    { id: 'bb-res-scramble', category: 'Student Learning Resources', title: 'Algorithm Scramble Cards', part: 'part2', pages: 2, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Shuffled activity cards representing steps in computer logging, menu searches, and daily sequencing.' },
-    { id: 'bb-res-role-cards', category: 'Student Learning Resources', title: 'Human Chatbot Role Cards', part: 'part2', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Instruction role cards for USER, CHATBOT, and ALGORITHM ENGINEER simulations.' },
-    { id: 'bb-res-flowchart', category: 'Student Learning Resources', title: 'Chatbot Algorithm Flowchart', part: 'part2', pages: 2, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Flowcharting canvas using Ovals (Start/End), Rectangles (Action), and Diamonds (Decisions) to design chatbot logic.' },
-    { id: 'bb-res-bughunt', category: 'Student Learning Resources', title: 'Algorithm Bug Hunt', part: 'part2', pages: 1, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Deliberately incorrect Scratch algorithm flows for students to identify, trace, and debug.' },
-    { id: 'bb-res-alg-testing', category: 'Student Learning Resources', title: 'Algorithm Testing Sheet', part: 'part2', pages: 2, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Step-by-step trace sheet comparing Expected Program Behavior vs. Actual Program Output.' },
+    { id: 'bb-res-robot-map', category: 'Student Learning Resources', title: 'School Robot Navigation Map', part: 'part2', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'School blueprint grid showing Nurse office, room 205, intersections, hallways, charging station, and stairs.' },
+    { id: 'bb-res-alg-plan', category: 'Student Learning Resources', title: 'Algorithm Planning Sheet', part: 'part2', pages: 2, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Drafting sheet for writing exact, step-by-step sequential movement rules for the delivery robot.' },
+    { id: 'bb-res-flow-symbol', category: 'Student Learning Resources', title: 'Flowchart Symbol Reference Card', part: 'part2', pages: 1, ratio: '1 per pair', mode: 'Digital + Printable', directions: 'Reference definition card for Oval (Start/End), Rectangle (Action), and Diamond (Decision) symbols.' },
+    { id: 'bb-res-flow-canvas', category: 'Student Learning Resources', title: 'Flowchart Design Canvas', part: 'part2', pages: 2, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Grid canvas template for drawing algorithm logic using shapes connected by direction arrows.' },
+    { id: 'bb-res-block-card', category: 'Student Learning Resources', title: 'New Information Card: Hallway Blocked', part: 'part2', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Scenario card detailing blocked hallways to trigger dynamic route iteration.' },
+    { id: 'bb-res-bat-card', category: 'Student Learning Resources', title: 'New Constraint Card: Low Battery', part: 'part2', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Rerouting override condition card triggering charging station checks if battery drops below 20%.' },
+    { id: 'bb-res-door-card', category: 'Student Learning Resources', title: 'New Constraint Card: Door Closed', part: 'part2', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Exception handler card defining robot response behaviors if Room 205 door is locked.' },
+    { id: 'bb-res-scenario-cards', category: 'Student Learning Resources', title: 'Scenario Stress-Test Cards', part: 'part2', pages: 2, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Stress testing scenario deck combining obstacle configurations, low battery, and locked target rooms.' },
+    { id: 'bb-res-test-log', category: 'Student Learning Resources', title: 'Engineering Test Log', part: 'part2', pages: 2, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Audit table for logging inputs, expected paths, actual paths, failure points, and debug suggestions.' },
+    { id: 'bb-res-alg-revision', category: 'Student Learning Resources', title: 'Algorithm Revision Sheet', part: 'part2', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Log sheet to document code and logic fixes made during debugging loops.' },
+    { id: 'bb-res-gallery-walk', category: 'Student Learning Resources', title: 'Gallery Walk Feedback Sheet', part: 'part2', pages: 1, ratio: '1 per student', mode: 'Printable Recommended', directions: 'Peer review evaluation sheet tracking I Noticed, I Wonder, and Have You Considered feedback.' },
+    { id: 'bb-res-exit-ticket', category: 'Student Learning Resources', title: 'AI Engineer Exit Ticket', part: 'part2', pages: 2, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Individual metacognitive exit ticket covering algorithms, sequence, and efficiency.' },
 
     // Student Learning Resources (Part 3)
     { id: 'bb-res-var-box', category: 'Student Learning Resources', title: 'Variable Box Cards', part: 'part3', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Physical variable labels (userName, userQuestion, selectedTopic, score) and empty value boxes for classroom simulations.' },
@@ -77,10 +84,12 @@ const prepChecklist = {
     ],
     part2: [
       'Read PD guides: "Teaching Algorithms" and "Computational Thinking".',
-      'Print Algorithm Scramble cards (1 set per team).',
-      'Prepare Human Chatbot Role cards (1 set per team).',
-      'Print Chatbot Algorithm Flowchart sheets (1 per student).',
-      'Verify students can locate the chatbot project in Scratch from Part 1.'
+      'Print School Robot Navigation Maps (1 per team).',
+      'Print Algorithm Planning Sheets and Flowchart Design Canvases.',
+      'Prepare Scenario Cards (Hallway Blocked, Low Battery, Door Closed) and Stress-Test Cards.',
+      'Print Engineering Test Logs and Algorithm Revision Sheets.',
+      'Verify student Scratch workspace has the robot sprite and school backdrop configured.',
+      'Print AI Engineer Exit Tickets (1 per student).'
     ],
     part3: [
       'Read PD guides: "Understanding Variables" and "Scratch Variables".',
@@ -3815,27 +3824,57 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
         {/* SUBTAB CONTENT: OVERVIEW */}
         {activePart2SubTab === 'overview' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            {/* AI Engineer Mission Hook */}
             <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
               <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>AI Engineer Mission Hook</span>
-              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: Coding the Logical Flow</h4>
+              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: Program the Emergency Delivery Robot</h4>
               <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
-                Introduce the lesson:
-                <em style={{ display: 'block', margin: '8px 0', color: '#fff', borderLeft: '3px solid var(--primary)', paddingLeft: '10px' }}>
-                  "Algorithms are exact recipes. Today, we step into the role of Algorithm Engineers to design, map, and write the logical flowchart sequence for our Scratch chatbot before coding it."
+                Introduce the scenario:
+                <em style={{ display: 'block', margin: '8px 0', color: '#fff', borderLeft: '3px solid var(--primary)', paddingLeft: '10px', fontStyle: 'normal' }}>
+                  "The nurse's office needs to send an important package to Room 205. The school's delivery robot can carry it—but there is one problem. The robot cannot decide what to do on its own. Your engineering team must design the algorithm that safely gets the robot to its destination."
                 </em>
+                Set the foundational concept: <strong>"A robot does exactly what you tell it to do—not what you meant for it to do."</strong> An <strong>algorithm</strong> is a clear, ordered set of instructions used to complete a task or solve a problem.
               </p>
             </div>
+
+            {/* Student Collaborative Engineering Roles */}
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '8px' }}>Student Collaborative Engineering Roles</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#60a5fa', fontSize: '0.75rem', display: 'block' }}>🤖 Algorithm Engineer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Designs the movement sequences, decision nodes, and recovery logics for the system.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block' }}>🗺️ Navigation Engineer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Studies the school floor map layout, analyzing corridors, intersections, and charging routes.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#a78bfa', fontSize: '0.75rem', display: 'block' }}>🕵️ Systems Tester</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Audits the design, searching for blocking variables, battery drain limits, and closed door failures.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#f59e0b', fontSize: '0.75rem', display: 'block' }}>💻 Scratch Developer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Translates the finalized, audited algorithm flowchart plan into executable Scratch scripts.</span>
+                </div>
+              </div>
+              <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', display: 'block', marginTop: '6px' }}>
+                💡 <em>Facilitator Tip:</em> Have students switch roles periodically so they experience multiple engineering practices.
+              </span>
+            </div>
+
+            {/* STEAM Career Spotlight */}
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
               <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>💼 STEAM Career Spotlight</strong>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                {['Algorithms Developer', 'Systems Engineer', 'Automation Architect'].map(career => (
+                {['Robotics Engineer', 'Autonomous Systems Engineer', 'Software Engineer', 'Algorithm Engineer', 'Logistics Engineer'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
                     {career}
                   </span>
                 ))}
               </div>
               <p style={{ fontSize: '0.75rem', margin: '8px 0 0 0', lineHeight: '1.4' }}>
-                Explain that Algorithm Engineers build the core logic gates that power search engines, recommendation feeds, and AI assistants.
+                Similar systems are used in warehouse robots, hospital delivery robots, autonomous vehicles, drones, package delivery systems, and Mars rovers.
               </p>
             </div>
           </div>
@@ -3844,21 +3883,133 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
         {/* SUBTAB CONTENT: HOUR 1 (THINK) */}
         {activePart2SubTab === 'hour1' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 1: Be the Robot */}
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: Robot Teacher Unplugged Challenge</span>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: Be the Robot (Map Challenge)</span>
               <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
-                Act out student drawing directions literally. Emphasize that computers execute exactly what is written, not what is meant.
+                Teams write exact instructions to guide the robot from the Nurse's Office to Room 205. One student physically acts as the robot or moves a token on the navigation map, following directions literally.
               </p>
-              <strong style={{ color: '#fff', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>Inquiry Prompt:</strong>
-              <p style={{ fontStyle: 'italic', margin: 0, fontSize: '0.75rem', lineHeight: '1.4' }}>
-                "Why must instructions be specific? What happens when steps are out of order? Let's discuss literal execution."
-              </p>
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '10px', borderRadius: '6px', fontSize: '0.75rem', color: '#fff', marginBottom: '8px', border: '1px solid rgba(255,255,255,0.05)', fontFamily: 'monospace' }}>
+                • Move forward 3 spaces ➔ Turn right ➔ Move forward 4 spaces ➔ Turn left ➔ Stop at Room 205.
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> School Robot Navigation Map, Algorithm Planning Sheet</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "What did you assume the robot already knew? Which instruction was unclear? Does the order of steps matter?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Students writing precise directions (like step counts) rather than vague commands like "Go to Room 205".</div>
+                <div>⚠️ <strong>Misconceptions:</strong> Thinking that the robot can guess intent. Emphasize literal execution.</div>
+                <div>⚡ <strong>Differentiation & Extension:</strong> Advanced teams can use exact rotation angles (e.g. 90° or 45°) and distance rules.</div>
+              </div>
             </div>
+
+            {/* Activity 2: Sequence Matters */}
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: Algorithm Scramble Cards</span>
-              <p style={{ margin: '6px 0 0 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
-                Teams arrange card sequences to model chatbot processes. Ensure students clean and sort menu sequences before building flows.
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: Sequence Matters (Algorithm Scramble)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Provide a short navigation algorithm with steps in the wrong order. Students identify the routing failure, reorder the steps into the correct sequence, and explain why order determines output.
               </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Shuffled Algorithm Scramble Cards</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Can an algorithm contain correct instructions but still fail? Why is sequence critical?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Teams tracing the scrambled path physically to demonstrate the failure point.</div>
+              </div>
+            </div>
+
+            {/* Activity 3: Hallway Blocked */}
+            <div style={{ background: 'rgba(239, 68, 68, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(239, 68, 68, 0.15)' }}>
+              <span style={{ color: '#f87171', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 3: Unexpected Problem (Hallway Blocked)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Provide a new event card: 🚧 <strong>NEW INFORMATION: The main hallway is blocked.</strong> Ask: "Does your original algorithm still work?" Students revise the route using the side hallway path.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Hallway Blocked Event Card</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Where does your algorithm fail now? What needs to change? Do you need to rewrite everything?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Students identifying the point of failure and modifying only the affected sequence segment.</div>
+              </div>
+            </div>
+
+            {/* Activity 4: IF/ELSE Decisions */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 4: Decision Point (Introducing IF/ELSE)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Challenge: "Sometimes the hallway is open. Sometimes it is blocked. You will not know ahead of time." Students design **one single algorithm** that works in both situations. Formally introduce <strong>IF/ELSE logic</strong>.
+              </p>
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '10px', borderRadius: '6px', fontSize: '0.75rem', color: '#fff', marginBottom: '8px', border: '1px solid rgba(255,255,255,0.05)', fontFamily: 'monospace' }}>
+                IF (hallway is open) ➔ continue straight<br/>
+                ELSE ➔ take the side hallway
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Algorithm Planning Sheet</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "How does a system choose actions based on conditions? What checks does it run?"</div>
+              </div>
+            </div>
+
+            {/* Activity 5: Flowcharting */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 5: Convert to Flowchart Symbols</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Introduce flowchart symbols: <strong>Oval (Start/End)</strong>, <strong>Rectangle (Action)</strong>, <strong>Diamond (Decision)</strong>, and <strong>Arrow (Direction)</strong>. Students convert their route algorithm into a visual flowchart.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '8px', fontSize: '0.7rem', color: '#fff', background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <div style={{ textAlign: 'center' }}>🟢 Start / End (Oval)</div>
+                <div style={{ textAlign: 'center' }}>🟦 Action (Rectangle)</div>
+                <div style={{ textAlign: 'center' }}>🔶 Decision (Diamond)</div>
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Flowchart Reference, Flowchart Design Canvas</div>
+                <div>🔍 <strong>Look-fors:</strong> Correct branching arrows (YES/NO paths) stemming from decision diamonds.</div>
+              </div>
+            </div>
+
+            {/* Activity 6: Low Battery */}
+            <div style={{ background: 'rgba(239, 68, 68, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(239, 68, 68, 0.15)' }}>
+              <span style={{ color: '#f87171', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 6: New Constraint (Low Battery Check)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Event Card: 🔋 <strong>NEW CONSTRAINT: If the battery drops below 20%, the robot must visit the charging station first.</strong> Students determine where to place this check and revise their flowcharts.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Low Battery Constraint Card</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Where should the robot check its battery? Once or multiple times? What happens after charging?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Decision diamonds checking battery levels and routing to charging station coordinates on the map.</div>
+              </div>
+            </div>
+
+            {/* Activity 7: Closed Door */}
+            <div style={{ background: 'rgba(239, 68, 68, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(239, 68, 68, 0.15)' }}>
+              <span style={{ color: '#f87171', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 7: Exception Handling (Locked Destination)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Constraint Card: 🚪 <strong>Room 205's door may be closed when the robot arrives.</strong> Students design an exception handling step: wait, retry, return, or alert. Teams justify their design decision.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Door Closed Constraint Card</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "What makes today's door exception similar to programming an error fallback in search code?"</div>
+              </div>
+            </div>
+
+            {/* Activity 8: Efficiency Challenge */}
+            <div style={{ background: 'rgba(139, 92, 246, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(139, 92, 246, 0.15)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 8: Efficiency Challenge</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Challenge: "Deliver the package safely using the fewest steps while still handling the battery and blocked hallway." Teams count movements, decisions, and repeated steps to justify their algorithm's efficiency.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Floor Map</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Is the shortest route always the best? What if it is less reliable?"</div>
+              </div>
+            </div>
+
+            {/* Hour 1 Checkpoint */}
+            <div style={{ background: 'rgba(16, 185, 129, 0.04)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+              <span style={{ color: '#34d399', fontSize: '0.75rem', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Hour 1 Checkpoint Requirements</span>
+              <ul style={{ margin: '6px 0 0 0', paddingLeft: '16px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px', lineHeight: '1.4' }}>
+                <li>✅ Clear route and sequential algorithm.</li>
+                <li>✅ Visual flowchart with start/end ovals, rectangles, and decision diamonds.</li>
+                <li>✅ IF/ELSE logic for blocked hallway, low battery, and closed door.</li>
+                <li>✅ Total movement/decision counts showing path efficiency.</li>
+              </ul>
+              <span style={{ fontSize: '0.7rem', color: '#34d399', display: 'block', marginTop: '8px' }}>
+                ⚠️ <em>Facilitator Action:</em> Review and sign off on each team's physical flowchart canvas before they start coding.
+              </span>
             </div>
           </div>
         )}
@@ -3866,17 +4017,116 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
         {/* SUBTAB CONTENT: HOUR 2 (BUILD & TEST) */}
         {activePart2SubTab === 'hour2' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 9: Build Simulation */}
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 3: Flowcharts to Block Coding</span>
-              <p style={{ margin: '6px 0 0 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
-                Students translate Ovals, Rectangles, and Diamonds into Scratch blocks. Guide them to trace blocks line-by-line using test tables.
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 9: Build the Robot Simulation in Scratch</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students translate their flowchart blueprints into Scratch. Backdrops represent the school floor grids, and a robot sprite acts as the receiver. Connect flowchart structures to coding constructs:
               </p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '0.75rem', color: '#fff', background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <div>• Flowchart sequence ➔ ordered Scratch blocks</div>
+                <div>• Decisions ➔ IF / ELSE blocks</div>
+                <div>• Conditions ➔ Sensors / color-touch blocks</div>
+                <div>• Repeats ➔ Repeat loops</div>
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 20 mins | 🛠️ <strong>Materials:</strong> Computers with Scratch, Flowchart Design Canvas</div>
+                <div>🔍 <strong>Look-fors:</strong> Students tracing their flowchart shapes to make coding decisions.</div>
+                <div>⚠️ <strong>Misconceptions:</strong> Creating movements without checking bounds. Keep loops inside conditional boundary sensors.</div>
+              </div>
             </div>
-            <div style={{ background: 'rgba(139, 92, 246, 0.05)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#a78bfa', display: 'block', fontSize: '0.75rem' }}>🚀 Level-Up Challenge (Extension)</strong>
-              <p style={{ margin: '4px 0 0 0', fontSize: '0.7rem', lineHeight: '1.4' }}>
-                Map multiple keyword triggers to the search loops, and document sequence limitations.
+
+            {/* Activity 10: Trace Before You Run */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 10: Trace Before You Run</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students write down their predictions on their planning sheets (expected paths, decisions, and destination outcomes) before running their program.
               </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> Trace Sheet, Algorithm Planning Sheet</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Did the robot do what you predicted? If not, why?"</div>
+              </div>
+            </div>
+
+            {/* Activity 11: Systems Stress Test */}
+            <div style={{ background: 'rgba(139, 92, 246, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(139, 92, 246, 0.15)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 11: Systems Stress Test</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams trade laptops. The testing team runs stress scenarios using cards and logs results in the <strong>Engineering Test Log</strong>.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '0.7rem', color: '#fff', background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                <div>• Scenario A: Hallway open, battery 80%, door open.</div>
+                <div>• Scenario B: Hallway blocked, battery 75%, door open.</div>
+                <div>• Scenario C: Hallway open, battery 15%, door open.</div>
+                <div>• Scenario D: Hallway blocked, battery 15%, door closed.</div>
+                <div>• Scenario E: Battery low after passing charging station.</div>
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 20 mins | 🛠️ <strong>Materials:</strong> Scenario Cards, Engineering Test Log</div>
+                <div>🔍 <strong>Look-fors:</strong> Students logging failure paths accurately.</div>
+              </div>
+            </div>
+
+            {/* Activity 12: Debug the Logic */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 12: Debug the Logic</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Define <strong>debugging</strong> as finding and fixing logical errors. Teams identify at least two failures and document: What happened? Why did it happen? Was the bug in the flowchart logic or the Scratch blocks? Document revisions.
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Algorithm Revision Sheet</div>
+                <div>⚠️ <strong>Important:</strong> Require students to update both their flowchart canvas and Scratch blocks.</div>
+              </div>
+            </div>
+
+            {/* Activity 13: Final Optimization */}
+            <div style={{ background: 'rgba(139, 92, 246, 0.03)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(139, 92, 246, 0.15)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 13: Final Optimization Challenge (Three Deliveries)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                The nurse has 3 packages. Students optimize routing order, battery triggers, and obstacle handling. Teams defend their choices (trade-offs between path duration and battery limits).
+              </p>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 20 mins | 🛠️ <strong>Materials:</strong> Map grid, Algorithm Planning Sheet</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "What trade-offs did you make? Why is your route efficient?"</div>
+              </div>
+            </div>
+
+            {/* Gallery Walk */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Gallery Walk & Peer Review</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams display maps, flowcharts, logs, and simulations. Peer feedback uses three columns:
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '8px', fontSize: '0.7rem', color: '#fff', background: 'rgba(0,0,0,0.2)', padding: '8px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)', textAlign: 'center' }}>
+                <div>"I noticed..."</div>
+                <div>"I wonder..."</div>
+                <div>"Have you considered...?"</div>
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins | 🛠️ <strong>Materials:</strong> Gallery Walk Feedback Sheet</div>
+              </div>
+            </div>
+
+            {/* Reflection Exit Ticket */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fff', fontSize: '0.75rem', fontWeight: 'bold', display: 'block', marginBottom: '6px' }}>📝 AI Engineer Exit Ticket</span>
+              <ul style={{ margin: 0, paddingLeft: '16px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px', lineHeight: '1.4' }}>
+                <li>1. What is an algorithm?</li>
+                <li>2. Why does sequence order matter?</li>
+                <li>3. How did IF/ELSE improve your robot?</li>
+                <li>4. What caused your algorithm to fail during testing?</li>
+                <li>5. How did your team debug the problem?</li>
+                <li>6. What makes one algorithm better than another?</li>
+                <li>7. What trade-off did your team make?</li>
+                <li>8. How is today's work different from the data work in Part 1?</li>
+              </ul>
+              <div style={{ background: 'rgba(139, 92, 246, 0.05)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '10px', borderRadius: '6px', marginTop: '10px', fontSize: '0.75rem', fontStyle: 'italic', lineHeight: '1.4' }}>
+                💡 <strong>Core Concept:</strong> "In Part 1, you designed what a computer system KNOWS (Data). In Part 2, you designed what a computer system DOES (Algorithms). Soon, we will bring those ideas back together to make our chatbot more powerful."
+              </div>
+              <div style={{ background: 'rgba(255,255,255,0.02)', borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '8px', marginTop: '8px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins | 🛠️ <strong>Materials:</strong> AI Engineer Exit Ticket</div>
+              </div>
             </div>
           </div>
         )}
