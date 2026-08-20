@@ -917,10 +917,11 @@ return (
       background: #ffffff !important;
     }
     
-    /* Invalidate white gradient on heading */
-    h2[style*="background: 'linear-gradient"] {
-      background: none !important;
-      -webkit-text-fill-color: #0f172a !important;
+    /* Discovery Lab heading gradient fix for light background */
+    h2 {
+      background: linear-gradient(135deg, #0f172a 0%, #312e81 100%) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
       color: #0f172a !important;
     }
 
@@ -929,10 +930,18 @@ return (
       color: #0f172a !important;
     }
     p, li, td, th {
-      color: #334155 !important;
+      color: #1e293b !important;
     }
     span, label, strong {
-      color: #334155;
+      color: #1e293b !important;
+    }
+    
+    /* Overrides for inline white styles (React translates style={{ color: '#fff' }} to color: rgb(255, 255, 255) or color: #fff) */
+    [style*="color: #fff"],
+    [style*="color:#fff"],
+    [style*="color: rgb(255, 255, 255)"],
+    [style*="color:rgb(255, 255, 255)"] {
+      color: #1e293b !important;
     }
     
     /* Preserve warning/success labels */
@@ -953,43 +962,38 @@ return (
     }
 
     /* View mode switcher (Student Mode / Teacher Mode) */
-    div[style*="background: 'rgba(255,255,255,0.03)'"] {
+    div[style*="background: 'rgba(255,255,255,0.03)'"],
+    div[style*="background:rgba(255,255,255,0.03)"],
+    div[style*="background: rgba(255, 255, 255, 0.03)"] {
       background-color: #f1f5f9 !important;
       border: 1px solid #cbd5e1 !important;
     }
     
-    /* Active viewMode button: Student Mode */
-    button[style*="background: viewMode === 'student'"] {
-      background: #4f46e5 !important;
-      background-color: #4f46e5 !important;
-      color: #ffffff !important;
-    }
-    
-    /* Active viewMode button: Teacher Mode */
-    button[style*="background: viewMode === 'teacher'"] {
-      background: #4f46e5 !important;
-      background-color: #4f46e5 !important;
-      color: #ffffff !important;
-      border: none !important;
-    }
-    
     /* Inactive viewMode buttons */
-    button[style*="background: viewMode === 'student'"][style*="none"],
-    button[style*="background: viewMode === 'teacher'"][style*="transparent"] {
+    button[style*="background:none"],
+    button[style*="background:transparent"],
+    button[style*="background: none"],
+    button[style*="background: transparent"] {
       background: transparent !important;
       color: #475569 !important;
       border: none !important;
     }
 
+    /* Active viewMode button: Student Mode & Teacher Mode */
+    button[style*="linear-gradient"] {
+      color: #ffffff !important;
+    }
+
     /* School level selector buttons (Elementary / Middle) */
-    button[style*="schoolLevel === 'elementary'"],
-    button[style*="schoolLevel === 'middle'"] {
+    button[style*="border-radius: '30px'"],
+    button[style*="borderRadius: 30px"],
+    button[style*="borderRadius: '30px'"] {
       border: 1px solid #cbd5e1 !important;
     }
     
     /* Active school level button */
-    button[style*="schoolLevel === 'elementary'"][style*="0.15"],
-    button[style*="schoolLevel === 'middle'"][style*="0.15"] {
+    button[style*="rgba(99, 102, 241, 0.15)"],
+    button[style*="rgba(99,102,241,0.15)"] {
       background: #4f46e5 !important;
       background-color: #4f46e5 !important;
       color: #ffffff !important;
@@ -997,11 +1001,12 @@ return (
     }
     
     /* Inactive school level button */
-    button[style*="schoolLevel === 'elementary'"][style*="0.03"],
-    button[style*="schoolLevel === 'middle'"][style*="0.03"] {
+    button[style*="rgba(255, 255, 255, 0.03)"],
+    button[style*="rgba(255,255,255,0.03)"] {
       background: #ffffff !important;
       background-color: #ffffff !important;
       color: #475569 !important;
+      border-color: #cbd5e1 !important;
     }
 
     /* Cards Styling */
@@ -1011,15 +1016,8 @@ return (
     div[style*="background: 'rgba(255,255,255,0.03)'"] {
       background: #ffffff !important;
       background-color: #ffffff !important;
-      border: 1px solid #e2e8f0 !important;
+      border: 1px solid #cbd5e1 !important;
       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05) !important;
-    }
-
-    /* Override white text inside cards */
-    div[style*="background: 'var(--glass-bg)'"] h3,
-    div[style*="background: 'var(--glass-bg)'"] p,
-    div[style*="background: 'var(--glass-bg)'"] span {
-      color: #1e293b !important;
     }
 
     /* Buttons */
@@ -1032,19 +1030,23 @@ return (
       border: none !important;
     }
 
-    /* Inputs */
+    /* Inputs & Select Elements */
     input[type="text"], input[type="number"], select, textarea {
       background-color: #ffffff !important;
       border: 1px solid #cbd5e1 !important;
       color: #0f172a !important;
     }
+    select option {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
     
-    /* Variables variables */
+    /* Theme variables overrides */
     :root {
       --glass-bg: #ffffff !important;
       --glass-border: #cbd5e1 !important;
-      --text-secondary: #475569 !important;
-      --text-muted: #64748b !important;
+      --text-secondary: #1e293b !important;
+      --text-muted: #475569 !important;
       --primary: #4f46e5 !important;
       --primary-light: #6366f1 !important;
       --success: #16a34a !important;
@@ -1052,30 +1054,128 @@ return (
       --danger: #dc2626 !important;
     }
 
-    /* Sidebar menu */
-    div[style*="width: '240px'"], 
-    div[style*="width: 240px"], 
-    .sidebar {
-      background-color: #f8fafc !important;
-      border-right: 1px solid #e2e8f0 !important;
+    /* --- Teacher Facilitator Console Customizations --- */
+    
+    /* Facilitator Console Outer Container (#1d1726 -> rgb(29, 23, 38)) */
+    .curriculum-teacher-container,
+    div[style*="background: '#1d1726'"],
+    div[style*="background:'#1d1726'"],
+    div[style*="rgb(29, 23, 38)"],
+    div[style*="rgb(29,23,38)"] {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05) !important;
     }
-    div[style*="width: '240px'"] span, 
-    div[style*="width: 240px"] span {
-      color: #334155 !important;
+
+    /* Facilitator Header (#241a30 -> rgb(36, 26, 48)) */
+    div[style*="background: '#241a30'"],
+    div[style*="background:'#241a30'"],
+    div[style*="rgb(36, 26, 48)"],
+    div[style*="rgb(36,26,48)"] {
+      background: #f8fafc !important;
+      background-color: #f8fafc !important;
+      border-bottom: 1px solid #cbd5e1 !important;
+    }
+
+    /* Facilitator Left Sidebar (#282130 -> rgb(40, 33, 48)) */
+    div[style*="background: '#282130'"],
+    div[style*="background:'#282130'"],
+    div[style*="rgb(40, 33, 48)"],
+    div[style*="rgb(40,33,48)"] {
+      background: #f1f5f9 !important;
+      background-color: #f1f5f9 !important;
+      border-right: 1px solid #cbd5e1 !important;
+    }
+
+    /* Sidebar active tab buttons (#0284c7 -> rgb(2, 132, 199)) */
+    button[style*="border: isActive"],
+    button[style*="#0284c7"],
+    button[style*="rgb(2, 132, 199)"],
+    button[style*="rgb(2,132,199)"] {
+      background-color: #e0e7ff !important;
+      border: 2px solid #4f46e5 !important;
+      color: #4f46e5 !important;
     }
     
-    /* Active sidebar item */
-    div[style*="background: 'var(--primary)'"] span,
-    div[style*="border: '1px solid var(--primary)'"] span {
+    /* Sidebar inactive tab buttons */
+    button[style*="rgba(255, 255, 255, 0.6)"],
+    button[style*="rgba(255,255,255,0.6)"] {
+      color: #475569 !important;
+      border: 2px solid transparent !important;
+    }
+    button[style*="rgba(255, 255, 255, 0.6)"]:hover,
+    button[style*="rgba(255,255,255,0.6)"]:hover {
+      background-color: #e2e8f0 !important;
+    }
+
+    /* Facilitator Content Right Panel */
+    div[style*="background: 'rgba(0,0,0,0.1)'"],
+    div[style*="background:rgba(0,0,0,0.1)"] {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+    }
+
+    /* Sub-tabs divider line */
+    div[style*="borderBottom: '1px solid rgba(255,255,255,0.08)'"] {
+      border-bottom-color: #cbd5e1 !important;
+    }
+
+    /* Dynamic Sub-tab buttons (Overview and all Part subtabs) */
+    button[style*="SubTab === subTab.id"],
+    button[style*="OverviewSubTab === tab.id"],
+    button[style*="activeOverviewSubTab === tab.id"] {
+      border: 1px solid #cbd5e1 !important;
+      border-radius: 6px !important;
+      padding: 6px 12px !important;
+    }
+    
+    /* Inactive dynamic sub-tab buttons */
+    button[style*="SubTab === subTab.id"][style*="transparent"],
+    button[style*="OverviewSubTab === tab.id"][style*="transparent"],
+    button[style*="activeOverviewSubTab === tab.id"][style*="transparent"] {
+      color: #475569 !important;
+      background: transparent !important;
+    }
+    
+    /* Active dynamic sub-tab buttons */
+    button[style*="SubTab === subTab.id"][style*="0.06"],
+    button[style*="OverviewSubTab === tab.id"][style*="0.06"],
+    button[style*="activeOverviewSubTab === tab.id"][style*="0.06"] {
+      background-color: #e0e7ff !important;
       color: #4f46e5 !important;
+      border-color: #4f46e5 !important;
       font-weight: bold !important;
     }
-    div[style*="background: 'var(--primary)'"],
-    div[style*="border: '1px solid var(--primary)'"] {
-      background-color: #e0e7ff !important;
-      border: 1px solid #4f46e5 !important;
+    
+    /* Inactive checklist item text decorations */
+    label[style*="color: isChecked ? 'var(--text-muted)' : '#fff'"] {
+      color: #1e293b !important;
+    }
+    
+    /* Checklist border boxes */
+    div[style*="borderLeft: '3px solid"] {
+      background-color: #f8fafc !important;
+      border-color: #cbd5e1 !important;
+    }
+    
+    /* Standard tables and lists */
+    table {
+      background-color: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+    }
+    th {
+      background-color: #f8fafc !important;
+      color: #0f172a !important;
+      border-bottom: 2px solid #cbd5e1 !important;
+    }
+    td {
+      border-bottom: 1px solid #cbd5e1 !important;
     }
 `}</style>
+  
+  
+  
   
 <div className="container">
 {/* Upper Header */}
