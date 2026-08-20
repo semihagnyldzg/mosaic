@@ -370,7 +370,7 @@ const pdResources = {
 const getCategoryStyles = (category) => {
   switch (category) {
     case 'Concept Knowledge': return { bg: 'rgba(99, 102, 241, 0.1)', color: '#818cf8', border: '1px solid rgba(99, 102, 241, 0.2)' };
-    case 'Facilitation Strategy': return { bg: 'rgba(245°, 158, 11, 0.1)', color: '#fbbf24', border: '1px solid rgba(245°, 158, 11, 0.2)' };
+    case 'Facilitation Strategy': return { bg: 'rgba(245, 158, 11, 0.1)', color: '#fbbf24', border: '1px solid rgba(245, 158, 11, 0.2)' };
     case 'Scratch Support': return { bg: 'rgba(59, 130, 246, 0.1)', color: '#60a5fa', border: '1px solid rgba(59, 130, 246, 0.2)' };
     case 'Student Agency': return { bg: 'rgba(16, 185, 129, 0.1)', color: '#34d399', border: '1px solid rgba(16, 185, 129, 0.2)' };
     case 'Assessment': return { bg: 'rgba(244, 63, 94, 0.1)', color: '#fb7185', border: '1px solid rgba(244, 63, 94, 0.2)' };
@@ -896,7 +896,18 @@ const verifyAlgorithm = () => {
 return (
 <section id="curriculum" style={{ padding: '80px 0', position: 'relative' }}>
   <style>{`
-    /* Theme overrides for white background / light theme */
+    /* --- CSS Overrides for Centered Layout & Light Theme --- */
+    
+    /* Centering and Margins */
+    .container {
+      max-width: 1200px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: 24px !important;
+      padding-right: 24px !important;
+    }
+    
+    /* Page & Section Backgrounds */
     body, html, #curriculum, main, 
     div[style*="minHeight: '100vh'"], 
     div[class*="min-h-screen"],
@@ -904,31 +915,131 @@ return (
     div[style*="background: '#1d1825'"] {
       background-color: #ffffff !important;
       background: #ffffff !important;
-      color: #1e293b !important;
     }
-    h1, h2, h3, h4, h5, h6, 
-    [style*="color: '#fff'"], 
-    [style*="color: '#ffffff'"],
-    [style*="color: 'var(--text-secondary)'"],
-    [style*="color: 'var(--text-muted)'"] {
-      color: #1e293b !important;
-    }
-    h2, h3, h4, strong {
+    
+    /* Invalidate white gradient on heading */
+    h2[style*="background: 'linear-gradient"] {
+      background: none !important;
+      -webkit-text-fill-color: #0f172a !important;
       color: #0f172a !important;
     }
-    p, span, label, li, td, th {
+
+    /* Core typography contrast */
+    h1, h2, h3, h4, h5, h6 {
+      color: #0f172a !important;
+    }
+    p, li, td, th {
       color: #334155 !important;
     }
+    span, label, strong {
+      color: #334155;
+    }
+    
+    /* Preserve warning/success labels */
     span[style*="color: var(--success)"], 
-    label[style*="color: var(--success)"] {
+    label[style*="color: var(--success)"],
+    span[style*="color: '#34d399'"],
+    strong[style*="color: '#34d399'"] {
       color: #16a34a !important;
     }
-    span[style*="color: var(--warning)"] {
+    span[style*="color: var(--warning)"],
+    label[style*="color: var(--warning)"],
+    span[style*="color: '#fbbf24'"] {
       color: #d97706 !important;
     }
-    span[style*="color: var(--danger)"] {
+    span[style*="color: var(--danger)"],
+    label[style*="color: var(--danger)"] {
       color: #dc2626 !important;
     }
+
+    /* View mode switcher (Student Mode / Teacher Mode) */
+    div[style*="background: 'rgba(255,255,255,0.03)'"] {
+      background-color: #f1f5f9 !important;
+      border: 1px solid #cbd5e1 !important;
+    }
+    
+    /* Active viewMode button: Student Mode */
+    button[style*="background: viewMode === 'student'"] {
+      background: #4f46e5 !important;
+      background-color: #4f46e5 !important;
+      color: #ffffff !important;
+    }
+    
+    /* Active viewMode button: Teacher Mode */
+    button[style*="background: viewMode === 'teacher'"] {
+      background: #4f46e5 !important;
+      background-color: #4f46e5 !important;
+      color: #ffffff !important;
+      border: none !important;
+    }
+    
+    /* Inactive viewMode buttons */
+    button[style*="background: viewMode === 'student'"][style*="none"],
+    button[style*="background: viewMode === 'teacher'"][style*="transparent"] {
+      background: transparent !important;
+      color: #475569 !important;
+      border: none !important;
+    }
+
+    /* School level selector buttons (Elementary / Middle) */
+    button[style*="schoolLevel === 'elementary'"],
+    button[style*="schoolLevel === 'middle'"] {
+      border: 1px solid #cbd5e1 !important;
+    }
+    
+    /* Active school level button */
+    button[style*="schoolLevel === 'elementary'"][style*="0.15"],
+    button[style*="schoolLevel === 'middle'"][style*="0.15"] {
+      background: #4f46e5 !important;
+      background-color: #4f46e5 !important;
+      color: #ffffff !important;
+      border-color: #4f46e5 !important;
+    }
+    
+    /* Inactive school level button */
+    button[style*="schoolLevel === 'elementary'"][style*="0.03"],
+    button[style*="schoolLevel === 'middle'"][style*="0.03"] {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+      color: #475569 !important;
+    }
+
+    /* Cards Styling */
+    div[style*="background: 'var(--glass-bg)'"],
+    div[style*="background: 'rgba(255,255,255,0.01)'"],
+    div[style*="background: 'rgba(255,255,255,0.02)'"],
+    div[style*="background: 'rgba(255,255,255,0.03)'"] {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05) !important;
+    }
+
+    /* Override white text inside cards */
+    div[style*="background: 'var(--glass-bg)'"] h3,
+    div[style*="background: 'var(--glass-bg)'"] p,
+    div[style*="background: 'var(--glass-bg)'"] span {
+      color: #1e293b !important;
+    }
+
+    /* Buttons */
+    .btn-primary,
+    button[style*="background: 'var(--primary)'"],
+    button[style*="background: \"var(--primary)\""],
+    button[style*="background: 'var(--secondary)'"] {
+      background-color: #4f46e5 !important;
+      color: #ffffff !important;
+      border: none !important;
+    }
+
+    /* Inputs */
+    input[type="text"], input[type="number"], select, textarea {
+      background-color: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+    
+    /* Variables variables */
     :root {
       --glass-bg: #ffffff !important;
       --glass-border: #cbd5e1 !important;
@@ -940,6 +1051,8 @@ return (
       --warning: #d97706 !important;
       --danger: #dc2626 !important;
     }
+
+    /* Sidebar menu */
     div[style*="width: '240px'"], 
     div[style*="width: 240px"], 
     .sidebar {
@@ -950,56 +1063,20 @@ return (
     div[style*="width: 240px"] span {
       color: #334155 !important;
     }
-    div[style*="background: 'var(--primary)'"],
-    div[style*="background: \"var(--primary)\""],
-    div[style*="border: '1px solid var(--primary)'"] {
-      background-color: #e0e7ff !important;
-      border: 1px solid #4f46e5 !important;
-    }
+    
+    /* Active sidebar item */
     div[style*="background: 'var(--primary)'"] span,
     div[style*="border: '1px solid var(--primary)'"] span {
       color: #4f46e5 !important;
       font-weight: bold !important;
     }
-    div[style*="background: 'var(--glass-bg)'"],
-    div[style*="background: 'rgba(255,255,255,0.01)'"],
-    div[style*="background: 'rgba(255,255,255,0.02)'"],
-    div[style*="background: 'rgba(255,255,255,0.03)'"] {
-      background: #ffffff !important;
-      background-color: #ffffff !important;
-      border: 1px solid #cbd5e1 !important;
-      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05) !important;
-    }
-    button[style*="background: 'var(--primary)'"],
-    button[style*="background: \"var(--primary)\""],
-    button.btn-primary,
-    .btn-primary {
-      background-color: #4f46e5 !important;
-      color: #ffffff !important;
-      border: none !important;
-    }
-    input[type="text"], input[type="number"], select, textarea {
-      background-color: #ffffff !important;
-      border: 1px solid #cbd5e1 !important;
-      color: #0f172a !important;
-    }
-    table {
-      background-color: #ffffff !important;
-      border: 1px solid #e2e8f0 !important;
-    }
-    th {
-      background-color: #f8fafc !important;
-      color: #0f172a !important;
-    }
-    td {
-      color: #334155 !important;
-    }
-    div[style*="background: 'rgba(0,0,0,0.2)'"],
-    div[style*="background: 'rgba(0,0,0,0.3)'"] {
-      background-color: #f8fafc !important;
-      border: 1px solid #e2e8f0 !important;
+    div[style*="background: 'var(--primary)'"],
+    div[style*="border: '1px solid var(--primary)'"] {
+      background-color: #e0e7ff !important;
+      border: 1px solid #4f46e5 !important;
     }
 `}</style>
+  
 <div className="container">
 {/* Upper Header */}
 <div style={{
@@ -1011,7 +1088,7 @@ gap: '16px',
 marginBottom: '32px'
 }}>
 <div>
-<h2 style={{ fontSize: '2rem', background: 'linear-gradient(135°°deg, #fff 0%, var(--secondary-light) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+<h2 style={{ fontSize: '2rem', background: 'linear-gradient(135deg, #fff 0%, var(--secondary-light) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
 Discovery Lab Curriculum
 </h2>
 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginTop: '4px' }}>
@@ -1030,7 +1107,7 @@ onClick={() => { setViewMode('student'); setActiveChallenge(null); setActiveDay(
 style={{
 padding: '8px 16px',
 borderRadius: '8px',
-background: viewMode === 'student' ? 'linear-gradient(135°°deg, var(--primary) 0%, #6366f1 100%)' : 'none',
+background: viewMode === 'student' ? 'linear-gradient(135deg, var(--primary) 0%, #6366f1 100%)' : 'none',
 color: '#fff',
 border: 'none',
 cursor: 'pointer',
@@ -1414,7 +1491,7 @@ transition: 'all 0.2s'
 ))}
 </div>
 {c1StudentRole && (
-<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', background: c1CableConnected ? 'rgba(16, 185, 129, 0.08)' : 'rgba(245°°, 158, 11, 0.08)', border: c1CableConnected ? '1px solid rgba(16, 185, 129, 0.2)' : '1px solid rgba(245°°, 158, 11, 0.2)', padding: '12px', borderRadius: '6px' }}>
+<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', background: c1CableConnected ? 'rgba(16, 185, 129, 0.08)' : 'rgba(245, 158, 11, 0.08)', border: c1CableConnected ? '1px solid rgba(16, 185, 129, 0.2)' : '1px solid rgba(245, 158, 11, 0.2)', padding: '12px', borderRadius: '6px' }}>
 <span style={{ fontSize: '2rem' }}>☀️🌱🔋</span>
 <h5 style={{ color: 'var(--success)', fontSize: '0.85rem', margin: '4px 0 8px 0' }}>
 {c1CableConnected ? 'Database Connection Active! Mission Unlocked.' : 'Role Selected! Connect Database Cable to Begin'}
@@ -1878,7 +1955,7 @@ We must align two variables: Solar panel angle (0° to 90°) to capture solar ph
 Solar panels are most efficient when they face the sun directly. The angle of the panel changes the amount of light energy absorbed.
 </p>
 <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '20px' }}>
-Adjust the panel angle variable on the right close to **45°°°** to capture the sun's rays optimally, then click Next Day.
+Adjust the panel angle variable on the right close to **45°** to capture the sun's rays optimally, then click Next Day.
 </p>
 <button onClick={() => setActiveDay(3)} className="btn btn-primary" style={{ padding: '10px 20px', borderRadius: '6px' }}>Go to Day 8 ▶</button>
 </div>
@@ -2125,7 +2202,7 @@ Choose your blade count on the right. 3 Blades are recommended.
 Blade pitch angle defines the tilt of the rotor blades. Flat angles spin fast but stall in high wind. Steep angles capture wind easily but turn slowly.
 </p>
 <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '20px' }}>
-Adjust blade pitch angle slider close to **35°°°** for balanced drag resistance.
+Adjust blade pitch angle slider close to **35°** for balanced drag resistance.
 </p>
 <button onClick={() => setActiveDay(4)} className="btn btn-primary" style={{ padding: '10px 20px', borderRadius: '6px' }}>Go to Day 9 ▶</button>
 </div>
@@ -3466,7 +3543,7 @@ Adjust pacing to fit your class scheduling. Standard path represents a total of 
 <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem' }}>
 <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.04)', paddingBottom: '4px' }}>
 <span>Unit Introduction</span>
-<strong>1 Session (~45°° mins)</strong>
+<strong>1 Session (~45 mins)</strong>
 </div>
 <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.04)', paddingBottom: '4px' }}>
 <span>Part 1: Data / Infiltration</span>
@@ -3911,7 +3988,7 @@ Print Everything for This Lesson 🖨️
 </button>
 </div>
 {/* Before the Lesson Checklist */}
-<div style={{ background: 'rgba(245°°, 158, 11, 0.03)', border: '1px solid rgba(245°°, 158, 11, 0.15)', borderRadius: '8px', padding: '16px', marginBottom: '20px', textAlign: 'left' }}>
+<div style={{ background: 'rgba(245, 158, 11, 0.03)', border: '1px solid rgba(245, 158, 11, 0.15)', borderRadius: '8px', padding: '16px', marginBottom: '20px', textAlign: 'left' }}>
 <span style={{ fontSize: '0.75rem', color: '#fbbf24', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '8px' }}>📋 Before the Lesson Checklist</span>
 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px 16px' }}>
 {[
@@ -3970,9 +4047,9 @@ fontSize: '0.6rem',
 padding: '2px 6px',
 borderRadius: '8px',
 fontWeight: 'bold',
-background: res.mode.includes('Printable Recommended') ? 'rgba(245°°, 158, 11, 0.1)' : res.mode.includes('Digital Only') ? 'rgba(255,255,255,0.05)' : res.mode.includes('Optional Print') ? 'rgba(59, 130, 246, 0.1)' : 'rgba(20, 184, 166, 0.1)',
+background: res.mode.includes('Printable Recommended') ? 'rgba(245, 158, 11, 0.1)' : res.mode.includes('Digital Only') ? 'rgba(255,255,255,0.05)' : res.mode.includes('Optional Print') ? 'rgba(59, 130, 246, 0.1)' : 'rgba(20, 184, 166, 0.1)',
 color: res.mode.includes('Printable Recommended') ? '#fbbf24' : res.mode.includes('Digital Only') ? 'var(--text-muted)' : res.mode.includes('Optional Print') ? '#60a5fa' : '#2dd4bf',
-border: '1px solid ' + (res.mode.includes('Printable Recommended') ? 'rgba(245°°, 158, 11, 0.2)' : res.mode.includes('Digital Only') ? 'rgba(255,255,255,0.1)' : res.mode.includes('Optional Print') ? 'rgba(59, 130, 246, 0.2)' : 'rgba(20, 184, 166, 0.2)')
+border: '1px solid ' + (res.mode.includes('Printable Recommended') ? 'rgba(245, 158, 11, 0.2)' : res.mode.includes('Digital Only') ? 'rgba(255,255,255,0.1)' : res.mode.includes('Optional Print') ? 'rgba(59, 130, 246, 0.2)' : 'rgba(20, 184, 166, 0.2)')
 }}>{res.mode}</span>
 <button onClick={() => setPreviewResource(res)} style={{ background: 'var(--primary)', border: 'none', color: '#fff', padding: '4px 10px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.65rem', outline: 'none' }}>
 Preview ➜
@@ -4038,7 +4115,7 @@ Preview ➜
 {teacherUnit === 'botbuilder' ? (
 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
 {/* Overview Header */}
-<div style={{ background: 'linear-gradient(135°°deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%)', border: '1px solid rgba(255,255,255,0.05)', padding: '20px', borderRadius: '10px' }}>
+<div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%)', border: '1px solid rgba(255,255,255,0.05)', padding: '20px', borderRadius: '10px' }}>
 <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Unit Launch</span>
 <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.1rem' }}>The Chatbot Challenge Overview</h4>
 <p style={{ lineHeight: '1.6', margin: 0 }}>
@@ -4102,7 +4179,7 @@ Elicit student attention with the unit story. Introduce the scenario where the s
 </div>
 </div>
 {/* Step 2 */}
-<div style={{ borderLeft: '3px solid #f59e0b', paddingLeft: '16px', background: 'rgba(245°°, 158, 11, 0.02)', padding: '12px', borderRadius: '6px' }}>
+<div style={{ borderLeft: '3px solid #f59e0b', paddingLeft: '16px', background: 'rgba(245, 158, 11, 0.02)', padding: '12px', borderRadius: '6px' }}>
 <strong style={{ color: '#fff', display: 'block', marginBottom: '4px' }}>2. Hack-a-Thon Performance Reveal (10 min)</strong>
 <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: '1.4' }}>
 Reveal the final performance task: students will work in pairs to design an AI Chatbot that answers questions for a real-world problem (e.g. event schedules, campus navigation, library resources). Explain that at the end of the unit, they will participate in a team Hack-a-thon, competing to build solutions for new user cases.
@@ -4195,7 +4272,7 @@ fontWeight: activePart1SubTab === subTab.id ? 'bold' : 'normal'
 {activePart1SubTab === 'overview' && (
 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
 {/* AI Engineer Mission hook */}
-<div style={{ background: 'linear-gradient(135°°deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
+<div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
 <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>AI Engineer Mission Hook</span>
 <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: Designing a School Helper</h4>
 <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
