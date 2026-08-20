@@ -895,6 +895,111 @@ const verifyAlgorithm = () => {
 };
 return (
 <section id="curriculum" style={{ padding: '80px 0', position: 'relative' }}>
+  <style>{`
+    /* Theme overrides for white background / light theme */
+    body, html, #curriculum, main, 
+    div[style*="minHeight: '100vh'"], 
+    div[class*="min-h-screen"],
+    div[style*="background: '#0f172a'"],
+    div[style*="background: '#1d1825'"] {
+      background-color: #ffffff !important;
+      background: #ffffff !important;
+      color: #1e293b !important;
+    }
+    h1, h2, h3, h4, h5, h6, 
+    [style*="color: '#fff'"], 
+    [style*="color: '#ffffff'"],
+    [style*="color: 'var(--text-secondary)'"],
+    [style*="color: 'var(--text-muted)'"] {
+      color: #1e293b !important;
+    }
+    h2, h3, h4, strong {
+      color: #0f172a !important;
+    }
+    p, span, label, li, td, th {
+      color: #334155 !important;
+    }
+    span[style*="color: var(--success)"], 
+    label[style*="color: var(--success)"] {
+      color: #16a34a !important;
+    }
+    span[style*="color: var(--warning)"] {
+      color: #d97706 !important;
+    }
+    span[style*="color: var(--danger)"] {
+      color: #dc2626 !important;
+    }
+    :root {
+      --glass-bg: #ffffff !important;
+      --glass-border: #cbd5e1 !important;
+      --text-secondary: #475569 !important;
+      --text-muted: #64748b !important;
+      --primary: #4f46e5 !important;
+      --primary-light: #6366f1 !important;
+      --success: #16a34a !important;
+      --warning: #d97706 !important;
+      --danger: #dc2626 !important;
+    }
+    div[style*="width: '240px'"], 
+    div[style*="width: 240px"], 
+    .sidebar {
+      background-color: #f8fafc !important;
+      border-right: 1px solid #e2e8f0 !important;
+    }
+    div[style*="width: '240px'"] span, 
+    div[style*="width: 240px"] span {
+      color: #334155 !important;
+    }
+    div[style*="background: 'var(--primary)'"],
+    div[style*="background: \"var(--primary)\""],
+    div[style*="border: '1px solid var(--primary)'"] {
+      background-color: #e0e7ff !important;
+      border: 1px solid #4f46e5 !important;
+    }
+    div[style*="background: 'var(--primary)'"] span,
+    div[style*="border: '1px solid var(--primary)'"] span {
+      color: #4f46e5 !important;
+      font-weight: bold !important;
+    }
+    div[style*="background: 'var(--glass-bg)'"],
+    div[style*="background: 'rgba(255,255,255,0.01)'"],
+    div[style*="background: 'rgba(255,255,255,0.02)'"],
+    div[style*="background: 'rgba(255,255,255,0.03)'"] {
+      background: #ffffff !important;
+      background-color: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05) !important;
+    }
+    button[style*="background: 'var(--primary)'"],
+    button[style*="background: \"var(--primary)\""],
+    button.btn-primary,
+    .btn-primary {
+      background-color: #4f46e5 !important;
+      color: #ffffff !important;
+      border: none !important;
+    }
+    input[type="text"], input[type="number"], select, textarea {
+      background-color: #ffffff !important;
+      border: 1px solid #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+    table {
+      background-color: #ffffff !important;
+      border: 1px solid #e2e8f0 !important;
+    }
+    th {
+      background-color: #f8fafc !important;
+      color: #0f172a !important;
+    }
+    td {
+      color: #334155 !important;
+    }
+    div[style*="background: 'rgba(0,0,0,0.2)'"],
+    div[style*="background: 'rgba(0,0,0,0.3)'"] {
+      background-color: #f8fafc !important;
+      border: 1px solid #e2e8f0 !important;
+    }
+`}</style>
 <div className="container">
 {/* Upper Header */}
 <div style={{
