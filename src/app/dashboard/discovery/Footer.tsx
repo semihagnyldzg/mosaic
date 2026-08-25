@@ -4,8 +4,8 @@ import React from 'react';
 export default function Footer() {
   return (
     <footer style={{
-      background: 'rgba(3, 1, 7, 0.9)',
-      borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+      background: 'var(--bg-deep)',
+      borderTop: '1px solid var(--glass-border)',
       padding: '60px 0 40px',
       color: 'var(--text-secondary)',
       textAlign: 'left'
@@ -29,7 +29,7 @@ export default function Footer() {
                   fontFamily: 'var(--font-heading)',
                   fontWeight: 900,
                   fontSize: '1rem',
-                  color: '#fff',
+                  color: 'var(--text-primary)',
                   letterSpacing: '0.05em',
                   lineHeight: '1.2'
                 }}>
@@ -53,17 +53,17 @@ export default function Footer() {
           {/* Column 2: Coordinator Profile */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <h4 style={{
-              color: '#fff',
+              color: 'var(--text-primary)',
               fontSize: '0.85rem',
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
-              borderBottom: '1px solid rgba(255,255,255,0.05)',
+              borderBottom: '1px solid var(--glass-border)',
               paddingBottom: '6px'
             }}>
               Platform Coordinator
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.85rem' }}>
-              <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Semiha G Yildiz</strong>
+              <strong style={{ color: 'var(--text-primary)', fontSize: '0.95rem' }}>Semiha G Yildiz</strong>
               <span style={{ color: 'var(--secondary-light)', fontWeight: 600, fontSize: '0.8rem' }}>
                 PhD Candidate - STEM Education
               </span>
@@ -73,11 +73,11 @@ export default function Footer() {
           {/* Column 3: Contact & Address details */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <h4 style={{
-              color: '#fff',
+              color: 'var(--text-primary)',
               fontSize: '0.85rem',
               textTransform: 'uppercase',
               letterSpacing: '0.05em',
-              borderBottom: '1px solid rgba(255,255,255,0.05)',
+              borderBottom: '1px solid var(--glass-border)',
               paddingBottom: '6px'
             }}>
               Contact Info
@@ -92,7 +92,7 @@ export default function Footer() {
 
         {/* Bottom Footer Bar */}
         <div style={{
-          borderTop: '1px solid rgba(255, 255, 255, 0.05)',
+          borderTop: '1px solid var(--glass-border)',
           paddingTop: '20px',
           display: 'flex',
           justifyContent: 'space-between',
