@@ -1,5 +1,5 @@
-'use client';
-﻿import React from 'react';
+﻿'use client';
+import React from 'react';
 
 export default function Footer() {
   return (
@@ -33,7 +33,7 @@ export default function Footer() {
                   letterSpacing: '0.05em',
                   lineHeight: '1.2'
                 }}>
-                  TMSA PUBLIC CHARTER SCHOOLS
+                  MOSAIC EDUCATION PLATFORM
                 </strong>
                 <span style={{
                   fontSize: '0.75rem',
@@ -41,12 +41,12 @@ export default function Footer() {
                   fontStyle: 'italic',
                   marginTop: '2px'
                 }}>
-                  Science Wisdom Peace
+                  School Intelligence & STEM Hub
                 </span>
               </div>
             </div>
             <p style={{ fontSize: '0.8rem', lineHeight: '1.5', maxWidth: '300px', color: 'var(--text-secondary)' }}>
-              Providing quality education through active student agency, inquiry-led exploration, and district-wide STEAM alignment.
+              Providing quality education through active student agency, inquiry-led exploration, and intelligent curriculum alignment.
             </p>
           </div>
 
@@ -60,15 +60,12 @@ export default function Footer() {
               borderBottom: '1px solid rgba(255,255,255,0.05)',
               paddingBottom: '6px'
             }}>
-              STEAM Coordinator
+              Platform Coordinator
             </h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.85rem' }}>
               <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Semiha G Yildiz</strong>
               <span style={{ color: 'var(--secondary-light)', fontWeight: 600, fontSize: '0.8rem' }}>
                 PhD Candidate - STEM Education
-              </span>
-              <span style={{ color: 'var(--text-secondary)', fontSize: '0.75rem', lineHeight: '1.4' }}>
-                District STEAM & Science Department Coordinator
               </span>
             </div>
           </div>
@@ -83,12 +80,11 @@ export default function Footer() {
               borderBottom: '1px solid rgba(255,255,255,0.05)',
               paddingBottom: '6px'
             }}>
-              Central Office Contact
+              Contact Info
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.8rem', padding: 0, margin: 0 }}>
               <li>📞 <strong>Phone:</strong> (919) 650 2270</li>
-              <li>✉️ <strong>Email:</strong> <a href="mailto:semiha.yildiz@tmsaschools.org" style={{ color: 'var(--primary-light)', textDecoration: 'none' }} onMouseEnter={e => e.target.style.textDecoration = 'underline'} onMouseLeave={e => e.target.style.textDecoration = 'none'}>semiha.yildiz@tmsaschools.org</a></li>
-              <li>📍 <strong>Address:</strong> 3570 Amberlight Rd., Apex, NC 27502</li>
+              <li>✉️ <strong>Email:</strong> info@mosaicedu.app</li>
             </ul>
           </div>
 
@@ -106,9 +102,9 @@ export default function Footer() {
           fontSize: '0.75rem',
           color: 'var(--text-muted)'
         }}>
-          <span>&copy; {new Date().getFullYear()} TMSA Public Charter Schools. All Rights Reserved.</span>
+          <span>&copy; {new Date().getFullYear()} Mosaic Education. All Rights Reserved.</span>
           <div style={{ display: 'flex', gap: '16px' }}>
-            <span style={{ color: 'var(--text-muted)' }}>Science Wisdom Peace</span>
+            <span style={{ color: 'var(--text-muted)' }}>Learning Intelligence</span>
           </div>
         </div>
 

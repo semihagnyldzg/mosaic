@@ -1374,7 +1374,7 @@ transition: 'all 0.2s'
         <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 1: Data</span>
         <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 1: Smart Pictures</h3>
         <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
-          Show animal pictures to your chatbot! Match the dog and cat cards.
+          Teach your first AI chatbot using visual picture data. Classify animal cards (dogs, cats) and see how a smart machine groups items by matching properties.
         </p>
       </div>
       <button onClick={() => { setActiveChallenge('k4-chatbot'); setActiveDay(1); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Play Lab 🚀</button>
@@ -1387,7 +1387,7 @@ transition: 'all 0.2s'
         <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 2: Algorithms</span>
         <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 2: Step Arrows</h3>
         <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
-          Help the school robot find the library! Click arrows to build the path.
+          Learn computational navigation by building sequences of direction arrows. Program the school robot's path to navigate around blockades and reach the library.
         </p>
       </div>
       <button onClick={() => { setActiveChallenge('k4-chatbot'); setActiveDay(2); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Play Lab 🚀</button>
@@ -1400,7 +1400,7 @@ transition: 'all 0.2s'
         <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 3: Variables</span>
         <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 3: Memory Boxes</h3>
         <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
-          Put color blocks inside different boxes. Update what the box remembers!
+          Explore variables as memory containers that store values. Drop colored blocks into boxes to update and retrieve what the chatbot remembers in real-time.
         </p>
       </div>
       <button onClick={() => { setActiveChallenge('k4-chatbot'); setActiveDay(3); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Play Lab 🚀</button>
@@ -1413,7 +1413,7 @@ transition: 'all 0.2s'
         <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 4: Loops</span>
         <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 4: Repeat Dance</h3>
         <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
-          Make the character dance! Loop simple movements like clap or jump.
+          Discover how repeat loops automate actions. Choose movement counts and loop actions to make your character clap, wave, and jump in a dance choreography.
         </p>
       </div>
       <button onClick={() => { setActiveChallenge('k4-chatbot'); setActiveDay(4); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Play Lab 🚀</button>
@@ -1426,7 +1426,7 @@ transition: 'all 0.2s'
         <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Unit Share</span>
         <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Unit Share: Expo</h3>
         <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
-          Draw your custom chatbot, select its role, and show it to your classmates!
+          Pick a helpful role for your avatar, draw its design on a template canvas, and showcase it to collect hearts and stars from your classmates.
         </p>
       </div>
       <button onClick={() => { setActiveChallenge('k4-chatbot'); setActiveDay(5); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Open Showcase 🚀</button>
