@@ -50,26 +50,6 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Column 2: Coordinator Profile */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <h4 style={{
-              color: 'var(--text-primary)',
-              fontSize: '0.85rem',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em',
-              borderBottom: '1px solid var(--glass-border)',
-              paddingBottom: '6px'
-            }}>
-              Platform Coordinator
-            </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.85rem' }}>
-              <strong style={{ color: 'var(--text-primary)', fontSize: '0.95rem' }}>Semiha G Yildiz</strong>
-              <span style={{ color: 'var(--secondary-light)', fontWeight: 600, fontSize: '0.8rem' }}>
-                PhD Candidate - STEM Education
-              </span>
-            </div>
-          </div>
-
           {/* Column 3: Contact & Address details */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <h4 style={{
