@@ -87,6 +87,13 @@ const printingResources = {
     { id: 'eco-res-turbine', category: 'Student Learning Resources', title: 'Wind Turbine Vectors Map', part: 'part2', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Traces blade counts and angle pitch calculations against grid energy loads.' },
     { id: 'eco-res-chem', category: 'Student Learning Resources', title: 'Chemical Filtration Logs', part: 'part3', pages: 2, ratio: '1 per student', mode: 'Digital + Printable', directions: 'Worksheets for mapping pH values and drops needed to neutralize acidic stormwater.' },
     { id: 'eco-res-tower', category: 'Student Learning Resources', title: 'Structural Loads Blueprint', part: 'part4', pages: 3, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Blueprints for building seismic resistant towers and recording shake table load tests.' }
+  ],
+  earlybot: [
+    { id: 'k4-res-pics', category: 'Student Learning Resources', title: 'Smart Picture Emoji Cards', part: 'part1', pages: 1, ratio: '1 set per pair', mode: 'Printable Recommended', directions: 'Big colored cards with animals and object pictures for offline classification.' },
+    { id: 'k4-res-arrows', category: 'Student Learning Resources', title: 'Giant Step Floor Arrows', part: 'part2', pages: 2, ratio: '1 set per team', mode: 'Printable Recommended', directions: 'Printable floor direction arrows for building grid navigation paths.' },
+    { id: 'k4-res-pockets', category: 'Student Learning Resources', title: 'Memory Pocket Sticker Labels', part: 'part3', pages: 1, ratio: '1 set per team', mode: 'Optional Print', directions: 'Sticker labels to attach to physical memory boxes/buckets.' },
+    { id: 'k4-res-dance', category: 'Student Learning Resources', title: 'Loop Dance Action Cards', part: 'part4', pages: 1, ratio: '1 set per student', mode: 'Digital + Printable', directions: 'Movement cards (clap, wave, spin) for building choreographies.' },
+    { id: 'k4-res-drawing', category: 'Student Learning Resources', title: 'My Chatbot Drawing Canvas', part: 'share', pages: 1, ratio: '1 per student', mode: 'Printable Recommended', directions: 'A template sheet for drawing and labeling their personal helper chatbot.' }
   ]
 };
 
@@ -169,6 +176,19 @@ const prepChecklist = {
     part3: ['Prepare chemical pH test indicator drop sets.'],
     part4: ['Construct wooden base shake tables for towers.'],
     share: ['Design final sustainable environmental map posters.']
+  },
+  earlybot: {
+    all: [
+      'Prepare animal and object emoji flashcards.',
+      'Check that class tablets/devices load K-4 simulation panels.',
+      'Print loop choreography sheets for teams.'
+    ],
+    intro: ['Elicit K-4 prior knowledge using visual icons.'],
+    part1: ['Prepare red/blue hoops for physical toy vs. animal sort.'],
+    part2: ['Lay down classroom tape path lines for human grid game.'],
+    part3: ['Prepare physical labeled cups and color blocks.'],
+    part4: ['Practice K-4 loop dance movements (clap, wave, spin).'],
+    share: ['Print drawing canvases and prepare smiley stickers.']
   }
 };
 
@@ -364,6 +384,36 @@ const pdResources = {
       whyThisMatters: "Helps students understand how physical values map to code variables.",
       whatTeachersNeedToKnow: "Variables in physical simulations correspond directly to material parameters and environmental forces.",
       whenToUseThis: "Recommended before: Part 3 - Chemical Filtration"
+    }
+  ],
+  earlybot: [
+    {
+      id: "early-computational-thinking",
+      title: "CT for Pre-readers",
+      category: "Concept Knowledge",
+      categoryColor: "indigo",
+      description: "Support computational thinking without reading requirements using visual cues.",
+      whyThisMatters: "Builds problem decomposition and pattern matching foundations for early learners.",
+      whatTeachersNeedToKnow: "Focus on icons, emojis, and physical cards instead of text variables.",
+      whenToUseThis: "Recommended before: Part 1 - Hour 1",
+      whatToSay: '"We can give rules to machines using pictures!"',
+      questions: ["How do pictures show our instructions?"],
+      lookFor: "Students sorting physical items by properties.",
+      quickStrategy: "Ask students to group blocks by color and shape."
+    },
+    {
+      id: "unplugged-classroom-games",
+      title: "Managing Active Unplugged Games",
+      category: "Facilitation Strategy",
+      categoryColor: "amber",
+      description: "Help students connect physical navigation and memory games to digital computer rules.",
+      whyThisMatters: "Improves student understanding of algorithmic sequences before touch interfaces.",
+      whatTeachersNeedToKnow: "Act as the 'compiler' and read out instructions as students step through grid tape.",
+      whenToUseThis: "Recommended before: Part 2 - Hour 1",
+      whatToSay: 'Step forward! Sola dön!',
+      questions: ["Did the robot follow your arrow?"],
+      lookFor: "Students matching card arrows to physical movements.",
+      quickStrategy: "Play a quick Simon Says game to model step instructions."
     }
   ]
 };
@@ -858,6 +908,18 @@ const [towerLog, setTowerLog] = useState('Configure tower and test seismic resis
 useEffect(() => {
 chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
 }, [chatMessages, isBotTyping]);
+/* --- K-4 Early BotBuilder States --- */
+  const [k4D1Choice, setK4D1Choice] = useState<string | null>(null);
+  const [k4D2Steps, setK4D2Steps] = useState<string[]>([]);
+  const [k4D3Box, setK4D3Box] = useState<string | null>(null);
+  const [k4D4LoopCount, setK4D4LoopCount] = useState<number>(2);
+  const [k4D4Move, setK4D4Move] = useState<string | null>(null);
+  const [k4D4Result, setK4D4Result] = useState<string>('');
+  const [k4D5Likes, setK4D5Likes] = useState({ hearts: 0, stars: 0, thumbs: 0 });
+  const [k4CompletedMissions, setK4CompletedMissions] = useState({
+    d1: false, d2: false, d3: false, d4: false, d5: false
+  });
+
 // Welcome inside Chatbot Day 5
 useEffect(() => {
 if (activeChallenge === 'chatbot' && activeDay === 5 && chatMessages.length === 0) {
@@ -1249,6 +1311,23 @@ gap: '12px',
 marginBottom: '32px'
 }}>
 <button
+onClick={() => setSchoolLevel('k4')}
+style={{
+padding: '12px 24px',
+borderRadius: '30px',
+background: schoolLevel === 'k4' ? 'rgba(99, 102, 241, 0.15)' : 'rgba(255,255,255,0.03)',
+border: schoolLevel === 'k4' ? '2px solid var(--primary)' : '1px solid rgba(255,255,255,0.08)',
+color: schoolLevel === 'k4' ? '#fff' : 'var(--text-secondary)',
+fontWeight: 'bold',
+fontSize: '0.9rem',
+cursor: 'pointer',
+transition: 'all 0.2s',
+marginRight: '12px'
+}}
+>
+🐣 Early Learners (Grades K-4)
+</button>
+<button
 onClick={() => setSchoolLevel('elementary')}
 style={{
 padding: '12px 24px',
@@ -1262,7 +1341,7 @@ cursor: 'pointer',
 transition: 'all 0.2s'
 }}
 >
-🎒 Elementary School (Grades 4-5)
+🎒 Upper Elementary (Grades 4-5)
 </button>
       <button
         onClick={() => setSchoolLevel('middle')}
@@ -1285,7 +1364,78 @@ transition: 'all 0.2s'
 {activeChallenge === null ? (
 // Week Dashboard selection
 <div>
-{schoolLevel === 'elementary' ? (
+{schoolLevel === 'k4' ? (
+  <div style={{
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+    gap: '20px'
+  }}>
+    {/* K-4 Card 1 */}
+    <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+      <div>
+        <span style={{ fontSize: '2.2rem' }}>🎨🐶🐱</span>
+        <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 1: Data</span>
+        <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 1: Smart Pictures</h3>
+        <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+          Show animal pictures to your chatbot! Match the dog and cat cards.
+        </p>
+      </div>
+      <button onClick={() => { setActiveChallenge('k4-chatbot'); setActiveDay(1); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Play Lab 🚀</button>
+    </div>
+
+    {/* K-4 Card 2 */}
+    <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+      <div>
+        <span style={{ fontSize: '2.2rem' }}>👣⬅️➡️</span>
+        <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 2: Algorithms</span>
+        <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 2: Step Arrows</h3>
+        <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+          Help the school robot find the library! Click arrows to build the path.
+        </p>
+      </div>
+      <button onClick={() => { setActiveChallenge('k4-chatbot'); setActiveDay(2); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Play Lab 🚀</button>
+    </div>
+
+    {/* K-4 Card 3 */}
+    <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+      <div>
+        <span style={{ fontSize: '2.2rem' }}>📦🔴🔵</span>
+        <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 3: Variables</span>
+        <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 3: Memory Boxes</h3>
+        <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+          Put color blocks inside different boxes. Update what the box remembers!
+        </p>
+      </div>
+      <button onClick={() => { setActiveChallenge('k4-chatbot'); setActiveDay(3); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Play Lab 🚀</button>
+    </div>
+
+    {/* K-4 Card 4 */}
+    <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+      <div>
+        <span style={{ fontSize: '2.2rem' }}>🔄💃🕺</span>
+        <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Part 4: Loops</span>
+        <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Part 4: Repeat Dance</h3>
+        <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+          Make the character dance! Loop simple movements like clap or jump.
+        </p>
+      </div>
+      <button onClick={() => { setActiveChallenge('k4-chatbot'); setActiveDay(4); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Play Lab 🚀</button>
+    </div>
+
+    {/* K-4 Card 5 */}
+    <div style={{ background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', borderRadius: 'var(--border-radius-md)', border: '1px solid var(--glass-border)', padding: '20px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: '0 8px 32px rgba(0,0,0,0.2)' }}>
+      <div>
+        <span style={{ fontSize: '2.2rem' }}>🎨🗣️🌟</span>
+        <span style={{ display: 'block', fontSize: '0.7rem', color: 'var(--success)', fontWeight: 'bold', textTransform: 'uppercase', marginTop: '6px' }}>Unit Share</span>
+        <h3 style={{ margin: '6px 0 8px 0', fontSize: '1.1rem', color: '#fff', textAlign: 'left' }}>Unit Share: Expo</h3>
+        <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.4', textAlign: 'left' }}>
+          Draw your custom chatbot, select its role, and show it to your classmates!
+        </p>
+      </div>
+      <button onClick={() => { setActiveChallenge('k4-chatbot'); setActiveDay(5); }} className="btn btn-primary" style={{ marginTop: '16px', padding: '8px', borderRadius: '6px', width: '100%', fontSize: '0.85rem' }}>Open Showcase 🚀</button>
+    </div>
+  </div>
+) : schoolLevel === 'elementary' ? (
   <div style={{
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
@@ -1542,6 +1692,222 @@ Day {absoluteDay} {isCompleted ? '✓' : ''}
 {/* Day-by-Day Content Container */}
 <div style={{ padding: '36px' }}>
 {/* --- ELEMENTARY WEEK 1: Coding & Algorithms --- */}
+{activeChallenge === 'k4-chatbot' && (
+  <div>
+    {/* Day 1: Smart Pictures (Data) */}
+    {activeDay === 1 && (
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+        <div>
+          <h4 style={{ color: '#0f172a', fontSize: '1.2rem', marginBottom: '12px', fontWeight: 'bold' }}>Day 1: Smart Pictures (Data)</h4>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '20px' }}>
+            Welcome to the Smart Pictures Lab! Chatbots use pictures to know what things are. Click the 🐶 Dog button to teach the chatbot what a dog is!
+          </p>
+          <div style={{ display: 'flex', gap: '12px', marginBottom: '24px' }}>
+            <button onClick={() => { setK4D1Choice('dog'); setK4CompletedMissions(prev => ({ ...prev, d1: true })); }} className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '1.1rem' }}>🐶 Dog</button>
+            <button onClick={() => { setK4D1Choice('cat'); }} className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '1.1rem', background: '#ec4899' }}>🐱 Cat</button>
+            <button onClick={() => { setK4D1Choice('robot'); }} className="btn btn-primary" style={{ padding: '12px 24px', fontSize: '1.1rem', background: '#10b981' }}>🤖 Robot</button>
+          </div>
+          {k4CompletedMissions.d1 && (
+            <button onClick={() => setActiveDay(2)} className="btn btn-primary" style={{ padding: '10px 20px', borderRadius: '6px' }}>Go to Day 2 ▶</button>
+          )}
+        </div>
+        <div>
+          <div style={{ background: 'rgba(0,0,0,0.03)', border: '1px solid #cbd5e1', padding: '24px', borderRadius: '12px', textAlign: 'center', minHeight: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            {k4D1Choice ? (
+              <div>
+                <span style={{ fontSize: '4rem', display: 'block' }}>{k4D1Choice === 'dog' ? '🐶' : k4D1Choice === 'cat' ? '🐱' : '🤖'}</span>
+                <strong style={{ display: 'block', marginTop: '12px', fontSize: '1.1rem', color: 'var(--success)' }}>
+                  {k4D1Choice === 'dog' ? 'Woof! This is a Dog! 🐾' : k4D1Choice === 'cat' ? 'Meow! This is a Cat! 🐾' : 'Hello! I am a Robot! ⚡'}
+                </strong>
+              </div>
+            ) : (
+              <span style={{ fontSize: '1.1rem', color: 'var(--text-muted)' }}>Click a button to train the chatbot!</span>
+            )}
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* Day 2: Step Arrows (Algorithms) */}
+    {activeDay === 2 && (
+      <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '32px' }}>
+        <div>
+          <h4 style={{ color: '#0f172a', fontSize: '1.2rem', marginBottom: '12px', fontWeight: 'bold' }}>Day 2: Step Arrows (Algorithms)</h4>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '16px' }}>
+            Help the school robot find the library! Click the direction arrows below to build the path. The robot needs to go ➡️ Right twice and ⬆️ Up twice to reach the library 📚!
+          </p>
+          <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+            <button onClick={() => setK4D2Steps(prev => [...prev, '➡️'])} className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '1.1rem' }}>➡️ Right</button>
+            <button onClick={() => setK4D2Steps(prev => [...prev, '⬆️'])} className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '1.1rem', background: '#10b981' }}>⬆️ Up</button>
+            <button onClick={() => setK4D2Steps([])} className="btn btn-primary" style={{ padding: '8px 16px', background: '#ef4444' }}>Clear ❌</button>
+          </div>
+          <div style={{ padding: '12px', background: 'rgba(0,0,0,0.03)', borderRadius: '8px', minHeight: '60px', marginBottom: '20px', border: '1px dashed #cbd5e1' }}>
+            <strong style={{ fontSize: '0.8rem', color: 'var(--text-muted)', display: 'block', marginBottom: '6px' }}>Your Path:</strong>
+            <span style={{ fontSize: '1.5rem', letterSpacing: '4px' }}>{k4D2Steps.join(' ')}</span>
+          </div>
+          <div style={{ display: 'flex', gap: '10px' }}>
+            <button onClick={() => {
+              const rightCount = k4D2Steps.filter(s => s === '➡️').length;
+              const upCount = k4D2Steps.filter(s => s === '⬆️').length;
+              if (rightCount >= 2 && upCount >= 2) {
+                setK4CompletedMissions(prev => ({ ...prev, d2: true }));
+                alert("🎉 Safe Path! The robot reached the Library 📚!");
+              } else {
+                alert("⚠️ Not there yet! Make sure the robot goes at least 2 steps Right and 2 steps Up.");
+              }
+            }} className="btn btn-primary" style={{ padding: '10px 20px' }}>Run Path 🚀</button>
+            {k4CompletedMissions.d2 && (
+              <button onClick={() => setActiveDay(3)} className="btn btn-primary" style={{ padding: '10px 20px', background: '#10b981' }}>Go to Day 3 ▶</button>
+            )}
+          </div>
+        </div>
+        <div>
+          {/* Visual 3x3 Grid */}
+          <div style={{ display: 'grid', gridTemplateRows: 'repeat(3, 1fr)', gap: '6px', background: 'rgba(0,0,0,0.03)', border: '1px solid #cbd5e1', padding: '16px', borderRadius: '12px', width: '240px', height: '240px', margin: '0 auto' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '6px' }}>
+              <div style={{ background: '#e0e7ff', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', border: '1px solid #cbd5e1' }}>📚</div>
+              <div style={{ background: '#f8fafc', borderRadius: '6px', border: '1px dashed #e2e8f0' }}></div>
+              <div style={{ background: '#f8fafc', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', border: '1px dashed #e2e8f0' }}>🌟</div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '6px' }}>
+              <div style={{ background: '#f8fafc', borderRadius: '6px', border: '1px dashed #e2e8f0' }}></div>
+              <div style={{ background: '#fee2e2', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem', color: '#fff', border: '1px solid #fca5a5' }}>🚧</div>
+              <div style={{ background: '#f8fafc', borderRadius: '6px', border: '1px dashed #e2e8f0' }}></div>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '6px' }}>
+              <div style={{ background: '#e0e7ff', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', border: '1px solid #cbd5e1' }}>🤖</div>
+              <div style={{ background: '#f8fafc', borderRadius: '6px', border: '1px dashed #e2e8f0' }}></div>
+              <div style={{ background: '#f8fafc', borderRadius: '6px', border: '1px dashed #e2e8f0' }}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* Day 3: Memory Boxes (Variables) */}
+    {activeDay === 3 && (
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+        <div>
+          <h4 style={{ color: '#0f172a', fontSize: '1.2rem', marginBottom: '12px', fontWeight: 'bold' }}>Day 3: Memory Boxes (Variables)</h4>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '20px' }}>
+            A Variable is like a box that remembers things! Click the color buttons to put a color inside the magic box. Click the 🟢 Green button to unlock the next level!
+          </p>
+          <div style={{ display: 'flex', gap: '12px', marginBottom: '24px' }}>
+            <button onClick={() => { setK4D3Box('red'); }} className="btn btn-primary" style={{ padding: '10px 20px', background: '#ef4444' }}>🔴 Red</button>
+            <button onClick={() => { setK4D3Box('blue'); }} className="btn btn-primary" style={{ padding: '10px 20px', background: '#3b82f6' }}>🔵 Blue</button>
+            <button onClick={() => { setK4D3Box('green'); setK4CompletedMissions(prev => ({ ...prev, d3: true })); }} className="btn btn-primary" style={{ padding: '10px 20px', background: '#10b981' }}>🟢 Green</button>
+          </div>
+          {k4CompletedMissions.d3 && (
+            <button onClick={() => setActiveDay(4)} className="btn btn-primary" style={{ padding: '10px 20px', borderRadius: '6px' }}>Go to Day 4 ▶</button>
+          )}
+        </div>
+        <div>
+          <div style={{ background: 'rgba(0,0,0,0.03)', border: '1px solid #cbd5e1', padding: '24px', borderRadius: '12px', textAlign: 'center', minHeight: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+            <span style={{ fontSize: '3rem' }}>📦</span>
+            <strong style={{ fontSize: '1rem', marginTop: '10px', color: '#0f172a' }}>My Box remembers:</strong>
+            {k4D3Box ? (
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px' }}>
+                <span style={{ fontSize: '1.5rem' }}>{k4D3Box === 'red' ? '🔴' : k4D3Box === 'blue' ? '🔵' : '🟢'}</span>
+                <span style={{ fontSize: '1.1rem', fontWeight: 'bold', textTransform: 'capitalize', color: 'var(--success)' }}>{k4D3Box}</span>
+              </div>
+            ) : (
+              <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginTop: '8px' }}>The box is empty!</span>
+            )}
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* Day 4: Repeat Dance (Loops) */}
+    {activeDay === 4 && (
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '32px' }}>
+        <div>
+          <h4 style={{ color: '#0f172a', fontSize: '1.2rem', marginBottom: '12px', fontWeight: 'bold' }}>Day 4: Repeat Dance (Loops)</h4>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '16px' }}>
+            A loop tells the computer to repeat instructions. Choose how many times to repeat and select a dance move, then click Dance!
+          </p>
+          <div style={{ display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '16px' }}>
+            <span style={{ fontSize: '0.85rem', fontWeight: 'bold', color: '#0f172a' }}>Repeat Count:</span>
+            <button onClick={() => setK4D4LoopCount(2)} className="btn btn-primary" style={{ padding: '6px 12px', background: k4D4LoopCount === 2 ? '#4f46e5' : '#cbd5e1', color: k4D4LoopCount === 2 ? '#fff' : '#475569' }}>2x</button>
+            <button onClick={() => setK4D4LoopCount(5)} className="btn btn-primary" style={{ padding: '6px 12px', background: k4D4LoopCount === 5 ? '#4f46e5' : '#cbd5e1', color: k4D4LoopCount === 5 ? '#fff' : '#475569' }}>5x</button>
+          </div>
+          <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+            <button onClick={() => setK4D4Move('clap')} className="btn btn-primary" style={{ padding: '8px 16px' }}>👏 Clap</button>
+            <button onClick={() => setK4D4Move('wave')} className="btn btn-primary" style={{ padding: '8px 16px', background: '#ec4899' }}>👋 Wave</button>
+            <button onClick={() => setK4D4Move('jump')} className="btn btn-primary" style={{ padding: '8px 16px', background: '#10b981' }}>🦘 Jump</button>
+          </div>
+          <div style={{ display: 'flex', gap: '10px' }}>
+            <button onClick={() => {
+              if (k4D4Move) {
+                const emoji = k4D4Move === 'clap' ? '👏' : k4D4Move === 'wave' ? '👋' : '🦘';
+                setK4D4Result(Array(k4D4LoopCount).fill(emoji).join(' '));
+                setK4CompletedMissions(prev => ({ ...prev, d4: true }));
+              } else {
+                alert("Please pick a dance move first!");
+              }
+            }} className="btn btn-primary" style={{ padding: '10px 20px' }}>Dance! 🔄</button>
+            {k4CompletedMissions.d4 && (
+              <button onClick={() => setActiveDay(5)} className="btn btn-primary" style={{ padding: '10px 20px', background: '#10b981' }}>Go to Day 5 ▶</button>
+            )}
+          </div>
+        </div>
+        <div>
+          <div style={{ background: 'rgba(0,0,0,0.03)', border: '1px solid #cbd5e1', padding: '24px', borderRadius: '12px', minHeight: '200px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+            {k4D4Result ? (
+              <div>
+                <span style={{ fontSize: '3rem', display: 'block' }}>🕺💃🔄</span>
+                <span style={{ fontSize: '1.8rem', display: 'block', marginTop: '12px', letterSpacing: '4px' }}>{k4D4Result}</span>
+              </div>
+            ) : (
+              <span style={{ color: 'var(--text-muted)', fontSize: '0.85rem' }}>Select loops and click Dance!</span>
+            )}
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* Day 5: Draw & Share (Unit Share Showcase) */}
+    {activeDay === 5 && (
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.1fr', gap: '32px' }}>
+        <div>
+          <h4 style={{ color: '#0f172a', fontSize: '1.2rem', marginBottom: '12px', fontWeight: 'bold' }}>Day 5: Unit Share: Showcase</h4>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '16px' }}>
+            Draw your custom chatbot on paper! Select what role your chatbot has:
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px' }}>
+            {['🤖 Playground Helper', '🐼 Story Reader', '🦁 Math Buddy'].map((role) => (
+              <label key={role} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.9rem', cursor: 'pointer' }}>
+                <input type="radio" name="k4-role" defaultChecked={role.includes('Playground')} onChange={() => setK4CompletedMissions(prev => ({ ...prev, d5: true }))} style={{ accentColor: '#4f46e5' }} />
+                <span style={{ color: '#1e293b' }}>{role}</span>
+              </label>
+            ))}
+          </div>
+          {k4CompletedMissions.d1 && k4CompletedMissions.d2 && k4CompletedMissions.d3 && k4CompletedMissions.d4 && (
+            <button onClick={() => {
+              handleFinishWeek(5);
+              alert("🏆 Congratulations! You have finished the K-4 AI BotBuilder Unit!");
+            }} className="btn btn-primary" style={{ padding: '12px 24px', background: 'var(--success)' }}>Finish K-4 Unit! 🏆</button>
+          )}
+        </div>
+        <div>
+          <div style={{ background: 'rgba(0,0,0,0.03)', border: '1px solid #cbd5e1', padding: '20px', borderRadius: '12px', textAlign: 'center' }}>
+            <span style={{ fontSize: '1.1rem', fontWeight: 'bold', display: 'block', marginBottom: '12px', color: '#0f172a' }}>Classmate Sticker Feedback:</span>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginBottom: '16px' }}>
+              <button onClick={() => setK4D5Likes(prev => ({ ...prev, hearts: prev.hearts + 1 }))} className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '1.2rem' }}>❤️</button>
+              <button onClick={() => setK4D5Likes(prev => ({ ...prev, stars: prev.stars + 1 }))} className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '1.2rem', background: '#fbbf24' }}>⭐</button>
+              <button onClick={() => setK4D5Likes(prev => ({ ...prev, thumbs: prev.thumbs + 1 }))} className="btn btn-primary" style={{ padding: '8px 16px', fontSize: '1.2rem', background: '#10b981' }}>👍</button>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '10px', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+              <div>Hearts: <strong style={{ color: '#0f172a' }}>{k4D5Likes.hearts}</strong></div>
+              <div>Stars: <strong style={{ color: '#0f172a' }}>{k4D5Likes.stars}</strong></div>
+              <div>Thumbs: <strong style={{ color: '#0f172a' }}>{k4D5Likes.thumbs}</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+)}
 {activeChallenge === 'chatbot' && (
 <div>
 {/* Day 1: AI Engineer Challenge & Hook */}
@@ -3357,6 +3723,7 @@ outline: 'none',
 cursor: 'pointer'
 }}
 >
+<option value="earlybot">🐣 Grades K-4 - Early BotBuilder</option>
 <option value="botbuilder">🎒 Grades 4-5 - AI BotBuilder</option>
 <option value="ecoengineering">🎓 Grades 6-8 - EcoEngineering</option>
 </select>
