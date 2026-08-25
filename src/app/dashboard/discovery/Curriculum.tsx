@@ -89,11 +89,15 @@ const printingResources = {
     { id: 'eco-res-tower', category: 'Student Learning Resources', title: 'Structural Loads Blueprint', part: 'part4', pages: 3, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Blueprints for building seismic resistant towers and recording shake table load tests.' }
   ],
   earlybot: [
-    { id: 'k4-res-pics', category: 'Student Learning Resources', title: 'Smart Picture Emoji Cards', part: 'part1', pages: 1, ratio: '1 set per pair', mode: 'Printable Recommended', directions: 'Big colored cards with animals and object pictures for offline classification.' },
-    { id: 'k4-res-arrows', category: 'Student Learning Resources', title: 'Giant Step Floor Arrows', part: 'part2', pages: 2, ratio: '1 set per team', mode: 'Printable Recommended', directions: 'Printable floor direction arrows for building grid navigation paths.' },
-    { id: 'k4-res-pockets', category: 'Student Learning Resources', title: 'Memory Pocket Sticker Labels', part: 'part3', pages: 1, ratio: '1 set per team', mode: 'Optional Print', directions: 'Sticker labels to attach to physical memory boxes/buckets.' },
-    { id: 'k4-res-dance', category: 'Student Learning Resources', title: 'Loop Dance Action Cards', part: 'part4', pages: 1, ratio: '1 set per student', mode: 'Digital + Printable', directions: 'Movement cards (clap, wave, spin) for building choreographies.' },
-    { id: 'k4-res-drawing', category: 'Student Learning Resources', title: 'My Chatbot Drawing Canvas', part: 'share', pages: 1, ratio: '1 per student', mode: 'Printable Recommended', directions: 'A template sheet for drawing and labeling their personal helper chatbot.' }
+    { id: 'k4-res-pics', category: 'Student Learning Resources', title: 'Smart Picture Emoji Cards', part: 'part1', pages: 2, ratio: '1 set per pair', mode: 'Printable Recommended', directions: 'Big colored cards with Apple, Banana, Car, Dog pictures, plus Sorting Mats (Food, Animals, Things That Move).' },
+    { id: 'k4-res-mystery', category: 'Student Learning Resources', title: 'Mystery Picture Cards', part: 'part1', pages: 1, ratio: '1 set per class', mode: 'Printable Recommended', directions: 'Mystery reveal cards, Missing Information Cards, and Good/Confusing Data Cards.' },
+    { id: 'k4-res-steps', category: 'Student Learning Resources', title: 'Step Arrow Cards', part: 'part2', pages: 2, ratio: '1 set per team', mode: 'Printable Recommended', directions: 'Arrow cards (Forward, Left, Right, Stop) and Start/Stop Cards.' },
+    { id: 'k4-res-grids', category: 'Student Learning Resources', title: 'Floor Grid Kit', part: 'part2', pages: 1, ratio: '1 set per class', mode: 'Optional Print', directions: 'Obstacle Cards (🚧), Goal Cards (⭐), Broken Sequence Cards, and Algorithm Planning Mats.' },
+    { id: 'k4-res-cups', category: 'Student Learning Resources', title: 'Memory Box Kits', part: 'part3', pages: 1, ratio: '1 set per team', mode: 'Optional Print', directions: 'Memory Box Cup Labels, Value Cards, Change Cards, and Variable Picture Cards.' },
+    { id: 'k4-res-dance', category: 'Student Learning Resources', title: 'Dance Movement Cards', part: 'part4', pages: 1, ratio: '1 set per student', mode: 'Digital + Printable', directions: 'Move cards (Clap, Wave, Spin, Jump, Step), Repeat Cards, and 2x/3x/5x Cards.' },
+    { id: 'k4-res-dance-plan', category: 'Student Learning Resources', title: 'Dance Planning Mats', part: 'part4', pages: 1, ratio: '1 per student', mode: 'Printable Recommended', directions: 'Dance planning mats, Prediction Cards, and Debugging Cards.' },
+    { id: 'k4-res-drawing', category: 'Student Learning Resources', title: 'Final Bot Canvas', part: 'share', pages: 1, ratio: '1 per student', mode: 'Printable Recommended', directions: 'Helpful Bot Idea Cards, design canvases, and KNOW/DO/REMEMBER/REPEAT Cards.' },
+    { id: 'k4-res-expo', category: 'Student Learning Resources', title: 'Showcase Expo Resources', part: 'share', pages: 1, ratio: '1 set per class', mode: 'Optional Print', directions: 'Testing Sheets, Visual Peer Feedback Cards (Like/Wonder/Try), and Final Reflection Sheets.' }
   ]
 };
 
@@ -3743,9 +3747,9 @@ flexShrink: 0
 { id: 'pd', text: 'Professional Development Resources' },
 { id: 'printing', text: 'Student Resource Printing & Prep' },
 { id: 'intro', text: 'Unit Introduction' },
-{ id: 'part1', text: teacherUnit === 'botbuilder' ? 'Part 1: Data, Data, Data' : 'Part 1: Irrigation & Soil Codes' },
-{ id: 'part2', text: teacherUnit === 'botbuilder' ? 'Part 2: All About Algorithms' : 'Part 2: Wind Forces' },
-{ id: 'part3', text: teacherUnit === 'botbuilder' ? 'Part 3: Introduction to Variables' : 'Part 3: Chemical Filtration' },
+{ id: 'part1', text: teacherUnit === 'botbuilder' ? 'Part 1: Data, Data, Data' : teacherUnit === 'earlybot' ? 'Part 1: Smart Pictures' : 'Part 1: Irrigation & Soil Codes' },
+{ id: 'part2', text: teacherUnit === 'botbuilder' ? 'Part 2: All About Algorithms' : teacherUnit === 'earlybot' ? 'Part 2: Step Arrows' : 'Part 2: Wind Forces' },
+{ id: 'part3', text: teacherUnit === 'botbuilder' ? 'Part 3: Introduction to Variables' : teacherUnit === 'earlybot' ? 'Part 3: Memory Boxes' : 'Part 3: Chemical Filtration' },
 { id: 'part4', text: teacherUnit === 'botbuilder' ? 'Part 4: Loops & Repetition' : teacherUnit === 'earlybot' ? 'Part 4: Repeat Dance' : 'Part 4: Seismic Structural Loads' },
 { id: 'share', text: 'Unit Share' }
 ].map((item) => {
@@ -3830,6 +3834,8 @@ transition: 'all 0.2s'
 <p style={{ fontSize: '0.8rem', lineHeight: '1.6', margin: 0 }}>
 {teacherUnit === 'botbuilder' ? (
 "Students step into the role of AI engineers as they explore how data, algorithms, variables, and conditionals work together to create interactive chatbot systems. Through inquiry, design, coding, testing, and reflection, students investigate how computers use structured information and programmed logic to respond to users. The unit emphasizes real-world problem solving, computational thinking, collaboration, responsible AI, and iterative engineering."
+) : teacherUnit === 'earlybot' ? (
+"Early learners step into the role of computational thinkers as they explore how computers use data, algorithms, variables, and loops in a simple, visual way. Through offline games and tablet simulations, pre-readers build a foundation for programming logic."
 ) : (
 "Students step into the role of environmental and civil engineers to address stormwater management in urban centers. Across the unit, students analyze physical soil layers, model porous filtration media, design lift coefficients in turbine blade physics, and run seismic testing loads on high-rise structures. The unit connects math modeling and physics variables to sustainable urban infrastructure."
 )}
@@ -3846,6 +3852,13 @@ transition: 'all 0.2s'
 <li>How can variables help a program remember and use information?</li>
 <li>How do conditionals allow a program to respond differently in different situations?</li>
 <li>How can engineers test and improve an AI-inspired system?</li>
+</>
+) : teacherUnit === 'earlybot' ? (
+<>
+<li>How can we show instructions to a machine using pictures?</li>
+<li>How do sequence paths help a robot move step-by-step?</li>
+<li>How can memory boxes remember things for a chatbot?</li>
+<li>How do repetition loops help us dance without repeating instructions?</li>
 </>
 ) : (
 <>
@@ -3896,6 +3909,37 @@ transition: 'all 0.2s'
 </ul>
 </div>
 </>
+) : teacherUnit === 'earlybot' ? (
+<>
+<div>
+<strong style={{ color: '#818cf8', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>Data & Smart Pictures</strong>
+<ul style={{ margin: 0, paddingLeft: '14px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+<li>Sort animal and object cards by properties.</li>
+<li>Understand that computers group pictures.</li>
+</ul>
+</div>
+<div>
+<strong style={{ color: '#818cf8', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>Algorithms & Arrows</strong>
+<ul style={{ margin: 0, paddingLeft: '14px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+<li>Create sequential steps using path arrows.</li>
+<li>Navigate a robot past grid blockers to a target.</li>
+</ul>
+</div>
+<div>
+<strong style={{ color: '#818cf8', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>Variables & Memory Boxes</strong>
+<ul style={{ margin: 0, paddingLeft: '14px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+<li>Assign block values into digital memory boxes.</li>
+<li>Update and recall stored properties.</li>
+</ul>
+</div>
+<div>
+<strong style={{ color: '#818cf8', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>Loops & Repeat Dance</strong>
+<ul style={{ margin: 0, paddingLeft: '14px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+<li>Recognize patterns and repetitive actions.</li>
+<li>Loop movements to simplify choreographies.</li>
+</ul>
+</div>
+</>
 ) : (
 <>
 <div>
@@ -3921,11 +3965,11 @@ transition: 'all 0.2s'
 <h4 style={{ color: '#fff', fontSize: '0.9rem', marginTop: 0, marginBottom: '14px' }}>🗺️ Unit Learning Journey (Roadmap)</h4>
 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
 {[
-{ id: 'intro', step: 'INTRO', title: 'The Chatbot Challenge', desc: teacherUnit === 'botbuilder' ? 'Students investigate chatbots and identify the real-world problem.' : 'Identify urban stormwater hazards.' },
-{ id: 'part1', step: 'PART 1', title: teacherUnit === 'botbuilder' ? 'Data, Data, Data' : 'Irrigation & Filtration', desc: teacherUnit === 'botbuilder' ? 'Students organize information, design a knowledge base, and build lists.' : 'Measure soil composition permeability.' },
-{ id: 'part2', step: 'PART 2', title: teacherUnit === 'botbuilder' ? 'All About Algorithms' : 'Wind Turbine Mechanics', desc: teacherUnit === 'botbuilder' ? 'Students construct sequential search logic.' : 'Optimize rotor blade pitches.' },
-{ id: 'part3', step: 'PART 3', title: teacherUnit === 'botbuilder' ? 'Introduction to Variables' : 'Chemical Filtration', desc: teacherUnit === 'botbuilder' ? 'Students use variables to track user input.' : 'Use pH sensors to neutralize acidity.' },
-{ id: 'part4', step: 'PART 4', title: teacherUnit === 'botbuilder' ? 'Crazy About Conditionals' : 'Seismic Structures', desc: teacherUnit === 'botbuilder' ? 'Students code logic decision gates.' : 'Build seismic resistant buildings.' },
+{ id: 'intro', step: 'INTRO', title: teacherUnit === 'botbuilder' ? 'The Chatbot Challenge' : teacherUnit === 'earlybot' ? 'K-4 Early BotBuilder' : 'EcoEngineering Launch', desc: teacherUnit === 'botbuilder' ? 'Students investigate chatbots and identify the real-world problem.' : teacherUnit === 'earlybot' ? 'Introduce K-4 helper bot and active instructions.' : 'Identify urban stormwater hazards.' },
+{ id: 'part1', step: 'PART 1', title: teacherUnit === 'botbuilder' ? 'Data, Data, Data' : teacherUnit === 'earlybot' ? 'Smart Pictures' : 'Irrigation & Filtration', desc: teacherUnit === 'botbuilder' ? 'Students organize information, design a knowledge base, and build lists.' : teacherUnit === 'earlybot' ? 'Sort cards and build clear categories for the bot.' : 'Measure soil composition permeability.' },
+{ id: 'part2', step: 'PART 2', title: teacherUnit === 'botbuilder' ? 'All About Algorithms' : teacherUnit === 'earlybot' ? 'Step Arrows' : 'Wind Turbine Mechanics', desc: teacherUnit === 'botbuilder' ? 'Students construct sequential search logic.' : teacherUnit === 'earlybot' ? 'Plan floor path grids and write precise sequential steps.' : 'Optimize rotor blade pitches.' },
+{ id: 'part3', step: 'PART 3', title: teacherUnit === 'botbuilder' ? 'Introduction to Variables' : teacherUnit === 'earlybot' ? 'Memory Boxes' : 'Chemical Filtration', desc: teacherUnit === 'botbuilder' ? 'Students use variables to track user input.' : teacherUnit === 'earlybot' ? 'Learn variables as labeled cups with changing color values.' : 'Use pH sensors to neutralize acidity.' },
+{ id: 'part4', step: 'PART 4', title: teacherUnit === 'botbuilder' ? 'Crazy About Conditionals' : teacherUnit === 'earlybot' ? 'Repeat Dance' : 'Seismic Structures', desc: teacherUnit === 'botbuilder' ? 'Students code logic decision gates.' : teacherUnit === 'earlybot' ? 'Choreograph sequences and simplify them using repeat loops.' : 'Build seismic resistant buildings.' },
 { id: 'share', step: 'UNIT SHARE', title: 'Test, Present, Reflect', desc: 'Present prototypes, gather peer feedback, and reflect on iterative improvements.' }
 ].map(journey => (
 <button
@@ -3983,7 +4027,7 @@ Students navigate this cycle iteratively. They test and refine systems continuou
 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px', fontSize: '0.75rem' }}>
 <div>
 <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Required Software</strong>
-<span>{teacherUnit === 'botbuilder' ? 'Scratch Desktop or Web' : 'Storm Sim Web app & physical probes'}</span>
+<span>{teacherUnit === 'botbuilder' ? 'Scratch Desktop or Web' : teacherUnit === 'earlybot' ? 'Classroom tablets, card deck prints, floor grid tape' : 'Storm Sim Web app & physical probes'}</span>
 </div>
 <div>
 <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Student Grouping</strong>
@@ -4150,7 +4194,7 @@ Hack-a-thon presentation, student logic explanations, and engineering design loo
 {teacherUnit === 'botbuilder' ? (
 "The chatbot students build serves as a simplified, hands-on model to help them grasp foundational AI and Computer Science concepts. This project directly maps to real-world software applications, such as customer support help desks, school information centers, online library catalog search databases, and automated service triage systems."
 ) : (
-"The runoff dynamics students model simulate civil drainage systems, reservoir architectures, and municipal environmental safety grids. These models connect directly to real-world urban stormwater networks, permeable parking lot planning, and eco-sustainable flood prevention infrastructure."
+teacherUnit === 'earlybot' ? "The visual instructions early learners design build fundamental logical reasoning and problem decomposition. These lessons map directly to real-world software workflows, game design patterns, visual coding logic, and automated scheduling systems." : "The runoff dynamics students model simulate civil drainage systems, reservoir architectures, and municipal environmental safety grids. These models connect directly to real-world urban stormwater networks, permeable parking lot planning, and eco-sustainable flood prevention infrastructure."
 )}
 </p>
 </div>
@@ -4302,6 +4346,8 @@ The resources in this section provide practical support for facilitating this Di
 {(pdResources[teacherUnit] || []).filter(r => 
 teacherUnit === 'botbuilder' ? [
 'understanding-ai', 'data-knowledge-bases', 'scratch-lists', 'agency-steam', 'fac-break-bot', 'responsible-ai'
+].includes(r.id) : teacherUnit === 'earlybot' ? [
+'earlybot-exp-before-vocab', 'earlybot-phys-before-dig', 'earlybot-predict-before-click', 'earlybot-debug-learning', 'earlybot-low-literacy', 'earlybot-thinking-visible'
 ].includes(r.id) : [
 'eco-overview', 'runoff-dynamics', 'scratch-physics'
 ].includes(r.id)
