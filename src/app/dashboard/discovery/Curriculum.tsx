@@ -998,24 +998,12 @@ return (
       color: #1e293b !important;
     }
     
-    /* Default dark text overrides for white styles */
+    /* Overrides for inline white styles (React translates style={{ color: '#fff' }} to color: rgb(255, 255, 255) or color: #fff) */
     [style*="color: #fff"],
     [style*="color:#fff"],
     [style*="color: rgb(255, 255, 255)"],
     [style*="color:rgb(255, 255, 255)"] {
       color: #1e293b !important;
-    }
-    
-    /* EXCEPTION: Buttons with dark background must keep white text */
-    .btn-primary,
-    button[style*="background: var(--primary)"],
-    button[style*="background:var(--primary)"],
-    button[style*="background-color: var(--primary)"],
-    button[style*="background-color:var(--primary)"],
-    button[style*="background: var(--secondary)"],
-    button[style*="background:var(--secondary)"],
-    button[style*="linear-gradient"] {
-      color: #ffffff !important;
     }
     
     /* Preserve warning/success labels */
@@ -1092,6 +1080,16 @@ return (
       background-color: #ffffff !important;
       border: 1px solid #cbd5e1 !important;
       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05) !important;
+    }
+
+    /* Buttons */
+    .btn-primary,
+    button[style*="background: 'var(--primary)'"],
+    button[style*="background: \"var(--primary)\""],
+    button[style*="background: 'var(--secondary)'"] {
+      background-color: #4f46e5 !important;
+      color: #ffffff !important;
+      border: none !important;
     }
 
     /* Inputs & Select Elements */
@@ -1237,7 +1235,6 @@ return (
       border-bottom: 1px solid #cbd5e1 !important;
     }
 `}</style>
-  
   
   
   
