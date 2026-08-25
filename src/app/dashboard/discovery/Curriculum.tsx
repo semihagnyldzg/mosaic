@@ -3746,7 +3746,7 @@ flexShrink: 0
 { id: 'part1', text: teacherUnit === 'botbuilder' ? 'Part 1: Data, Data, Data' : 'Part 1: Irrigation & Soil Codes' },
 { id: 'part2', text: teacherUnit === 'botbuilder' ? 'Part 2: All About Algorithms' : 'Part 2: Wind Forces' },
 { id: 'part3', text: teacherUnit === 'botbuilder' ? 'Part 3: Introduction to Variables' : 'Part 3: Chemical Filtration' },
-{ id: 'part4', text: teacherUnit === 'botbuilder' ? 'Part 4: Loops & Repetition' : 'Part 4: Seismic Structural Loads' },
+{ id: 'part4', text: teacherUnit === 'botbuilder' ? 'Part 4: Loops & Repetition' : teacherUnit === 'earlybot' ? 'Part 4: Repeat Dance' : 'Part 4: Seismic Structural Loads' },
 { id: 'share', text: 'Unit Share' }
 ].map((item) => {
 const isActive = activeTeacherTab === item.id;
@@ -5712,7 +5712,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
 {activeTeacherTab === 'part4' && (
   <div style={{ animation: 'slideUp 0.2s' }}>
     <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px', textAlign: 'left' }}>
-      {teacherUnit === 'botbuilder' ? 'Part 4: Loops & Repetition (AI BotBuilder)' : 'Part 4: Seismic Structural Loads'}
+      {teacherUnit === 'botbuilder' ? 'Part 4: Loops & Repetition (AI BotBuilder)' : teacherUnit === 'earlybot' ? 'Part 4: Repeat Dance (Early BotBuilder)' : 'Part 4: Seismic Structural Loads'}
     </h3>
     {teacherUnit === 'botbuilder' ? (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
@@ -6123,6 +6123,371 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
           </div>
         )}
       </div>
+    ) : teacherUnit === 'earlybot' ? (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
+        {/* Sub-Tab Navigation */}
+        <div style={{ display: 'flex', gap: '8px', background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          {[
+            { id: 'overview', label: '📂 Mission & Careers' },
+            { id: 'hour1', label: '⏰ Hour 1: Think' },
+            { id: 'hour2', label: '🔧 Hour 2: Build & Test' }
+          ].map(subTab => (
+            <button
+              key={subTab.id}
+              onClick={() => setActivePart4SubTab(subTab.id)}
+              style={{
+                flex: 1,
+                padding: '8px 12px',
+                fontSize: '0.75rem',
+                borderRadius: '6px',
+                border: 'none',
+                cursor: 'pointer',
+                background: activePart4SubTab === subTab.id ? 'var(--primary)' : 'transparent',
+                color: activePart4SubTab === subTab.id ? '#fff' : 'var(--text-secondary)',
+                transition: 'all 0.2s',
+                fontWeight: activePart4SubTab === subTab.id ? 'bold' : 'normal'
+              }}
+            >
+              {subTab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* SUBTAB CONTENT: OVERVIEW */}
+        {activePart4SubTab === 'overview' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
+              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>AI ML Mission Hook</span>
+              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: The Repeat Dance Loop</h4>
+              <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
+                "We want our robot to perform a fun dance routine. Instead of writing the same instruction card over and over, we will use repeat loops to make it simple and efficient. Let's design the dance and test it!"
+              </p>
+            </div>
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '8px' }}>Student Classroom Roles</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#60a5fa', fontSize: '0.75rem', display: 'block' }}>Choreographer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Decides the dance moves (Clap, Wave, Jump) and plans the routine.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block' }}>Loop Programmer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Configures the repeat loops and inputs count parameters on the simulator.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* SUBTAB CONTENT: HOUR 1 (THINK) */}
+        {activePart4SubTab === 'hour1' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 1 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: Copy My Moves</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students experience repetition physically by mimicking the facilitator's sequence of repeating moves.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '8px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 5 mins</div>
+                <div>🛠️ <strong>Materials:</strong> None</div>
+                <div>🎯 <strong>Student Task:</strong> Watch the teacher and repeat the dance sequence in real-time (e.g. Clap, Clap, Clap, Clap).</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "What pattern did you notice in my moves? Did we repeat anything? How did your brain know to keep clapping?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Students mimicking the action in unison and identifying the repeating sound/action.</div>
+                <div>⚠️ <strong>Common Misconceptions:</strong> Thinking that every clap is a completely different instruction set rather than the same move repeated.</div>
+                <div style={{ marginTop: '4px', paddingLeft: '8px', borderLeft: '2px solid var(--primary-light)' }}>
+                  ⚡ <strong>Differentiation:</strong>
+                  <div style={{ paddingLeft: '8px', fontSize: '0.7rem' }}>
+                    • <strong>K–1 Support:</strong> Use only one action (just claps).<br/>
+                    • <strong>Grades 2–3 Support:</strong> Use a two-action sequence (Clap, Stomp, Clap, Stomp).<br/>
+                    • <strong>Grade 4 Extension:</strong> Create a pattern and ask a student to lead it.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Activity 2 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: Build a Dance</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students arrange physical cards in a linear sequence to design a custom dance.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '8px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins</div>
+                <div>🛠️ <strong>Materials:</strong> Physical move cards (Clap, Wave, Jump)</div>
+                <div>🎯 <strong>Student Task:</strong> Arrange cards on the floor in a sequence to design a custom dance.</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "How do we know which move comes first? How does our 'dance bot' read these cards?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Cards placed in a clear left-to-right sequence.</div>
+                <div>⚠️ <strong>Common Misconceptions:</strong> Placing cards in a pile instead of a linear row.</div>
+                <div style={{ marginTop: '4px', paddingLeft: '8px', borderLeft: '2px solid var(--primary-light)' }}>
+                  ⚡ <strong>Differentiation:</strong>
+                  <div style={{ paddingLeft: '8px', fontSize: '0.7rem' }}>
+                    • <strong>K–1 Support:</strong> Limit to 3 cards maximum.<br/>
+                    • <strong>Grades 2–3 Support:</strong> Use up to 6 cards.<br/>
+                    • <strong>Grade 4 Extension:</strong> Create branching sequences where a card can split.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Activity 3 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 3: The Too-Many-Cards Problem</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students experience the physical limitation of linear coding when dealing with repetitive instructions.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '8px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins</div>
+                <div>🛠️ <strong>Materials:</strong> Large stack of duplicate move cards</div>
+                <div>🎯 <strong>Student Task:</strong> Build a dance that claps 8 times. Notice how many cards you need to lay down and how long the sequence becomes.</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Is it easy to read a giant row of the same card? What if we wanted to clap 100 times? Would we need 100 cards?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Students expressing frustration or pointing out that laying out 8 identical cards is tedious.</div>
+                <div>⚠️ <strong>Common Misconceptions:</strong> Thinking that the only way to do something multiple times is to write/place it that many times.</div>
+                <div style={{ marginTop: '4px', paddingLeft: '8px', borderLeft: '2px solid var(--primary-light)' }}>
+                  ⚡ <strong>Differentiation:</strong>
+                  <div style={{ paddingLeft: '8px', fontSize: '0.7rem' }}>
+                    • <strong>K–1 Support:</strong> Try repeating 4 times instead of 8.<br/>
+                    • <strong>Grades 2–3 Support:</strong> Try repeating 8 times and count them aloud.<br/>
+                    • <strong>Grade 4 Extension:</strong> Discuss memory limit: "What if the computer runs out of space to store all these cards?"
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Activity 4 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 4: Introduce the Repeat Card</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Introduce the shortcut for looping instructions.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '8px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins</div>
+                <div>🛠️ <strong>Materials:</strong> Repeat Loop cards (brackets or numbers: "Repeat 2x", "Repeat 5x")</div>
+                <div>🎯 <strong>Student Task:</strong> Put a single "Clap" card inside a "Repeat 5x" bracket card. Show how it replaces 5 individual cards.</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "How does the repeat card act like a shortcut? What does the number on the repeat card tell us?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Students recognizing that the loop card groups the action.</div>
+                <div>⚠️ <strong>Common Misconceptions:</strong> Placing the repeat card after the move instead of wrapping/binding it.</div>
+                <div style={{ marginTop: '4px', paddingLeft: '8px', borderLeft: '2px solid var(--primary-light)' }}>
+                  ⚡ <strong>Differentiation:</strong>
+                  <div style={{ paddingLeft: '8px', fontSize: '0.7rem' }}>
+                    • <strong>K–1 Support:</strong> Use a "2x" loop.<br/>
+                    • <strong>Grades 2–3 Support:</strong> Use "3x" or "5x" loops.<br/>
+                    • <strong>Grade 4 Extension:</strong> Nested loops (loop inside a loop, e.g., Repeat 2x of [Repeat 3x of Clap]).
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Activity 5 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 5: Be the Dance Bot</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students act as robots to execute repeat instructions.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '8px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins</div>
+                <div>🛠️ <strong>Materials:</strong> Loop sequences built by classmates</div>
+                <div>🎯 <strong>Student Task:</strong> One student acts as the "Dance Bot" and literally executes the repeat instruction cards built by their partner.</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Did the bot repeat the move the exact number of times? How does the bot know when to stop?"</div>
+                <div>🔍 <strong>Look-fors:</strong> The "bot" executing the wrapped cards exactly the specified number of times.</div>
+                <div>⚠️ <strong>Common Misconceptions:</strong> The bot continuing to perform the action indefinitely after the loop finishes.</div>
+                <div style={{ marginTop: '4px', paddingLeft: '8px', borderLeft: '2px solid var(--primary-light)' }}>
+                  ⚡ <strong>Differentiation:</strong>
+                  <div style={{ paddingLeft: '8px', fontSize: '0.7rem' }}>
+                    • <strong>K–1 Support:</strong> Teacher acts as the first bot to demonstrate literal execution.<br/>
+                    • <strong>Grades 2–3 Support:</strong> Students act as bots for simple loop sequences.<br/>
+                    • <strong>Grade 4 Extension:</strong> Include a sequence that has actions outside the loop (e.g., Repeat 3x [Clap], then Stomp once).
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        )}
+
+        {/* SUBTAB CONTENT: HOUR 2 (BUILD & TEST) */}
+        {activePart4SubTab === 'hour2' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 6 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 6: Broken Dance Challenge</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students find the bug in a dance sequence and fix it.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '8px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins</div>
+                <div>🛠️ <strong>Materials:</strong> Cards showing a broken sequence (e.g., empty Repeat loop)</div>
+                <div>🎯 <strong>Student Task:</strong> Find the bug in the dance sequence and fix it so the dance plays correctly.</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "What is wrong with this dance instruction? Why is our dance bot confused?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Students pointing to the empty loop or wrong sequence order.</div>
+                <div>⚠️ <strong>Common Misconceptions:</strong> Believing that a script can still run even if it has incomplete instruction gates.</div>
+                <div style={{ marginTop: '4px', paddingLeft: '8px', borderLeft: '2px solid var(--primary-light)' }}>
+                  ⚡ <strong>Differentiation:</strong>
+                  <div style={{ paddingLeft: '8px', fontSize: '0.7rem' }}>
+                    • <strong>K–1 Support:</strong> Show a loop that is completely empty: "What should the bot repeat?"<br/>
+                    • <strong>Grades 2–3 Support:</strong> Show a loop where the count is too high (e.g., 10x clap when they wanted 5x).<br/>
+                    • <strong>Grade 4 Extension:</strong> Show a sequence where the loop is placed in the wrong order.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Activity 7 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 7: Make It Shorter</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students redraw linear dance sequences using loop shortcuts.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '8px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 10 mins</div>
+                <div>🛠️ <strong>Materials:</strong> Long linear dance sequences on worksheets</div>
+                <div>🎯 <strong>Student Task:</strong> Redraw the long linear sequence using the Repeat card shortcut to make it as short as possible.</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "How many cards did we save by using the loop shortcut? Why is shorter code better?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Correct transcription of repeating blocks into a single loop block.</div>
+                <div>⚠️ <strong>Common Misconceptions:</strong> Grouping non-identical moves together in a single loop (e.g. looping Clap and Stomp as if they were just Clap).</div>
+                <div style={{ marginTop: '4px', paddingLeft: '8px', borderLeft: '2px solid var(--primary-light)' }}>
+                  ⚡ <strong>Differentiation:</strong>
+                  <div style={{ paddingLeft: '8px', fontSize: '0.7rem' }}>
+                    • <strong>K–1 Support:</strong> Simplify [Clap, Clap, Clap] into [Repeat 3x [Clap]].<br/>
+                    • <strong>Grades 2–3 Support:</strong> Simplify [Clap, Stomp, Clap, Stomp] into [Repeat 2x [Clap, Stomp]].<br/>
+                    • <strong>Grade 4 Extension:</strong> Analyze code length and count total operations.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Activity 8 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 8: Create Your Own Repeat Dance</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students design a unique dance using at least one Repeat loop card.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '8px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins</div>
+                <div>🛠️ <strong>Materials:</strong> Worksheets, card kits</div>
+                <div>🎯 <strong>Student Task:</strong> Design a unique dance sequence using at least one Repeat loop card. Draw or write it on your template sheet.</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "What does your dance do? Can you explain the loop in your dance to a friend?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Unique combinations of moves with correct loop structure.</div>
+                <div>⚠️ <strong>Common Misconceptions:</strong> Forgetting to specify the repeat count multiplier.</div>
+                <div style={{ marginTop: '4px', paddingLeft: '8px', borderLeft: '2px solid var(--primary-light)' }}>
+                  ⚡ <strong>Differentiation:</strong>
+                  <div style={{ paddingLeft: '8px', fontSize: '0.7rem' }}>
+                    • <strong>K–1 Support:</strong> Use only 1 loop with 1 move.<br/>
+                    • <strong>Grades 2–3 Support:</strong> Use 1 loop with 2 alternating moves.<br/>
+                    • <strong>Grade 4 Extension:</strong> Use multiple loops back-to-back.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Activity 9 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 9: Repeat Dance Simulator</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students move to the digital simulation environment.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '8px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins</div>
+                <div>🛠️ <strong>Materials:</strong> Classroom tablets, simulator app</div>
+                <div>🎯 <strong>Student Task:</strong> Load Day 4 simulator. Set the loop repeat count (2x or 5x) and select a dance move on screen. Click "Dance!" to run.</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "What happens on the screen when we click Dance? How does the digital character know how many times to move?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Students matching the digital UI parameters to their intention.</div>
+                <div>⚠️ <strong>Common Misconceptions:</strong> Thinking that clicking the button faster makes it loop more.</div>
+                <div style={{ marginTop: '4px', paddingLeft: '8px', borderLeft: '2px solid var(--primary-light)' }}>
+                  ⚡ <strong>Differentiation:</strong>
+                  <div style={{ paddingLeft: '8px', fontSize: '0.7rem' }}>
+                    • <strong>K–1 Support:</strong> Try the "2x" loop first and watch the character clap twice.<br/>
+                    • <strong>Grades 2–3 Support:</strong> Toggle between 2x and 5x to compare speed and duration.<br/>
+                    • <strong>Grade 4 Extension:</strong> Predict the total time the animation will play.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Activity 10 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: 'var(--primary-light)', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 10: Make the Simulator Match Your Physical Dance</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Students transfer physical code designs onto the digital simulator.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '8px' }}>
+                <div>⏱️ <strong>Estimated Time:</strong> 15 mins</div>
+                <div>🛠️ <strong>Materials:</strong> Tablets, custom designs from Activity 8</div>
+                <div>🎯 <strong>Student Task:</strong> Recreate the exact loop dance sequence you designed physically in Activity 8 on the tablet simulator.</div>
+                <div>🗣️ <strong>Facilitator Questions:</strong> "Does the digital bot dance exactly like your physical drawings? How did you match the two?"</div>
+                <div>🔍 <strong>Look-fors:</strong> Students referencing their paper worksheets while setting up the simulator.</div>
+                <div>⚠️ <strong>Common Misconceptions:</strong> Expecting the simulator to automatically know their paper design without inputs.</div>
+                <div style={{ marginTop: '4px', paddingLeft: '8px', borderLeft: '2px solid var(--primary-light)' }}>
+                  ⚡ <strong>Differentiation:</strong>
+                  <div style={{ paddingLeft: '8px', fontSize: '0.7rem' }}>
+                    • <strong>K–1 Support:</strong> Match a single clap loop.<br/>
+                    • <strong>Grades 2–3 Support:</strong> Replicate a multi-move pattern.<br/>
+                    • <strong>Grade 4 Extension:</strong> Critique: "What limits does the simulator have compared to your physical dance?"
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Part 4 Checkpoint */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <strong style={{ color: '#fff', fontSize: '0.8rem', display: 'block', marginBottom: '6px' }}>Part 4 Checkpoint</strong>
+              <div style={{ margin: 0, fontSize: '0.75rem', lineHeight: '1.4', color: 'var(--text-secondary)' }}>
+                Verify that students understand that <strong>loops simplify repeated instructions</strong>. Before moving to the final project, students should be able to:
+                <ul style={{ margin: '4px 0 0 0', paddingLeft: '16px' }}>
+                  <li>Identify patterns in repeating physical movements.</li>
+                  <li>Explain why a loop card is better than writing a long line of identical instructions.</li>
+                  <li>Recreate a physical card design on their tablet simulator.</li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Common Misconceptions */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <strong style={{ color: '#a78bfa', fontSize: '0.8rem', display: 'block', marginBottom: '6px' }}>Common Misconceptions</strong>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.75rem', lineHeight: '1.4' }}>
+                <div>
+                  <strong style={{ color: '#fff' }}>1. "Loops must run forever."</strong><br/>
+                  <em>Clarify:</em> Explain that loops in their simulator stop after a specific number of repetitions (e.g. 2x, 5x).
+                </div>
+                <div>
+                  <strong style={{ color: '#fff' }}>2. "Any sequence can be looped."</strong><br/>
+                  <em>Clarify:</em> Loops only make sense if the exact same actions repeat in the exact same pattern.
+                </div>
+              </div>
+            </div>
+
+            {/* Reflection */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <strong style={{ color: '#fff', fontSize: '0.8rem', display: 'block', marginBottom: '6px' }}>Reflection & Circle Time</strong>
+              <ul style={{ margin: 0, paddingLeft: '16px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px', lineHeight: '1.4' }}>
+                <li>1. "How did the repeat card help you build your dance?"</li>
+                <li>2. "What was the most challenging part of acting like a dance bot?"</li>
+                <li>3. "How did you fix your code when your dance bot made a mistake?"</li>
+              </ul>
+            </div>
+
+            {/* Level-Up Extensions */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <strong style={{ color: '#a78bfa', display: 'block', fontSize: '0.8rem', marginBottom: '6px' }}>Level-Up Extensions</strong>
+              <ul style={{ margin: 0, paddingLeft: '16px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px', lineHeight: '1.4' }}>
+                <li><strong>Extension 1:</strong> Design a dance where one loop is immediately followed by a different loop (e.g. Clap 3x, Stomp 2x).</li>
+                <li><strong>Extension 2:</strong> Program the simulator bot to perform a continuous loop and tell it to stop only when a specific color is shown.</li>
+              </ul>
+            </div>
+
+            {/* Solution Cheatsheet */}
+            <div style={{ background: 'rgba(16, 185, 129, 0.04)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+              <strong style={{ color: '#34d399', display: 'block', fontSize: '0.75rem' }}>Solution Cheatsheet</strong>
+              <p style={{ margin: '4px 0 0 0', fontSize: '0.75rem', lineHeight: '1.4' }}>
+                Students must select a dance move first, set the repeat count, and click "Dance!" to trigger the animation and complete Day 4.
+              </p>
+            </div>
+
+          </div>
+        )}
+      </div>
     ) : (
       <div>
         <h4 style={{ color: '#a78bfa', fontSize: '0.9rem', margin: '14px 0 6px 0', textAlign: 'left' }}>Challenge Solution Cheatsheet</h4>
@@ -6130,7 +6495,8 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
           Middle School Challenge 4 (Seismic Structural Loads): Select steel cross braces as reinforcement materials and calibrate frequency bounds to sustain simulation vibrations.
         </p>
       </div>
-    )}
+    )
+}
   </div>
 )}
 {activeTeacherTab === 'share' && (
