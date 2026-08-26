@@ -1049,6 +1049,272 @@ const [activePart1SubTab, setActivePart1SubTab] = useState('overview');
     setChatbotMissions(prev => ({ ...prev, [key]: val }));
   };
 
+  const getK4ResourceHtml = (id) => {
+    if (id === 'k4-res-pics') {
+      return `
+        <div class="print-page">
+          <div class="page-title">Smart Picture Emoji Cards - Page 1</div>
+          <div class="cards-grid-6">
+            <div class="card-item"><span class="card-icon">👋</span><span class="card-label">Wave</span></div>
+            <div class="card-item"><span class="card-icon">👏</span><span class="card-label">Clap</span></div>
+            <div class="card-item"><span class="card-icon">⬆️</span><span class="card-label">Forward</span></div>
+            <div class="card-item"><span class="card-icon">⬅️</span><span class="card-label">Turn Left</span></div>
+            <div class="card-item"><span class="card-icon">➡️</span><span class="card-label">Turn Right</span></div>
+            <div class="card-item"><span class="card-icon">🛑</span><span class="card-label">Stop</span></div>
+          </div>
+        </div>
+        <div class="print-page">
+          <div class="page-title">Smart Picture Emoji Cards - Page 2</div>
+          <div class="cards-grid-6">
+            <div class="card-item"><span class="card-icon">🔄</span><span class="card-label">Turn Around</span></div>
+            <div class="card-item"><span class="card-icon">🦘</span><span class="card-label">Jump</span></div>
+            <div class="card-item"><span class="card-icon">🙌</span><span class="card-label">Hands Up</span></div>
+            <div class="card-item"><span class="card-icon">👇</span><span class="card-label">Touch Floor</span></div>
+            <div class="card-item"><span class="card-icon">👣</span><span class="card-label">Step</span></div>
+            <div class="card-item"><span class="card-icon">🧍</span><span class="card-label">Freeze</span></div>
+          </div>
+        </div>
+      `;
+    }
+    if (id === 'k4-res-mystery') {
+      return `
+        <div class="print-page">
+          <div class="page-title">Mystery Picture Cards - Page 1</div>
+          <div class="cards-grid-4">
+            <div class="card-item"><span class="card-icon">🌀</span><span class="card-label">Symbol A</span></div>
+            <div class="card-item"><span class="card-icon">🔂</span><span class="card-label">Symbol B</span></div>
+            <div class="card-item"><span class="card-icon">🔀</span><span class="card-label">Symbol C</span></div>
+            <div class="card-item"><span class="card-icon">🔙</span><span class="card-label">Symbol D</span></div>
+          </div>
+        </div>
+        <div class="print-page">
+          <div class="page-title">Mystery Picture Cards - Page 2</div>
+          <div class="cards-grid-4">
+            <div class="card-item"><span class="card-icon">❄️</span><span class="card-label">Symbol E</span></div>
+            <div class="card-item"><span class="card-icon">🔁</span><span class="card-label">Symbol F</span></div>
+            <div class="card-item"><span class="card-icon">🔄</span><span class="card-label">Symbol G</span></div>
+            <div class="card-item"><span class="card-icon">⚡</span><span class="card-label">Symbol H</span></div>
+          </div>
+        </div>
+      `;
+    }
+    if (id === 'k4-res-steps') {
+      return `
+        <div class="print-page">
+          <div class="page-title">Step Arrow Cards - Page 1</div>
+          <div class="cards-grid-6">
+            <div class="card-item"><span class="card-icon">⬆️</span><span class="card-label">Forward</span></div>
+            <div class="card-item"><span class="card-icon">⬆️</span><span class="card-label">Forward</span></div>
+            <div class="card-item"><span class="card-icon">⬅️</span><span class="card-label">Turn Left</span></div>
+            <div class="card-item"><span class="card-icon">⬅️</span><span class="card-label">Turn Left</span></div>
+            <div class="card-item"><span class="card-icon">➡️</span><span class="card-label">Turn Right</span></div>
+            <div class="card-item"><span class="card-icon">➡️</span><span class="card-label">Turn Right</span></div>
+          </div>
+        </div>
+        <div class="print-page">
+          <div class="page-title">Step Arrow Cards - Page 2</div>
+          <div class="cards-grid-6">
+            <div class="card-item"><span class="card-icon">⬇️</span><span class="card-label">Backward</span></div>
+            <div class="card-item"><span class="card-icon">⬇️</span><span class="card-label">Backward</span></div>
+            <div class="card-item"><span class="card-icon">↻</span><span class="card-label">Rotate</span></div>
+            <div class="card-item"><span class="card-icon">↻</span><span class="card-label">Rotate</span></div>
+            <div class="card-item"><span class="card-icon">⏹</span><span class="card-label">Stop</span></div>
+            <div class="card-item"><span class="card-icon">⏹</span><span class="card-label">Stop</span></div>
+          </div>
+        </div>
+      `;
+    }
+    if (id === 'k4-res-grids') {
+      return `
+        <div class="print-page">
+          <div style="display:flex; flexDirection:column; justifyContent:center; alignItems:center; height:100%; border:4px double #222; borderRadius:12px;">
+            <span style="fontSize:10rem;">▶</span>
+            <h1 style="fontSize:60pt; marginTop:20px; fontFamily:'Outfit';">START</h1>
+          </div>
+        </div>
+        <div class="print-page">
+          <div style="display:flex; flexDirection:column; justifyContent:center; alignItems:center; height:100%; border:4px double #222; borderRadius:12px; background:#fffbf0;">
+            <span style="fontSize:10rem; color:#fbbf24;">⭐</span>
+            <h1 style="fontSize:60pt; marginTop:20px; fontFamily:'Outfit';">FINISH</h1>
+          </div>
+        </div>
+        <div class="print-page">
+          <div class="page-title">Floor Grid Kit: Obstacles (Cut Out)</div>
+          <div class="cards-grid-4">
+            <div class="card-item"><span class="card-icon">🌳</span><span class="card-label">Tree</span></div>
+            <div class="card-item"><span class="card-icon">💧</span><span class="card-label">Water</span></div>
+            <div class="card-item"><span class="card-icon">🪨</span><span class="card-label">Rock</span></div>
+            <div class="card-item"><span class="card-icon">🚧</span><span class="card-label">Barrier</span></div>
+          </div>
+        </div>
+        <div class="print-page">
+          <div class="page-title">Floor Grid Kit: Mission Objects (Cut Out)</div>
+          <div class="cards-grid-4">
+            <div class="card-item"><span class="card-icon">🤖</span><span class="card-label">Robot</span></div>
+            <div class="card-item"><span class="card-icon">🏠</span><span class="card-label">Home</span></div>
+            <div class="card-item"><span class="card-icon">🎁</span><span class="card-label">Mystery Box</span></div>
+            <div class="card-item"><span class="card-icon">🍕</span><span class="card-label">Goal</span></div>
+          </div>
+        </div>
+      `;
+    }
+    if (id === 'k4-res-cups') {
+      return `
+        <div class="print-page">
+          <div class="page-title">Memory Box Kits - Page 1</div>
+          <div class="cards-grid-4">
+            <div class="card-item" style="padding: 20px;"><span style="fontSize:4rem;">❤️</span><div style="border: 2px dashed #aaa; width:100%; height:120px; marginTop:20px; borderRadius:8px;"></div><span class="card-label">Memory Box</span></div>
+            <div class="card-item" style="padding: 20px;"><span style="fontSize:4rem;">⭐</span><div style="border: 2px dashed #aaa; width:100%; height:120px; marginTop:20px; borderRadius:8px;"></div><span class="card-label">Memory Box</span></div>
+            <div class="card-item" style="padding: 20px;"><span style="fontSize:4rem;">🌙</span><div style="border: 2px dashed #aaa; width:100%; height:120px; marginTop:20px; borderRadius:8px;"></div><span class="card-label">Memory Box</span></div>
+            <div class="card-item" style="padding: 20px;"><span style="fontSize:4rem;">☀️</span><div style="border: 2px dashed #aaa; width:100%; height:120px; marginTop:20px; borderRadius:8px;"></div><span class="card-label">Memory Box</span></div>
+          </div>
+        </div>
+        <div class="print-page">
+          <div class="page-title">Memory Box Kits: Value Tokens (Cut Out)</div>
+          <div class="tokens-grid">
+            <div class="token-item">🍎</div><div class="token-item">🚗</div><div class="token-item">🐶</div>
+            <div class="token-item">⭐</div><div class="token-item">🔺</div><div class="token-item">🔵</div>
+            <div class="token-item">1</div><div class="token-item">2</div><div class="token-item">3</div>
+          </div>
+        </div>
+      `;
+    }
+    if (id === 'k4-res-dance') {
+      return `
+        <div class="print-page">
+          <div class="page-title">Dance Movement Cards</div>
+          <div class="cards-grid-8">
+            <div class="card-item"><span class="card-icon">👏</span><span class="card-label">Clap</span></div>
+            <div class="card-item"><span class="card-icon">🦘</span><span class="card-label">Jump</span></div>
+            <div class="card-item"><span class="card-icon">🔄</span><span class="card-label">Spin</span></div>
+            <div class="card-item"><span class="card-icon">👣</span><span class="card-label">Step</span></div>
+            <div class="card-item"><span class="card-icon">🙌</span><span class="card-label">Hands Up</span></div>
+            <div class="card-item"><span class="card-icon">⬇️</span><span class="card-label">Crouch</span></div>
+            <div class="card-item"><span class="card-icon">👋</span><span class="card-label">Wave</span></div>
+            <div class="card-item"><span class="card-icon">🧍</span><span class="card-label">Freeze</span></div>
+          </div>
+        </div>
+      `;
+    }
+    if (id === 'k4-res-dance-plan') {
+      return `
+        <div class="print-page" style="padding: 0.3in;">
+          <div class="page-title" style="textAlign:center; marginBottom:15px; fontSize:18pt;">💃 MY DANCE ALGORITHM PLANNER 🕺</div>
+          
+          <div style="border: 2px solid #222; borderRadius: 8px; padding: 15px; height: 5.2in; display:flex; flexDirection:column; justifyContent:space-between; marginBottom: 20px;">
+            <strong style="fontSize:11pt; textTransform:uppercase; color:#555;">Dance Slots (Place Action Cards Here)</strong>
+            <div style="display:flex; justifyContent:space-between; gap:10px;">
+              <div style="border:3px dashed #aaa; flex:1; height:180px; borderRadius:8px; display:flex; justifyContent:center; alignItems:center; fontSize:24pt; fontWeight:bold; color:#ccc;">[ 1 ]</div>
+              <div style="border:3px dashed #aaa; flex:1; height:180px; borderRadius:8px; display:flex; justifyContent:center; alignItems:center; fontSize:24pt; fontWeight:bold; color:#ccc;">[ 2 ]</div>
+              <div style="border:3px dashed #aaa; flex:1; height:180px; borderRadius:8px; display:flex; justifyContent:center; alignItems:center; fontSize:24pt; fontWeight:bold; color:#ccc;">[ 3 ]</div>
+              <div style="border:3px dashed #aaa; flex:1; height:180px; borderRadius:8px; display:flex; justifyContent:center; alignItems:center; fontSize:24pt; fontWeight:bold; color:#ccc;">[ 4 ]</div>
+            </div>
+            
+            <div style="border: 2px solid #8b5cf6; borderRadius: 8px; padding: 12px; background:#f5f3ff; display:flex; justifyContent:space-between; alignItems:center;">
+              <span style="fontSize:14pt; fontWeight:bold; color:#6d28d9;">🔁 REPEAT LOOP SHORTCUT</span>
+              <div style="border:2px dashed #6d28d9; width:150px; height:60px; borderRadius:6px; display:flex; justifyContent:center; alignItems:center; fontSize:10pt; fontWeight:bold; color:#8b5cf6;">REPEAT DANCE</div>
+              <span style="fontSize:12pt; fontWeight:bold; color:#6d28d9;">[ _____ ] TIMES</span>
+            </div>
+          </div>
+
+          <div style="border: 1px solid #ddd; borderRadius:6px; padding: 10px; fontSize: 8pt; display:flex; justifyContent:space-between; alignItems:center;">
+            <span>👀 <strong>LOOK</strong> &nbsp;→&nbsp; 💭 <strong>PREDICT</strong> &nbsp;→&nbsp; 🧪 <strong>TRY</strong> &nbsp;→&nbsp; 🤝 <strong>TALK</strong></span>
+            <strong>Early BotBuilder Mat</strong>
+          </div>
+        </div>
+      `;
+    }
+    if (id === 'k4-res-drawing') {
+      return `
+        <div class="print-page" style="padding: 0.3in;">
+          <div class="page-title" style="textAlign:center; fontSize:16pt; marginBottom:10px;">🤖 MY HELPFUL BOT DESIGN CANVAS 🎨</div>
+          
+          <div style="display:grid; gridTemplateRows: 4.8in 2.5in; gap: 15px;">
+            <div style="border:3px solid #333; borderRadius:10px; padding:15px; position:relative;">
+              <strong style="fontSize:11pt; color:#444; textTransform:uppercase;">🤖 Draw / Design Your Bot Companion Here</strong>
+              <div style="width:100%; height:90%;"></div>
+            </div>
+            
+            <div style="display:grid; gridTemplateColumns:1fr 1fr; gap:15px;">
+              <div style="border:2px solid #aaa; borderRadius:8px; padding:10px;">
+                <strong style="fontSize:9pt; color:#555; textTransform:uppercase; display:block; marginBottom:5px;">👀 What It Notices (Inputs)</strong>
+                <div style="border:1px dashed #bbb; height:120px; borderRadius:4px;"></div>
+              </div>
+              <div style="border:2px solid #aaa; borderRadius:8px; padding:10px;">
+                <strong style="fontSize:9pt; color:#555; textTransform:uppercase; display:block; marginBottom:5px;">➡️ What It Does (Actions)</strong>
+                <div style="border:1px dashed #bbb; height:120px; borderRadius:4px;"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div style="display:grid; gridTemplateColumns:1.2fr 1fr; gap:15px; marginTop:15px;">
+            <div style="border:2px solid #8b5cf6; borderRadius:8px; padding:10px; background:#f5f3ff;">
+              <strong style="fontSize:9pt; color:#6d28d9; textTransform:uppercase; display:block; marginBottom:4px;">🧠 Memory Box (What It Remembers)</strong>
+              <div style="border:2px dashed #c084fc; height:50px; borderRadius:4px; display:flex; justifyContent:center; alignItems:center; color:#a855f7; fontSize:8pt; fontWeight:bold;">Variable Storage Label</div>
+            </div>
+            <div style="border:2px solid #10b981; borderRadius:8px; padding:10px; background:#ecfdf5; display:flex; flexDirection:column; justifyContent:center; alignItems:center;">
+              <span style="fontSize:14pt;">🔁</span>
+              <strong style="fontSize:9pt; color:#047857; textTransform:uppercase;">Does It Repeat?</strong>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    if (id === 'k4-res-expo') {
+      return `
+        <div class="print-page">
+          <div class="page-title">Showcase Expo: Bot Designer Badges</div>
+          <div style="display:grid; gridTemplateColumns: 1fr; gap:30px; height:90%;">
+            <div style="border:3px solid #222; padding:30px; borderRadius:12px; textAlign:center; display:flex; flexDirection:column; justifyContent:center; alignItems:center;">
+              <span style="fontSize:5rem;">🤖</span>
+              <h1 style="fontSize:28pt; margin: 15px 0;">BOT DESIGNER</h1>
+              <div style="borderTop:2px dashed #aaa; width:100%; marginTop:30px; fontSize:8pt; color:#666; padding-top:6px;">Fold Here / Wear at Showcase Expo</div>
+            </div>
+            <div style="border:3px solid #222; padding:30px; borderRadius:12px; textAlign:center; display:flex; flexDirection:column; justifyContent:center; alignItems:center;">
+              <span style="fontSize:5rem;">🤖</span>
+              <h1 style="fontSize:28pt; margin: 15px 0;">BOT DESIGNER</h1>
+              <div style="borderTop:2px dashed #aaa; width:100%; marginTop:30px; fontSize:8pt; color:#666; padding-top:6px;">Fold Here / Wear at Showcase Expo</div>
+            </div>
+          </div>
+        </div>
+        <div class="print-page">
+          <div class="page-title">Showcase Expo: Visitor Cards & Feedback Tokens</div>
+          <div style="display:grid; gridTemplateColumns: 1fr 1fr; gap:15px; height:90%;">
+            <div class="card-item" style="padding:15px; textAlign:center; fontSize:10pt;">
+              <span style="fontSize:2rem;">💡</span>
+              <p style="fontWeight:bold; marginTop:8px;">What did you create?</p>
+            </div>
+            <div class="card-item" style="padding:15px; textAlign:center; fontSize:10pt;">
+              <span style="fontSize:2rem;">🧠</span>
+              <p style="fontWeight:bold; marginTop:8px;">How does it work?</p>
+            </div>
+            <div class="card-item" style="padding:15px; textAlign:center; fontSize:10pt;">
+              <span style="fontSize:2rem;">🔄</span>
+              <p style="fontWeight:bold; marginTop:8px;">What did you change?</p>
+            </div>
+            <div class="card-item" style="padding:15px; textAlign:center; fontSize:10pt;">
+              <span style="fontSize:2rem;">🧪</span>
+              <p style="fontWeight:bold; marginTop:8px;">What did you test?</p>
+            </div>
+            <div class="card-item" style="padding:10px; background:#f0fdf4; borderColor:#10b981; color:#047857; fontWeight:bold; fontSize:11pt;">
+              👍 LIKE TOKEN
+            </div>
+            <div class="card-item" style="padding:10px; background:#eff6ff; borderColor:#3b82f6; color:#1d4ed8; fontWeight:bold; fontSize:11pt;">
+              💭 WONDER TOKEN
+            </div>
+            <div class="card-item" style="padding:10px; background:#fdf2f8; borderColor:#ec4899; color:#be185d; fontWeight:bold; fontSize:11pt;">
+              💡 TRY TOKEN
+            </div>
+            <div class="card-item" style="padding:10px; background:#fffbeb; borderColor:#f59e0b; color:#b45309; fontWeight:bold; fontSize:11pt;">
+              ⭐ LOVE TOKEN
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    return '';
+  };
+
   const triggerPrintResource = (res) => {
     const printWindow = window.open('', '_blank');
     if (!printWindow) {
@@ -1057,8 +1323,9 @@ const [activePart1SubTab, setActivePart1SubTab] = useState('overview');
     }
 
     let contentHtml = '';
-
-    if (res.id === 'bb-role-cards-badge') {
+    if (res.id.startsWith('k4-')) {
+      contentHtml = getK4ResourceHtml(res.id);
+    } else if (res.id === 'bb-role-cards-badge') {
       contentHtml = `
         <div class="header">
           <h1>Discovery Lab - AI BotBuilder</h1>
@@ -1233,27 +1500,44 @@ const [activePart1SubTab, setActivePart1SubTab] = useState('overview');
         <head>
           <title>${res.title}</title>
           <style>
-            body { font-family: 'Inter', Arial, sans-serif; color: #000; padding: 40px; margin: 0; line-height: 1.5; }
-            .header { border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 20px; }
-            h1 { font-size: 18pt; margin: 0; color: #111; }
-            h2 { font-size: 14pt; margin: 5px 0 0 0; color: #444; }
-            .meta { font-size: 9pt; color: #666; margin: 5px 0 0 0; font-style: italic; }
-            h3 { font-size: 11pt; margin: 15px 0 5px 0; color: #111; text-transform: uppercase; letter-spacing: 0.05em; }
-            p { font-size: 10pt; color: #333; margin: 0 0 10px 0; }
-            .print-table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 15px; }
-            .print-table th, .print-table td { border: 1px solid #aaa; padding: 10px; font-size: 9pt; text-align: left; }
-            .print-table th { background: #f5f5f5; font-weight: bold; }
-            .section-box { border: 1px solid #ddd; border-radius: 6px; padding: 15px; margin-top: 20px; }
-            .notes-box { border: 1px dashed #aaa; border-radius: 4px; height: 180px; margin-top: 10px; }
+            body { fontFamily: 'Inter', Arial, sans-serif; color: #000; padding: 40px; margin: 0; line-height: 1.5; background: #fff; }
+            .header { borderBottom: 2px solid #000; padding-bottom: 10px; marginBottom: 20px; }
+            h1 { fontSize: 18pt; margin: 0; color: #111; }
+            h2 { fontSize: 14pt; margin: 5px 0 0 0; color: #444; }
+            .meta { fontSize: 9pt; color: #666; margin: 5px 0 0 0; font-style: italic; }
+            h3 { fontSize: 11pt; margin: 15px 0 5px 0; color: #111; textTransform: uppercase; letter-spacing: 0.05em; }
+            p { fontSize: 10pt; color: #333; margin: 0 0 10px 0; }
+            .print-table { width: 100%; border-collapse: collapse; marginTop: 15px; marginBottom: 15px; }
+            .print-table th, .print-table td { border: 1px solid #aaa; padding: 10px; fontSize: 9pt; textAlign: left; }
+            .print-table th { background: #f5f5f5; fontWeight: bold; }
+            .section-box { border: 1px solid #ddd; borderRadius: 6px; padding: 15px; marginTop: 20px; }
+            .notes-box { border: 1px dashed #aaa; borderRadius: 4px; height: 180px; marginTop: 10px; }
             
+            /* K-4 Printable styles */
+            .print-page { width: 8.5in; height: 11in; boxSizing: border-box; pageBreakAfter: always; padding: 0.5in; position: relative; border: 1px solid #eee; background: #fff; margin: 0 auto 20px auto; }
+            .page-title { fontSize: 10pt; color: #777; fontFamily: sans-serif; textTransform: uppercase; marginBottom: 10px; textAlign: left; }
+            .cards-grid-6 { display: grid; gridTemplateColumns: 1fr 1fr; gridTemplateRows: 1fr 1fr 1fr; gap: 15px; height: 9.2in; }
+            .cards-grid-4 { display: grid; gridTemplateColumns: 1fr 1fr; gridTemplateRows: 1fr 1fr; gap: 15px; height: 9.2in; }
+            .cards-grid-8 { display: grid; gridTemplateColumns: 1fr 1fr; gridTemplateRows: repeat(4, 1fr); gap: 15px; height: 9.2in; }
+            .card-item { border: 2px dashed #444; borderRadius: 8px; display: flex; flexDirection: column; justifyContent: center; alignItems: center; background: #fff; position: relative; height: 100%; boxSizing: border-box; }
+            .card-icon { fontSize: 4rem; }
+            .card-label { fontSize: 11pt; fontWeight: bold; marginTop: 8px; color: #222; textTransform: uppercase; letter-spacing:0.05em; }
+            .tokens-grid { display: grid; gridTemplateColumns: repeat(3, 1fr); gridTemplateRows: repeat(3, 1fr); gap: 12px; height: 9.2in; }
+            .token-item { border: 2px dashed #444; borderRadius: 50%; display: flex; justifyContent: center; alignItems: center; fontSize: 3rem; background: #fff; height:100%; aspectRatio: 1; margin:0 auto; }
+            
+            @media print {
+              body { padding: 0; margin: 0; }
+              .print-page { border: none; margin: 0; pageBreakAfter: always; box-shadow: none; }
+            }
+
             /* Badges layout */
-            .badges-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
-            .badge-card { border: 2px solid #333; border-radius: 8px; padding: 20px; position: relative; background: #fff; }
-            .badge-card.primary { border-color: #6366f1; }
-            .badge-card.secondary { border-color: #ec4899; }
-            .badge-card.success { border-color: #10b981; }
-            .badge-role { font-size: 14pt; font-weight: bold; display: block; border-bottom: 1px solid #eee; padding-bottom: 6px; margin-bottom: 10px; }
-            .badge-cut-line { font-size: 7pt; color: #888; border-top: 1px dashed #888; margin-top: 20px; padding-top: 4px; text-align: center; }
+            .badges-grid { display: grid; gridTemplateColumns: 1fr; gap: 24px; }
+            .badge-card { border: 2px solid #333; borderRadius: 8px; padding: 20px; position: relative; background: #fff; }
+            .badge-card.primary { borderColor: #6366f1; }
+            .badge-card.secondary { borderColor: #ec4899; }
+            .badge-card.success { borderColor: #10b981; }
+            .badge-role { fontSize: 14pt; fontWeight: bold; display: block; borderBottom: 1px solid #eee; padding-bottom: 6px; marginBottom: 10px; }
+            .badge-cut-line { fontSize: 7pt; color: #888; borderTop: 1px dashed #888; marginTop: 20px; padding-top: 4px; textAlign: center; }
             
             @media print {
               body { padding: 10px; }
@@ -1273,7 +1557,6 @@ const [activePart1SubTab, setActivePart1SubTab] = useState('overview');
     `);
     printWindow.document.close();
   };
-/* --- Enhanced Student Day 1 to 5 States --- */
 const [c1StudentRole, setC1StudentRole] = useState(null);
 const [c1PizzaCleaned, setC1PizzaCleaned] = useState(false);
 const [c1ChickenCleaned, setC1ChickenCleaned] = useState(false);
@@ -1547,7 +1830,7 @@ return (
     div[class*="min-h-screen"],
     div[style*="background: '#0f172a'"],
     div[style*="background: '#1d1825'"] {
-      background-color: #ffffff !important;
+      backgroundColor: #ffffff !important;
       background: #ffffff !important;
     }
     
@@ -1599,7 +1882,7 @@ return (
     div[style*="background: 'rgba(255,255,255,0.03)'"],
     div[style*="background:rgba(255,255,255,0.03)"],
     div[style*="background: rgba(255, 255, 255, 0.03)"] {
-      background-color: #f1f5f9 !important;
+      backgroundColor: #f1f5f9 !important;
       border: 1px solid #cbd5e1 !important;
     }
     
@@ -1619,7 +1902,7 @@ return (
     }
 
     /* School level selector buttons (Elementary / Middle) */
-    button[style*="border-radius: '30px'"],
+    button[style*="borderRadius: '30px'"],
     button[style*="borderRadius: 30px"],
     button[style*="borderRadius: '30px'"] {
       border: 1px solid #cbd5e1 !important;
@@ -1629,18 +1912,18 @@ return (
     button[style*="rgba(99, 102, 241, 0.15)"],
     button[style*="rgba(99,102,241,0.15)"] {
       background: #4f46e5 !important;
-      background-color: #4f46e5 !important;
+      backgroundColor: #4f46e5 !important;
       color: #ffffff !important;
-      border-color: #4f46e5 !important;
+      borderColor: #4f46e5 !important;
     }
     
     /* Inactive school level button */
     button[style*="rgba(255, 255, 255, 0.03)"],
     button[style*="rgba(255,255,255,0.03)"] {
       background: #ffffff !important;
-      background-color: #ffffff !important;
+      backgroundColor: #ffffff !important;
       color: #475569 !important;
-      border-color: #cbd5e1 !important;
+      borderColor: #cbd5e1 !important;
     }
 
     /* Cards Styling */
@@ -1649,7 +1932,7 @@ return (
     div[style*="background: 'rgba(255,255,255,0.02)'"],
     div[style*="background: 'rgba(255,255,255,0.03)'"] {
       background: #ffffff !important;
-      background-color: #ffffff !important;
+      backgroundColor: #ffffff !important;
       border: 1px solid #cbd5e1 !important;
       box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05) !important;
     }
@@ -1659,19 +1942,19 @@ return (
     button[style*="background: 'var(--primary)'"],
     button[style*="background: \"var(--primary)\""],
     button[style*="background: 'var(--secondary)'"] {
-      background-color: #4f46e5 !important;
+      backgroundColor: #4f46e5 !important;
       color: #ffffff !important;
       border: none !important;
     }
 
     /* Inputs & Select Elements */
     input[type="text"], input[type="number"], select, textarea {
-      background-color: #ffffff !important;
+      backgroundColor: #ffffff !important;
       border: 1px solid #cbd5e1 !important;
       color: #0f172a !important;
     }
     select option {
-      background-color: #ffffff !important;
+      backgroundColor: #ffffff !important;
       color: #0f172a !important;
     }
     
@@ -1697,7 +1980,7 @@ return (
     div[style*="rgb(29, 23, 38)"],
     div[style*="rgb(29,23,38)"] {
       background: #ffffff !important;
-      background-color: #ffffff !important;
+      backgroundColor: #ffffff !important;
       border: 1px solid #cbd5e1 !important;
       box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05) !important;
     }
@@ -1708,8 +1991,8 @@ return (
     div[style*="rgb(36, 26, 48)"],
     div[style*="rgb(36,26,48)"] {
       background: #f8fafc !important;
-      background-color: #f8fafc !important;
-      border-bottom: 1px solid #cbd5e1 !important;
+      backgroundColor: #f8fafc !important;
+      borderBottom: 1px solid #cbd5e1 !important;
     }
 
     /* Facilitator Left Sidebar (#282130 -> rgb(40, 33, 48)) */
@@ -1718,7 +2001,7 @@ return (
     div[style*="rgb(40, 33, 48)"],
     div[style*="rgb(40,33,48)"] {
       background: #f1f5f9 !important;
-      background-color: #f1f5f9 !important;
+      backgroundColor: #f1f5f9 !important;
       border-right: 1px solid #cbd5e1 !important;
     }
 
@@ -1727,7 +2010,7 @@ return (
     button[style*="#0284c7"],
     button[style*="rgb(2, 132, 199)"],
     button[style*="rgb(2,132,199)"] {
-      background-color: #e0e7ff !important;
+      backgroundColor: #e0e7ff !important;
       border: 2px solid #4f46e5 !important;
       color: #4f46e5 !important;
     }
@@ -1740,14 +2023,14 @@ return (
     }
     button[style*="rgba(255, 255, 255, 0.6)"]:hover,
     button[style*="rgba(255,255,255,0.6)"]:hover {
-      background-color: #e2e8f0 !important;
+      backgroundColor: #e2e8f0 !important;
     }
 
     /* Facilitator Content Right Panel */
     div[style*="background: 'rgba(0,0,0,0.1)'"],
     div[style*="background:rgba(0,0,0,0.1)"] {
       background: #ffffff !important;
-      background-color: #ffffff !important;
+      backgroundColor: #ffffff !important;
     }
 
     /* Sub-tabs divider line */
@@ -1760,7 +2043,7 @@ return (
     button[style*="OverviewSubTab === tab.id"],
     button[style*="activeOverviewSubTab === tab.id"] {
       border: 1px solid #cbd5e1 !important;
-      border-radius: 6px !important;
+      borderRadius: 6px !important;
       padding: 6px 12px !important;
     }
     
@@ -1776,10 +2059,10 @@ return (
     button[style*="SubTab === subTab.id"][style*="0.06"],
     button[style*="OverviewSubTab === tab.id"][style*="0.06"],
     button[style*="activeOverviewSubTab === tab.id"][style*="0.06"] {
-      background-color: #e0e7ff !important;
+      backgroundColor: #e0e7ff !important;
       color: #4f46e5 !important;
-      border-color: #4f46e5 !important;
-      font-weight: bold !important;
+      borderColor: #4f46e5 !important;
+      fontWeight: bold !important;
     }
     
     /* Inactive checklist item text decorations */
@@ -1789,22 +2072,22 @@ return (
     
     /* Checklist border boxes */
     div[style*="borderLeft: '3px solid"] {
-      background-color: #f8fafc !important;
-      border-color: #cbd5e1 !important;
+      backgroundColor: #f8fafc !important;
+      borderColor: #cbd5e1 !important;
     }
     
     /* Standard tables and lists */
     table {
-      background-color: #ffffff !important;
+      backgroundColor: #ffffff !important;
       border: 1px solid #cbd5e1 !important;
     }
     th {
-      background-color: #f8fafc !important;
+      backgroundColor: #f8fafc !important;
       color: #0f172a !important;
-      border-bottom: 2px solid #cbd5e1 !important;
+      borderBottom: 2px solid #cbd5e1 !important;
     }
     td {
-      border-bottom: 1px solid #cbd5e1 !important;
+      borderBottom: 1px solid #cbd5e1 !important;
     }
 `}</style>
   
@@ -5360,47 +5643,355 @@ Preview ➜
 </div>
 {/* Resource Preview Panel Modal */}
 {previewResource && (
-<div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000 }}>
-<div style={{ background: '#251e2c', border: '1px solid rgba(255,255,255,0.1)', padding: '24px', borderRadius: '12px', width: '480px', maxWidth: '90%', animation: 'scaleUp 0.15s', textAlign: 'left' }}>
-<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '10px', marginBottom: '14px' }}>
-<div>
-<span style={{ fontSize: '0.6rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase' }}>Document Preview</span>
-<h4 style={{ color: '#fff', margin: '2px 0 0 0', fontSize: '1.1rem' }}>{previewResource.title}</h4>
-</div>
-<button onClick={() => setPreviewResource(null)} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '1.2rem', cursor: 'pointer', outline: 'none', padding: 0 }}>&times;</button>
-</div>
-<div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.75rem', marginBottom: '20px' }}>
-<div>
-<strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Lesson Connection</strong>
-<span style={{ textTransform: 'capitalize' }}>{previewResource.part.replace('part', 'Part ')}</span>
-</div>
-<div>
-<strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Student Directions</strong>
-<p style={{ margin: 0, color: 'rgba(255,255,255,0.8)', lineHeight: '1.4' }}>{previewResource.directions}</p>
-</div>
-<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-<div>
-<strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Pages Count</strong>
-<span>{previewResource.pages} page(s)</span>
-</div>
-<div>
-<strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Recommended Quantity</strong>
-<span>{previewResource.ratio}</span>
-</div>
-</div>
-<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-<div>
-<strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Digital Availability</strong>
-<span>{previewResource.mode}</span>
-</div>
-</div>
-</div>
-<div style={{ display: 'flex', justifySelf: 'flex-end', gap: '8px' }}>
-<button onClick={() => setPreviewResource(null)} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', padding: '6px 12px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.75rem', outline: 'none' }}>Close</button>
-<button onClick={() => { triggerPrintResource(previewResource); setPreviewResource(null); }} style={{ background: 'var(--primary)', border: 'none', color: '#fff', padding: '6px 16px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.75rem', fontWeight: 'bold', outline: 'none' }}>Print Document 🖨️</button>
-</div>
-</div>
-</div>
+  previewResource.id.startsWith('k4-') ? (
+    <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(3, 1, 7, 0.95)', backdropFilter: 'blur(8px)', display: 'flex', flexDirection: 'column', zIndex: 1000, color: '#000' }}>
+      
+      {/* Top bar */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: '#1e1c24', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '12px 24px', color: '#fff' }}>
+        <div>
+          <span style={{ fontSize: '0.65rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>K-4 Student Resource - Print Preview (US Letter 8.5" x 11")</span>
+          <h4 style={{ color: '#fff', margin: '2px 0 0 0', fontSize: '1.05rem' }}>{previewResource.title}</h4>
+        </div>
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <button onClick={() => setPreviewResource(null)} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', padding: '8px 16px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.75rem', outline: 'none' }}>
+            ← Back to Resources
+          </button>
+          <button onClick={() => { triggerPrintResource(previewResource); }} style={{ background: 'var(--primary)', border: 'none', color: '#fff', padding: '8px 20px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.75rem', fontWeight: 'bold', outline: 'none' }}>
+            🖨️ Print / Save PDF
+          </button>
+        </div>
+      </div>
+
+      {/* Sheet Scroller */}
+      <div style={{ flex: 1, overflowY: 'auto', padding: '40px 20px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px' }}>
+        
+        {previewResource.id === 'k4-res-pics' && (
+          <>
+            {/* Page 1 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'left' }}>Smart Picture Emoji Cards - Page 1</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr 1fr', gap: '15px', flex: 1 }}>
+                {[['👋', 'Wave'], ['👏', 'Clap'], ['⬆️', 'Forward'], ['⬅️', 'Turn Left'], ['➡️', 'Turn Right'], ['🛑', 'Stop']].map(([icon, label]) => (
+                  <div key={label} style={{ border: '2px dashed #444', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <span style={{ fontSize: '4rem' }}>{icon}</span>
+                    <span style={{ fontSize: '11pt', fontWeight: 'bold', marginTop: '8px', textTransform: 'uppercase' }}>{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Page 2 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'left' }}>Smart Picture Emoji Cards - Page 2</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr 1fr', gap: '15px', flex: 1 }}>
+                {[['🔄', 'Turn Around'], ['🦘', 'Jump'], ['🙌', 'Hands Up'], ['👇', 'Touch Floor'], ['👣', 'Step'], ['🧍', 'Freeze']].map(([icon, label]) => (
+                  <div key={label} style={{ border: '2px dashed #444', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <span style={{ fontSize: '4rem' }}>{icon}</span>
+                    <span style={{ fontSize: '11pt', fontWeight: 'bold', marginTop: '8px', textTransform: 'uppercase' }}>{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+
+        {previewResource.id === 'k4-res-mystery' && (
+          <>
+            {/* Page 1 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'left' }}>Mystery Picture Cards - Page 1</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: '15px', flex: 1 }}>
+                {[['🌀', 'Symbol A'], ['🔂', 'Symbol B'], ['🔀', 'Symbol C'], ['🔙', 'Symbol D']].map(([icon, label]) => (
+                  <div key={label} style={{ border: '2px dashed #444', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <span style={{ fontSize: '4rem' }}>{icon}</span>
+                    <span style={{ fontSize: '11pt', fontWeight: 'bold', marginTop: '8px', textTransform: 'uppercase' }}>{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Page 2 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'left' }}>Mystery Picture Cards - Page 2</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: '15px', flex: 1 }}>
+                {[['❄️', 'Symbol E'], ['🔁', 'Symbol F'], ['🔄', 'Symbol G'], ['⚡', 'Symbol H']].map(([icon, label]) => (
+                  <div key={label} style={{ border: '2px dashed #444', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <span style={{ fontSize: '4rem' }}>{icon}</span>
+                    <span style={{ fontSize: '11pt', fontWeight: 'bold', marginTop: '8px', textTransform: 'uppercase' }}>{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+
+        {previewResource.id === 'k4-res-steps' && (
+          <>
+            {/* Page 1 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'left' }}>Step Arrow Cards - Page 1</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr 1fr', gap: '15px', flex: 1 }}>
+                {[['⬆️', 'Forward'], ['⬆️', 'Forward'], ['⬅️', 'Turn Left'], ['⬅️', 'Turn Left'], ['➡️', 'Turn Right'], ['➡️', 'Turn Right']].map(([icon, label], idx) => (
+                  <div key={idx} style={{ border: '2px dashed #444', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <span style={{ fontSize: '4rem' }}>{icon}</span>
+                    <span style={{ fontSize: '11pt', fontWeight: 'bold', marginTop: '8px', textTransform: 'uppercase' }}>{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Page 2 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'left' }}>Step Arrow Cards - Page 2</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr 1fr', gap: '15px', flex: 1 }}>
+                {[['⬇️', 'Backward'], ['⬇️', 'Backward'], ['↻', 'Rotate'], ['↻', 'Rotate'], ['⏹', 'Stop'], ['⏹', 'Stop']].map(([icon, label], idx) => (
+                  <div key={idx} style={{ border: '2px dashed #444', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <span style={{ fontSize: '4rem' }}>{icon}</span>
+                    <span style={{ fontSize: '11pt', fontWeight: 'bold', marginTop: '8px', textTransform: 'uppercase' }}>{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+
+        {previewResource.id === 'k4-res-grids' && (
+          <>
+            {/* Page 1 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flex: 1, border: '4px double #222', borderRadius: '12px' }}>
+                <span style={{ fontSize: '8rem' }}>▶</span>
+                <h1 style={{ fontSize: '50pt', marginTop: '20px', fontFamily: 'sans-serif' }}>START</h1>
+              </div>
+            </div>
+            {/* Page 2 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', flex: 1, border: '4px double #222', borderRadius: '12px', background: '#fffbf0' }}>
+                <span style={{ fontSize: '8rem', color: '#fbbf24' }}>⭐</span>
+                <h1 style={{ fontSize: '50pt', marginTop: '20px', fontFamily: 'sans-serif' }}>FINISH</h1>
+              </div>
+            </div>
+            {/* Page 3 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'left' }}>Floor Grid Kit: Obstacles (Cut Out)</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: '15px', flex: 1 }}>
+                {[['🌳', 'Tree'], ['💧', 'Water'], ['🪨', 'Rock'], ['🚧', 'Barrier']].map(([icon, label]) => (
+                  <div key={label} style={{ border: '2px dashed #444', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <span style={{ fontSize: '4rem' }}>{icon}</span>
+                    <span style={{ fontSize: '11pt', fontWeight: 'bold', marginTop: '8px', textTransform: 'uppercase' }}>{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Page 4 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'left' }}>Floor Grid Kit: Mission Objects (Cut Out)</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: '15px', flex: 1 }}>
+                {[['🤖', 'Robot'], ['🏠', 'Home'], ['🎁', 'Mystery Box'], ['🍕', 'Goal']].map(([icon, label]) => (
+                  <div key={label} style={{ border: '2px dashed #444', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    <span style={{ fontSize: '4rem' }}>{icon}</span>
+                    <span style={{ fontSize: '11pt', fontWeight: 'bold', marginTop: '8px', textTransform: 'uppercase' }}>{label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+
+        {previewResource.id === 'k4-res-cups' && (
+          <>
+            {/* Page 1 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'left' }}>Memory Box Kits - Page 1</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: '1fr 1fr', gap: '15px', flex: 1 }}>
+                {['❤️', '⭐', '🌙', '☀️'].map(icon => (
+                  <div key={icon} style={{ border: '2px dashed #444', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '20px' }}>
+                    <span style={{ fontSize: '3rem' }}>{icon}</span>
+                    <div style={{ border: '2px dashed #aaa', width: '100%', height: '100px', marginTop: '15px', borderRadius: '6px' }}></div>
+                    <span style={{ fontSize: '10pt', fontWeight: 'bold', marginTop: '8px', textTransform: 'uppercase', color: '#666' }}>Memory Box</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* Page 2 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'left' }}>Memory Box Kits: Value Tokens (Cut Out)</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gridTemplateRows: '1fr 1fr 1fr', gap: '15px', flex: 1, padding: '20px' }}>
+                {['🍎', '🚗', '🐶', '⭐', '🔺', '🔵', '1', '2', '3'].map((tok, idx) => (
+                  <div key={idx} style={{ border: '2px dashed #444', borderRadius: '50%', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '3rem', background: '#fff', aspectRatio: '1', width: '120px', margin: 'auto' }}>
+                    {tok}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
+        )}
+
+        {previewResource.id === 'k4-res-dance' && (
+          <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'left' }}>Dance Movement Cards</div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gridTemplateRows: 'repeat(4, 1fr)', gap: '15px', flex: 1 }}>
+              {[['👏', 'Clap'], ['🦘', 'Jump'], ['🔄', 'Spin'], ['👣', 'Step'], ['🙌', 'Hands Up'], ['⬇️', 'Crouch'], ['👋', 'Wave'], ['🧍', 'Freeze']].map(([icon, label]) => (
+                <div key={label} style={{ border: '2px dashed #444', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                  <span style={{ fontSize: '3.5rem' }}>{icon}</span>
+                  <span style={{ fontSize: '10pt', fontWeight: 'bold', marginTop: '6px', textTransform: 'uppercase' }}>{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {previewResource.id === 'k4-res-dance-plan' && (
+          <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.4in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', textAlign: 'left' }}>Dance Planning Mat</div>
+            <div style={{ textAlign: 'center', fontSize: '18pt', fontWeight: 'bold' }}>💃 MY DANCE ALGORITHM PLANNER 🕺</div>
+            
+            <div style={{ border: '2px solid #222', borderRadius: '8px', padding: '15px', height: '5.2in', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <strong style={{ fontSize: '11pt', textTransform: 'uppercase', color: '#555' }}>Dance Slots (Place Action Cards Here)</strong>
+              <div style={{ display: 'flex', justifyContent: 'space-between', gap: '10px' }}>
+                {[1, 2, 3, 4].map(num => (
+                  <div key={num} style={{ border: '3px dashed #aaa', flex: 1, height: '150px', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '24pt', fontWeight: 'bold', color: '#ccc' }}>
+                    [ {num} ]
+                  </div>
+                ))}
+              </div>
+              
+              <div style={{ border: '2px solid #8b5cf6', borderRadius: '8px', padding: '12px', background: '#f5f3ff', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ fontSize: '13pt', fontWeight: 'bold', color: '#6d28d9' }}>🔁 REPEAT LOOP SHORTCUT</span>
+                <div style={{ border: '2px dashed #6d28d9', width: '130px', height: '50px', borderRadius: '6px', display: 'flex', justifyContent: 'center', alignItems: 'center', fontSize: '10pt', fontWeight: 'bold', color: '#8b5cf6' }}>REPEAT DANCE</div>
+                <span style={{ fontSize: '11pt', fontWeight: 'bold', color: '#6d28d9' }}>[ _____ ] TIMES</span>
+              </div>
+            </div>
+
+            <div style={{ border: '1px solid #ddd', borderRadius: '6px', padding: '10px', fontSize: '8pt', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <span>👀 <strong>LOOK</strong> &nbsp;→&nbsp; 💭 <strong>PREDICT</strong> &nbsp;→&nbsp; 🧪 <strong>TRY</strong> &nbsp;→&nbsp; 🤝 <strong>TALK</strong></span>
+              <strong>Early BotBuilder Mat</strong>
+            </div>
+          </div>
+        )}
+
+        {previewResource.id === 'k4-res-drawing' && (
+          <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.4in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', textAlign: 'left' }}>Final Bot Canvas</div>
+            <div style={{ textAlign: 'center', fontSize: '16pt', fontWeight: 'bold' }}>🤖 MY HELPFUL BOT DESIGN CANVAS 🎨</div>
+            
+            <div style={{ display: 'grid', gridTemplateRows: '4.5in 2.4in', gap: '15px', flex: 1, marginTop: '10px' }}>
+              <div style={{ border: '3px solid #333', borderRadius: '10px', padding: '15px' }}>
+                <strong style={{ fontSize: '10pt', color: '#444', textTransform: 'uppercase' }}>🤖 Draw / Design Your Bot Companion Here</strong>
+              </div>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+                <div style={{ border: '2px solid #aaa', borderRadius: '8px', padding: '10px' }}>
+                  <strong style={{ fontSize: '9pt', color: '#555', textTransform: 'uppercase', display: 'block', marginBottom: '5px' }}>👀 What It Notices (Inputs)</strong>
+                  <div style={{ border: '1px dashed #bbb', height: '100px', borderRadius: '4px' }}></div>
+                </div>
+                <div style={{ border: '2px solid #aaa', borderRadius: '8px', padding: '10px' }}>
+                  <strong style={{ fontSize: '9pt', color: '#555', textTransform: 'uppercase', display: 'block', marginBottom: '5px' }}>➡️ What It Does (Actions)</strong>
+                  <div style={{ border: '1px dashed #bbb', height: '100px', borderRadius: '4px' }}></div>
+                </div>
+              </div>
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '15px', marginTop: '15px' }}>
+              <div style={{ border: '2px solid #8b5cf6', borderRadius: '8px', padding: '10px', background: '#f5f3ff' }}>
+                <strong style={{ fontSize: '9pt', color: '#6d28d9', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>🧠 Memory Box (What It Remembers)</strong>
+                <div style={{ border: '2px dashed #c084fc', height: '40px', borderRadius: '4px', display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#a855f7', fontSize: '8pt', fontWeight: 'bold' }}>Variable Storage Label</div>
+              </div>
+              <div style={{ border: '2px solid #10b981', borderRadius: '8px', padding: '10px', background: '#ecfdf5', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                <span style={{ fontSize: '14pt' }}>🔁</span>
+                <strong style={{ fontSize: '9pt', color: '#047857', textTransform: 'uppercase' }}>Does It Repeat?</strong>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {previewResource.id === 'k4-res-expo' && (
+          <>
+            {/* Page 1 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'left' }}>Showcase Expo: Bot Designer Badges</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '30px', flex: 1 }}>
+                <div style={{ border: '3px solid #222', padding: '30px', borderRadius: '12px', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                  <span style={{ fontSize: '5rem' }}>🤖</span>
+                  <h1 style={{ fontSize: '24pt', margin: '15px 0' }}>BOT DESIGNER</h1>
+                  <div style={{ borderTop: '2px dashed #aaa', width: '100%', marginTop: '20px', fontSize: '8pt', color: '#666', paddingTop: '6px' }}>Fold Here / Wear at Showcase Expo</div>
+                </div>
+                <div style={{ border: '3px solid #222', padding: '30px', borderRadius: '12px', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                  <span style={{ fontSize: '5rem' }}>🤖</span>
+                  <h1 style={{ fontSize: '24pt', margin: '15px 0' }}>BOT DESIGNER</h1>
+                  <div style={{ borderTop: '2px dashed #aaa', width: '100%', marginTop: '20px', fontSize: '8pt', color: '#666', paddingTop: '6px' }}>Fold Here / Wear at Showcase Expo</div>
+                </div>
+              </div>
+            </div>
+            {/* Page 2 */}
+            <div style={{ width: '8.5in', height: '11in', background: '#fff', padding: '0.5in', boxSizing: 'border-box', border: '1px solid #ddd', boxShadow: '0 4px 15px rgba(0,0,0,0.3)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ fontSize: '10pt', color: '#777', textTransform: 'uppercase', marginBottom: '10px', textAlign: 'left' }}>Showcase Expo: Visitor Cards & Feedback Tokens</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px', flex: 1 }}>
+                {[['💡', 'What did you create?'], ['🧠', 'How does it work?'], ['🔄', 'What did you change?'], ['🧪', 'What did you test?']].map(([icon, prompt]) => (
+                  <div key={prompt} style={{ border: '2px dashed #444', borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', padding: '15px', textAlign: 'center' }}>
+                    <span style={{ fontSize: '2rem' }}>{icon}</span>
+                    <p style={{ fontWeight: 'bold', marginTop: '8px', fontSize: '10pt' }}>{prompt}</p>
+                  </div>
+                ))}
+                <div style={{ border: '2px dashed #10b981', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px', background: '#f0fdf4', color: '#047857', fontWeight: 'bold' }}>
+                  👍 LIKE TOKEN
+                </div>
+                <div style={{ border: '2px dashed #3b82f6', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px', background: '#eff6ff', color: '#1d4ed8', fontWeight: 'bold' }}>
+                  💭 WONDER TOKEN
+                </div>
+                <div style={{ border: '2px dashed #ec4899', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px', background: '#fdf2f8', color: '#be185d', fontWeight: 'bold' }}>
+                  💡 TRY TOKEN
+                </div>
+                <div style={{ border: '2px dashed #f59e0b', borderRadius: '8px', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px', background: '#fffbeb', color: '#b45309', fontWeight: 'bold' }}>
+                  ⭐ LOVE TOKEN
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+
+      </div>
+    </div>
+  ) : (
+    <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(4px)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, color: '#fff' }}>
+      <div style={{ background: '#251e2c', border: '1px solid rgba(255,255,255,0.1)', padding: '24px', borderRadius: '12px', width: '480px', maxWidth: '90%', animation: 'scaleUp 0.15s', textAlign: 'left' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '10px', marginBottom: '14px' }}>
+          <div>
+            <span style={{ fontSize: '0.6rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase' }}>Document Preview</span>
+            <h4 style={{ color: '#fff', margin: '2px 0 0 0', fontSize: '1.1rem' }}>{previewResource.title}</h4>
+          </div>
+          <button onClick={() => setPreviewResource(null)} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '1.2rem', cursor: 'pointer', outline: 'none', padding: 0 }}>&times;</button>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.75rem', marginBottom: '20px' }}>
+          <div>
+            <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Lesson Connection</strong>
+            <span style={{ textTransform: 'capitalize' }}>{previewResource.part.replace('part', 'Part ')}</span>
+          </div>
+          <div>
+            <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Student Directions</strong>
+            <p style={{ margin: 0, color: 'rgba(255,255,255,0.8)', lineHeight: '1.4' }}>{previewResource.directions}</p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Pages Count</strong>
+              <span>{previewResource.pages} page(s)</span>
+            </div>
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Recommended Quantity</strong>
+              <span>{previewResource.ratio}</span>
+            </div>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Digital Availability</strong>
+              <span>{previewResource.mode}</span>
+            </div>
+          </div>
+        </div>
+        <div style={{ display: 'flex', justifySelf: 'flex-end', gap: '8px' }}>
+          <button onClick={() => setPreviewResource(null)} style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', padding: '6px 12px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.75rem', outline: 'none' }}>Close</button>
+          <button onClick={() => { triggerPrintResource(previewResource); setPreviewResource(null); }} style={{ background: 'var(--primary)', border: 'none', color: '#fff', padding: '6px 16px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.75rem', fontWeight: 'bold', outline: 'none' }}>Print Document</button>
+        </div>
+      </div>
+    </div>
+  )
 )}
 </div>
 )}{activeTeacherTab === 'intro' && (
