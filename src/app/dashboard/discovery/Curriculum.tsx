@@ -6165,6 +6165,20 @@ Log into Scratch. Guide students through basic interface tutorials: adding a spr
         <div>
           <strong style={{ color: '#fff', display: 'block', marginBottom: '12px', fontSize: '0.95rem' }}>Facilitation Steps</strong>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+
+            {/* 🌎 Real-World Phenomenon */}
+            <div style={{ background: 'rgba(59, 130, 246, 0.04)', borderLeft: '3px solid #3b82f6', padding: '14px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '6px' }}>🌎 Real-World Phenomenon: The Confused Robot</strong>
+              <p style={{ margin: '0 0 10px 0', fontSize: '0.8rem', lineHeight: '1.5', color: 'rgba(255,255,255,0.9)' }}>
+                Watch the teacher act as a robot receiving an unclear command. The teacher tells the bot "Go over there," and the bot freezes, looking completely confused.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                <div><strong>👀 NOTICE:</strong> "What happened? Did the robot move?"</div>
+                <div><strong>🤫 MY THINKING:</strong> 5-10s wait. Think: "Why didn't the bot move?" (No writing required).</div>
+                <div><strong>🤝 OUR THINKING:</strong> Turn to your partner and share your idea. "What does a bot need from us to know where 'there' is?"</div>
+                <div><strong>❓ WONDER:</strong> "What are you wondering about how robots follow directions?" (Share questions orally).</div>
+              </div>
+            </div>
             <div style={{ borderLeft: '3px solid #6366f1', padding: '12px', background: 'rgba(99, 102, 241, 0.02)', borderRadius: '6px' }}>
               <strong style={{ color: '#fff', display: 'block', marginBottom: '4px' }}>1. Meet the Silent Bot (15 min)</strong>
               <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: '1.4' }}>
@@ -6617,6 +6631,23 @@ Pairs trade laptops. The testing team intentionally runs stress tests to audit t
         {/* SUBTAB CONTENT: HOUR 1 (THINK) */}
         {activePart1SubTab === 'hour1' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+
+            {/* 🌎 Real-World Phenomenon */}
+            <div style={{ background: 'rgba(59, 130, 246, 0.04)', borderLeft: '3px solid #3b82f6', padding: '14px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '6px' }}>🌎 Real-World Phenomenon: A Message with No Words</strong>
+              <div style={{ display: 'flex', gap: '10px', fontSize: '1.5rem', margin: '8px 0', background: 'rgba(0,0,0,0.15)', padding: '8px', borderRadius: '6px', justifyContent: 'center' }}>
+                <span>🚫</span> <span>⬆️</span> <span>🚻</span> <span>🛑</span> <span>🔋</span> <span>▶️</span> <span>🔇</span>
+              </div>
+              <p style={{ margin: '0 0 10px 0', fontSize: '0.8rem', lineHeight: '1.5', color: 'rgba(255,255,255,0.9)' }}>
+                Look at these familiar symbols shown without any words or labels. How do we know what they are telling us to do?
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                <div><strong>👀 NOTICE:</strong> "What do you notice about these shapes and pictures?"</div>
+                <div><strong>🤫 MY THINKING:</strong> 5-10s wait. Think: "What is one of these pictures telling people to do?"</div>
+                <div><strong>🤝 OUR THINKING:</strong> Compare your ideas with a partner. "What makes us understand them without words?"</div>
+                <div><strong>❓ WONDER:</strong> "What are you wondering about how pictures can speak?"</div>
+              </div>
+            </div>
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
               <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: Mystery Symbol Debate</span>
               <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
@@ -6794,6 +6825,24 @@ Pairs trade laptops. The testing team intentionally runs stress tests to audit t
               </div>
             </div>
 
+            {/* 📖 Read, Look & Connect */}
+            <div style={{ background: 'rgba(139, 92, 246, 0.04)', border: '1px solid rgba(139, 92, 246, 0.15)', padding: '14px', borderRadius: '8px' }}>
+              <strong style={{ color: '#a78bfa', fontSize: '0.85rem', display: 'block', marginBottom: '6px' }}>📖 Read, Look & Connect: "Pictures That Talk"</strong>
+              
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '10px', borderRadius: '6px', marginBottom: '10px', fontSize: '0.8rem', lineHeight: '1.5', color: '#fff', borderLeft: '2px solid #a78bfa' }}>
+                <div style={{ fontSize: '1.2rem', marginBottom: '6px' }}>🛑 ➡️ 🚻 📱</div>
+                <strong>Pictures That Talk</strong><br/>
+                People use pictures and symbols to share messages. A stop sign tells drivers what to do. An arrow can show which way to go. A picture on a button can tell us what will happen when we press it. Pictures can be useful when people speak different languages or when we need to understand something quickly. Good symbols need to be clear so other people understand the message.
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                <div><strong>ACCESS MODES:</strong> 👩‍🏫 Teacher Read-Aloud | 🖼️ Picture-Based | 📖 Optional Student Reading (73 words)</div>
+                <div><strong>BEFORE READING:</strong> "What have we already discovered about pictures?" (Think, then partner talk).</div>
+                <div><strong>DURING READING:</strong> "Listen for one way pictures help people communicate."</div>
+                <div><strong>AFTER READING (🤫 My Thinking Now & 🤝 Our Thinking Now):</strong> "What connected to our Smart Picture activity? Why do symbols need to be clear? Would you change your Smart Picture design?"</div>
+              </div>
+            </div>
+
           </div>
         )}
 
@@ -6960,6 +7009,25 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
         {/* SUBTAB CONTENT: HOUR 1 (THINK) */}
         {activePart2SubTab === 'hour1' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+
+            {/* 🌎 Real-World Phenomenon */}
+            <div style={{ background: 'rgba(59, 130, 246, 0.04)', borderLeft: '3px solid #3b82f6', padding: '14px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '6px' }}>🌎 Real-World Phenomenon: Same Steps, Different Order</strong>
+              <div style={{ display: 'flex', gap: '15px', fontSize: '1.2rem', margin: '8px 0', background: 'rgba(0,0,0,0.15)', padding: '8px', borderRadius: '6px', justifyContent: 'center', alignItems: 'center' }}>
+                <div style={{ border: '1px dashed #aaa', padding: '4px 8px', borderRadius: '4px' }}>🧦 Socks → 👟 Shoes</div>
+                <span style={{ fontSize: '0.8rem', color: '#888' }}>vs</span>
+                <div style={{ border: '1px dashed #aaa', padding: '4px 8px', borderRadius: '4px' }}>👟 Shoes → 🧦 Socks</div>
+              </div>
+              <p style={{ margin: '0 0 10px 0', fontSize: '0.8rem', lineHeight: '1.5', color: 'rgba(255,255,255,0.9)' }}>
+                Look at these two routines. They use the exact same steps, but in a different order. Will they work the same way?
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                <div><strong>👀 NOTICE:</strong> "What changed?"</div>
+                <div><strong>🤫 MY THINKING:</strong> 5-10s wait. Think: "Would both orders work? Why or why not?"</div>
+                <div><strong>🤝 OUR THINKING:</strong> Explain to your partner why order matters in our daily routines.</div>
+                <div><strong>❓ WONDER:</strong> "What about instructions for our bot? Does the order of steps matter there too?"</div>
+              </div>
+            </div>
             
             {/* Activity 1: Be the Robot */}
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
@@ -7464,6 +7532,24 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
               </div>
             </div>
 
+            {/* 📖 Read, Look & Connect */}
+            <div style={{ background: 'rgba(139, 92, 246, 0.04)', border: '1px solid rgba(139, 92, 246, 0.15)', padding: '14px', borderRadius: '8px' }}>
+              <strong style={{ color: '#a78bfa', fontSize: '0.85rem', display: 'block', marginBottom: '6px' }}>📖 Read, Look & Connect: "Order Changes What Happens"</strong>
+              
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '10px', borderRadius: '6px', marginBottom: '10px', fontSize: '0.8rem', lineHeight: '1.5', color: '#fff', borderLeft: '2px solid #a78bfa' }}>
+                <div style={{ fontSize: '1.2rem', marginBottom: '6px' }}>🧦 → 👟 vs 👟 → 🧦</div>
+                <strong>Order Changes What Happens</strong><br/>
+                Some instructions need to happen in a certain order. You put on your socks before your shoes. When you follow directions, the first step can change what happens next. Computers and robots also follow instructions in order. If we move the instructions around, we may get a different result. A clear sequence helps us know what happens first, next, and last.
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                <div><strong>ACCESS MODES:</strong> 👩‍🏫 Teacher Read-Aloud | 🖼️ Picture-Based | 📖 Optional Student Reading (77 words)</div>
+                <div><strong>BEFORE READING:</strong> "What did we notice when we changed our arrow cards?" (Think, then partner talk).</div>
+                <div><strong>DURING READING:</strong> "Listen for an example where order matters."</div>
+                <div><strong>AFTER READING (🤫 My Thinking Now & 🤝 Our Thinking Now):</strong> "What connects to our Floor Grid? What can happen when we change the order? Can you create TWO different sequences that reach the same place?"</div>
+              </div>
+            </div>
+
           </div>
         )}
 
@@ -7631,6 +7717,23 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
         {/* SUBTAB CONTENT: HOUR 1 (THINK) */}
         {activePart3SubTab === 'hour1' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+
+            {/* 🌎 Real-World Phenomenon */}
+            <div style={{ background: 'rgba(59, 130, 246, 0.04)', borderLeft: '3px solid #3b82f6', padding: '14px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '6px' }}>🌎 Real-World Phenomenon: Remember This for Later</strong>
+              <div style={{ display: 'flex', gap: '10px', fontSize: '1.2rem', margin: '8px 0', background: 'rgba(0,0,0,0.15)', padding: '8px', borderRadius: '6px', justifyContent: 'center', alignItems: 'center' }}>
+                <span>⭐</span> <span style={{ color: '#888' }}>→</span> <span>🧠 Student Memory</span>
+              </div>
+              <p style={{ margin: '0 0 10px 0', fontSize: '0.8rem', lineHeight: '1.5', color: 'rgba(255,255,255,0.9)' }}>
+                Look at this Star card. Keep it in your mind. We are going to need it later. Let's do another class action first... (Teacher has class clap 3 times, then asks: "What card did I ask you to remember?")
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                <div><strong>👀 NOTICE:</strong> "What is happening?"</div>
+                <div><strong>🤫 MY THINKING:</strong> 5-10s wait. Think: "How could a box or cup help our bot keep information until it needs it?"</div>
+                <div><strong>🤝 OUR THINKING:</strong> Compare ideas with a partner. "How do humans remember things vs. how bots might?"</div>
+                <div><strong>🧪 TEST:</strong> Let's test using the existing Memory Box activities to find out.</div>
+              </div>
+            </div>
             
             {/* Activity 1: What Changes? */}
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
@@ -9121,6 +9224,21 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
         {/* SUBTAB CONTENT: HOUR 1 (THINK) */}
         {activeShareSubTab === 'hour1' && (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+
+            {/* 🌎 Real-World Systems Challenge */}
+            <div style={{ background: 'rgba(59, 130, 246, 0.04)', borderLeft: '3px solid #3b82f6', padding: '14px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '6px' }}>🌎 Real-World Systems Challenge</strong>
+              <div style={{ display: 'flex', gap: '10px', fontSize: '1.4rem', margin: '8px 0', background: 'rgba(0,0,0,0.15)', padding: '8px', borderRadius: '6px', justifyContent: 'center' }}>
+                <span>🚦 Traffic Light</span> <span>🚪 Auto Door</span> <span>🛗 Elevator</span> <span>🧺 Washer</span> <span>🤖 Vacuum</span>
+              </div>
+              <p style={{ margin: '0 0 10px 0', fontSize: '0.8rem', lineHeight: '1.5', color: 'rgba(255,255,255,0.9)' }}>
+                Look at these everyday systems. What do you think they need to know or do? Where can we see representation, sequence, memory, or loops?
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                <div><strong>🤫 INDIVIDUAL THINKING:</strong> 5-10s wait. Choose one system and think: "Where do I see something we learned in Early BotBuilder?" (Point, draw, or explain).</div>
+                <div><strong>🤝 COLLABORATIVE THINKING:</strong> Partners compare: "Did you notice the same thing? What did your partner notice that you did not?" Connect back to your final bot designs.</div>
+              </div>
+            </div>
             
             {/* Phase 2: System Integration Check */}
             <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
@@ -9588,6 +9706,22 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
                 <div><strong>🔍 Look-fors:</strong> Student ownership, oral/visual explanation, peer questioning, comparing designs.</div>
                 <div><strong>⚠️ Common Misconceptions:</strong> Thinking the goal is having the best-looking bot. Focus on how it works.</div>
                 <div><strong>⚡ Differentiation:</strong> K-1: Demonstrate instead of formal explanation. Grades 2-3: Explain 2-3 design decisions. Grade 4: Explain revision process.</div>
+              </div>
+            </div>
+
+            {/* 📖 Optional Unit-End Read-Aloud */}
+            <div style={{ background: 'rgba(139, 92, 246, 0.04)', border: '1px solid rgba(139, 92, 246, 0.15)', padding: '14px', borderRadius: '8px' }}>
+              <strong style={{ color: '#a78bfa', fontSize: '0.85rem', display: 'block', marginBottom: '6px' }}>📖 Optional Read-Aloud: "Bots Follow Ideas"</strong>
+              
+              <div style={{ background: 'rgba(0,0,0,0.2)', padding: '10px', borderRadius: '6px', marginBottom: '10px', fontSize: '0.8rem', lineHeight: '1.5', color: '#fff', borderLeft: '2px solid #a78bfa' }}>
+                <div style={{ fontSize: '1.2rem', marginBottom: '6px' }}>🤖 🖼️ ➡️ 📦 🔁</div>
+                <strong>Bots Follow Ideas</strong><br/>
+                Bots and computers need clear instructions. Pictures can represent instructions. The order of instructions can change what happens. Computers can keep information and use it later. Some instructions can repeat. People design, test, and change instructions to make systems work better.
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                <div><strong>ACCESS MODES:</strong> 👩‍🏫 Teacher Read-Aloud | 🖼️ Picture-Based | 📖 Optional Student Reading (61 words)</div>
+                <div><strong>CLOSING INQUIRY:</strong> "Which computational thinking idea did you use the most in your final bot design?" (Students respond orally, visually, or through physical canvas demonstration).</div>
               </div>
             </div>
 
