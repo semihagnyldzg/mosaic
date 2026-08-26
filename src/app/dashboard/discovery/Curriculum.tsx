@@ -392,32 +392,412 @@ const pdResources = {
   ],
   earlybot: [
     {
-      id: "early-computational-thinking",
-      title: "CT for Pre-readers",
-      category: "Concept Knowledge",
-      categoryColor: "indigo",
-      description: "Support computational thinking without reading requirements using visual cues.",
-      whyThisMatters: "Builds problem decomposition and pattern matching foundations for early learners.",
-      whatTeachersNeedToKnow: "Focus on icons, emojis, and physical cards instead of text variables.",
-      whenToUseThis: "Recommended before: Part 1 - Hour 1",
-      whatToSay: '"We can give rules to machines using pictures!"',
-      questions: ["How do pictures show our instructions?"],
-      lookFor: "Students sorting physical items by properties.",
-      quickStrategy: "Ask students to group blocks by color and shape."
-    },
-    {
-      id: "unplugged-classroom-games",
-      title: "Managing Active Unplugged Games",
+      id: "earlybot-pd-intro",
+      title: "Unit Intro: Human or Bot?",
       category: "Facilitation Strategy",
       categoryColor: "amber",
-      description: "Help students connect physical navigation and memory games to digital computer rules.",
-      whyThisMatters: "Improves student understanding of algorithmic sequences before touch interfaces.",
-      whatTeachersNeedToKnow: "Act as the 'compiler' and read out instructions as students step through grid tape.",
+      description: "Support computational thinking foundations and literal command execution without direct instruction.",
+      whenToUseThis: "Recommended before: Unit Introduction",
+      launchWithCuriosity: "Draw a simple target smiley face on the whiteboard. Place a red block on your desk. Act like a completely frozen robot (eyes open, standing stiff) and tell the class: 'I am a helper bot. I want to touch the smiley face but my memory is empty. Solve the problem of how to move me.' Do not explain directions first.",
+      noticeAndWonder: {
+        k1: [
+          "What did you notice when you said 'go over there'?",
+          "How did I move when you pointed vs when you only spoke?",
+          "What was the difference between how your friend moves and how I move?"
+        ],
+        grades24: [
+          "What patterns do you notice in my movements?",
+          "What is the problem with using vague words like 'there' or 'that way'?",
+          "What specific data points does the robot need to calculate steps?"
+        ]
+      },
+      studentInvestigation: "Students play 'Program the Teacher.' One student stands as navigator, another as driver. They write/draw a 3-step sequence on a card (e.g. forward, turn, forward) and test it on the teacher-bot. Students predict the final square, execute the moves, notice when the bot hits a desk, change one direction card, and try again.",
+      studentDiscourse: {
+        structure: "Think-Pair-Share: Students partner up. Student B gives commands to Student A (acting as bot) to trace a path across a grid. If the bot steps off-grid, they discuss why the command was wrong and swap roles.",
+        stems: [
+          "I notice the bot did... because...",
+          "I think we need to change... because...",
+          "I disagree because the bot ended up on..."
+        ]
+      },
+      startThinking: [
+        "What do you notice when the bot moves?",
+        "What do you think will happen if we say 'walk' without saying how many steps?"
+      ],
+      pushThinking: [
+        "Why did the bot walk into the table instead of turning?",
+        "What evidence do you have that the bot was confused?",
+        "What happened when you changed the first step?"
+      ],
+      connectThinking: [
+        "Who tried a different first step? What happened?",
+        "Did anyone change their thinking about how smart a bot is?"
+      ],
+      studentAgency: [
+        "Students choose which helper role their classroom bot will practice (e.g. clean-up vs. lining up).",
+        "Students decide how to physically represent coordinates on their floor grids (using colors vs. cards)."
+      ],
+      productiveStruggle: [
+        "What did you try when the bot did not move?",
+        "What do you already know about directions that might help?",
+        "Can someone in your team test the step physically to check?"
+      ],
+      lookForStudents: [
+        "Students identifying that the bot lacks intuition and executes commands literally.",
+        "Students revising command cards to correct mistakes."
+      ],
+      lookForTeacher: [
+        "Teacher waiting at least 5 seconds before prompting after a failed command.",
+        "Teacher resisting the urge to point out the correct step card."
+      ],
+      ifStuck: {
+        wait: "Allow the student to see the bot hit the barrier and stand there for 10 seconds.",
+        ask: "Ask: 'Where did the bot end up? Where did you want it to go?'",
+        redirect: "Say: 'Look at the direction of the arrow card. Which way does it point?'",
+        hint: "Give a small hint: 'The bot needs to turn before it can move forward.'",
+        model: "Walk the grid yourself, exaggerating the turns and steps."
+      },
+      reflection: "How would you explain the difference between a human and a bot to a student who has never seen one?"
+    },
+    {
+      id: "earlybot-pd-part1",
+      title: "Part 1: Smart Pictures (Data)",
+      category: "Concept Knowledge",
+      categoryColor: "indigo",
+      description: "Introduce variables and data classification through physical picture cards and properties.",
+      whenToUseThis: "Recommended before: Part 1 - Hour 1",
+      launchWithCuriosity: "Place a blurry, cut-off drawing of an unknown shape inside a mystery box. Reveal only a tiny corner of the drawing. Ask students to classify it. Gradually slide the cover open to reveal more details (color, shape, lines) until they can identify it. Do not define the word DATA.",
+      noticeAndWonder: {
+        k1: [
+          "What do you notice about this picture corner?",
+          "Can you guess what it is? Why is it hard?",
+          "What happened when I showed you more of the picture?"
+        ],
+        grades24: [
+          "What details (color, size, shape) helped you identify the object?",
+          "What makes an input useful vs. confusing for a system?",
+          "What questions do you have about how a computer reads pixels?"
+        ]
+      },
+      studentInvestigation: "Students sort a pile of mixed visual cards (food, animals, vehicles) into category mats. They predict the groups, try sorting them, notice cards that fit multiple areas (e.g. flying bird), negotiate sorting rules, change the category tags, and verify consistency.",
+      studentDiscourse: {
+        structure: "Notice-Explain-Challenge: In pairs, Student A sorts a card. Student B challenges the choice by asking for evidence. Student A must point to the visual property (e.g., 'It has wheels') to justify.",
+        stems: [
+          "I put this in... because I see...",
+          "I agree/disagree because it also has...",
+          "Can you explain why you chose this label?"
+        ]
+      },
+      startThinking: [
+        "What visual properties do you notice first?",
+        "What do you think the sorting machine will do with this card?"
+      ],
+      pushThinking: [
+        "Why does a dog card not belong in the vehicles pile?",
+        "What evidence from the picture tells us it is a fruit?",
+        "What happened when you added a color label to the cards?"
+      ],
+      connectThinking: [
+        "Did anyone sort the bird differently? Why?",
+        "What do all food cards have in common?"
+      ],
+      studentAgency: [
+        "Students select their own sorting categories (e.g. sorting by color vs sorting by function).",
+        "Students decide how to decorate/annotate confusing cards to make them clear."
+      ],
+      productiveStruggle: [
+        "What properties have you checked so far?",
+        "What could you look at if the name is cut off?",
+        "Can a classmate help you group this mystery item?"
+      ],
+      lookForStudents: [
+        "Students using visual properties (edges, shapes, details) to classify cards.",
+        "Students arguing classification based on evidence rather than guessing."
+      ],
+      lookForTeacher: [
+        "Teacher asking 'Why does it belong there?' instead of confirming right/wrong.",
+        "Teacher encouraging multiple classification schemes."
+      ],
+      ifStuck: {
+        wait: "Let students stare at a ambiguous card and struggle with overlapping groups.",
+        ask: "Ask: 'What parts of this picture do you recognize? What does it do?'",
+        redirect: "Say: 'Let's look at the other cards in the food pile. What do they have?'",
+        hint: "Give a small hint: 'It has feathers and wings, just like the parrot.'",
+        model: "Sort a card yourself, speaking your reasoning aloud: 'I see wheels, so I place this in vehicles.'"
+      },
+      reflection: "What did you figure out about why computers need good data/information today?"
+    },
+    {
+      id: "earlybot-pd-part2",
+      title: "Part 2: Step Arrows (Algorithms)",
+      category: "Concept Knowledge",
+      categoryColor: "indigo",
+      description: "Guide students to map coordinates to step arrows and sequential flow logic.",
       whenToUseThis: "Recommended before: Part 2 - Hour 1",
-      whatToSay: 'Step forward! Sola dön!',
-      questions: ["Did the robot follow your arrow?"],
-      lookFor: "Students matching card arrows to physical movements.",
-      quickStrategy: "Play a quick Simon Says game to model step instructions."
+      launchWithCuriosity: "Tweak a floor path grid by placing a cardboard box barrier (🚧) right in front of the goal. Tell students: 'The bot has to reach the star, but there is a wall in the way. Our old plan is blocked. We need a new recipe of steps.' Do not explain how to detour.",
+      noticeAndWonder: {
+        k1: [
+          "What is in the way of our star?",
+          "What happened when the bot tried to walk straight?",
+          "Which way should the bot turn first?"
+        ],
+        grades24: [
+          "How did adding the barrier affect our sequential algorithm?",
+          "What patterns do you notice when the bot turns right vs left?",
+          "What is the difference between rotating in place and taking a step?"
+        ]
+      },
+      studentInvestigation: "Students lay down giant floor tape lines. They place arrow cards next to the grid, predict the path, walk through it step-by-step, notice wrong turns, swap the offending arrow card, and test the revised algorithm.",
+      studentDiscourse: {
+        structure: "Predict-Explain-Verify: Student A arranges 4 arrow cards. Student B must physically walk the sequence exactly as shown. If Student B ends up on the wrong square, they collaborate to debug the sequence.",
+        stems: [
+          "I think the bot will go... because...",
+          "My evidence is this arrow card pointing...",
+          "Let's change step number... to a..."
+        ]
+      },
+      startThinking: [
+        "What do you notice about the grid path?",
+        "What do you think will happen at the corner?"
+      ],
+      pushThinking: [
+        "Why did the bot turn left instead of right?",
+        "What happened when you removed the third step?",
+        "How do you know this sequence is shorter?"
+      ],
+      connectThinking: [
+        "Did anyone find a different way around the block? Which is simpler?",
+        "What do both paths have in common?"
+      ],
+      studentAgency: [
+        "Students choose their own delivery destination on the map.",
+        "Students select which obstacles to avoid on the floor grid."
+      ],
+      productiveStruggle: [
+        "What did you try when the bot hit the wall?",
+        "What steps are working correctly? Let's check them first.",
+        "What direction is the bot facing right now?"
+      ],
+      lookForStudents: [
+        "Students systematically tracing steps with fingers or feet.",
+        "Students identifying that a turn command only changes orientation and doesn't change tile location."
+      ],
+      lookForTeacher: [
+        "Teacher prompting students to walk the path physically when confused.",
+        "Teacher letting the bot fail grid runs without early intervention."
+      ],
+      ifStuck: {
+        wait: "Allow students to discuss a pathing error for 1 minute before stepping in.",
+        ask: "Ask: 'Where did the bot start to go wrong? Point to that arrow card.'",
+        redirect: "Say: 'Let's act out step 3 together. Stand on grid tile 2. Now execute the card.'",
+        hint: "Give a small hint: 'You need to turn the bot before you tell it to walk forward.'",
+        model: "Model a turn-and-step combo physically while calling out instructions."
+      },
+      reflection: "Why does the order of step arrows matter in an algorithm?"
+    },
+    {
+      id: "earlybot-pd-part3",
+      title: "Part 3: Memory Boxes (Variables)",
+      category: "Concept Knowledge",
+      categoryColor: "indigo",
+      description: "Build variable memory concepts using physical cups and destructive update behaviors.",
+      whenToUseThis: "Recommended before: Part 3 - Hour 1",
+      launchWithCuriosity: "Show a locked plastic cup labeled 'Classroom Weather'. Hide a green block inside it. Tell the class: 'This box remembers our weather color. Right now it says green for sunny. But look! It is starting to rain!' Drop a blue block into the cup, taking the green block out. Do not use the word variable yet.",
+      noticeAndWonder: {
+        k1: [
+          "What did the box remember first? What color is inside now?",
+          "Where did the green color block go?",
+          "Can the box hold two colors at the same time?"
+        ],
+        grades24: [
+          "What remains constant about the box? What changes?",
+          "Why did we have to remove the old block when setting the new value?",
+          "How does a computer system keep track of scores that increase?"
+        ]
+      },
+      studentInvestigation: "Students use physical cups and cards to model program memory. They write values on cards, drop them into cups labeled with names, replace cards when events occur, trace state changes over a story, and predict the final memory state.",
+      studentDiscourse: {
+        structure: "Update-Explain-Challenge: Student A acts as the event caller (e.g. 'Add 1 to Score'). Student B updates the value inside the 'Score' cup. Student A audits the cup to verify the mathematical value.",
+        stems: [
+          "The variable box remembers... because we set it to...",
+          "I changed the value from... to... because...",
+          "What does the box remember right now?"
+        ]
+      },
+      startThinking: [
+        "What do you notice about the cup label?",
+        "What do you think is inside the cup?"
+      ],
+      pushThinking: [
+        "Why is there only one block inside the cup?",
+        "What happened when we added a new name card?",
+        "How do you know what the bot remembers?"
+      ],
+      connectThinking: [
+        "Who got a final score of 5? How did you count?",
+        "Did anyone keep the old card inside the box? Why is that confusing?"
+      ],
+      studentAgency: [
+        "Students select variable names and draw visual label icons for their cups.",
+        "Students choose what values (e.g., favorite numbers vs names) to store during simulation testing."
+      ],
+      productiveStruggle: [
+        "What have you placed inside the box so far?",
+        "What does the label on your cup say? Does it match the card inside?",
+        "How can we check what the simulator remembered?"
+      ],
+      lookForStudents: [
+        "Students physically removing old value cards before inserting new ones.",
+        "Students referencing variables by their constant label names."
+      ],
+      lookForTeacher: [
+        "Teacher using the 'storage box' analogy to clarify memory constraints.",
+        "Teacher encouraging students to trace variables on paper grids."
+      ],
+      ifStuck: {
+        wait: "Let students puzzle over why their simulator count is incorrect for 30 seconds.",
+        ask: "Ask: 'What value is currently inside the cup? What value should be there?'",
+        redirect: "Say: 'Let's look at the timeline. What event happened first? What changed?'",
+        hint: "Give a small hint: 'When a new color comes in, the old color must be thrown away.'",
+        model: "Show how to swap value cards inside a cup physically."
+      },
+      reflection: "What is a memory box (variable) and why does a chatbot need one?"
+    },
+    {
+      id: "earlybot-pd-part4",
+      title: "Part 4: Repeat Dance (Loops)",
+      category: "Concept Knowledge",
+      categoryColor: "indigo",
+      description: "Support loop representation and code compaction using physical movement patterns.",
+      whenToUseThis: "Recommended before: Part 4 - Hour 1",
+      launchWithCuriosity: "Perform a rhythmic physical sequence: Clap, Stomp, Clap, Stomp, Clap, Stomp, Clap, Stomp. Ask students: 'If I wanted you to do this all day, would you want me to say 'Clap' and 'Stomp' 100 times, or is there a faster way to tell you?' Do not introduce loops.",
+      noticeAndWonder: {
+        k1: [
+          "What movements did you see again and again?",
+          "How did your body know to repeat the moves?",
+          "How can we show this pattern using cards without a giant row?"
+        ],
+        grades24: [
+          "What is the repeating core pattern in this choreography?",
+          "What happens if we put the repeat bracket around the wrong card?",
+          "Why is shorter instruction code better for a processor?"
+        ]
+      },
+      studentInvestigation: "Students write short choreographies using move cards. They wrap repeating segments in a physical REPEAT bracket card, predict the behavior, execute it, modify the loop count slider on a tablet simulator, and compare execution times.",
+      studentDiscourse: {
+        structure: "Observe-Code-Verify: Student A performs a repeating dance. Student B must write down the loop sequence using a single repeat block and multiplier. Student A executes Student B's code to verify.",
+        stems: [
+          "I notice the pattern repeating is...",
+          "I used a loop count of... because...",
+          "Let's change the repeat block to wrap..."
+        ]
+      },
+      startThinking: [
+        "What patterns do you notice in the movements?",
+        "What do you think a repeat card does?"
+      ],
+      pushThinking: [
+        "Why did the bot clap 6 times instead of 3?",
+        "What happened when you moved the repeat card to wrap the stomp too?",
+        "How do you know the code is shorter now?"
+      ],
+      connectThinking: [
+        "Who used a nested loop? How did that work?",
+        "What do all loop codes have in common?"
+      ],
+      studentAgency: [
+        "Students choose their own combination of dance moves to loop.",
+        "Students decide the repeat multiplier parameter (e.g. 2x, 5x, 10x)."
+      ],
+      productiveStruggle: [
+        "What moves are repeating in a pattern?",
+        "Where does the repeat bracket start? Where does it end?",
+        "Can your partner act out the loop card to check it?"
+      ],
+      lookForStudents: [
+        "Students grouping duplicate action cards into a single loop box.",
+        "Students predicting loop iterations accurately before execution."
+      ],
+      lookForTeacher: [
+        "Teacher utilizing movement to reinforce repeating blocks.",
+        "Teacher asking students to trace the loop cycle boundary."
+      ],
+      ifStuck: {
+        wait: "Allow students to run an incorrect loop count on the simulator twice.",
+        ask: "Ask: 'How many times did the bot clap? How many times did your card tell it to?'",
+        redirect: "Say: 'Let's point to the moves inside the repeat bracket. What are they?'",
+        hint: "Give a small hint: 'Only put the cards that repeat inside the bracket. Put the rest outside.'",
+        model: "Model stepping through a loop: step inside, run action, check count, repeat or exit."
+      },
+      reflection: "How does using a repeat card help us make code simpler?"
+    },
+    {
+      id: "earlybot-pd-share",
+      title: "Unit Share: Helpful Bot Design",
+      category: "Facilitation Strategy",
+      categoryColor: "amber",
+      description: "Facilitate system integration and peer feedback for final K-4 prototype showcases.",
+      whenToUseThis: "Recommended before: Unit Share - Hour 1",
+      launchWithCuriosity: "Show a poster template that has four blank, labeled zones: KNOW, DO, REMEMBER, REPEAT. Tell the class: 'We want to build a Welcome Bot. But it has no information, no instructions, no memory, and cannot repeat. It is empty! How can we use everything we learned to bring it to life?' Do not script the steps.",
+      noticeAndWonder: {
+        k1: [
+          "What did we learn that helps a bot KNOW things?",
+          "What did we use to tell the bot what to DO?",
+          "What did the bot use to REMEMBER things?"
+        ],
+        grades24: [
+          "How do the four components (Data, Algorithm, Variable, Loop) connect in a helper bot?",
+          "What problems can occur if one of the zones is empty?",
+          "How can we collect classmate review feedback to improve our design?"
+        ]
+      },
+      studentInvestigation: "Students design a helpful classroom bot on a layout canvas. They select pictures (KNOW), write step arrows (DO), assign a memory box (REMEMBER), configure loop repeats (REPEAT), test it with peer testers, log bugs, and upgrade one component.",
+      studentDiscourse: {
+        structure: "Showcase Review: Teams showcase their bot canvas. Peer reviewers walk around and use visual feedback cards: 👍 LIKE, 💭 WONDER, 💡 TRY. Designers must listen without arguing and select one upgrade.",
+        stems: [
+          "Our bot helps... by combining...",
+          "I wonder what happens if the user...",
+          "We changed... because our peer feedback suggested..."
+        ]
+      },
+      startThinking: [
+        "What classroom problem does your bot solve?",
+        "What do you think is the most important component?"
+      ],
+      pushThinking: [
+        "Why did you choose that specific variable for your bot to remember?",
+        "What happened when the peer tester ran your arrows?",
+        "How does the loop help your bot clean up?"
+      ],
+      connectThinking: [
+        "Who got a suggestion to improve their DO steps? What was it?",
+        "What do all the helpful bots have in common?"
+      ],
+      studentAgency: [
+        "Students choose the classroom problem to solve (e.g. library bot, welcome bot).",
+        "Students decide which peer feedback suggestion to implement in their final design sprint."
+      ],
+      productiveStruggle: [
+        "What did your peer tester say was confusing?",
+        "What area of the canvas is causing the problem: the steps or the memory?",
+        "How can your group test the alternative route?"
+      ],
+      lookForStudents: [
+        "Students integrating all 4 CS concepts into a single system design poster.",
+        "Students responding constructively to peer critique during expo sprints."
+      ],
+      lookForTeacher: [
+        "Teacher listening to team presentations rather than leading the descriptions.",
+        "Teacher reinforcing kind, specific, and helpful feedback norms."
+      ],
+      ifStuck: {
+        wait: "Let teams struggle with an integration clash for 2 minutes.",
+        ask: "Ask: 'What part of the system is confused? Is it the instructions or the data?'",
+        redirect: "Say: 'Let's check the check-list. Does the bot have data under KNOW? Does it have steps under DO?'",
+        hint: "Give a small hint: 'The memory box needs to store the toy count so the loop knows when to stop.'",
+        model: "Demonstrate a complete walkthrough of a simple bot plan (e.g., story reader bot) pointing to each of the 4 sections."
+      },
+      reflection: "What was the most challenging part of designing your helper bot, and how did you fix it?"
     }
   ]
 };
@@ -4264,7 +4644,157 @@ teacherUnit === 'earlybot' ? "The visual instructions early learners design buil
 )}{activeTeacherTab === 'pd' && (
 <div style={{ animation: 'slideUp 0.2s', color: 'var(--text-secondary)' }}>
 {selectedResource ? (
-<div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: 'slideUp 0.15s', textAlign: 'left' }}>
+  teacherUnit === 'earlybot' ? (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: 'slideUp 0.15s', textAlign: 'left' }}>
+      <button onClick={() => setSelectedResource(null)} style={{ alignSelf: 'flex-start', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', padding: '6px 12px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '6px', outline: 'none' }}>
+        ← Back to PD Resources
+      </button>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+        <h3 style={{ fontSize: '1.3rem', color: '#fff', margin: 0 }}>{selectedResource.title}</h3>
+        <span style={{
+          padding: '3px 8px',
+          borderRadius: '12px',
+          fontSize: '0.65rem',
+          fontWeight: 'bold',
+          background: getCategoryStyles(selectedResource.category).bg,
+          color: getCategoryStyles(selectedResource.category).color,
+          border: getCategoryStyles(selectedResource.category).border
+        }}>{selectedResource.category}</span>
+      </div>
+      
+      <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '24px' }}>
+        {/* Left Column: Inquiry Loop & Discourse */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          
+          {/* 1. Launch With Curiosity */}
+          <div style={{ background: 'rgba(99, 102, 241, 0.04)', borderLeft: '3px solid var(--primary-light)', padding: '12px', borderRadius: '4px' }}>
+            <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '4px' }}>1. Launch With Curiosity (Phenomenon/Demonstration)</strong>
+            <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: '1.5', color: 'rgba(255, 255, 255, 0.95)' }}>{selectedResource.launchWithCuriosity}</p>
+          </div>
+
+          {/* 2. Notice & Wonder */}
+          <div style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '12px', borderRadius: '6px' }}>
+            <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '6px' }}>2. Notice & Wonder Prompts</strong>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.75rem' }}>
+              <div>
+                <strong style={{ color: '#a78bfa', display: 'block' }}>K–1 Support (Pointing/Concrete):</strong>
+                <ul style={{ margin: '2px 0 0 0', paddingLeft: '14px', lineHeight: '1.4' }}>
+                  {(selectedResource.noticeAndWonder?.k1 || []).map((q, i) => <li key={i}>{q}</li>)}
+                </ul>
+              </div>
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '6px' }}>
+                <strong style={{ color: '#60a5fa', display: 'block' }}>Grades 2–4 (Reasoning/Evidence):</strong>
+                <ul style={{ margin: '2px 0 0 0', paddingLeft: '14px', lineHeight: '1.4' }}>
+                  {(selectedResource.noticeAndWonder?.grades24 || []).map((q, i) => <li key={i}>{q}</li>)}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. Student Investigation */}
+          <div style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '12px', borderRadius: '6px' }}>
+            <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '4px' }}>3. Student Investigation (Predict → Try → Revise)</strong>
+            <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: '1.5' }}>{selectedResource.studentInvestigation}</p>
+          </div>
+
+          {/* 4. Student Discourse */}
+          <div style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.15)', padding: '12px', borderRadius: '6px' }}>
+            <strong style={{ color: '#34d399', fontSize: '0.85rem', display: 'block', marginBottom: '4px' }}>4. Student-to-Student Discourse (Think-Pair-Share)</strong>
+            <p style={{ margin: '0 0 8px 0', fontSize: '0.8rem', lineHeight: '1.5' }}>{selectedResource.studentDiscourse?.structure}</p>
+            <strong style={{ color: '#fff', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>Visual Talk Stems:</strong>
+            <ul style={{ margin: 0, paddingLeft: '14px', fontSize: '0.75rem', lineHeight: '1.4', fontStyle: 'italic', color: '#a7f3d0' }}>
+              {(selectedResource.studentDiscourse?.stems || []).map((s, i) => <li key={i}>"{s}"</li>)}
+            </ul>
+          </div>
+
+          {/* 6. Student Agency */}
+          <div style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '12px', borderRadius: '6px' }}>
+            <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '4px' }}>6. Student Agency Opportunities (Intellectual Choices)</strong>
+            <ul style={{ margin: 0, paddingLeft: '14px', fontSize: '0.75rem', lineHeight: '1.4' }}>
+              {(selectedResource.studentAgency || []).map((a, i) => <li key={i} style={{ color: 'rgba(255,255,255,0.85)' }}>{a}</li>)}
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Right Column: Coaching Metrics, Stuck Progression & Look-Fors */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', background: 'rgba(0,0,0,0.15)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          
+          {/* 5. Questions to Move Thinking Forward */}
+          <div>
+            <strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>5. Questions to Move Thinking Forward</strong>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.75rem' }}>
+              <div>
+                <strong style={{ color: '#a78bfa' }}>Start Thinking:</strong>
+                <ul style={{ margin: '2px 0 0 0', paddingLeft: '14px', lineHeight: '1.3' }}>
+                  {(selectedResource.startThinking || []).map((q, i) => <li key={i}>{q}</li>)}
+                </ul>
+              </div>
+              <div>
+                <strong style={{ color: '#60a5fa' }}>Push Thinking:</strong>
+                <ul style={{ margin: '2px 0 0 0', paddingLeft: '14px', lineHeight: '1.3' }}>
+                  {(selectedResource.pushThinking || []).map((q, i) => <li key={i}>{q}</li>)}
+                </ul>
+              </div>
+              <div>
+                <strong style={{ color: '#34d399' }}>Connect Thinking:</strong>
+                <ul style={{ margin: '2px 0 0 0', paddingLeft: '14px', lineHeight: '1.3' }}>
+                  {(selectedResource.connectThinking || []).map((q, i) => <li key={i}>{q}</li>)}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 7. Productive Struggle */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '10px' }}>
+            <strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>7. Before You Help...</strong>
+            <ul style={{ margin: 0, paddingLeft: '14px', fontSize: '0.75rem', lineHeight: '1.3' }}>
+              {(selectedResource.productiveStruggle || []).map((q, i) => <li key={i}>{q}</li>)}
+            </ul>
+          </div>
+
+          {/* 8. Look-Fors */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '10px' }}>
+            <strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>8. Look-Fors (Evidence of Thinking)</strong>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', lineHeight: '1.3' }}>
+              <div>
+                <strong style={{ color: '#34d399' }}>Students are:</strong>
+                <ul style={{ margin: '2px 0 0 0', paddingLeft: '14px' }}>
+                  {(selectedResource.lookForStudents || []).map((l, i) => <li key={i}>{l}</li>)}
+                </ul>
+              </div>
+              <div>
+                <strong style={{ color: '#60a5fa' }}>Teacher is:</strong>
+                <ul style={{ margin: '2px 0 0 0', paddingLeft: '14px' }}>
+                  {(selectedResource.lookForTeacher || []).map((l, i) => <li key={i}>{l}</li>)}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* 9. If Students Get Stuck */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '10px' }}>
+            <strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>9. If Students Get Stuck (Progression)</strong>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.75rem', lineHeight: '1.3' }}>
+              <div>⌛ <strong>Wait:</strong> {selectedResource.ifStuck?.wait}</div>
+              <div>❓ <strong>Ask:</strong> {selectedResource.ifStuck?.ask}</div>
+              <div>➡️ <strong>Redirect:</strong> {selectedResource.ifStuck?.redirect}</div>
+              <div>💡 <strong>Hint:</strong> {selectedResource.ifStuck?.hint}</div>
+              <div>🎨 <strong>Model:</strong> {selectedResource.ifStuck?.model}</div>
+            </div>
+          </div>
+
+          {/* 10. Reflection / Exit Question */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '10px' }}>
+            <strong style={{ color: '#fbbf24', fontSize: '0.75rem', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>10. Reflection / Exit Question</strong>
+            <p style={{ margin: 0, fontSize: '0.75rem', fontStyle: 'italic', color: '#fff', lineHeight: '1.3' }}>"{selectedResource.reflection}"</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: 'slideUp 0.15s', textAlign: 'left' }}>
 <button onClick={() => setSelectedResource(null)} style={{ alignSelf: 'flex-start', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', padding: '6px 12px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '6px', outline: 'none' }}>
 ← Back to PD Resources
 </button>
@@ -4333,6 +4863,7 @@ border: getCategoryStyles(selectedResource.category).border
 </div>
 </div>
 </div>
+  )
 ) : (
 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: 'slideUp 0.15s', textAlign: 'left' }}>
 <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '4px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px' }}>Professional Development Resources</h3>
@@ -4347,7 +4878,7 @@ The resources in this section provide practical support for facilitating this Di
 teacherUnit === 'botbuilder' ? [
 'understanding-ai', 'data-knowledge-bases', 'scratch-lists', 'agency-steam', 'fac-break-bot', 'responsible-ai'
 ].includes(r.id) : teacherUnit === 'earlybot' ? [
-'earlybot-exp-before-vocab', 'earlybot-phys-before-dig', 'earlybot-predict-before-click', 'earlybot-debug-learning', 'earlybot-low-literacy', 'earlybot-thinking-visible'
+'earlybot-pd-intro', 'earlybot-pd-part1', 'earlybot-pd-part2', 'earlybot-pd-part3', 'earlybot-pd-part4', 'earlybot-pd-share'
 ].includes(r.id) : [
 'eco-overview', 'runoff-dynamics', 'scratch-physics'
 ].includes(r.id)
