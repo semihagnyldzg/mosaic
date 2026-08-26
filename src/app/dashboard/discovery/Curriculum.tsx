@@ -14,7 +14,7 @@ const printingResources = {
     { id: 'bb-res-mission', category: 'Student Learning Resources', title: 'AI Engineer Mission Sheet', part: 'intro', pages: 2, ratio: '1 per student', mode: 'Printable Recommended', directions: 'Introduces the chatbot challenge scenario, team roles, and initial system problem.' },
     { id: 'bb-res-inquiry', category: 'Student Learning Resources', title: 'Human vs. AI Language Challenge', part: 'part1', pages: 1, ratio: '1 per pair', mode: 'Digital + Printable', directions: 'Worksheet comparing how humans and computers process similar phrases.' },
     { id: 'bb-res-detective', category: 'Student Learning Resources', title: 'Data Detective Challenge', part: 'part1', pages: 3, ratio: '1 per team', mode: 'Printable Recommended', directions: 'Contains the messy lunch menu database containing duplicate records, spelling typos, and outdated pricing.' },
-    { id: 'bb-res-brainstorm', category: 'Student Learning Resources', title: 'Real-World Problem Brainstorm', part: 'part1', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Structured brainstorm map using the Problem -> User -> Data -> Solution framework.' },
+    { id: 'bb-res-brainstorm', category: 'Student Learning Resources', title: 'Real-World Problem Brainstorm', part: 'part1', pages: 1, ratio: '1 per team', mode: 'Digital + Printable', directions: 'Structured brainstorm map using the Problem → User → Data → Solution framework.' },
 
     // Student Learning Resources (Part 2)
     { id: 'bb-res-robot-map', category: 'Student Learning Resources', title: 'School Robot Navigation Map', part: 'part2', pages: 1, ratio: '1 per team', mode: 'Printable Recommended', directions: 'School blueprint grid showing Nurse office, room 205, intersections, hallways, charging station, and stairs.' },
@@ -1973,7 +1973,7 @@ return (
 
     /* --- Teacher Facilitator Console Customizations --- */
     
-    /* Facilitator Console Outer Container (#1d1726 -> rgb(29, 23, 38)) */
+    /* Facilitator Console Outer Container (#1d1726 → rgb(29, 23, 38)) */
     .curriculum-teacher-container,
     div[style*="background: '#1d1726'"],
     div[style*="background:'#1d1726'"],
@@ -1985,7 +1985,7 @@ return (
       box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05) !important;
     }
 
-    /* Facilitator Header (#241a30 -> rgb(36, 26, 48)) */
+    /* Facilitator Header (#241a30 → rgb(36, 26, 48)) */
     div[style*="background: '#241a30'"],
     div[style*="background:'#241a30'"],
     div[style*="rgb(36, 26, 48)"],
@@ -1995,7 +1995,7 @@ return (
       borderBottom: 1px solid #cbd5e1 !important;
     }
 
-    /* Facilitator Left Sidebar (#282130 -> rgb(40, 33, 48)) */
+    /* Facilitator Left Sidebar (#282130 → rgb(40, 33, 48)) */
     div[style*="background: '#282130'"],
     div[style*="background:'#282130'"],
     div[style*="rgb(40, 33, 48)"],
@@ -2005,7 +2005,7 @@ return (
       border-right: 1px solid #cbd5e1 !important;
     }
 
-    /* Sidebar active tab buttons (#0284c7 -> rgb(2, 132, 199)) */
+    /* Sidebar active tab buttons (#0284c7 → rgb(2, 132, 199)) */
     button[style*="border: isActive"],
     button[style*="#0284c7"],
     button[style*="rgb(2, 132, 199)"],
@@ -6206,7 +6206,102 @@ Log into Scratch. Guide students through basic interface tutorials: adding a spr
           </div>
         </div>
       </div>
+) : teacherUnit === 'earlybot' ? (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
+        
+        {/* Overview Header */}
+        <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%)', border: '1px solid rgba(255,255,255,0.05)', padding: '20px', borderRadius: '10px' }}>
+          <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Unit Launch Hook</span>
+          <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.1rem' }}>Challenge: The Mystery Bot</h4>
+          <p style={{ lineHeight: '1.6', margin: 0 }}>
+            Meet our classroom robot! It needs to get to its target, but it is stiff and silent. How can we tell it what to do? Students will discover the need for clear, visual instructions by trying to direct a "human robot" before learning any formal vocabulary or code.
+          </p>
+        </div>
+
+        {/* Terminology */}
+        <div>
+          <strong style={{ color: '#fff', display: 'block', marginBottom: '10px', fontSize: '0.95rem' }}>Core Terminology</strong>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
+            <div style={{ padding: '12px', background: 'rgba(255,255,255,0.02)', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <strong style={{ color: 'var(--primary-light)', display: 'block', fontSize: '0.8rem', marginBottom: '4px' }}>Helper Bot</strong>
+              <span style={{ fontSize: '0.75rem', lineHeight: '1.4' }}>A simple, friendly machine that follows exact visual instructions to solve problems.</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(255,255,255,0.02)', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <strong style={{ color: 'var(--primary-light)', display: 'block', fontSize: '0.8rem', marginBottom: '4px' }}>Instruction</strong>
+              <span style={{ fontSize: '0.75rem', lineHeight: '1.4' }}>A picture, card, or symbol that tells our helper bot exactly what action to perform next.</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(255,255,255,0.02)', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <strong style={{ color: 'var(--primary-light)', display: 'block', fontSize: '0.8rem', marginBottom: '4px' }}>Partner Team</strong>
+              <span style={{ fontSize: '0.75rem', lineHeight: '1.4' }}>Two student designers working together, sharing ideas, testing plans, and fixing errors.</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Activities List */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+          
+          {/* Activity 1 */}
+          <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 1: Meet the Silent Bot</strong>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 5 mins | 🛠️ Toy robot or bot image</span>
+            </div>
+            <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students discover that giving clear instructions to a bot can be challenging.</p>
+            <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <div><strong>🎯 Student Task:</strong> Look at the bot and figure out how they might communicate with it if the bot cannot understand regular conversation.</div>
+              <div><strong>🤫 Individual Thinking:</strong> Ask: "How could YOU tell this bot what to do?" Give every student quiet thinking time before anyone answers. Students may think silently, point, gesture, draw, or demonstrate. No writing is required.</div>
+              <div><strong>🤝 Collaborative Thinking:</strong> Students turn to a partner and show or tell one idea. Partners compare: "Did you have the same idea or a different idea?"</div>
+              <div><strong>🗣️ Facilitator Questions:</strong> "How could we tell our bot what to do? Could we use our hands? Could we use a picture?"</div>
+              <div><strong>🔍 Look-fors:</strong> Students generating different communication ideas, listening to partners, and using gestures or pictures.</div>
+              <div><strong>⚠️ Common Misconceptions:</strong> Students may assume the bot automatically understands spoken language. Do NOT correct this through explanation; test their idea instead.</div>
+              <div><strong>⚡ Differentiation:</strong> K-1 Support: Allow gestures/pointing. Grades 2-3: Compare two possible ways to communicate. Grade 4: Discuss which method is clearest and why.</div>
+            </div>
+          </div>
+
+          {/* Activity 2 */}
+          <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 2: Give the Bot a Direction</strong>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ Target destination</span>
+            </div>
+            <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students experience the importance of clear instructions.</p>
+            <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <div><strong>🎯 Student Task:</strong> Help the bot move toward a target. The facilitator acts as the bot and follows instructions VERY literally. (e.g. Student: "Go over there" → Bot doesn't move. Ask: "Where is there?")</div>
+              <div><strong>🤫 Individual Thinking:</strong> Students privately think: "What instruction would be clearer?"</div>
+              <div><strong>🤝 Collaborative Thinking:</strong> Partners create one improved instruction together. Then several pairs test their ideas.</div>
+              <div><strong>🗣️ Facilitator Questions:</strong> "Was that instruction clear enough? What information is missing? Did the bot do what you expected?"</div>
+              <div><strong>🔍 Look-fors:</strong> Students becoming more specific, learning through unsuccessful attempts, and changing instructions.</div>
+              <div><strong>⚠️ Common Misconceptions:</strong> Students may think the bot should "know what they mean." Emphasize that the bot follows only the information given.</div>
+              <div><strong>⚡ Differentiation:</strong> K-1: One-step movements. Grades 2-3: Two-step directions. Grade 4: Create directions another student can follow without asking questions.</div>
+            </div>
+          </div>
+
+          {/* Activity 3 */}
+          <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 3: The Mystery Picture</strong>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 5 mins | 🛠️ One Mystery Picture Card</span>
+            </div>
+            <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students begin wondering whether a picture can communicate an instruction.</p>
+            <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <div><strong>🎯 Student Task:</strong> Look at the mystery symbol and decide what they think it could mean.</div>
+              <div><strong>🤫 Individual Thinking:</strong> Show the picture silently. Ask: "What do YOU think this picture means?" Do not take answers immediately.</div>
+              <div><strong>🤝 Collaborative Thinking:</strong> Students show or tell their interpretation to a partner. Ask: "Did everyone think it meant the same thing?"</div>
+              <div><strong>🗣️ Facilitator Questions:</strong> "What makes you think that? Who has a different idea? How could we test it?"</div>
+              <div><strong>🔍 Look-fors:</strong> Multiple interpretations, students giving reasons, and curiosity about visual communication.</div>
+              <div><strong>⚠️ Common Misconceptions:</strong> Students may believe every picture has only one obvious meaning. Allow ambiguity.</div>
+              <div><strong>⚡ Differentiation:</strong> K-1: Students act out what the symbol means. Grades 2-3: Compare two interpretations. Grade 4: Ask what features make a symbol easier to understand.</div>
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '6px', fontStyle: 'italic', color: 'var(--primary-light)' }}>
+                <strong>➡️ Transition to Part 1:</strong> "Could we create pictures that tell our bot exactly what to do?"
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
 ) : (
+
 
 <div>
 <h4 style={{ color: '#a78bfa', fontSize: '0.9rem', margin: '14px 0 6px 0', textAlign: 'left' }}>Unit Introduction: EcoEngineering</h4>
@@ -6590,7 +6685,175 @@ Pairs trade laptops. The testing team intentionally runs stress tests to audit t
           </div>
         )}
       </div>
+) : teacherUnit === 'earlybot' ? (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
+        
+        {/* Sub-Tab Navigation */}
+        <div style={{ display: 'flex', gap: '8px', background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          {[
+            { id: 'overview', label: '🧩 Mission & Careers' },
+            { id: 'hour1', label: '🤫 Hour 1: Think' },
+            { id: 'hour2', label: '🧪 Hour 2: Build & Test' }
+          ].map(subTab => (
+            <button
+              key={subTab.id}
+              onClick={() => setActivePart1SubTab(subTab.id)}
+              style={{
+                flex: 1,
+                padding: '8px 12px',
+                fontSize: '0.75rem',
+                borderRadius: '6px',
+                border: 'none',
+                cursor: 'pointer',
+                background: activePart1SubTab === subTab.id ? 'var(--primary)' : 'transparent',
+                color: activePart1SubTab === subTab.id ? '#fff' : 'var(--text-secondary)',
+                transition: 'all 0.2s',
+                fontWeight: activePart1SubTab === subTab.id ? 'bold' : 'normal'
+              }}
+            >
+              {subTab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* OVERVIEW TAB */}
+        {activePart1SubTab === 'overview' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
+              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Symbol Designer Hook</span>
+              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: Teach the Bot Without Words</h4>
+              <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
+                "Our helper bot cannot understand our words today. How could we communicate using pictures?" Students discover that symbols can represent actions and instructions, laying the groundwork for visual coding blocks.
+              </p>
+            </div>
+
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '8px' }}>Student Collaborative Roles</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#60a5fa', fontSize: '0.75rem', display: 'block' }}>🎨 Symbol Designer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Creates, selects, or draws visual instructions for the bot to perform.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block' }}>🔎 Meaning Tester</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Acts out the visual instructions literally to check for clarity.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {['UI Designer', 'Visual Engineer', 'UX Specialist', 'Graphic Designer'].map(career => (
+                  <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
+                    {career}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* HOUR 1 (THINK) TAB */}
+        {activePart1SubTab === 'hour1' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 1 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 1: What Does This Picture Mean?</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ Emoji & Mystery cards</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students interpret familiar and unfamiliar visual symbols.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Look at one card and decide what action it might represent.</div>
+                <div><strong>🤫 Individual Thinking:</strong> Students silently examine the card first. They can point, gesture, act, or think.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Partners compare interpretations. Ask: "What did your partner notice that you did not notice?"</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What do you notice? What does this tell us to do? Why? Could it mean something else?"</div>
+                <div><strong>🔍 Look-fors:</strong> Students interpreting visual details, explaining visual clues, and listening to different ideas.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Students may think the facilitator must tell them the answer. Redirect: "How could we test your idea?"</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: Highly familiar icons first. Grades 2-3: Mix familiar and mystery symbols. Grade 4: Compare symbol design effectiveness.</div>
+              </div>
+            </div>
+
+            {/* Activity 2 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 2: Show Me the Move</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ Smart Picture Emoji Cards</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students test whether a symbol communicates clearly.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> One student chooses a card without speaking. Another student performs what they think the card means.</div>
+                <div><strong>🤫 Individual Thinking:</strong> The student receiving the card privately decides what they think it means.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> After performing, partners discuss: "Is that what you intended? Why did we understand it differently?"</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What did you think the picture meant? Was that what the designer expected?"</div>
+                <div><strong>🔍 Look-fors:</strong> Students using symbols independently, interpreting representation, and linking design to communication.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Students may blame the person interpreting the symbol. Redirect: "How could we make the picture clearer?"</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: One familiar action. Grades 2-3: Abstract symbols. Grade 4: Explain universal symbol criteria.</div>
+              </div>
+            </div>
+
+          </div>
+        )}
+
+        {/* HOUR 2 (BUILD & TEST) TAB */}
+        {activePart1SubTab === 'hour2' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 3 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 3: Design Your Own Smart Picture</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 15 mins | 🛠️ Blank cards, markers</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students create their own visual command.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Create a picture that tells another student to perform an action (Clap, Jump, Wave, Turn, Stop) WITHOUT writing the action word.</div>
+                <div><strong>🤫 Individual Thinking:</strong> Students choose how they want to represent their action visually.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Students show their design to a partner WITHOUT explaining it. The partner interprets it, then they discuss results.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What should someone notice first? Can they understand it without you talking?"</div>
+                <div><strong>🔍 Look-fors:</strong> Intentional visual choices, reacting to feedback, and revising symbols.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Students may write the action word. Encourage: "Can you SHOW that idea without writing the word?"</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: Modify an existing picture. Grades 2-3: Create an original symbol. Grade 4: Design a symbol for a new student.</div>
+              </div>
+            </div>
+
+            {/* Activity 4 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 4: Mystery Symbol Swap</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ Student-created Smart Picture Cards</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students test their visual designs with another team.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Teams exchange cards and try to perform the other team's instructions.</div>
+                <div><strong>🤫 Individual Thinking:</strong> Each student independently predicts the meaning first.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> The team compares interpretations and agrees on what they want to test, then perform to verify.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "Did everyone interpret it the same way? What visual evidence helped you?"</div>
+                <div><strong>🔍 Look-fors:</strong> Testing rather than asking for answers, using peer feedback, and revising their own designs.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Students may expect designs to work perfectly first try. Emphasize that redesign is part of engineering.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: Test 1 card. Grades 2-3: Test 2-3 cards. Grade 4: Create a visual system with several commands.</div>
+              </div>
+            </div>
+
+            {/* Part 1 Discovery & Bridge */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '10px' }}>
+              <div style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.15)', padding: '12px', borderRadius: '6px' }}>
+                <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>💡 Discovery: Representation</strong>
+                <span style={{ fontSize: '0.75rem' }}>Pictures and symbols can represent actions and communicate instructions without words.</span>
+              </div>
+              <div style={{ background: 'rgba(99, 102, 241, 0.04)', border: '1px solid rgba(99, 102, 241, 0.15)', padding: '12px', borderRadius: '6px' }}>
+                <strong style={{ color: '#a78bfa', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>🔗 Bridge to Part 2: Step Arrows</strong>
+                <span style={{ fontSize: '0.75rem' }}>Arrange cards: 🦘 → 👏 → 👋. Ask: "If we change the order of these instruction cards, will the bot do the same thing? Let's check in Part 2."</span>
+              </div>
+            </div>
+
+          </div>
+        )}
+      </div>
 ) : (
+
 
 <div>
 <h4 style={{ color: '#a78bfa', fontSize: '0.9rem', margin: '14px 0 6px 0', textAlign: 'left' }}>Challenge Solution Cheatsheet</h4>
@@ -7074,7 +7337,193 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
           </div>
         )}
       </div>
+) : teacherUnit === 'earlybot' ? (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
+        
+        {/* Sub-Tab Navigation */}
+        <div style={{ display: 'flex', gap: '8px', background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          {[
+            { id: 'overview', label: '🧩 Mission & Careers' },
+            { id: 'hour1', label: '🤫 Hour 1: Think' },
+            { id: 'hour2', label: '🧪 Hour 2: Build & Test' }
+          ].map(subTab => (
+            <button
+              key={subTab.id}
+              onClick={() => setActivePart2SubTab(subTab.id)}
+              style={{
+                flex: 1,
+                padding: '8px 12px',
+                fontSize: '0.75rem',
+                borderRadius: '6px',
+                border: 'none',
+                cursor: 'pointer',
+                background: activePart2SubTab === subTab.id ? 'var(--primary)' : 'transparent',
+                color: activePart2SubTab === subTab.id ? '#fff' : 'var(--text-secondary)',
+                transition: 'all 0.2s',
+                fontWeight: activePart2SubTab === subTab.id ? 'bold' : 'normal'
+              }}
+            >
+              {subTab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* OVERVIEW TAB */}
+        {activePart2SubTab === 'overview' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
+              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Sequence Hook</span>
+              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: Guide the Bot to the Star</h4>
+              <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
+                "Can you guide our helper bot to the star on our grid?" Students build from individual symbols to ordered sequences, discovering that the order of instructions changes the outcome.
+              </p>
+            </div>
+
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '8px' }}>Student Collaborative Roles</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#60a5fa', fontSize: '0.75rem', display: 'block' }}>🗺️ Path Designer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Plans the route and lays out the step arrows in order.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block' }}>🤖 Bot Tester</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Follows the arrows literally on the floor grid and checks for errors.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {['Software Architect', 'Logistics Coordinator', 'Robot Programmer'].map(career => (
+                  <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
+                    {career}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* HOUR 1 (THINK) TAB */}
+        {activePart2SubTab === 'hour1' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 1 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 1: Which Way Will the Bot Go?</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ Step Arrow Cards</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students predict movement from arrow symbols.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Look at a short arrow sequence (e.g. ⬆️ ⬆️ ➡️) and predict what the bot will do.</div>
+                <div><strong>🤫 Individual Thinking:</strong> Students trace the movement silently with a finger or imagine the path.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Partners compare where they think the bot will end. Do NOT require them to agree.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What happens first? Where do you think the bot will end? Why? How could we check?"</div>
+                <div><strong>🔍 Look-fors:</strong> Students reading visual sequences from beginning to end, making predictions before movement.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Students may look at all arrows as a group instead of following them one-by-one.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: 2-3 cards. Grades 2-3: 4-6 cards. Grade 4: Predict longer routes before testing.</div>
+              </div>
+            </div>
+
+            {/* Activity 2 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 2: Be the Bot</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ Floor Grid Kit & Arrow Cards</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students physically execute an arrow sequence.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> One student acts as the bot while a partner lays out the instruction sequence. The bot follows cards EXACTLY.</div>
+                <div><strong>🤫 Individual Thinking:</strong> Before the bot moves, everyone privately predicts where the bot will finish.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Teams compare predictions, then test the movements physically.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What instruction comes first? What happens next? Did the bot end where you predicted?"</div>
+                <div><strong>🔍 Look-fors:</strong> Following sequence accurately, referring back to specific cards, and linking cards to movements.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Students may let the bot "fix" the route automatically. The bot must follow cards literally.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: Straight paths. Grades 2-3: Add one turn. Grade 4: Add turns and obstacles.</div>
+              </div>
+            </div>
+
+            {/* Activity 3 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 3: Same Cards, Different Order</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ Step Arrow Cards & Floor Grid</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students discover that changing the order changes the outcome.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Compare two sequences containing the same cards in different orders (e.g., ⬆️ ⬆️ ➡️ vs ➡️ ⬆️ ⬆️).</div>
+                <div><strong>🤫 Individual Thinking:</strong> Students privately predict: "Same ending or different ending?"</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Partners explain their predictions. Then execute both to compare.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What changed? Were the cards different? Why did the bot end somewhere else?"</div>
+                <div><strong>🔍 Look-fors:</strong> Students recognizing that the order of instructions (sequence) determines the final outcome.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Students may assume same cards always produce same results. Emphasize sequence importance.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: Compare two 2-card paths. Grades 2-3: Compare 3-4 cards. Grade 4: Predict without physical test.</div>
+              </div>
+            </div>
+
+          </div>
+        )}
+
+        {/* HOUR 2 (BUILD & TEST) TAB */}
+        {activePart2SubTab === 'hour2' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 4 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 4: Fix the Broken Path</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 15 mins | 🛠️ Broken path setup, grid, markers</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students debug an incorrect sequence.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Follow a sequence that intentionally misses the target, then fix it. (TEST → OBSERVE → REVISE → TEST AGAIN).</div>
+                <div><strong>🤫 Individual Thinking:</strong> Students examine the failed route and privately identify where they think the problem occurred.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Teams compare ideas and choose ONE change to test first. Avoid rebuilding the whole path.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "Where did the path stop working? Which card might we change? Why that card?"</div>
+                <div><strong>🔍 Look-fors:</strong> Using failure as evidence, changing sequences purposefully, and explaining design choices.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Students may want to rebuild the entire sequence immediately. Encourage strategic debugging.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: 1 incorrect card. Grades 2-3: 2 possible errors. Grade 4: Create a broken path for another team.</div>
+              </div>
+            </div>
+
+            {/* Activity 5 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 5: Design Your Own Route</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 15 mins | 🛠️ Grid, arrows, obstacles</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students apply sequencing through an open-ended path challenge.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Teams choose obstacle locations (🌳, 💧, 🪨) and target goals (🤖, 🏠), then write instructions to reach them. (Agency: 2+ choices).</div>
+                <div><strong>🤫 Individual Thinking:</strong> Each student privately develops one possible route first.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Partners compare routes and decide what they want to build and test.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "Do you both have the same route? Could both routes work? Which one will we test first?"</div>
+                <div><strong>🔍 Look-fors:</strong> Multiple solutions, student decision-making, testing and debugging, and evidence-based discussion.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Students may assume there is only one correct path. Encourage multiple routes.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: Short route with no obstacles. Grades 2-3: Add obstacles. Grade 4: Find the most efficient route.</div>
+              </div>
+            </div>
+
+            {/* Part 2 Discovery & Bridge */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '10px' }}>
+              <div style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.15)', padding: '12px', borderRadius: '6px' }}>
+                <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>💡 Discovery: Sequence & Algorithm</strong>
+                <span style={{ fontSize: '0.75rem' }}>The order of instructions changes what happens. We call this sequence an algorithm.</span>
+              </div>
+              <div style={{ background: 'rgba(99, 102, 241, 0.04)', border: '1px solid rgba(99, 102, 241, 0.15)', padding: '12px', borderRadius: '6px' }}>
+                <strong style={{ color: '#a78bfa', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>🔗 Bridge to Part 3: Memory Boxes</strong>
+                <span style={{ fontSize: '0.75rem' }}>Show a star card, then hide it. Ask: "What if our bot needs this information later? Where could it keep something it needs to remember?"</span>
+              </div>
+            </div>
+
+          </div>
+        )}
+      </div>
 ) : (
+
 
       <div>
         <h4 style={{ color: '#a78bfa', fontSize: '0.9rem', margin: '14px 0 6px 0', textAlign: 'left' }}>Challenge Solution Cheatsheet</h4>
@@ -7614,7 +8063,193 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
           </div>
         )}
       </div>
+) : teacherUnit === 'earlybot' ? (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
+        
+        {/* Sub-Tab Navigation */}
+        <div style={{ display: 'flex', gap: '8px', background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          {[
+            { id: 'overview', label: '🧩 Mission & Careers' },
+            { id: 'hour1', label: '🤫 Hour 1: Think' },
+            { id: 'hour2', label: '🧪 Hour 2: Build & Test' }
+          ].map(subTab => (
+            <button
+              key={subTab.id}
+              onClick={() => setActivePart3SubTab(subTab.id)}
+              style={{
+                flex: 1,
+                padding: '8px 12px',
+                fontSize: '0.75rem',
+                borderRadius: '6px',
+                border: 'none',
+                cursor: 'pointer',
+                background: activePart3SubTab === subTab.id ? 'var(--primary)' : 'transparent',
+                color: activePart3SubTab === subTab.id ? '#fff' : 'var(--text-secondary)',
+                transition: 'all 0.2s',
+                fontWeight: activePart3SubTab === subTab.id ? 'bold' : 'normal'
+              }}
+            >
+              {subTab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* OVERVIEW TAB */}
+        {activePart3SubTab === 'overview' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
+              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Memory Hook</span>
+              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: Help the Bot Remember</h4>
+              <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
+                "Can our bot remember something?" Students use physical cups as memory boxes to store, recall, and update color block values, discovering how variables function in computer memory.
+              </p>
+            </div>
+
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '8px' }}>Student Collaborative Roles</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#60a5fa', fontSize: '0.75rem', display: 'block' }}>📦 Memory Keeper</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Manages the variables, swapping blocks or cards inside the memory cups.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block' }}>🔍 Memory Tester</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Verifies that the bot correctly recalls and acts on the stored properties.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {['Database Administrator', 'Memory Engineer', 'Systems Architect'].map(career => (
+                  <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
+                    {career}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* HOUR 1 (THINK) TAB */}
+        {activePart3SubTab === 'hour1' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 1 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 1: What's Inside?</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 5 mins | 🛠️ Memory Box & token cards</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students experience the idea that information can be stored and retrieved.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Watch one picture card (e.g. ⭐) go inside the box and remember what is stored.</div>
+                <div><strong>🤫 Individual Thinking:</strong> Students silently remember the item. No writing required.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Students tell or show a partner what they believe is inside.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What is inside? How do you know? Did the box keep it for us?"</div>
+                <div><strong>🔍 Look-fors:</strong> Students connecting the box with holding information.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Focus on physical box instead of storage concept. Keep it concrete.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: One familiar picture. Grades 2-3: Store one of several options. Grade 4: Discuss computer storage representation.</div>
+              </div>
+            </div>
+
+            {/* Activity 2 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 2: Memory Match</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ 2–4 Memory Boxes & action cards</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students use several Memory Boxes and retrieve stored information.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Store different cards in different boxes (e.g. ❤️ Box → 👏, ⭐ Box → 🦘) and later retrieve the correct one.</div>
+                <div><strong>🤫 Individual Thinking:</strong> Before opening a box, students privately predict what is stored inside.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Partners compare memories, then open the box to check.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What do you think this box is holding? Did your partner remember the same thing?"</div>
+                <div><strong>🔍 Look-fors:</strong> Distinguishing between storage locations, retrieving correct info, explaining how they know.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Students may assume all boxes contain the same information.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: Two boxes. Grades 2-3: Three boxes. Grade 4: Multiple boxes with labeled locations.</div>
+              </div>
+            </div>
+
+            {/* Activity 3 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 3: Change What's Remembered</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ Memory Box & multiple cards</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students experience that stored information can change.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Replace one stored card with another (e.g., First: 📦 = ⭐, Then: 📦 = 🍎). Ask: "What is the box remembering NOW?"</div>
+                <div><strong>🤫 Individual Thinking:</strong> Students privately decide what the current value is.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Partners compare their thinking and explain what changed.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What was in the box before? What is inside now? Does the box still remember the star?"</div>
+                <div><strong>🔍 Look-fors:</strong> Recognizing that new information replaces/overwrites old information.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Students may continue answering with the first item. Emphasize overwriting.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: Two very different pictures. Grades 2-3: Change value multiple times. Grade 4: Track a sequence of changes.</div>
+              </div>
+            </div>
+
+          </div>
+        )}
+
+        {/* HOUR 2 (BUILD & TEST) TAB */}
+        {activePart3SubTab === 'hour2' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 4 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 4: Remember a Move</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ Memory Boxes & action cards</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students connect memory to bot actions.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Place an action card into a Memory Box. Later another student retrieves the card and performs it (e.g. 📦 = 👏 → perform clap).</div>
+                <div><strong>🤫 Individual Thinking:</strong> Before the box opens, students privately predict what the bot will do.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Partners explain why they made that prediction.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What is our bot remembering? What should happen when we open the box?"</div>
+                <div><strong>🔍 Look-fors:</strong> Connecting stored info with later action, making predictions from memory.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Storing and performing treated as the same step. Emphasize: Store now → Use later.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: One action. Grades 2-3: Two boxes with two actions. Grade 4: Short sequence retrieving stored actions.</div>
+              </div>
+            </div>
+
+            {/* Activity 5 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 5: Build a Memory Challenge</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 15 mins | 🛠️ Memory Box Kits & action cards</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students design their own situation where a bot needs to remember something.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Partners create a challenge where the bot stores information and uses it later (what to store, where to store it, when to retrieve it, and actions). (Agency: 2+ choices).</div>
+                <div><strong>🤫 Individual Thinking:</strong> Each student privately thinks of one possible idea first.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Partners compare ideas and create one challenge together. Another team tests it.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What does your bot need to remember? When will it use it? What if it changed?"</div>
+                <div><strong>🔍 Look-fors:</strong> Meaningful student choices, applying storage/retrieval, peer explanation, and revision.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Putting objects into boxes without retrieval purpose. Ask: "When will your bot need this again?"</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: Store/retrieve 1 item. Grades 2-3: Store/retrieve action. Grade 4: Multi-step challenge using several boxes.</div>
+              </div>
+            </div>
+
+            {/* Part 3 Discovery & Bridge */}
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginTop: '10px' }}>
+              <div style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.15)', padding: '12px', borderRadius: '6px' }}>
+                <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>💡 Discovery: Variables & Memory</strong>
+                <span style={{ fontSize: '0.75rem' }}>Information can be stored in a labeled place (called a variable) and retrieved or updated later.</span>
+              </div>
+              <div style={{ background: 'rgba(99, 102, 241, 0.04)', border: '1px solid rgba(99, 102, 241, 0.15)', padding: '12px', borderRadius: '6px' }}>
+                <strong style={{ color: '#a78bfa', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>🔗 Bridge to Part 4: Repeat Dance</strong>
+                <span style={{ fontSize: '0.75rem' }}>Show: 👏 → 🦘 → 👏 → 🦘 → 👏 → 🦘. Ask: "Our bot repeats this dance over and over. Is there a simpler way to write these instructions? Let's check in Part 4."</span>
+              </div>
+            </div>
+
+          </div>
+        )}
+      </div>
 ) : (
+
 
       <div>
         <h4 style={{ color: '#a78bfa', fontSize: '0.9rem', margin: '14px 0 6px 0', textAlign: 'left' }}>Challenge Solution Cheatsheet</h4>
@@ -8750,7 +9385,217 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
           </div>
         )}
       </div>
+) : teacherUnit === 'earlybot' ? (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
+        
+        {/* Sub-Tab Navigation */}
+        <div style={{ display: 'flex', gap: '8px', background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          {[
+            { id: 'overview', label: '🧩 Mission & Careers' },
+            { id: 'hour1', label: '🤫 Hour 1: Think' },
+            { id: 'hour2', label: '🧪 Hour 2: Build & Test' }
+          ].map(subTab => (
+            <button
+              key={subTab.id}
+              onClick={() => setActiveShareSubTab(subTab.id)}
+              style={{
+                flex: 1,
+                padding: '8px 12px',
+                fontSize: '0.75rem',
+                borderRadius: '6px',
+                border: 'none',
+                cursor: 'pointer',
+                background: activeShareSubTab === subTab.id ? 'var(--primary)' : 'transparent',
+                color: activeShareSubTab === subTab.id ? '#fff' : 'var(--text-secondary)',
+                transition: 'all 0.2s',
+                fontWeight: activeShareSubTab === subTab.id ? 'bold' : 'normal'
+              }}
+            >
+              {subTab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* OVERVIEW TAB */}
+        {activeShareSubTab === 'overview' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
+              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Design Expo Hook</span>
+              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Early BotBuilder Design Studio</h4>
+              <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
+                "Can you combine everything we discovered to design, test, improve, and explain your own bot?" Students use the Final Bot Canvas to design their bot and showcase it to their peers.
+              </p>
+            </div>
+
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '8px' }}>Student Showcase Roles</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#60a5fa', fontSize: '0.75rem', display: 'block' }}>🤖 Bot Designer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Creates the canvas poster design and demonstrates how the bot functions.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block' }}>👥 Peer Tester</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Tests the canvas design, reviews logical flow, and shares helpful feedback.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {['Product Manager', 'Systems Analyst', 'Creative Tech Designer'].map(career => (
+                  <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
+                    {career}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* HOUR 1 (THINK) TAB */}
+        {activeShareSubTab === 'hour1' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 1 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 1: Imagine Your Bot</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ Canvas, drawing tools</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students generate an individual bot idea before collaborating.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Imagine something they would like their bot helper to do. (e.g. Welcome guest, tidy toys, clean desk). No writing required.</div>
+                <div><strong>🤫 Individual Thinking:</strong> Students privately imagine: "What would MY bot do?" Students may draw, select pictures, gesture, build, or orally explain.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Partners share ideas and ask: "What does your bot do? What would happen first?"</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What problem could your bot solve? How will your bot know what to do?"</div>
+                <div><strong>🔍 Look-fors:</strong> Original student ideas, making choices, and explaining rather than copying examples.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Students may think there is only one "correct bot." Reinforce that different designs are expected.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: Draw/select one action. Grades 2-3: Design several connected actions. Grade 4: Design bot around user need.</div>
+              </div>
+            </div>
+
+            {/* Activity 2 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 2: Give Your Bot Instructions</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 15 mins | 🛠️ Final Bot Canvas & cards</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students apply Smart Pictures and Step Arrows.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Create instructions showing what their bot should do and in what order (symbols & sequence).</div>
+                <div><strong>🤫 Individual Thinking:</strong> Student first decides their own sequence.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Partner reviews the sequence and predicts what the bot will do.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What happens first? Could someone follow your instructions without you explaining?"</div>
+                <div><strong>🔍 Look-fors:</strong> Clear visual instructions, intentional order, student explanation, and revision.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Explaining verbally instead of making the design understandable. Ask: "Can your design show that without talking?"</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: 2-3 instructions. Grades 2-3: 4-6 instructions. Grade 4: Complex sequences or multiple routes.</div>
+              </div>
+            </div>
+
+            {/* Activity 3 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 3: Add Memory</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ Memory Box materials</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students decide what their bot needs to remember.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Add one piece of information their bot needs to store and use later.</div>
+                <div><strong>🤫 Individual Thinking:</strong> Student privately thinks: "What should MY bot remember?"</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Partner asks: "Why does your bot need to remember that?"</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What information should your bot keep? When will it use it?"</div>
+                <div><strong>🔍 Look-fors:</strong> Students using memory for a purposeful reason.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Adding a memory box only because it is required. Ask for its purpose.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: Store one image/action. Grades 2-3: Explain when it will be retrieved. Grade 4: Use multiple memory boxes.</div>
+              </div>
+            </div>
+
+            {/* Activity 4 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 4: Add a Repeat</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ Repeat cards, canvas</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students apply their Part 4 learning to their own bot.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Identify something their bot should do more than once and represent it using the repeat cards.</div>
+                <div><strong>🤫 Individual Thinking:</strong> Student privately thinks: "What action could my bot repeat?"</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Partner checks: "How many times should it repeat?"</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What repeats? Why use a repeat here? How would it look without a repeat?"</div>
+                <div><strong>🔍 Look-fors:</strong> Students using repetition intentionally rather than randomly.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Repeating an action that only occurs once.</div>
+                <div><strong>⚡ Differentiation:</strong> Use same support levels established in Part 4.</div>
+              </div>
+            </div>
+
+          </div>
+        )}
+
+        {/* HOUR 2 (BUILD & TEST) TAB */}
+        {activeShareSubTab === 'hour2' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            
+            {/* Activity 5 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 5: Peer Bot Test</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 15 mins | 🛠️ Student bot designs</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students discover whether another person can understand their design.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Exchange bot designs. The creator may NOT explain immediately. The partner tries to interpret the bot.</div>
+                <div><strong>🤫 Individual Thinking:</strong> The tester privately studies the design first.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Tester explains: what the bot does, what happens first, what repeats. Then they compare interpretations.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "Did your partner understand what you intended? What was clear? What was confusing?"</div>
+                <div><strong>🔍 Look-fors:</strong> Using peer interpretation as evidence, accepting feedback, and finding communication problems.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Designers may immediately explain everything. Let the design communicate first.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: Tester interprets one part at a time. Grades 2-3: Explain full sequence. Grade 4: Identify one improvement.</div>
+              </div>
+            </div>
+
+            {/* Activity 6 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 6: Revise My Bot</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 10 mins | 🛠️ Final Bot Canvas & design tools</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students make individual decisions after receiving collaborative feedback.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Decide what, if anything, they want to change on their canvas. (Agency: 2+ choices).</div>
+                <div><strong>🤫 Individual Thinking:</strong> Ask: "What do YOU want to change after seeing your partner test your bot?" Give private thinking time.</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Partners share one suggestion. The original designer decides whether to use it. (Feedback helps, designer decides).</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What did you learn from the test? What do you want to improve? Why make that change?"</div>
+                <div><strong>🔍 Look-fors:</strong> Deciding how to revise independently, using evidence from testing, and designer ownership.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Believing they must use every suggestion. Designer has the final say.</div>
+                <div><strong>⚡ Differentiation:</strong> All students may revise via moving cards, replacing pictures, drawing, or demonstrating. No writing required.</div>
+              </div>
+            </div>
+
+            {/* Activity 7 */}
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <strong style={{ color: '#fff', fontSize: '0.95rem' }}>Activity 7: Bot Showcase</strong>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>⏱️ 15–30 mins | 🛠️ Canvas & Showcase expo resources</span>
+              </div>
+              <p style={{ margin: 0, fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>Students communicate their learning through demonstration and conversation.</p>
+              <div style={{ fontSize: '0.8rem', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                <div><strong>🎯 Student Task:</strong> Show their bot to classmates/visitors and demonstrate how it works (speaking, pointing, manipulating, moving cards). No writing required.</div>
+                <div><strong>🤫 Individual Thinking:</strong> Before presenting, decide: "What is the most important thing I want people to understand?"</div>
+                <div><strong>🤝 Collaborative Thinking:</strong> Visitors ask questions and designers respond. Students visit other designs and compare ideas.</div>
+                <div><strong>🗣️ Facilitator Questions:</strong> "What did another designer do differently? What surprised you? What are you proud of?"</div>
+                <div><strong>🔍 Look-fors:</strong> Student ownership, oral/visual explanation, peer questioning, comparing designs.</div>
+                <div><strong>⚠️ Common Misconceptions:</strong> Thinking the goal is having the best-looking bot. Focus on how it works.</div>
+                <div><strong>⚡ Differentiation:</strong> K-1: Demonstrate instead of formal explanation. Grades 2-3: Explain 2-3 design decisions. Grade 4: Explain revision process.</div>
+              </div>
+            </div>
+
+          </div>
+        )}
+      </div>
 ) : (
+
 
       <div>
         <h4 style={{ color: '#a78bfa', fontSize: '0.9rem', margin: '14px 0 6px 0', textAlign: 'left' }}>Challenge Solution Cheatsheet</h4>
