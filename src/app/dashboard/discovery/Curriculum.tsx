@@ -398,27 +398,59 @@ const pdResources = {
       categoryColor: "amber",
       description: "Support computational thinking foundations and literal command execution without direct instruction.",
       whenToUseThis: "Recommended before: Unit Introduction",
-      launchWithCuriosity: "Draw a simple target smiley face on the whiteboard. Place a red block on your desk. Act like a completely frozen robot (eyes open, standing stiff) and tell the class: 'I am a helper bot. I want to touch the smiley face but my memory is empty. Solve the problem of how to move me.' Do not explain directions first.",
-      noticeAndWonder: {
-        k1: [
-          "What did you notice when you said 'go over there'?",
-          "How did I move when you pointed vs when you only spoke?",
-          "What was the difference between how your friend moves and how I move?"
+      startWith: "Draw a simple target smiley face on the whiteboard. Place a red block on your desk. Act like a completely frozen robot (eyes open, standing stiff) and tell the class: 'I am a helper bot. I want to touch the smiley face but my memory is empty. Solve the problem of how to move me.' Do not explain directions first.",
+      startQuestions: [
+        "What do you notice about how I am standing?",
+        "What do you think is happening?",
+        "What needs to change for the bot to touch the smiley face?"
+      ],
+      accessWithoutReading: {
+        readingAlternatives: [
+          "Read instructions aloud step-by-step.",
+          "Use physical arrows taped to the floor instead of written coordinates.",
+          "Pair oral commands with physical gestures (pointing directions)."
         ],
-        grades24: [
-          "What patterns do you notice in my movements?",
-          "What is the problem with using vague words like 'there' or 'that way'?",
-          "What specific data points does the robot need to calculate steps?"
-        ]
+        writingAlternatives: {
+          sayIt: "Orally guide the teacher-bot step-by-step using count words.",
+          drawIt: "Draw a line pathway on a grid paper showing the path.",
+          pointTo: "Point to the floor arrows to indicate the next step.",
+          buildIt: "Lay physical arrow cards on the floor grid.",
+          sortIt: "Separate path cards from obstacle cards.",
+          showIt: "Act as the bot themselves to execute the steps.",
+          sequenceIt: "Arrange 3 movement cards in a row."
+        }
       },
       studentInvestigation: "Students play 'Program the Teacher.' One student stands as navigator, another as driver. They write/draw a 3-step sequence on a card (e.g. forward, turn, forward) and test it on the teacher-bot. Students predict the final square, execute the moves, notice when the bot hits a desk, change one direction card, and try again.",
       studentDiscourse: {
         structure: "Think-Pair-Share: Students partner up. Student B gives commands to Student A (acting as bot) to trace a path across a grid. If the bot steps off-grid, they discuss why the command was wrong and swap roles.",
-        stems: [
-          "I notice the bot did... because...",
-          "I think we need to change... because...",
-          "I disagree because the bot ended up on..."
+        stemsK1: [
+          "I see...",
+          "I think...",
+          "It changed.",
+          "I agree."
+        ],
+        stems24: [
+          "I think... because...",
+          "My evidence is...",
+          "I noticed that...",
+          "I disagree because..."
         ]
+      },
+      multipleResponseModes: {
+        question: "Why did the robot walk into the table instead of stopping?",
+        sayIt: "Explain orally: 'The bot didn't have a stop command!'",
+        drawIt: "Draw a picture of the bot colliding with the obstacle.",
+        showIt: "Point to the obstacle card on the grid map.",
+        buildIt: "Place a STOP card at the correct grid location."
+      },
+      howStudentShows: {
+        goal: "Understanding that bots follow exact sequential steps.",
+        build: "Lays 3 arrow cards in a row to reach the smiley face.",
+        point: "Points to the incorrect arrow in a broken sequence.",
+        say: "Explains why the bot moved in a straight line.",
+        sequence: "Arranges START, Forward, and STOP cards in order.",
+        show: "Steps forward and stops on command.",
+        draw: "Draws arrows on a path map."
       },
       startThinking: [
         "What do you notice when the bot moves?",
@@ -466,27 +498,59 @@ const pdResources = {
       categoryColor: "indigo",
       description: "Introduce variables and data classification through physical picture cards and properties.",
       whenToUseThis: "Recommended before: Part 1 - Hour 1",
-      launchWithCuriosity: "Place a blurry, cut-off drawing of an unknown shape inside a mystery box. Reveal only a tiny corner of the drawing. Ask students to classify it. Gradually slide the cover open to reveal more details (color, shape, lines) until they can identify it. Do not define the word DATA.",
-      noticeAndWonder: {
-        k1: [
-          "What do you notice about this picture corner?",
-          "Can you guess what it is? Why is it hard?",
-          "What happened when I showed you more of the picture?"
+      startWith: "Place a blurry, cut-off drawing of an unknown shape inside a mystery box. Reveal only a tiny corner of the drawing. Ask students to classify it. Gradually slide the cover open to reveal more details (color, shape, lines) until they can identify it. Do not define the word DATA.",
+      startQuestions: [
+        "What do you notice about this picture corner?",
+        "Can you guess what it is? Why is it hard?",
+        "What happened when I showed you more of the picture?"
+      ],
+      accessWithoutReading: {
+        readingAlternatives: [
+          "Use picture labels and emoji stickers instead of written words.",
+          "Describe card attributes orally for students (e.g. 'This has fur and four legs').",
+          "Match cards using shape outlines instead of reading text categories."
         ],
-        grades24: [
-          "What details (color, size, shape) helped you identify the object?",
-          "What makes an input useful vs. confusing for a system?",
-          "What questions do you have about how a computer reads pixels?"
-        ]
+        writingAlternatives: {
+          sayIt: "Name the card categories aloud to the group.",
+          drawIt: "Draw the missing part of an incomplete card.",
+          pointTo: "Point to the category bin where a card belongs.",
+          buildIt: "Place physical blocks on category bins to show card counts.",
+          sortIt: "Sort cards into physical sorting hoops.",
+          showIt: "Show similar items in the classroom that fit the same category.",
+          sequenceIt: "Group cards in order of size or color gradients."
+        }
       },
       studentInvestigation: "Students sort a pile of mixed visual cards (food, animals, vehicles) into category mats. They predict the groups, try sorting them, notice cards that fit multiple areas (e.g. flying bird), negotiate sorting rules, change the category tags, and verify consistency.",
       studentDiscourse: {
         structure: "Notice-Explain-Challenge: In pairs, Student A sorts a card. Student B challenges the choice by asking for evidence. Student A must point to the visual property (e.g., 'It has wheels') to justify.",
-        stems: [
+        stemsK1: [
+          "I see...",
+          "I noticed...",
+          "It changed.",
+          "I agree."
+        ],
+        stems24: [
           "I put this in... because I see...",
-          "I agree/disagree because it also has...",
-          "Can you explain why you chose this label?"
+          "My evidence is...",
+          "I noticed that...",
+          "I agree/disagree because..."
         ]
+      },
+      multipleResponseModes: {
+        question: "Why does a dog card belong to animals and not vehicles?",
+        sayIt: "Explain orally: 'Dogs have legs and run, they don't have wheels!'",
+        drawIt: "Draw a dog with legs and a car with wheels next to each other.",
+        showIt: "Point to the legs on the dog picture card.",
+        buildIt: "Sort cards into physical bins labeled with pictures."
+      },
+      howStudentShows: {
+        goal: "Students understand that data is structured information.",
+        build: "Creates a sorting mat using physical classroom dividers.",
+        point: "Points to clean data vs confusing data on a board.",
+        say: "Explains how a color tag helps the bot find foods.",
+        sequence: "Piles all clean cards together and messy cards separate.",
+        show: "Holds up a clean card to show it has a clear image.",
+        draw: "Draws a line connecting matching items."
       },
       startThinking: [
         "What visual properties do you notice first?",
@@ -519,7 +583,7 @@ const pdResources = {
         "Teacher encouraging multiple classification schemes."
       ],
       ifStuck: {
-        wait: "Let students stare at a ambiguous card and struggle with overlapping groups.",
+        wait: "Let students stare at an ambiguous card and struggle with overlapping groups.",
         ask: "Ask: 'What parts of this picture do you recognize? What does it do?'",
         redirect: "Say: 'Let's look at the other cards in the food pile. What do they have?'",
         hint: "Give a small hint: 'It has feathers and wings, just like the parrot.'",
@@ -534,27 +598,58 @@ const pdResources = {
       categoryColor: "indigo",
       description: "Guide students to map coordinates to step arrows and sequential flow logic.",
       whenToUseThis: "Recommended before: Part 2 - Hour 1",
-      launchWithCuriosity: "Tweak a floor path grid by placing a cardboard box barrier (🚧) right in front of the goal. Tell students: 'The bot has to reach the star, but there is a wall in the way. Our old plan is blocked. We need a new recipe of steps.' Do not explain how to detour.",
-      noticeAndWonder: {
-        k1: [
-          "What is in the way of our star?",
-          "What happened when the bot tried to walk straight?",
-          "Which way should the bot turn first?"
+      startWith: "Tweak a floor path grid by placing a cardboard box barrier (🚧) right in front of the goal. Tell students: 'The bot has to reach the star, but there is a wall in the way. Our old plan is blocked. We need a new recipe of steps.' Do not explain how to detour.",
+      startQuestions: [
+        "What is in the way of our star?",
+        "What happened when the bot tried to walk straight?",
+        "Which way should the bot turn first?"
+      ],
+      accessWithoutReading: {
+        readingAlternatives: [
+          "Use color-coded arrows (Green = Forward, Orange = Turn) instead of text commands.",
+          "Demonstrate turn steps physically with student bodies before drawing paths.",
+          "Use visual start/stop flags to indicate sequence boundary tiles."
         ],
-        grades24: [
-          "How did adding the barrier affect our sequential algorithm?",
-          "What patterns do you notice when the bot turns right vs left?",
-          "What is the difference between rotating in place and taking a step?"
-        ]
+        writingAlternatives: {
+          sayIt: "Call out path directions orally (e.g., 'Forward, Forward, Turn Right').",
+          drawIt: "Draw the path line directly on a grid sheet.",
+          pointTo: "Point to the sequence arrows on the plan board.",
+          buildIt: "Layout giant arrow cards on the floor grid.",
+          sortIt: "Separate navigation arrows from obstacle blocks.",
+          showIt: "Physically step through the grid path themselves.",
+          sequenceIt: "Lay out arrow cards from left to right in order."
+        }
       },
       studentInvestigation: "Students lay down giant floor tape lines. They place arrow cards next to the grid, predict the path, walk through it step-by-step, notice wrong turns, swap the offending arrow card, and test the revised algorithm.",
       studentDiscourse: {
         structure: "Predict-Explain-Verify: Student A arranges 4 arrow cards. Student B must physically walk the sequence exactly as shown. If Student B ends up on the wrong square, they collaborate to debug the sequence.",
-        stems: [
+        stemsK1: [
+          "I noticed...",
+          "I tried...",
+          "It changed.",
+          "I agree."
+        ],
+        stems24: [
           "I think the bot will go... because...",
           "My evidence is this arrow card pointing...",
           "Let's change step number... to a..."
         ]
+      },
+      multipleResponseModes: {
+        question: "What caused the bot to walk into the desk?",
+        sayIt: "Explain orally: 'The turn arrow was facing the wrong way!'",
+        drawIt: "Draw an arrow pointing into the desk.",
+        showIt: "Point to the step arrow card that caused the error.",
+        buildIt: "Rotate the physical arrow card in place to show the fix."
+      },
+      howStudentShows: {
+        goal: "Students write sequential movement rules (algorithms).",
+        build: "Constructs a complete path sequence using floor arrow cards.",
+        point: "Points to the card that has the wrong direction.",
+        say: "Explains how turning right is different from stepping right.",
+        sequence: "Aligns arrow cards in a linear left-to-right line.",
+        show: "Walks the sequence perfectly like a robot.",
+        draw: "Draws the path route on a grid blueprint."
       },
       startThinking: [
         "What do you notice about the grid path?",
@@ -602,27 +697,58 @@ const pdResources = {
       categoryColor: "indigo",
       description: "Build variable memory concepts using physical cups and destructive update behaviors.",
       whenToUseThis: "Recommended before: Part 3 - Hour 1",
-      launchWithCuriosity: "Show a locked plastic cup labeled 'Classroom Weather'. Hide a green block inside it. Tell the class: 'This box remembers our weather color. Right now it says green for sunny. But look! It is starting to rain!' Drop a blue block into the cup, taking the green block out. Do not use the word variable yet.",
-      noticeAndWonder: {
-        k1: [
-          "What did the box remember first? What color is inside now?",
-          "Where did the green color block go?",
-          "Can the box hold two colors at the same time?"
+      startWith: "Show a locked plastic cup labeled 'Classroom Weather'. Hide a green block inside it. Tell the class: 'This box remembers our weather color. Right now it says green for sunny. But look! It is starting to rain!' Drop a blue block into the cup, taking the green block out. Do not use the word variable yet.",
+      startQuestions: [
+        "What did the box remember first? What color is inside now?",
+        "Where did the green color block go?",
+        "Can the box hold two colors at the same time?"
+      ],
+      accessWithoutReading: {
+        readingAlternatives: [
+          "Use picture labels on the memory cups instead of written names (e.g. sun picture for weather).",
+          "Represent variable values using physical colored blocks instead of numbers.",
+          "Use physical token exchange cards to show variables resetting."
         ],
-        grades24: [
-          "What remains constant about the box? What changes?",
-          "Why did we have to remove the old block when setting the new value?",
-          "How does a computer system keep track of scores that increase?"
-        ]
+        writingAlternatives: {
+          sayIt: "Tell a partner what is stored inside the cup.",
+          drawIt: "Draw the color block currently inside the variable box.",
+          pointTo: "Point to the variable cup that contains the target value.",
+          buildIt: "Add blocks to a cup to represent addition rules.",
+          sortIt: "Match value cards to their corresponding memory boxes.",
+          showIt: "Hold up the block value currently remembered.",
+          sequenceIt: "Arrange historic value cards to show variable timeline changes."
+        }
       },
       studentInvestigation: "Students use physical cups and cards to model program memory. They write values on cards, drop them into cups labeled with names, replace cards when events occur, trace state changes over a story, and predict the final memory state.",
       studentDiscourse: {
         structure: "Update-Explain-Challenge: Student A acts as the event caller (e.g. 'Add 1 to Score'). Student B updates the value inside the 'Score' cup. Student A audits the cup to verify the mathematical value.",
-        stems: [
+        stemsK1: [
+          "I see...",
+          "I noticed...",
+          "It changed.",
+          "I agree."
+        ],
+        stems24: [
           "The variable box remembers... because we set it to...",
           "I changed the value from... to... because...",
           "What does the box remember right now?"
         ]
+      },
+      multipleResponseModes: {
+        question: "Why must we remove the old block when setting a new variable color?",
+        sayIt: "Explain orally: 'Because variables can only remember one thing at a time!'",
+        drawIt: "Draw a cup with one block inside and another block rolling away on the table.",
+        showIt: "Hold up the old block in one hand and point to the cup containing the new block.",
+        buildIt: "Perform the block swap physically on the desk."
+      },
+      howStudentShows: {
+        goal: "Students understand how variables store and update information.",
+        build: "Configures the cup with the correct block inside.",
+        point: "Points to the variable box that holds the 'Green' state.",
+        say: "Explains how the 'Water Level' cup changes when it rains.",
+        sequence: "Swaps cards in order showing timeline updates.",
+        show: "Demonstrates overwriting by physically discarding a block.",
+        draw: "Draws a cup containing a colored dot value."
       },
       startThinking: [
         "What do you notice about the cup label?",
@@ -670,27 +796,58 @@ const pdResources = {
       categoryColor: "indigo",
       description: "Support loop representation and code compaction using physical movement patterns.",
       whenToUseThis: "Recommended before: Part 4 - Hour 1",
-      launchWithCuriosity: "Perform a rhythmic physical sequence: Clap, Stomp, Clap, Stomp, Clap, Stomp, Clap, Stomp. Ask students: 'If I wanted you to do this all day, would you want me to say 'Clap' and 'Stomp' 100 times, or is there a faster way to tell you?' Do not introduce loops.",
-      noticeAndWonder: {
-        k1: [
-          "What movements did you see again and again?",
-          "How did your body know to repeat the moves?",
-          "How can we show this pattern using cards without a giant row?"
+      startWith: "Perform a rhythmic physical sequence: Clap, Stomp, Clap, Stomp, Clap, Stomp, Clap, Stomp. Ask students: 'If I wanted you to do this all day, would you want me to say 'Clap' and 'Stomp' 100 times, or is there a faster way to tell you?' Do not introduce loops.",
+      startQuestions: [
+        "What movements did you see again and again?",
+        "How did your body know to repeat the moves?",
+        "How can we show this pattern using cards without a giant row?"
+      ],
+      accessWithoutReading: {
+        readingAlternatives: [
+          "Use brackets and visual loop frames instead of reading text multipliers.",
+          "Sing or clap out repeating sequences to feel the count rhythmically.",
+          "Use visual cards showing character poses (Clap, Wave, Spin) instead of text labels."
         ],
-        grades24: [
-          "What is the repeating core pattern in this choreography?",
-          "What happens if we put the repeat bracket around the wrong card?",
-          "Why is shorter instruction code better for a processor?"
-        ]
+        writingAlternatives: {
+          sayIt: "Describe the pattern orally (e.g., 'Clap three times, stomp twice').",
+          drawIt: "Draw a simple repeating shape pattern on a whiteboard.",
+          pointTo: "Point to the core repeating sequence on a plan board.",
+          buildIt: "Assemble physical repeat bracket cards around action cards.",
+          sortIt: "Separate cards that repeat from cards that run only once.",
+          showIt: "Perform the repeat dance physically with classmates.",
+          sequenceIt: "Group repeating cards inside a loop box."
+        }
       },
       studentInvestigation: "Students write short choreographies using move cards. They wrap repeating segments in a physical REPEAT bracket card, predict the behavior, execute it, modify the loop count slider on a tablet simulator, and compare execution times.",
       studentDiscourse: {
         structure: "Observe-Code-Verify: Student A performs a repeating dance. Student B must write down the loop sequence using a single repeat block and multiplier. Student A executes Student B's code to verify.",
-        stems: [
+        stemsK1: [
+          "I see...",
+          "I noticed...",
+          "It changed.",
+          "I agree."
+        ],
+        stems24: [
           "I notice the pattern repeating is...",
           "I used a loop count of... because...",
           "Let's change the repeat block to wrap..."
         ]
+      },
+      multipleResponseModes: {
+        question: "Why did we use a loop card instead of writing 10 claps in a line?",
+        sayIt: "Explain orally: 'Because it's a shortcut and uses way fewer cards!'",
+        drawIt: "Draw a stack of 10 cards next to a single card with a loop symbol.",
+        showIt: "Point to the loop bracket and show how it squeezes the sequence.",
+        buildIt: "Build the loop on the desk using a single repeat block."
+      },
+      howStudentShows: {
+        goal: "Students simplify repeating instructions using loops.",
+        build: "Constructs a loop bracket containing one action card.",
+        point: "Points to where the pattern breaks in a buggy sequence.",
+        say: "Explains how the repeat number changes the dance length.",
+        sequence: "Piles all non-loop cards after the loop exits.",
+        show: "Dances the loop sequence accurately according to brackets.",
+        draw: "Draws loop borders around repeating shapes."
       },
       startThinking: [
         "What patterns do you notice in the movements?",
@@ -738,27 +895,58 @@ const pdResources = {
       categoryColor: "amber",
       description: "Facilitate system integration and peer feedback for final K-4 prototype showcases.",
       whenToUseThis: "Recommended before: Unit Share - Hour 1",
-      launchWithCuriosity: "Show a poster template that has four blank, labeled zones: KNOW, DO, REMEMBER, REPEAT. Tell the class: 'We want to build a Welcome Bot. But it has no information, no instructions, no memory, and cannot repeat. It is empty! How can we use everything we learned to bring it to life?' Do not script the steps.",
-      noticeAndWonder: {
-        k1: [
-          "What did we learn that helps a bot KNOW things?",
-          "What did we use to tell the bot what to DO?",
-          "What did the bot use to REMEMBER things?"
+      startWith: "Show a poster template that has four blank, labeled zones: KNOW, DO, REMEMBER, REPEAT. Tell the class: 'We want to build a Welcome Bot. But it has no information, no instructions, no memory, and cannot repeat. It is empty! How can we use everything we learned to bring it to life?' Do not script the steps.",
+      startQuestions: [
+        "What did we learn that helps a bot KNOW things?",
+        "What did we use to tell the bot what to DO?",
+        "What did the bot use to REMEMBER things?"
+      ],
+      accessWithoutReading: {
+        readingAlternatives: [
+          "Use visual stickers and color zones on the system canvas instead of text titles.",
+          "Describe classmate bot proposals orally using picture cards during review walks.",
+          "Let students use thumbs-up/thumbs-down card indicators for peer reviews."
         ],
-        grades24: [
-          "How do the four components (Data, Algorithm, Variable, Loop) connect in a helper bot?",
-          "What problems can occur if one of the zones is empty?",
-          "How can we collect classmate review feedback to improve our design?"
-        ]
+        writingAlternatives: {
+          sayIt: "Explain their chatbot canvas layout orally to classmate groups.",
+          drawIt: "Draw their chatbot character design directly on the canvas poster.",
+          pointTo: "Point to the zone (KNOW, DO, REMEMBER, REPEAT) that needs fixes.",
+          buildIt: "Combine physical components (cards, labels, cups) onto the poster board.",
+          sortIt: "Classify feedback stickers into 'Likes' vs 'Wonders'.",
+          showIt: "Act out how their bot behaves when it runs its program.",
+          sequenceIt: "Arrange design steps sequentially before pasting them."
+        }
       },
       studentInvestigation: "Students design a helpful classroom bot on a layout canvas. They select pictures (KNOW), write step arrows (DO), assign a memory box (REMEMBER), configure loop repeats (REPEAT), test it with peer testers, log bugs, and upgrade one component.",
       studentDiscourse: {
         structure: "Showcase Review: Teams showcase their bot canvas. Peer reviewers walk around and use visual feedback cards: 👍 LIKE, 💭 WONDER, 💡 TRY. Designers must listen without arguing and select one upgrade.",
-        stems: [
+        stemsK1: [
+          "I see...",
+          "I noticed...",
+          "It changed.",
+          "I agree."
+        ],
+        stems24: [
           "Our bot helps... by combining...",
           "I wonder what happens if the user...",
           "We changed... because our peer feedback suggested..."
         ]
+      },
+      multipleResponseModes: {
+        question: "How does the memory box help the Welcome Bot respond correctly?",
+        sayIt: "Explain orally: 'It remembers the student's name so it can say hello!'",
+        drawIt: "Draw a name tag inside the Welcome Bot's memory box cup.",
+        showIt: "Point to the REMEMBER box and show the name tag inside.",
+        buildIt: "Model the name tag exchange physically using cups."
+      },
+      howStudentShows: {
+        goal: "Students design a complete integrated system layout.",
+        build: "Constructs the final bot poster using all 4 component cards.",
+        point: "Points to the area that matches a peer's comment.",
+        say: "Explains how the bot functions step-by-step.",
+        sequence: "Lays out components logically from inputs to outputs.",
+        show: "Demonstrates peer feedback changes physically.",
+        draw: "Draws annotations on the canvas map."
       },
       startThinking: [
         "What classroom problem does your bot solve?",
@@ -4646,9 +4834,12 @@ teacherUnit === 'earlybot' ? "The visual instructions early learners design buil
 {selectedResource ? (
   teacherUnit === 'earlybot' ? (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: 'slideUp 0.15s', textAlign: 'left' }}>
+      {/* Back button */}
       <button onClick={() => setSelectedResource(null)} style={{ alignSelf: 'flex-start', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', padding: '6px 12px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.75rem', display: 'flex', alignItems: 'center', gap: '6px', outline: 'none' }}>
         ← Back to PD Resources
       </button>
+      
+      {/* Header Panel */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
         <h3 style={{ fontSize: '1.3rem', color: '#fff', margin: 0 }}>{selectedResource.title}</h3>
         <span style={{
@@ -4660,69 +4851,122 @@ teacherUnit === 'earlybot' ? "The visual instructions early learners design buil
           color: getCategoryStyles(selectedResource.category).color,
           border: getCategoryStyles(selectedResource.category).border
         }}>{selectedResource.category}</span>
+        <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>| {selectedResource.whenToUseThis}</span>
       </div>
-      
+
       <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 1fr', gap: '24px' }}>
-        {/* Left Column: Inquiry Loop & Discourse */}
+        {/* Left Column: Access, Launch, Investigation & Discourse */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           
-          {/* 1. Launch With Curiosity */}
-          <div style={{ background: 'rgba(99, 102, 241, 0.04)', borderLeft: '3px solid var(--primary-light)', padding: '12px', borderRadius: '4px' }}>
-            <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '4px' }}>1. Launch With Curiosity (Phenomenon/Demonstration)</strong>
-            <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: '1.5', color: 'rgba(255, 255, 255, 0.95)' }}>{selectedResource.launchWithCuriosity}</p>
+          {/* 1. Launch With Curiosity (Start With) */}
+          <div style={{ background: 'rgba(99, 102, 241, 0.04)', borderLeft: '3px solid var(--primary-light)', padding: '14px', borderRadius: '8px' }}>
+            <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '6px' }}>🚀 Start With (Curiosity Launch)</strong>
+            <p style={{ margin: '0 0 10px 0', fontSize: '0.8rem', lineHeight: '1.5', color: 'rgba(255, 255, 255, 0.95)' }}>{selectedResource.startWith}</p>
+            <strong style={{ color: '#a78bfa', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>Oral Prompts:</strong>
+            <ul style={{ margin: 0, paddingLeft: '16px', fontSize: '0.75rem', lineHeight: '1.4' }}>
+              {(selectedResource.startQuestions || []).map((q, i) => <li key={i} style={{ color: 'rgba(255,255,255,0.85)' }}>{q}</li>)}
+            </ul>
           </div>
 
-          {/* 2. Notice & Wonder */}
-          <div style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '12px', borderRadius: '6px' }}>
-            <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '6px' }}>2. Notice & Wonder Prompts</strong>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.75rem' }}>
+          {/* 2. Access Without Reading or Writing */}
+          <div style={{ background: 'rgba(139, 92, 246, 0.04)', border: '1px solid rgba(139, 92, 246, 0.15)', padding: '14px', borderRadius: '8px' }}>
+            <strong style={{ color: '#a78bfa', fontSize: '0.85rem', display: 'block', marginBottom: '6px' }}>🧩 Access Without Reading or Writing</strong>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.75rem' }}>
               <div>
-                <strong style={{ color: '#a78bfa', display: 'block' }}>K–1 Support (Pointing/Concrete):</strong>
-                <ul style={{ margin: '2px 0 0 0', paddingLeft: '14px', lineHeight: '1.4' }}>
-                  {(selectedResource.noticeAndWonder?.k1 || []).map((q, i) => <li key={i}>{q}</li>)}
+                <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>If the student cannot read:</strong>
+                <ul style={{ margin: 0, paddingLeft: '16px', lineHeight: '1.4' }}>
+                  {(selectedResource.accessWithoutReading?.readingAlternatives || []).map((alt, i) => <li key={i}>{alt}</li>)}
                 </ul>
               </div>
-              <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '6px' }}>
-                <strong style={{ color: '#60a5fa', display: 'block' }}>Grades 2–4 (Reasoning/Evidence):</strong>
-                <ul style={{ margin: '2px 0 0 0', paddingLeft: '14px', lineHeight: '1.4' }}>
-                  {(selectedResource.noticeAndWonder?.grades24 || []).map((q, i) => <li key={i}>{q}</li>)}
+              
+              <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '8px' }}>
+                <strong style={{ color: '#fff', display: 'block', marginBottom: '6px' }}>If the student cannot write (Response Alternatives):</strong>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '0.7rem' }}>
+                  <div>🗣️ <strong>SAY IT:</strong> {selectedResource.accessWithoutReading?.writingAlternatives?.sayIt}</div>
+                  <div>✏️ <strong>DRAW IT:</strong> {selectedResource.accessWithoutReading?.writingAlternatives?.drawIt}</div>
+                  <div>👆 <strong>POINT TO IT:</strong> {selectedResource.accessWithoutReading?.writingAlternatives?.pointTo}</div>
+                  <div>🧱 <strong>BUILD IT:</strong> {selectedResource.accessWithoutReading?.writingAlternatives?.buildIt}</div>
+                  <div>🔀 <strong>SORT IT:</strong> {selectedResource.accessWithoutReading?.writingAlternatives?.sortIt}</div>
+                  <div>🎭 <strong>SHOW IT:</strong> {selectedResource.accessWithoutReading?.writingAlternatives?.showIt}</div>
+                  <div>🖼️ <strong>SEQUENCE IT:</strong> {selectedResource.accessWithoutReading?.writingAlternatives?.sequenceIt}</div>
+                  <div>🤝 <strong>TELL PARTNER:</strong> Share ideas orally in pairs.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 3. Student Investigation Visual Flow */}
+          <div style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '14px', borderRadius: '8px' }}>
+            <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '6px' }}>🧪 Student Investigation Sequence</strong>
+            {/* Visual Directions Sequence */}
+            <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '6px', fontSize: '0.6rem', fontWeight: 'bold', marginBottom: '10px', background: 'rgba(255,255,255,0.02)', padding: '8px', borderRadius: '4px' }}>
+              {['👀 LOOK', '💭 PREDICT', '🧪 TRY', '👀 OBSERVE', '🤝 TALK', '🔄 CHANGE', '🧪 TRY AGAIN', '💡 EXPLAIN'].map((step, idx) => (
+                <span key={step} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <span style={{ color: '#10b981', border: '1px solid rgba(16,185,129,0.2)', padding: '3px 6px', borderRadius: '4px', background: 'rgba(16,185,129,0.05)' }}>{step}</span>
+                  {idx < 7 && <span style={{ color: 'var(--text-muted)' }}>→</span>}
+                </span>
+              ))}
+            </div>
+            <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: '1.5' }}>{selectedResource.studentInvestigation}</p>
+          </div>
+
+          {/* 4. Student Discourse */}
+          <div style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.15)', padding: '14px', borderRadius: '8px' }}>
+            <strong style={{ color: '#34d399', fontSize: '0.85rem', display: 'block', marginBottom: '4px' }}>🗣️ Student-to-Student Discourse (Think-Pair-Share)</strong>
+            <p style={{ margin: '0 0 10px 0', fontSize: '0.8rem', lineHeight: '1.5' }}>{selectedResource.studentDiscourse?.structure}</p>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px', fontSize: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '8px' }}>
+              <div>
+                <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>K–1 Talk Stems (Short / Visual):</strong>
+                <ul style={{ margin: 0, paddingLeft: '14px', lineHeight: '1.4', fontStyle: 'italic', color: '#a7f3d0' }}>
+                  {(selectedResource.studentDiscourse?.stemsK1 || []).map((s, i) => <li key={i}>"{s}"</li>)}
+                </ul>
+              </div>
+              <div>
+                <strong style={{ color: '#fff', display: 'block', marginBottom: '2px' }}>Grades 2–4 Talk Stems (Evidence):</strong>
+                <ul style={{ margin: 0, paddingLeft: '14px', lineHeight: '1.4', fontStyle: 'italic', color: '#60a5fa' }}>
+                  {(selectedResource.studentDiscourse?.stems24 || []).map((s, i) => <li key={i}>"{s}"</li>)}
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* 3. Student Investigation */}
-          <div style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '12px', borderRadius: '6px' }}>
-            <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '4px' }}>3. Student Investigation (Predict → Try → Revise)</strong>
-            <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: '1.5' }}>{selectedResource.studentInvestigation}</p>
-          </div>
-
-          {/* 4. Student Discourse */}
-          <div style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.15)', padding: '12px', borderRadius: '6px' }}>
-            <strong style={{ color: '#34d399', fontSize: '0.85rem', display: 'block', marginBottom: '4px' }}>4. Student-to-Student Discourse (Think-Pair-Share)</strong>
-            <p style={{ margin: '0 0 8px 0', fontSize: '0.8rem', lineHeight: '1.5' }}>{selectedResource.studentDiscourse?.structure}</p>
-            <strong style={{ color: '#fff', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>Visual Talk Stems:</strong>
-            <ul style={{ margin: 0, paddingLeft: '14px', fontSize: '0.75rem', lineHeight: '1.4', fontStyle: 'italic', color: '#a7f3d0' }}>
-              {(selectedResource.studentDiscourse?.stems || []).map((s, i) => <li key={i}>"{s}"</li>)}
-            </ul>
-          </div>
-
-          {/* 6. Student Agency */}
-          <div style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255,255,255,0.05)', padding: '12px', borderRadius: '6px' }}>
-            <strong style={{ color: '#fff', fontSize: '0.85rem', display: 'block', marginBottom: '4px' }}>6. Student Agency Opportunities (Intellectual Choices)</strong>
-            <ul style={{ margin: 0, paddingLeft: '14px', fontSize: '0.75rem', lineHeight: '1.4' }}>
-              {(selectedResource.studentAgency || []).map((a, i) => <li key={i} style={{ color: 'rgba(255,255,255,0.85)' }}>{a}</li>)}
-            </ul>
-          </div>
-
         </div>
 
-        {/* Right Column: Coaching Metrics, Stuck Progression & Look-Fors */}
+        {/* Right Column: Response Modes, Questions, Agency, Struggle, Look-Fors */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', background: 'rgba(0,0,0,0.15)', padding: '16px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
           
+          {/* 3. Multiple Response Modes */}
+          <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <strong style={{ color: '#fff', fontSize: '0.8rem', display: 'block', marginBottom: '4px' }}>🎭 Multiple Response Modes</strong>
+            <div style={{ fontSize: '0.75rem' }}>
+              <span style={{ color: 'var(--text-muted)', display: 'block', marginBottom: '6px' }}><strong>Core Question:</strong> "{selectedResource.multipleResponseModes?.question}"</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', fontSize: '0.7rem' }}>
+                <div>🗣️ <strong>Say It:</strong> {selectedResource.multipleResponseModes?.sayIt}</div>
+                <div>✏️ <strong>Draw It:</strong> {selectedResource.multipleResponseModes?.drawIt}</div>
+                <div>🧱 <strong>Build / Show It:</strong> {selectedResource.multipleResponseModes?.buildIt}</div>
+              </div>
+            </div>
+          </div>
+
+          {/* 8. How Can the Student Show You? */}
+          <div style={{ background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+            <strong style={{ color: '#fff', fontSize: '0.8rem', display: 'block', marginBottom: '4px' }}>🎯 How Can the Student Show You? (Assessment)</strong>
+            <div style={{ fontSize: '0.75rem' }}>
+              <span style={{ color: 'var(--primary-light)', display: 'block', marginBottom: '4px' }}><strong>Goal:</strong> {selectedResource.howStudentShows?.goal}</span>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '3px', fontSize: '0.7rem' }}>
+                <div>🧱 <strong>Builds:</strong> {selectedResource.howStudentShows?.build}</div>
+                <div>👆 <strong>Points:</strong> {selectedResource.howStudentShows?.point}</div>
+                <div>🗣️ <strong>Says:</strong> {selectedResource.howStudentShows?.say}</div>
+                <div>🖼️ <strong>Sequences:</strong> {selectedResource.howStudentShows?.sequence}</div>
+              </div>
+            </div>
+          </div>
+
           {/* 5. Questions to Move Thinking Forward */}
           <div>
-            <strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>5. Questions to Move Thinking Forward</strong>
+            <strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>5. Questions to Move Thinking Forward</strong>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.75rem' }}>
               <div>
                 <strong style={{ color: '#a78bfa' }}>Start Thinking:</strong>
@@ -4745,7 +4989,15 @@ teacherUnit === 'earlybot' ? "The visual instructions early learners design buil
             </div>
           </div>
 
-          {/* 7. Productive Struggle */}
+          {/* 6. Student Agency */}
+          <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '10px' }}>
+            <strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>6. Student Agency (Intellectual Decisions)</strong>
+            <ul style={{ margin: 0, paddingLeft: '14px', fontSize: '0.75rem', lineHeight: '1.3' }}>
+              {(selectedResource.studentAgency || []).map((a, i) => <li key={i}>{a}</li>)}
+            </ul>
+          </div>
+
+          {/* 7. Productive Struggle (Before You Help) */}
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '10px' }}>
             <strong style={{ color: 'var(--primary-light)', fontSize: '0.75rem', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>7. Before You Help...</strong>
             <ul style={{ margin: 0, paddingLeft: '14px', fontSize: '0.75rem', lineHeight: '1.3' }}>
