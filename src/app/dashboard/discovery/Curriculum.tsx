@@ -5997,7 +5997,7 @@ Preview ➜
 )}{activeTeacherTab === 'intro' && (
 <div style={{ animation: 'slideUp 0.2s' }}>
 <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '16px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px', textAlign: 'left' }}>
-{teacherUnit === 'botbuilder' ? 'Unit Introduction: The Chatbot Challenge' : 'Unit Introduction: EcoEngineering Launch'}
+{teacherUnit === 'botbuilder' ? 'Unit Introduction: The Chatbot Challenge' : teacherUnit === 'earlybot' ? 'Unit Introduction: The Mystery Bot' : 'Unit Introduction: EcoEngineering Launch'}
 </h3>
 {teacherUnit === 'botbuilder' ? (
 <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
@@ -6111,7 +6111,103 @@ Log into Scratch. Guide students through basic interface tutorials: adding a spr
 </div>
 </div>
 </div>
+) : teacherUnit === 'earlybot' ? (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
+        {/* Overview Header */}
+        <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%)', border: '1px solid rgba(255,255,255,0.05)', padding: '20px', borderRadius: '10px' }}>
+          <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Unit Launch Hook</span>
+          <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.1rem' }}>Challenge: The Mystery Bot</h4>
+          <p style={{ lineHeight: '1.6', margin: 0 }}>
+            Meet our classroom robot! It needs to get to its target, but it is stiff and silent. How can we tell it what to do? Students will discover the need for clear, visual instructions by trying to direct a "human robot" before learning any formal vocabulary or code.
+          </p>
+        </div>
+
+        {/* Lesson Agenda */}
+        <div>
+          <strong style={{ color: '#fff', display: 'block', marginBottom: '8px', fontSize: '0.95rem' }}>Introduction Hour Timeline</strong>
+          <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.8rem', background: 'rgba(255,255,255,0.02)' }}>
+            <thead>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                <th style={{ padding: '6px 8px', textAlign: 'left', color: '#fff' }}>Activity Block</th>
+                <th style={{ padding: '6px 8px', textAlign: 'right', color: '#fff' }}>Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}><td style={{ padding: '6px 8px' }}>1. 👀 Experience: Meet the Silent Bot</td><td style={{ padding: '6px 8px', textAlign: 'right' }}>15 minutes</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}><td style={{ padding: '6px 8px' }}>2. 🧪 Test: Directing the Teacher-Bot Literally</td><td style={{ padding: '6px 8px', textAlign: 'right' }}>15 minutes</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.05)' }}><td style={{ padding: '6px 8px' }}>3. 🤫 Rethink: How Does a Bot Understand?</td><td style={{ padding: '6px 8px', textAlign: 'right' }}>15 minutes</td></tr>
+              <tr style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}><td style={{ padding: '6px 8px' }}>4. 🔗 Bridge: Picture Instruction Challenge</td><td style={{ padding: '6px 8px', textAlign: 'right' }}>15 minutes</td></tr>
+              <tr style={{ fontWeight: 'bold' }}><td style={{ padding: '6px 8px', color: '#fff' }}>Total Time</td><td style={{ padding: '6px 8px', textAlign: 'right', color: '#fff' }}>1 hour</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Terminology */}
+        <div>
+          <strong style={{ color: '#fff', display: 'block', marginBottom: '10px', fontSize: '0.95rem' }}>Core Terminology</strong>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px' }}>
+            <div style={{ padding: '12px', background: 'rgba(255,255,255,0.02)', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <strong style={{ color: 'var(--primary-light)', display: 'block', fontSize: '0.8rem', marginBottom: '4px' }}>Helper Bot</strong>
+              <span style={{ fontSize: '0.75rem', lineHeight: '1.4' }}>A simple, friendly machine that follows exact visual instructions to solve problems.</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(255,255,255,0.02)', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <strong style={{ color: 'var(--primary-light)', display: 'block', fontSize: '0.8rem', marginBottom: '4px' }}>Instruction</strong>
+              <span style={{ fontSize: '0.75rem', lineHeight: '1.4' }}>A picture, card, or symbol that tells our helper bot exactly what action to perform next.</span>
+            </div>
+            <div style={{ padding: '12px', background: 'rgba(255,255,255,0.02)', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <strong style={{ color: 'var(--primary-light)', display: 'block', fontSize: '0.8rem', marginBottom: '4px' }}>Partner Team</strong>
+              <span style={{ fontSize: '0.75rem', lineHeight: '1.4' }}>Two student designers working together, sharing ideas, testing plans, and fixing errors.</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Facilitation Steps */}
+        <div>
+          <strong style={{ color: '#fff', display: 'block', marginBottom: '12px', fontSize: '0.95rem' }}>Facilitation Steps</strong>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <div style={{ borderLeft: '3px solid #6366f1', padding: '12px', background: 'rgba(99, 102, 241, 0.02)', borderRadius: '6px' }}>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '4px' }}>1. Meet the Silent Bot (15 min)</strong>
+              <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Draw a target smiley face on the whiteboard. Place a block on your desk. Act completely frozen (eyes open, standing stiff) and tell the class: "I am a helper bot. I want to touch the smiley face, but my memory is empty. How could we tell me what to do?"
+              </p>
+              <div style={{ display: 'flex', gap: '10px', marginTop: '8px', fontSize: '0.75rem', flexWrap: 'wrap' }}>
+                <span style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#a78bfa', padding: '2px 6px', borderRadius: '4px' }}><strong>🤫 MY THINKING:</strong> 5-10s wait. Think, point, gesture, or draw.</span>
+                <span style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#a78bfa', padding: '2px 6px', borderRadius: '4px' }}><strong>🤝 PARTNER:</strong> Share command ideas.</span>
+              </div>
+            </div>
+
+            <div style={{ borderLeft: '3px solid #10b981', padding: '12px', background: 'rgba(16, 185, 129, 0.02)', borderRadius: '6px' }}>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '4px' }}>2. Test Commands Literally (15 min)</strong>
+              <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Let students call out commands. Follow them VERY literally (playful productive failure). If a student says "walk over there!", look confused and ask: "Does the bot know where 'there' is?"
+              </p>
+              <div style={{ display: 'flex', gap: '10px', marginTop: '8px', fontSize: '0.75rem', flexWrap: 'wrap' }}>
+                <span style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#34d399', padding: '2px 6px', borderRadius: '4px' }}><strong>🧪 TEST:</strong> Walk into a wall if they don't specify steps.</span>
+                <span style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#34d399', padding: '2px 6px', borderRadius: '4px' }}><strong>💬 TALK:</strong> "What went wrong? Why was the bot confused?"</span>
+              </div>
+            </div>
+
+            <div style={{ borderLeft: '3px solid #fbbf24', padding: '12px', background: 'rgba(251, 191, 36, 0.02)', borderRadius: '6px' }}>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '4px' }}>3. How Does a Bot Understand? (15 min)</strong>
+              <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Lead a class sensemaking conversation. Help students realize that bots don't have human intuition. They require exact, step-by-step instructions.
+              </p>
+              <div style={{ display: 'flex', gap: '10px', marginTop: '8px', fontSize: '0.75rem', flexWrap: 'wrap' }}>
+                <span style={{ background: 'rgba(251, 191, 36, 0.1)', color: '#fbbf24', padding: '2px 6px', borderRadius: '4px' }}><strong>💡 SENSEMAKING:</strong> "Our bot needs exact counts and exact turns."</span>
+              </div>
+            </div>
+
+            <div style={{ borderLeft: '3px solid #8b5cf6', padding: '12px', background: 'rgba(139, 92, 246, 0.02)', borderRadius: '6px' }}>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '4px' }}>4. Picture Instruction Bridge (15 min)</strong>
+              <p style={{ margin: 0, fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Show ONE mystery card (e.g. Wave 👋). Wave your hand. Ask: "Could a picture card tell our bot what to do? Let's check how pictures can represent instructions in Part 1."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 ) : (
+
 <div>
 <h4 style={{ color: '#a78bfa', fontSize: '0.9rem', margin: '14px 0 6px 0', textAlign: 'left' }}>Unit Introduction: EcoEngineering</h4>
 <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', lineHeight: '1.5', textAlign: 'left' }}>
@@ -6124,7 +6220,7 @@ Introduce the storm runoff water crisis. Explain how high rainfall floods park s
 {activeTeacherTab === 'part1' && (
 <div style={{ animation: 'slideUp 0.2s' }}>
 <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px', textAlign: 'left' }}>
-{teacherUnit === 'botbuilder' ? 'Part 1: Data, Data, Data (AI BotBuilder)' : 'Part 1: Irrigation & Soil Codes'}
+{teacherUnit === 'botbuilder' ? 'Part 1: Data, Data, Data (AI BotBuilder)' : teacherUnit === 'earlybot' ? 'Part 1: Smart Pictures (Early BotBuilder)' : 'Part 1: Irrigation & Soil Codes'}
 </h3>
 {teacherUnit === 'botbuilder' ? (
 <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
@@ -6355,7 +6451,147 @@ Pairs trade laptops. The testing team intentionally runs stress tests to audit t
 </div>
 )}
 </div>
+) : teacherUnit === 'earlybot' ? (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
+        {/* Sub-Tab Navigation */}
+        <div style={{ display: 'flex', gap: '8px', background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          {[
+            { id: 'overview', label: '🧩 Mission & Careers' },
+            { id: 'hour1', label: '🤫 Hour 1: Think' },
+            { id: 'hour2', label: '🧪 Hour 2: Build & Test' }
+          ].map(subTab => (
+            <button
+              key={subTab.id}
+              onClick={() => setActivePart1SubTab(subTab.id)}
+              style={{
+                flex: 1,
+                padding: '8px 12px',
+                fontSize: '0.75rem',
+                borderRadius: '6px',
+                border: 'none',
+                cursor: 'pointer',
+                background: activePart1SubTab === subTab.id ? 'var(--primary)' : 'transparent',
+                color: activePart1SubTab === subTab.id ? '#fff' : 'var(--text-secondary)',
+                transition: 'all 0.2s',
+                fontWeight: activePart1SubTab === subTab.id ? 'bold' : 'normal'
+              }}
+            >
+              {subTab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* SUBTAB CONTENT: OVERVIEW */}
+        {activePart1SubTab === 'overview' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
+              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Symbol Designer Hook</span>
+              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: Teach the Bot Without Words</h4>
+              <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
+                "Our helper bot cannot understand our words today. How could we communicate using pictures?" Students discover that symbols can represent actions and instructions, laying the groundwork for visual coding blocks.
+              </p>
+            </div>
+
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '8px' }}>Student Collaborative Roles</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#60a5fa', fontSize: '0.75rem', display: 'block' }}>🎨 Symbol Designer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Creates, selects, or draws visual instructions for the bot to perform.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block' }}>🔎 Meaning Tester</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Acts out the visual instructions literally to check for clarity.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {['UI Designer', 'Visual Engineer', 'UX Specialist', 'Graphic Designer'].map(career => (
+                  <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
+                    {career}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* SUBTAB CONTENT: HOUR 1 (THINK) */}
+        {activePart1SubTab === 'hour1' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: Mystery Symbol Debate</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Show ONE Mystery Picture Card (e.g. 🌀). Do not explain what it means.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                <div><strong>🤫 MY THINKING:</strong> 5-10s wait. Think: what is this card telling us to do? Point, gesture, or act silently.</div>
+                <div><strong>🤝 PARTNER:</strong> Compare interpretations. "Why do you think that? Does anyone think differently?"</div>
+                <div><strong>💡 SENSEMAKING:</strong> Share multiple ideas. How could we test which meaning is best?</div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#60a5fa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: Test the Interpretations</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                One student acts as the bot. The team holds up the mystery card and the bot performs their interpreted action.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                <div><strong>🧪 TEST & OBSERVE:</strong> Observe the action. Did everyone understand the symbol the same way?</div>
+                <div><strong>🔄 RETHINK:</strong> What made the picture clear or confusing?</div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#10b981', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 3: Design Challenge - JUMP!</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Challenge: Draw a symbol or choose emojis that tells the bot to JUMP. No words or writing allowed. Exchange designs with another group to see if they can interpret it without your explanation.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* SUBTAB CONTENT: HOUR 2 (BUILD & TEST) */}
+        {activePart1SubTab === 'hour2' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: Create & Exchange Cards</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Use Smart Picture Emoji Cards and Mystery Picture Cards. Partners design 3 custom instructions. Swap with another team. The Meaning Tester acts them out literally.
+              </p>
+              <div style={{ display: 'flex', gap: '10px', fontSize: '0.75rem', marginTop: '6px' }}>
+                <span style={{ background: 'rgba(251, 191, 36, 0.1)', color: '#fbbf24', padding: '2px 6px', borderRadius: '4px' }}><strong>CREATE → EXCHANGE → INTERPRET → PERFORM</strong></span>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: The Revision Loop</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Identify which card was most confusing. Modify or redraw the card to make the visual meaning clearer.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                <div><strong>TRY → NOTICE → TALK → CHANGE → TRY AGAIN</strong></div>
+              </div>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              <div style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.15)', padding: '12px', borderRadius: '6px' }}>
+                <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>💡 Discovery: Representation</strong>
+                <span style={{ fontSize: '0.75rem' }}>Pictures and symbols can represent actions and communicate instructions without words.</span>
+              </div>
+              <div style={{ background: 'rgba(99, 102, 241, 0.04)', border: '1px solid rgba(99, 102, 241, 0.15)', padding: '12px', borderRadius: '6px' }}>
+                <strong style={{ color: '#a78bfa', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>🔗 Bridge to Part 2: Step Arrows</strong>
+                <span style={{ fontSize: '0.75rem' }}>Arrange cards: 🦘 → 👏 → 👋. Ask: "If I change the order of these instruction cards, will the bot do the same thing? Let's check in Part 2."</span>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
 ) : (
+
 <div>
 <h4 style={{ color: '#a78bfa', fontSize: '0.9rem', margin: '14px 0 6px 0', textAlign: 'left' }}>Challenge Solution Cheatsheet</h4>
 <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', lineHeight: '1.5', textAlign: 'left' }}>
@@ -6367,7 +6603,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
 )}{activeTeacherTab === 'part2' && (
   <div style={{ animation: 'slideUp 0.2s' }}>
     <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px', textAlign: 'left' }}>
-      {teacherUnit === 'botbuilder' ? 'Part 2: All About Algorithms (AI BotBuilder)' : 'Part 2: Vector Wind Power'}
+      {teacherUnit === 'botbuilder' ? 'Part 2: All About Algorithms (AI BotBuilder)' : teacherUnit === 'earlybot' ? 'Part 2: Step Arrows (Early BotBuilder)' : 'Part 2: Vector Wind Power'}
     </h3>
     {teacherUnit === 'botbuilder' ? (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
@@ -6709,7 +6945,137 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
           </div>
         )}
       </div>
-    ) : (
+    ) : teacherUnit === 'earlybot' ? (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
+        {/* Sub-Tab Navigation */}
+        <div style={{ display: 'flex', gap: '8px', background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          {[
+            { id: 'overview', label: '🧩 Mission & Careers' },
+            { id: 'hour1', label: '🤫 Hour 1: Think' },
+            { id: 'hour2', label: '🧪 Hour 2: Build & Test' }
+          ].map(subTab => (
+            <button
+              key={subTab.id}
+              onClick={() => setActivePart2SubTab(subTab.id)}
+              style={{
+                flex: 1,
+                padding: '8px 12px',
+                fontSize: '0.75rem',
+                borderRadius: '6px',
+                border: 'none',
+                cursor: 'pointer',
+                background: activePart2SubTab === subTab.id ? 'var(--primary)' : 'transparent',
+                color: activePart2SubTab === subTab.id ? '#fff' : 'var(--text-secondary)',
+                transition: 'all 0.2s',
+                fontWeight: activePart2SubTab === subTab.id ? 'bold' : 'normal'
+              }}
+            >
+              {subTab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* SUBTAB CONTENT: OVERVIEW */}
+        {activePart2SubTab === 'overview' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
+              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Sequence Hook</span>
+              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: Guide the Bot to the Star</h4>
+              <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
+                "Can you guide our helper bot to the star on our grid?" Students build from individual symbols to ordered sequences, discovering that the order of instructions changes the outcome.
+              </p>
+            </div>
+
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '8px' }}>Student Collaborative Roles</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#60a5fa', fontSize: '0.75rem', display: 'block' }}>🗺️ Path Designer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Plans the route and lays out the step arrows in order.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block' }}>🤖 Bot Tester</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Follows the arrows literally on the floor grid and checks for errors.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {['Software Architect', 'Logistics Coordinator', 'Robot Programmer'].map(career => (
+                  <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
+                    {career}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* SUBTAB CONTENT: HOUR 1 (THINK) */}
+        {activePart2SubTab === 'hour1' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: Does Order Matter?</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Show: ⬆️ → ⬆️ → ➡️ &nbsp;and&nbsp; ➡️ → ⬆️ → ⬆️. Ask: "Will our bot end in the same place?"
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                <div><strong>🤫 MY THINKING:</strong> 5-10s wait. Predict: point or trace the final square.</div>
+                <div><strong>🤝 PARTNER:</strong> Compare predictions. Explain why they think that.</div>
+                <div><strong>🧪 TEST:</strong> Walk both paths on the floor grid to check.</div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#60a5fa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: Complete the Sequence</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Using Step Arrow Cards and the Floor Grid Kit. The Path Designer creates the FULL sequence before the Bot Tester begins. The bot executes instructions literally.
+              </p>
+            </div>
+
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#10b981', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 3: Debugging Barriers</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Place a barrier (🚧) on the path. Act out a buggy route that crashes. Discuss: "Where did our plan stop working? Which card should we change?"
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* SUBTAB CONTENT: HOUR 2 (BUILD & TEST) */}
+        {activePart2SubTab === 'hour2' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: Design Your Own Path (Agency)</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Teams decide their own obstacle locations (🌳, 💧, 🪨) and target goals (🤖, 🏠). Design the path sequence using Step Arrow Cards, then exchange grids and cards with a partner group to test.
+              </p>
+            </div>
+
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: Multiple Routes</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                "Can you find another way to reach the same destination?" Students test alternative algorithms and compare efficiency (fewer steps).
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              <div style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.15)', padding: '12px', borderRadius: '6px' }}>
+                <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>💡 Discovery: Sequence & Algorithm</strong>
+                <span style={{ fontSize: '0.75rem' }}>The order of instructions matters. A step-by-step sequence to solve a problem is called an algorithm.</span>
+              </div>
+              <div style={{ background: 'rgba(99, 102, 241, 0.04)', border: '1px solid rgba(99, 102, 241, 0.15)', padding: '12px', borderRadius: '6px' }}>
+                <strong style={{ color: '#a78bfa', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>🔗 Bridge to Part 3: Memory Boxes</strong>
+                <span style={{ fontSize: '0.75rem' }}>Show a star. Hide/remove it. Ask: "What if our bot needs this information later? Where can a bot keep something it needs to remember?"</span>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+) : (
+
       <div>
         <h4 style={{ color: '#a78bfa', fontSize: '0.9rem', margin: '14px 0 6px 0', textAlign: 'left' }}>Challenge Solution Cheatsheet</h4>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', lineHeight: '1.5', textAlign: 'left' }}>
@@ -6722,7 +7088,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
 {activeTeacherTab === 'part3' && (
   <div style={{ animation: 'slideUp 0.2s' }}>
     <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px', textAlign: 'left' }}>
-      {teacherUnit === 'botbuilder' ? 'Part 3: Introduction to Variables (AI BotBuilder)' : 'Part 3: Chemical Spill Titrations'}
+      {teacherUnit === 'botbuilder' ? 'Part 3: Introduction to Variables (AI BotBuilder)' : teacherUnit === 'earlybot' ? 'Part 3: Memory Boxes (Early BotBuilder)' : 'Part 3: Chemical Spill Titrations'}
     </h3>
     {teacherUnit === 'botbuilder' ? (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
@@ -7119,7 +7485,137 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
           </div>
         )}
       </div>
-    ) : (
+    ) : teacherUnit === 'earlybot' ? (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
+        {/* Sub-Tab Navigation */}
+        <div style={{ display: 'flex', gap: '8px', background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          {[
+            { id: 'overview', label: '🧩 Mission & Careers' },
+            { id: 'hour1', label: '🤫 Hour 1: Think' },
+            { id: 'hour2', label: '🧪 Hour 2: Build & Test' }
+          ].map(subTab => (
+            <button
+              key={subTab.id}
+              onClick={() => setActivePart3SubTab(subTab.id)}
+              style={{
+                flex: 1,
+                padding: '8px 12px',
+                fontSize: '0.75rem',
+                borderRadius: '6px',
+                border: 'none',
+                cursor: 'pointer',
+                background: activePart3SubTab === subTab.id ? 'var(--primary)' : 'transparent',
+                color: activePart3SubTab === subTab.id ? '#fff' : 'var(--text-secondary)',
+                transition: 'all 0.2s',
+                fontWeight: activePart3SubTab === subTab.id ? 'bold' : 'normal'
+              }}
+            >
+              {subTab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* SUBTAB CONTENT: OVERVIEW */}
+        {activePart3SubTab === 'overview' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
+              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Memory Hook</span>
+              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Challenge: Help the Bot Remember</h4>
+              <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
+                "Can our bot remember something?" Students use physical cups as memory boxes to store, recall, and update color block values, discovering how variables function in computer memory.
+              </p>
+            </div>
+
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '8px' }}>Student Collaborative Roles</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#60a5fa', fontSize: '0.75rem', display: 'block' }}>📦 Memory Keeper</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Manages the variables, swapping blocks or cards inside the memory cups.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block' }}>🔍 Memory Tester</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Verifies that the bot correctly recalls and acts on the stored properties.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {['Database Administrator', 'Memory Engineer', 'Systems Architect'].map(career => (
+                  <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
+                    {career}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* SUBTAB CONTENT: HOUR 1 (THINK) */}
+        {activePart3SubTab === 'hour1' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: What's in the Box?</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Place one token card (e.g. 🍎) inside a labeled box. Close it.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                <div><strong>🤫 MY THINKING:</strong> 5-10s wait. Hold the value in your head.</div>
+                <div><strong>🤝 PARTNER:</strong> Show your partner which value you think is inside.</div>
+                <div><strong>👀 REVEAL:</strong> Open the box. "How did the box help us remember?"</div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#60a5fa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: Swap the Value</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Place an apple 🍎 in the box. Now, put a car 🚗 in it. Discuss: "What is it holding now? Why did the apple have to leave? Can a variable hold two things at once?"
+              </p>
+            </div>
+
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#10b981', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 3: Labeled Memory Boxes</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Setup three different cups: ❤️, ⭐, 🌙. Store a different color block in each. Have students retrieve blocks by naming the box (e.g., "Give me the block inside the Star box").
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* SUBTAB CONTENT: HOUR 2 (BUILD & TEST) */}
+        {activePart3SubTab === 'hour2' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: The Memory Mission</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Use Memory Box Kits. Teams design a path where the bot must "remember" a color token at grid step 2, walk to step 4, and perform a different action based on the color stored.
+              </p>
+            </div>
+
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: The Overwrite Sprint</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Change the memory box contents midway through a path run. Have partners predict, test, and observe the new result.
+              </p>
+            </div>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              <div style={{ background: 'rgba(16, 185, 129, 0.04)', border: '1px solid rgba(16, 185, 129, 0.2)', padding: '12px', borderRadius: '6px' }}>
+                <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>💡 Discovery: Variables & Memory</strong>
+                <span style={{ fontSize: '0.75rem' }}>Information can be stored in a labeled place (called a variable) and retrieved or updated later.</span>
+              </div>
+              <div style={{ background: 'rgba(99, 102, 241, 0.04)', border: '1px solid rgba(99, 102, 241, 0.2)', padding: '12px', borderRadius: '6px' }}>
+                <strong style={{ color: '#a78bfa', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>🔗 Bridge to Part 4: Repeat Dance</strong>
+                <span style={{ fontSize: '0.75rem' }}>Show: 👏 → 🦘 → 👏 → 🦘 → 👏 → 🦘. Ask: "Our bot repeats this dance over and over. Is there a simpler way to write these instructions? Let's check in Part 4."</span>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+) : (
+
       <div>
         <h4 style={{ color: '#a78bfa', fontSize: '0.9rem', margin: '14px 0 6px 0', textAlign: 'left' }}>Challenge Solution Cheatsheet</h4>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', lineHeight: '1.5', textAlign: 'left' }}>
@@ -7922,7 +8418,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
 {activeTeacherTab === 'share' && (
   <div style={{ animation: 'slideUp 0.2s' }}>
     <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '12px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px', textAlign: 'left' }}>
-      {teacherUnit === 'botbuilder' ? 'Unit Share: AI BotBuilder Design Expo (AI BotBuilder)' : 'Unit Share: Sustainable City Map'}
+      {teacherUnit === 'botbuilder' ? 'Unit Share: AI BotBuilder Design Expo (AI BotBuilder)' : teacherUnit === 'earlybot' ? 'Unit Share: Bot Design Studio (Early BotBuilder)' : 'Unit Share: Sustainable City Map'}
     </h3>
     {teacherUnit === 'botbuilder' ? (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
@@ -8137,7 +8633,125 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
           </div>
         )}
       </div>
-    ) : (
+    ) : teacherUnit === 'earlybot' ? (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', fontSize: '0.85rem', color: 'var(--text-secondary)', textAlign: 'left' }}>
+        {/* Sub-Tab Navigation */}
+        <div style={{ display: 'flex', gap: '8px', background: 'rgba(255,255,255,0.03)', padding: '6px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+          {[
+            { id: 'overview', label: '🧩 Mission & Careers' },
+            { id: 'hour1', label: '🤫 Hour 1: Think' },
+            { id: 'hour2', label: '🧪 Hour 2: Build & Test' }
+          ].map(subTab => (
+            <button
+              key={subTab.id}
+              onClick={() => setActiveShareSubTab(subTab.id)}
+              style={{
+                flex: 1,
+                padding: '8px 12px',
+                fontSize: '0.75rem',
+                borderRadius: '6px',
+                border: 'none',
+                cursor: 'pointer',
+                background: activeShareSubTab === subTab.id ? 'var(--primary)' : 'transparent',
+                color: activeShareSubTab === subTab.id ? '#fff' : 'var(--text-secondary)',
+                transition: 'all 0.2s',
+                fontWeight: activeShareSubTab === subTab.id ? 'bold' : 'normal'
+              }}
+            >
+              {subTab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* SUBTAB CONTENT: OVERVIEW */}
+        {activeShareSubTab === 'overview' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.08) 100%)', border: '1px solid rgba(139, 92, 246, 0.2)', padding: '16px', borderRadius: '8px' }}>
+              <span style={{ fontSize: '0.7rem', color: 'var(--primary-light)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Design Expo Hook</span>
+              <h4 style={{ color: '#fff', margin: '4px 0 8px 0', fontSize: '1.05rem' }}>Early BotBuilder Design Studio</h4>
+              <p style={{ lineHeight: '1.5', margin: 0, fontSize: '0.8rem' }}>
+                "Can you combine everything we discovered to design, test, improve, and explain your own bot?" Students use the Final Bot Canvas to design their bot and showcase it to their peers.
+              </p>
+            </div>
+
+            <div>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '8px' }}>Student Showcase Roles</strong>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#60a5fa', fontSize: '0.75rem', display: 'block' }}>🤖 Bot Designer</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Creates the canvas poster design and demonstrates how the bot functions.</span>
+                </div>
+                <div style={{ background: 'rgba(255,255,255,0.02)', padding: '10px', borderRadius: '6px', border: '1px solid rgba(255,255,255,0.05)' }}>
+                  <strong style={{ color: '#34d399', fontSize: '0.75rem', display: 'block' }}>👥 Peer Tester</strong>
+                  <span style={{ fontSize: '0.7rem' }}>Tests the canvas design, reviews logical flow, and shares helpful feedback.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {['Product Manager', 'Systems Analyst', 'Creative Tech Designer'].map(career => (
+                  <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
+                    {career}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* SUBTAB CONTENT: HOUR 1 (THINK) */}
+        {activeShareSubTab === 'hour1' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: Imagine Your Bot Companion</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                "What would you like your bot helper to do?" (e.g. Welcome guest, tidy toys, clean desk).
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                <div><strong>🤫 MY THINKING:</strong> Independent ideation. Think, gesture, or draw. No writing.</div>
+                <div><strong>🤝 PARTNER:</strong> Share ideas. Ask questions: "What does it look like?"</div>
+              </div>
+            </div>
+
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#60a5fa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: Assemble the Bot Canvas</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Using the Final Bot Canvas. Students draw their bot, and add visual components (DO arrows, REMEMBER memory box, REPEAT loops). No writing required.
+              </p>
+            </div>
+          </div>
+        )}
+
+        {/* SUBTAB CONTENT: HOUR 2 (BUILD & TEST) */}
+        {activeShareSubTab === 'hour2' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', animation: 'slideUp 0.15s' }}>
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 1: Peer Walkthroughs</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                The Peer Tester runs the bot's canvas rules without explanations. Observe: does the bot behave as expected? Partners share feedback tokens: 👍 LIKE, 💭 WONDER, 💡 TRY.
+              </p>
+            </div>
+
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#a78bfa', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 2: Redesign Sprint</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                The original designer decides which suggestion to use. Modify the sequence or memory rules. Test again.
+              </p>
+            </div>
+
+            <div style={{ background: 'rgba(255,255,255,0.02)', padding: '14px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)' }}>
+              <span style={{ color: '#10b981', fontSize: '0.75rem', fontWeight: 'bold' }}>Activity 3: Showcase Design Expo</span>
+              <p style={{ margin: '6px 0 10px 0', fontSize: '0.8rem', lineHeight: '1.4' }}>
+                Wear Bot Designer badges. Present canvases to visitors. Visitors ask: "What does it do? How does it work? What repeats? What did you change?"
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+) : (
+
       <div>
         <h4 style={{ color: '#a78bfa', fontSize: '0.9rem', margin: '14px 0 6px 0', textAlign: 'left' }}>Challenge Solution Cheatsheet</h4>
         <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', lineHeight: '1.5', textAlign: 'left' }}>
