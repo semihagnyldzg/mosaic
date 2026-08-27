@@ -48,6 +48,12 @@ export default function LoginPage() {
       return;
     }
 
+    if (targetEmail.trim().toLowerCase() !== 'semihagnyldz@gmail.com') {
+      setError('Access restricted: Only authorized accounts can log in to this platform.');
+      setLoading(false);
+      return;
+    }
+
     try {
       const { data, error: signInError } = await supabase.auth.signInWithPassword({
         email: targetEmail,
@@ -666,25 +672,15 @@ export default function LoginPage() {
             </form>
 
             <div className="border-t border-zinc-100 pt-4 space-y-2.5">
-              <span className="text-xs text-zinc-400 font-bold uppercase tracking-wider block text-center">Instant Demo Logins</span>
-              <div className="grid grid-cols-2 gap-2.5">
-                <button
-                  type="button"
-                  onClick={() => handleQuickDemo('semihagnyldz@gmail.com', '123')}
-                  className="bg-purple-50/60 hover:bg-purple-100/60 border border-purple-100 p-3 rounded-xl text-left text-xs transition-colors cursor-pointer"
-                >
-                  <span className="text-[#5C2483] font-extrabold block">👩‍🏫 Teacher</span>
-                  <span className="text-[10px] text-zinc-500 block truncate">semihagnyldz...</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleQuickDemo('principal.skinner@springfield.edu', '123')}
-                  className="bg-purple-50/60 hover:bg-purple-100/60 border border-purple-100 p-3 rounded-xl text-left text-xs transition-colors cursor-pointer"
-                >
-                  <span className="text-[#5C2483] font-extrabold block">🏫 Principal</span>
-                  <span className="text-[10px] text-zinc-500 block truncate">skinner...</span>
-                </button>
-              </div>
+              <span className="text-xs text-zinc-400 font-bold uppercase tracking-wider block text-center">Instant Demo Login</span>
+              <button
+                type="button"
+                onClick={() => handleQuickDemo('semihagnyldz@gmail.com', '123')}
+                className="w-full bg-purple-50/60 hover:bg-purple-100/60 border border-purple-100 p-3.5 rounded-xl text-left text-xs transition-colors cursor-pointer"
+              >
+                <span className="text-[#5C2483] font-extrabold block">👩‍🏫 Teacher</span>
+                <span className="text-[10px] text-zinc-500 block">semihagnyldz@gmail.com</span>
+              </button>
             </div>
 
           </div>

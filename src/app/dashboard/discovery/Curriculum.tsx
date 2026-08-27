@@ -6725,7 +6725,7 @@ Pairs trade laptops. The testing team intentionally runs stress tests to audit t
             </div>
 
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>🎓 STEAM Career Spotlight</strong>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {['UI Designer', 'Visual Engineer', 'UX Specialist', 'Graphic Designer'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
@@ -6882,7 +6882,7 @@ Pairs trade laptops. The testing team intentionally runs stress tests to audit t
             </div>
 
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>🎓 STEAM Career Spotlight</strong>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {['UI Designer', 'Visual Engineer', 'UX Specialist', 'Graphic Designer'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
@@ -7067,7 +7067,7 @@ Pairs trade laptops. The testing team intentionally runs stress tests to audit t
             </div>
 
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>🎓 STEAM Career Spotlight</strong>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {['UI Designer', 'Visual Engineer', 'UX Specialist', 'Graphic Designer'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
@@ -7644,7 +7644,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
             </div>
 
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>🎓 STEAM Career Spotlight</strong>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {['Software Architect', 'Logistics Coordinator', 'Robot Programmer'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
@@ -7774,7 +7774,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
             </div>
 
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>🎓 STEAM Career Spotlight</strong>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {['Software Architect', 'Logistics Coordinator', 'Robot Programmer'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
@@ -7977,7 +7977,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
             </div>
 
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>🎓 STEAM Career Spotlight</strong>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {['Software Architect', 'Logistics Coordinator', 'Robot Programmer'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
@@ -8628,7 +8628,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
             </div>
 
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>🎓 STEAM Career Spotlight</strong>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {['Database Administrator', 'Memory Engineer', 'Systems Architect'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
@@ -8758,7 +8758,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
             </div>
 
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>🎓 STEAM Career Spotlight</strong>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {['Database Administrator', 'Memory Engineer', 'Systems Architect'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
@@ -8943,7 +8943,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
             </div>
 
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>🎓 STEAM Career Spotlight</strong>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {['Database Administrator', 'Memory Engineer', 'Systems Architect'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
@@ -10198,7 +10198,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
             </div>
 
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>🎓 STEAM Career Spotlight</strong>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {['Product Manager', 'Systems Analyst', 'Creative Tech Designer'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
@@ -10316,7 +10316,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
             </div>
 
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>🎓 STEAM Career Spotlight</strong>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {['Product Manager', 'Systems Analyst', 'Creative Tech Designer'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
@@ -10541,7 +10541,7 @@ Middle School Challenge 1 (IoT Irrigation): Set soil moisture threshold slider t
             </div>
 
             <div style={{ background: 'rgba(255, 255, 255, 0.01)', border: '1px dashed rgba(255,255,255,0.08)', padding: '12px', borderRadius: '8px' }}>
-              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>dY' STEAM Career Spotlight</strong>
+              <strong style={{ color: '#fff', display: 'block', marginBottom: '6px', fontSize: '0.8rem' }}>🎓 STEAM Career Spotlight</strong>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
                 {['Product Manager', 'Systems Analyst', 'Creative Tech Designer'].map(career => (
                   <span key={career} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', fontSize: '0.7rem', padding: '3px 8px', borderRadius: '12px' }}>
