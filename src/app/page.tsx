@@ -220,7 +220,7 @@ export default function Home() {
                   >
                     <span className="text-2xl">🧪</span>
                     <div>
-                      <div className="font-extrabold text-[#2D183B] text-sm group-hover:text-[#5C2483]">Discovery Lab</div>
+                      <div className="font-extrabold text-[#2D183B] text-sm group-hover:text-[#5C2483]">Innovation Lab</div>
                       <div className="text-xs text-zinc-500">Interactive standard simulations & lab journals</div>
                     </div>
                   </Link>
@@ -354,7 +354,7 @@ export default function Home() {
                 <div className="w-14 h-14 rounded-2xl bg-[#5C2483] text-white flex items-center justify-center text-3xl font-bold shadow-md">
                   🧪
                 </div>
-                <h3 className="text-xl font-black text-[#2D183B]">Discovery Lab</h3>
+                <h3 className="text-xl font-black text-[#2D183B]">Innovation Lab</h3>
                 <p className="text-sm text-zinc-600 leading-relaxed font-medium">
                   Interactive North Carolina standard simulations, digital inquiry journals, and hands-on science journals.
                 </p>

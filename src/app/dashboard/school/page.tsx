@@ -286,7 +286,7 @@ export default function PrincipalDashboard() {
                 >
                   <span className="text-xl">🤖</span>
                   <div>
-                    <div className="font-bold text-[#2D183B] text-xs group-hover/item:text-[#5C2483]">Discovery Lab</div>
+                    <div className="font-bold text-[#2D183B] text-xs group-hover/item:text-[#5C2483]">Innovation Lab</div>
                     <div className="text-[10px] text-zinc-500">Interactive standard simulations & lab journals</div>
                   </div>
                 </Link>

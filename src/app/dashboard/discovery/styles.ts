@@ -1,5 +1,5 @@
 export const discoveryCss = `
-/* Global Design System - Discovery Lab Light Theme */
+/* Global Design System - Innovation Lab Light Theme */
 
 :root {
   /* Colors */

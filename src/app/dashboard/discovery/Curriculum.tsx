@@ -1328,7 +1328,7 @@ const [activePart1SubTab, setActivePart1SubTab] = useState('overview');
     } else if (res.id === 'bb-role-cards-badge') {
       contentHtml = `
         <div class="header">
-          <h1>Discovery Lab - AI BotBuilder</h1>
+          <h1>Innovation Lab - AI BotBuilder</h1>
           <h2>Team Engineering Role Badges</h2>
           <p class="meta">Print, cut out, and fold these badges for team roles</p>
         </div>
@@ -1353,7 +1353,7 @@ const [activePart1SubTab, setActivePart1SubTab] = useState('overview');
     } else if (res.id === 'bb-all-notebooks') {
       contentHtml = `
         <div class="header">
-          <h1>Discovery Lab - AI BotBuilder</h1>
+          <h1>Innovation Lab - AI BotBuilder</h1>
           <h2>Combined Student Lab Notebooks Booklet</h2>
           <p class="meta">Complete 52-page workbook sequence for Grades 4-5</p>
         </div>
@@ -1393,7 +1393,7 @@ const [activePart1SubTab, setActivePart1SubTab] = useState('overview');
     } else if (res.id.includes('bb-notebook')) {
       contentHtml = `
         <div class="header">
-          <h1>Discovery Lab Student Lab Notebook</h1>
+          <h1>Innovation Lab Student Lab Notebook</h1>
           <h2>${res.title}</h2>
           <p class="meta">Lesson Connection: ${res.part.toUpperCase()} | Pages: ${res.pages} | quantity: ${res.ratio}</p>
         </div>
@@ -1431,7 +1431,7 @@ const [activePart1SubTab, setActivePart1SubTab] = useState('overview');
     } else if (res.id === 'bb-res-detective') {
       contentHtml = `
         <div class="header">
-          <h1>Discovery Lab Worksheet</h1>
+          <h1>Innovation Lab Worksheet</h1>
           <h2>${res.title}</h2>
           <p class="meta">Connection: ${res.part.toUpperCase()} | recommended: ${res.ratio}</p>
         </div>
@@ -1463,7 +1463,7 @@ const [activePart1SubTab, setActivePart1SubTab] = useState('overview');
     } else {
       contentHtml = `
         <div class="header">
-          <h1>Discovery Lab Worksheet</h1>
+          <h1>Innovation Lab Worksheet</h1>
           <h2>${res.title}</h2>
           <p class="meta">Lesson Connection: ${res.part.toUpperCase()} | Pages: ${res.pages} | quantity: address ${res.ratio}</p>
         </div>
@@ -1834,7 +1834,7 @@ return (
       background: #ffffff !important;
     }
     
-    /* Discovery Lab heading gradient fix for light background */
+    /* Innovation Lab heading gradient fix for light background */
     h2 {
       background: linear-gradient(135deg, #0f172a 0%, #312e81 100%) !important;
       -webkit-background-clip: text !important;
@@ -2106,7 +2106,7 @@ marginBottom: '32px'
 }}>
 <div>
 <h2 style={{ fontSize: '2rem', background: 'linear-gradient(135deg, #fff 0%, var(--secondary-light) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-Discovery Lab Curriculum
+Innovation Lab Curriculum
 </h2>
 <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginTop: '4px' }}>
 Student Agency Portal // Learning Score: <strong style={{ color: c1CableConnected ? 'var(--success)' : '#fbbf24' }}>{points} PTS</strong>
@@ -4933,7 +4933,7 @@ Adjust pacing to fit your class scheduling. Standard path represents a total of 
 <div style={{ background: 'rgba(16, 185, 129, 0.03)', border: '1px solid rgba(16, 185, 129, 0.15)', borderRadius: '8px', padding: '16px' }}>
 <h4 style={{ color: '#10b981', fontSize: '0.9rem', marginTop: 0, marginBottom: '10px' }}>🌟 Student Agency & Choices</h4>
 <p style={{ fontSize: '0.75rem', lineHeight: '1.5', margin: 0 }}>
-Discovery Lab is an open-ended inquiry experience, not a cookbook coding sequence. Students make original choices in:
+Innovation Lab is an open-ended inquiry experience, not a cookbook coding sequence. Students make original choices in:
 </p>
 <ul style={{ margin: '8px 0 0 0', paddingLeft: '16px', fontSize: '0.75rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
 <li><strong>Selecting a Problem:</strong> Deciding which community or school service problem the system solves.</li>
@@ -5403,7 +5403,7 @@ border: getCategoryStyles(selectedResource.category).border
 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', animation: 'slideUp 0.15s', textAlign: 'left' }}>
 <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '4px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px' }}>Professional Development Resources</h3>
 <p style={{ fontSize: '0.8rem', lineHeight: '1.5', margin: 0 }}>
-The resources in this section provide practical support for facilitating this Discovery Lab unit. Use them before or during instruction to strengthen content knowledge, instructional strategies, student agency, collaboration, and STEAM integration.
+The resources in this section provide practical support for facilitating this Innovation Lab unit. Use them before or during instruction to strengthen content knowledge, instructional strategies, student agency, collaboration, and STEAM integration.
 </p>
 {/* Recommended for this Unit */}
 <div>
@@ -5510,7 +5510,7 @@ View ➜
 <div style={{ animation: 'slideUp 0.2s', color: 'var(--text-secondary)' }}>
 <h3 style={{ fontSize: '1.3rem', color: '#fff', marginBottom: '4px', borderBottom: '1px solid rgba(255,255,255,0.08)', paddingBottom: '8px', textAlign: 'left' }}>Student Resource Printing & Preparation</h3>
 <p style={{ fontSize: '0.8rem', lineHeight: '1.5', marginBottom: '16px', textAlign: 'left' }}>
-Use this page to preview, print, and prepare all student-facing materials for the active Discovery Lab unit. Resources are organized by lesson section so facilitators can quickly identify what students will need before instruction begins.
+Use this page to preview, print, and prepare all student-facing materials for the active Innovation Lab unit. Resources are organized by lesson section so facilitators can quickly identify what students will need before instruction begins.
 </p>
 {/* Lesson Filters and Batch Actions */}
 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px', background: 'rgba(255,255,255,0.02)', padding: '12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.05)', marginBottom: '16px' }}>

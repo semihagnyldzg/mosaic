@@ -49,7 +49,7 @@ export default function Navigation() {
             background: 'linear-gradient(135deg, #fff 0%, var(--secondary-light) 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
-          }}>DISCOVERY LAB</span>
+          }}>INNOVATION LAB</span>
         </div>
 
         {/* Learning Hub Header Badge */}
