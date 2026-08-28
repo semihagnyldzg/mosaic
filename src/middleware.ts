@@ -36,7 +36,7 @@ export async function middleware(request: NextRequest) {
     } else if (role === 'principal') {
       return NextResponse.redirect(new URL('/dashboard/school', request.url));
     } else {
-      return NextResponse.redirect(new URL('/dashboard/teacher', request.url));
+      return NextResponse.redirect(new URL('/dashboard/discovery', request.url));
     }
   }
 

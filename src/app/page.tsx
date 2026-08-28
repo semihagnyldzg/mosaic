@@ -34,24 +34,21 @@ export default function Home() {
   const router = useRouter();
   const supabase = createClient();
 
-  const handleLogin = async (e?: React.FormEvent, customEmail?: string, customPass?: string) => {
+  const handleLogin = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
     setLoading(true);
     setError(null);
 
-    const targetEmail = customEmail || email;
-    const targetPass = customPass || password;
-
-    if (!targetEmail.trim() || !targetPass.trim()) {
-      setError('Please enter your email and password.');
+    if (password.trim() !== 'mosaic') {
+      setError('Incorrect password.');
       setLoading(false);
       return;
     }
 
     try {
       const { data, error: signInError } = await supabase.auth.signInWithPassword({
-        email: targetEmail,
-        password: targetPass,
+        email: 'semihagnyldz@gmail.com',
+        password: '123',
       });
 
       if (signInError) throw signInError;
@@ -70,13 +67,13 @@ export default function Home() {
       } else if (role === 'principal') {
         router.push('/dashboard/school');
       } else if (role === 'teacher') {
-        router.push('/dashboard/teacher');
+        router.push('/dashboard/discovery');
       } else {
-        router.push('/dashboard/teacher');
+        router.push('/dashboard/discovery');
       }
     } catch (err: any) {
       console.error(err);
-      setError(err.message || 'Invalid email or password.');
+      setError('Access restricted: Invalid credentials or session error.');
     } finally {
       setLoading(false);
     }
@@ -633,24 +630,12 @@ export default function Home() {
 
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-1.5">Email Address</label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@school.edu"
-                  className="w-full bg-zinc-50 border border-zinc-200 rounded-lg py-3 px-3.5 text-zinc-900 text-sm focus:border-[#5C2483] focus:outline-none"
-                  required
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-1.5">Password</label>
+                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-1.5">Platform Password</label>
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••"
+                  placeholder="Enter platform password"
                   className="w-full bg-zinc-50 border border-zinc-200 rounded-lg py-3 px-3.5 text-zinc-900 text-sm focus:border-[#5C2483] focus:outline-none"
                   required
                 />
@@ -661,31 +646,9 @@ export default function Home() {
                 disabled={loading}
                 className="w-full bg-[#5C2483] hover:bg-[#4A154B] text-white font-extrabold py-3.5 rounded-xl text-sm transition-all shadow-md cursor-pointer disabled:opacity-50"
               >
-                {loading ? 'Logging in...' : 'Log in ➔'}
+                {loading ? 'Entering Platform...' : 'Log In ➔'}
               </button>
             </form>
-
-            <div className="border-t border-zinc-100 pt-4 space-y-2.5">
-              <span className="text-xs text-zinc-400 font-bold uppercase tracking-wider block text-center">Instant Demo Logins</span>
-              <div className="grid grid-cols-2 gap-2.5">
-                <button
-                  type="button"
-                  onClick={() => handleQuickDemo('semihagnyldz@gmail.com', '123')}
-                  className="bg-purple-50/60 hover:bg-purple-100/60 border border-purple-100 p-3 rounded-xl text-left text-xs transition-colors cursor-pointer"
-                >
-                  <span className="text-[#5C2483] font-extrabold block">👩‍🏫 Teacher</span>
-                  <span className="text-[10px] text-zinc-500 block truncate">semihagnyldz...</span>
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleQuickDemo('principal.skinner@springfield.edu', '123')}
-                  className="bg-purple-50/60 hover:bg-purple-100/60 border border-purple-100 p-3 rounded-xl text-left text-xs transition-colors cursor-pointer"
-                >
-                  <span className="text-[#5C2483] font-extrabold block">🏫 Principal</span>
-                  <span className="text-[10px] text-zinc-500 block truncate">skinner...</span>
-                </button>
-              </div>
-            </div>
 
           </div>
         </div>

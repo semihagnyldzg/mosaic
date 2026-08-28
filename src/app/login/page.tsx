@@ -67,9 +67,9 @@ export default function LoginPage() {
       } else if (role === 'principal') {
         router.push('/dashboard/school');
       } else if (role === 'teacher') {
-        router.push('/dashboard/teacher');
+        router.push('/dashboard/discovery');
       } else {
-        router.push('/dashboard/teacher');
+        router.push('/dashboard/discovery');
       }
     } catch (err: any) {
       console.error(err);
