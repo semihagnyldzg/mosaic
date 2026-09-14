@@ -12,7 +12,7 @@ export default function CurriculumPage() {
       <style dangerouslySetInnerHTML={{ __html: discoveryCss }} />
       <Navigation />
 
-      <main className="flex-1 pt-32 sm:pt-36 pb-16 w-full">
+      <main style={{ flex: 1, paddingTop: "120px", paddingBottom: "60px", width: "100%" }}>
         <CurriculumViewer />
       </main>
 
