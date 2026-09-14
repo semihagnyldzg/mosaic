@@ -2119,6 +2119,26 @@ padding: '4px',
 borderRadius: '10px',
 border: '1px solid rgba(255,255,255,0.08)'
 }}>
+<a
+href="/dashboard/curriculum"
+style={{
+  padding: '8px 16px',
+  borderRadius: '8px',
+  background: 'linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%)',
+  color: '#fff',
+  border: 'none',
+  cursor: 'pointer',
+  fontWeight: 700,
+  fontSize: '0.85rem',
+  textDecoration: 'none',
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '6px',
+  boxShadow: '0 4px 14px rgba(139, 92, 246, 0.4)'
+}}
+>
+📚 K-5 Science Curriculum Hub
+</a>
 <button
 onClick={() => { setViewMode('student'); setActiveChallenge(null); setActiveDay(1); }}
 style={{

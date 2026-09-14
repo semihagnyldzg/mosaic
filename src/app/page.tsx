@@ -39,11 +39,7 @@ export default function Home() {
     setLoading(true);
     setError(null);
 
-    if (password.trim() !== 'mosaic') {
-      setError('Incorrect password.');
-      setLoading(false);
-      return;
-    }
+    // Password check removed for direct platform login
 
     try {
       const { data, error: signInError } = await supabase.auth.signInWithPassword({
@@ -222,6 +218,17 @@ export default function Home() {
                     <div>
                       <div className="font-extrabold text-[#2D183B] text-sm group-hover:text-[#5C2483]">Innovation Lab</div>
                       <div className="text-xs text-zinc-500">Interactive standard simulations & lab journals</div>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/dashboard/curriculum"
+                    className="flex items-start gap-3.5 p-3 rounded-xl hover:bg-purple-50 transition-colors group"
+                  >
+                    <span className="text-2xl">📚</span>
+                    <div>
+                      <div className="font-extrabold text-[#2D183B] text-sm group-hover:text-[#5C2483]">K-5 Science Curriculum</div>
+                      <div className="text-xs text-zinc-500">36 evidence-release lessons & 5 integrated projects</div>
                     </div>
                   </Link>
                 </div>
@@ -629,24 +636,17 @@ export default function Home() {
             )}
 
             <form onSubmit={handleLogin} className="space-y-4">
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-1.5">Platform Password</label>
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Enter platform password"
-                  className="w-full bg-zinc-50 border border-zinc-200 rounded-lg py-3 px-3.5 text-zinc-900 text-sm focus:border-[#5C2483] focus:outline-none"
-                  required
-                />
+              <div className="bg-purple-50 border border-purple-200 p-4 rounded-xl text-xs text-purple-900 font-medium">
+                <span className="font-bold text-purple-950 block mb-0.5">✨ Instant Access Enabled</span>
+                Password protection is disabled. Click below to access the Mosaic platform directly.
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#5C2483] hover:bg-[#4A154B] text-white font-extrabold py-3.5 rounded-xl text-sm transition-all shadow-md cursor-pointer disabled:opacity-50"
+                className="w-full bg-[#5C2483] hover:bg-[#4A154B] text-white font-extrabold py-3.5 rounded-xl text-sm transition-all shadow-md cursor-pointer disabled:opacity-50 flex items-center justify-center gap-2"
               >
-                {loading ? 'Entering Platform...' : 'Log In ➔'}
+                {loading ? 'Entering Platform...' : 'Log In to Mosaic →'}
               </button>
             </form>
 
