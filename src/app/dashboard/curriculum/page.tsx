@@ -8,7 +8,7 @@ import { discoveryCss } from '../discovery/styles';
 
 export default function CurriculumPage() {
   return (
-    <div className="curriculum-hub-container min-h-screen text-zinc-100 flex flex-col justify-between relative" style={{ background: '#07030f' }}>
+    <div className="curriculum-hub-container min-h-screen text-zinc-900 flex flex-col justify-between relative" style={{ background: 'var(--bg-dark, #F9F8FC)' }}>
       <style dangerouslySetInnerHTML={{ __html: discoveryCss }} />
       <Navigation />
 
