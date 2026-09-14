@@ -12,9 +12,9 @@ export default function CurriculumViewer() {
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>({});
   
   // Tab states per lesson
-  const [activeTabMap, setActiveTabMap] = useState<Record<string, 'launch' | 'evidence' | 'checklist'>>({});
-  const [activeEvidenceMap, setActiveEvidenceMap] = useState<Record<string, 1 | 2 | 3>>({});
+  const [activeTabMap, setActiveTabMap] = useState<Record<string, 'overview' | 'pathways' | 'evidence' | 'consolidation' | 'checklist'>>({});
   const [activePathwayMap, setActivePathwayMap] = useState<Record<string, 'language' | 'supported' | 'core' | 'extended'>>({});
+  const [activeEvidenceMap, setActiveEvidenceMap] = useState<Record<string, 1 | 2 | 3>>({});
 
   const grades = [
     { code: 'K', label: 'Kindergarten', active: true, count: '36 Lessons' },
@@ -30,8 +30,8 @@ export default function CurriculumViewer() {
     setCheckedItems(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
-  const getLessonTab = (lessonId: string) => activeTabMap[lessonId] || 'launch';
-  const setLessonTab = (lessonId: string, tab: 'launch' | 'evidence' | 'checklist') => {
+  const getLessonTab = (lessonId: string) => activeTabMap[lessonId] || 'overview';
+  const setLessonTab = (lessonId: string, tab: 'overview' | 'pathways' | 'evidence' | 'consolidation' | 'checklist') => {
     setActiveTabMap(prev => ({ ...prev, [lessonId]: tab }));
   };
 
@@ -73,7 +73,7 @@ export default function CurriculumViewer() {
         background: 'linear-gradient(135deg, #ffffff 0%, #f5f3ff 100%)',
         border: '1px solid rgba(92, 36, 131, 0.15)',
         borderRadius: '20px',
-        padding: '32px shadow-sm',
+        padding: '32px',
         marginBottom: '32px',
         boxShadow: '0 8px 30px rgba(92, 36, 131, 0.05)',
         textAlign: 'left'
@@ -95,7 +95,7 @@ export default function CurriculumViewer() {
               letterSpacing: '0.05em',
               marginBottom: '12px'
             }}>
-              📚 MOSAIC K-5 CURRICULUM HUB
+              ⚡ MOSAIC K-5 CURRICULUM HUB
             </div>
             
             <h1 style={{
@@ -111,7 +111,7 @@ export default function CurriculumViewer() {
             </h1>
             
             <p style={{ fontSize: '0.95rem', color: '#5c5866', margin: 0, fontWeight: 500 }}>
-              North Carolina Standards-Aligned Clear Scientific Evidence-Release Curriculum (36 Detailed Lessons)
+              North Carolina Standards-Aligned Clear Scientific Evidence-Release Curriculum (36 Detailed Lessons across 5 Integrated Projects)
             </p>
           </div>
 
@@ -420,14 +420,14 @@ export default function CurriculumViewer() {
                         {isExpanded && (
                           <div style={{ borderTop: '1px solid #e2e8f0', padding: '24px', background: '#fcfbfe', textAlign: 'left' }}>
                             
-                            {/* 3 Workspace Tabs */}
+                            {/* 5 Lesson Workspace Tabs */}
                             <div style={{ display: 'flex', gap: '8px', borderBottom: '1px solid #e2e8f0', paddingBottom: '12px', marginBottom: '20px', flexWrap: 'wrap' }}>
                               <button
-                                onClick={() => setLessonTab(lesson.id, 'launch')}
+                                onClick={() => setLessonTab(lesson.id, 'overview')}
                                 style={{
-                                  background: activeTab === 'launch' ? '#5c2483' : '#ffffff',
-                                  color: activeTab === 'launch' ? '#ffffff' : '#475569',
-                                  border: activeTab === 'launch' ? '1px solid #5c2483' : '1px solid #cbd5e1',
+                                  background: activeTab === 'overview' ? '#5c2483' : '#ffffff',
+                                  color: activeTab === 'overview' ? '#ffffff' : '#475569',
+                                  border: activeTab === 'overview' ? '1px solid #5c2483' : '1px solid #cbd5e1',
                                   padding: '8px 16px',
                                   borderRadius: '8px',
                                   fontSize: '0.8rem',
@@ -436,6 +436,22 @@ export default function CurriculumViewer() {
                                 }}
                               >
                                 🎯 1. Launch & Task Script
+                              </button>
+
+                              <button
+                                onClick={() => setLessonTab(lesson.id, 'pathways')}
+                                style={{
+                                  background: activeTab === 'pathways' ? '#5c2483' : '#ffffff',
+                                  color: activeTab === 'pathways' ? '#ffffff' : '#475569',
+                                  border: activeTab === 'pathways' ? '1px solid #5c2483' : '1px solid #cbd5e1',
+                                  padding: '8px 16px',
+                                  borderRadius: '8px',
+                                  fontSize: '0.8rem',
+                                  fontWeight: 800,
+                                  cursor: 'pointer'
+                                }}
+                              >
+                                👥 2. Small-Group Pathways
                               </button>
 
                               <button
@@ -451,7 +467,23 @@ export default function CurriculumViewer() {
                                   cursor: 'pointer'
                                 }}
                               >
-                                📦 2. Evidence Releases (1–2–3)
+                                📦 3. Evidence Releases (1–2–3)
+                              </button>
+
+                              <button
+                                onClick={() => setLessonTab(lesson.id, 'consolidation')}
+                                style={{
+                                  background: activeTab === 'consolidation' ? '#5c2483' : '#ffffff',
+                                  color: activeTab === 'consolidation' ? '#ffffff' : '#475569',
+                                  border: activeTab === 'consolidation' ? '1px solid #5c2483' : '1px solid #cbd5e1',
+                                  padding: '8px 16px',
+                                  borderRadius: '8px',
+                                  fontSize: '0.8rem',
+                                  fontWeight: 800,
+                                  cursor: 'pointer'
+                                }}
+                              >
+                                🧠 4. Consolidation & Transfer
                               </button>
 
                               <button
@@ -467,53 +499,58 @@ export default function CurriculumViewer() {
                                   cursor: 'pointer'
                                 }}
                               >
-                                ✅ 3. Facilitator Checklist
+                                ✅ 5. Facilitator Checklist
                               </button>
                             </div>
 
-                            {/* TAB 1: LAUNCH & SCRIPT */}
-                            {activeTab === 'launch' && (
+                            {/* TAB 1: LAUNCH & OVERVIEW */}
+                            {activeTab === 'overview' && (
                               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                                 
-                                {/* Teacher Context Notice */}
-                                <div style={{ background: '#fffbeb', border: '1px solid #fef08a', padding: '12px 16px', borderRadius: '10px', fontSize: '0.8rem', color: '#713f12' }}>
-                                  <strong style={{ color: '#854d0e', textTransform: 'uppercase', fontSize: '0.7rem', display: 'block', marginBottom: '2px' }}>
-                                    🔒 Teacher Background • What Would Normally Be Direct Instruction?
+                                {/* Teacher Background Notice */}
+                                <div style={{ background: '#fffbeb', border: '1px solid #fef08a', padding: '14px 18px', borderRadius: '10px', fontSize: '0.85rem', color: '#713f12' }}>
+                                  <strong style={{ color: '#854d0e', textTransform: 'uppercase', fontSize: '0.75rem', display: 'block', marginBottom: '4px' }}>
+                                    🔒 TEACHER ONLY • WHAT WOULD NORMALLY BE DIRECT INSTRUCTION?
                                   </strong>
                                   <em>{lesson.directInstructionContext}</em>
                                 </div>
 
                                 {/* Task Script Callout */}
-                                <div style={{ background: '#f3eeff', borderLeft: '5px solid #5c2483', padding: '20px', borderRadius: '8px' }}>
+                                <div style={{ background: '#f3eeff', borderLeft: '5px solid #5c2483', padding: '20px', borderRadius: '10px' }}>
                                   <span style={{ fontSize: '0.7rem', fontWeight: 900, color: '#5c2483', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '6px' }}>
                                     EXACT KINDERGARTEN TASK SCRIPT (SAY ALOUD TO STUDENTS)
                                   </span>
-                                  <div style={{ fontSize: '1.15rem', fontWeight: 900, color: '#2d183b', fontStyle: 'italic', lineHeight: 1.3, fontFamily: "'Outfit', sans-serif" }}>
+                                  <div style={{ fontSize: '1.2rem', fontWeight: 900, color: '#2d183b', fontStyle: 'italic', lineHeight: 1.35, fontFamily: "'Outfit', sans-serif" }}>
                                     &ldquo;{lesson.launch.kindergartenTaskScript}&rdquo;
                                   </div>
-                                  <div style={{ marginTop: '10px', fontSize: '0.8rem', color: '#4c1d95', borderTop: '1px solid #e6dbff', paddingTop: '8px' }}>
+                                  <div style={{ marginTop: '12px', fontSize: '0.85rem', color: '#4c1d95', borderTop: '1px solid #e6dbff', paddingTop: '8px' }}>
                                     <strong>Facilitator Launch Prompt:</strong> &ldquo;{lesson.launch.prompt}&rdquo;
                                   </div>
                                 </div>
 
-                                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px', fontSize: '0.8rem' }}>
-                                  <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '14px', borderRadius: '10px' }}>
-                                    <strong style={{ color: '#5c2483', display: 'block', marginBottom: '4px' }}>🛠️ Preparation & Materials:</strong>
-                                    <p style={{ color: '#475569', margin: 0, lineHeight: 1.4 }}>{lesson.prepare}</p>
+                                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px', fontSize: '0.85rem' }}>
+                                  <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '16px', borderRadius: '10px' }}>
+                                    <strong style={{ color: '#5c2483', display: 'block', marginBottom: '6px' }}>🛠️ Preparation & Hidden Materials:</strong>
+                                    <p style={{ color: '#475569', margin: 0, lineHeight: 1.5 }}>{lesson.prepare}</p>
                                   </div>
-                                  <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '14px', borderRadius: '10px' }}>
-                                    <strong style={{ color: '#5c2483', display: 'block', marginBottom: '4px' }}>🧒 What Children Do Before Evidence:</strong>
-                                    <p style={{ color: '#475569', margin: 0, lineHeight: 1.4 }}>{lesson.launch.studentActionsBeforeEvidence}</p>
+                                  <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '16px', borderRadius: '10px' }}>
+                                    <strong style={{ color: '#5c2483', display: 'block', marginBottom: '6px' }}>🧒 Student Actions Before Evidence Release:</strong>
+                                    <p style={{ color: '#475569', margin: 0, lineHeight: 1.5 }}>{lesson.launch.studentActionsBeforeEvidence}</p>
                                   </div>
                                 </div>
 
-                                {/* Small-Group Access Pathways */}
-                                <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '16px', borderRadius: '12px' }}>
-                                  <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#5c2483', textTransform: 'uppercase', display: 'block', marginBottom: '10px' }}>
-                                    👥 Small-Group Access Pathways
+                              </div>
+                            )}
+
+                            {/* TAB 2: ACCESS PATHWAYS */}
+                            {activeTab === 'pathways' && (
+                              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                                <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '20px', borderRadius: '12px' }}>
+                                  <span style={{ fontSize: '0.8rem', fontWeight: 900, color: '#5c2483', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>
+                                    👥 Small-Group Access Pathways (Select Support Level)
                                   </span>
                                   
-                                  <div style={{ display: 'flex', gap: '6px', marginBottom: '12px', flexWrap: 'wrap' }}>
+                                  <div style={{ display: 'flex', gap: '8px', marginBottom: '16px', flexWrap: 'wrap' }}>
                                     {(['language', 'supported', 'core', 'extended'] as const).map(pw => (
                                       <button
                                         key={pw}
@@ -522,33 +559,40 @@ export default function CurriculumViewer() {
                                           background: activePathway === pw ? '#3730a3' : '#f1f5f9',
                                           color: activePathway === pw ? '#ffffff' : '#475569',
                                           border: 'none',
-                                          padding: '4px 10px',
-                                          borderRadius: '6px',
-                                          fontSize: '0.75rem',
-                                          fontWeight: 700,
+                                          padding: '8px 14px',
+                                          borderRadius: '8px',
+                                          fontSize: '0.8rem',
+                                          fontWeight: 800,
                                           cursor: 'pointer'
                                         }}
                                       >
-                                        {pw === 'language' && 'Language & Representation'}
-                                        {pw === 'supported' && 'Supported Investigation'}
-                                        {pw === 'core' && 'Core Investigation'}
-                                        {pw === 'extended' && 'Extended Challenge'}
+                                        {pw === 'language' && '1. Language & Representation'}
+                                        {pw === 'supported' && '2. Supported Investigation'}
+                                        {pw === 'core' && '3. Core Investigation'}
+                                        {pw === 'extended' && '4. Extended Challenge'}
                                       </button>
                                     ))}
                                   </div>
 
-                                  <p style={{ fontSize: '0.85rem', color: '#1e293b', margin: 0, fontWeight: 500, lineHeight: 1.4 }}>
-                                    {activePathway === 'language' && lesson.accessPathways.languageRepresentation}
-                                    {activePathway === 'supported' && lesson.accessPathways.supportedInvestigation}
-                                    {activePathway === 'core' && lesson.accessPathways.coreInvestigation}
-                                    {activePathway === 'extended' && lesson.accessPathways.extendedChallenge}
-                                  </p>
+                                  <div style={{ background: '#f8fafc', border: '1px solid #cbd5e1', padding: '16px', borderRadius: '10px' }}>
+                                    <strong style={{ color: '#3730a3', fontSize: '0.85rem', display: 'block', marginBottom: '4px', textTransform: 'uppercase' }}>
+                                      {activePathway === 'language' && 'Language & Representation Pathway:'}
+                                      {activePathway === 'supported' && 'Supported Investigation Pathway:'}
+                                      {activePathway === 'core' && 'Core Investigation Pathway:'}
+                                      {activePathway === 'extended' && 'Extended Challenge Pathway:'}
+                                    </strong>
+                                    <p style={{ fontSize: '0.9rem', color: '#1e293b', margin: 0, fontWeight: 500, lineHeight: 1.5 }}>
+                                      {activePathway === 'language' && lesson.accessPathways.languageRepresentation}
+                                      {activePathway === 'supported' && lesson.accessPathways.supportedInvestigation}
+                                      {activePathway === 'core' && lesson.accessPathways.coreInvestigation}
+                                      {activePathway === 'extended' && lesson.accessPathways.extendedChallenge}
+                                    </p>
+                                  </div>
                                 </div>
-
                               </div>
                             )}
 
-                            {/* TAB 2: EVIDENCE PACKAGES */}
+                            {/* TAB 3: EVIDENCE PACKAGES (1-2-3) */}
                             {activeTab === 'evidence' && (
                               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                                 <div style={{ display: 'flex', gap: '8px' }}>
@@ -560,9 +604,9 @@ export default function CurriculumViewer() {
                                         background: activeEvidenceNum === num ? '#5c2483' : '#ffffff',
                                         color: activeEvidenceNum === num ? '#ffffff' : '#475569',
                                         border: activeEvidenceNum === num ? '1px solid #5c2483' : '1px solid #cbd5e1',
-                                        padding: '6px 14px',
+                                        padding: '8px 16px',
                                         borderRadius: '8px',
-                                        fontSize: '0.8rem',
+                                        fontSize: '0.85rem',
                                         fontWeight: 800,
                                         cursor: 'pointer'
                                       }}
@@ -572,60 +616,60 @@ export default function CurriculumViewer() {
                                   ))}
                                 </div>
 
-                                <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                                <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '14px', padding: '20px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
                                   <div>
-                                    <span style={{ background: '#f3eeff', color: '#5c2483', border: '1px solid #e6dbff', fontSize: '0.7rem', fontWeight: 900, padding: '3px 8px', borderRadius: '4px', textTransform: 'uppercase' }}>
+                                    <span style={{ background: '#f3eeff', color: '#5c2483', border: '1px solid #e6dbff', fontSize: '0.75rem', fontWeight: 900, padding: '4px 10px', borderRadius: '6px', textTransform: 'uppercase' }}>
                                       {currentEvidence.title}
                                     </span>
-                                    <h4 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#1e0e34', margin: '8px 0 6px 0', fontFamily: "'Outfit', sans-serif" }}>
+                                    <h4 style={{ fontSize: '1.1rem', fontWeight: 900, color: '#1e0e34', margin: '10px 0 6px 0', fontFamily: "'Outfit', sans-serif" }}>
                                       Scientific Knowledge Statement:
                                     </h4>
-                                    <div style={{ background: '#f5f3ff', border: '1px solid #e0e7ff', padding: '12px 16px', borderRadius: '10px', color: '#4c1d95', fontSize: '0.85rem', fontWeight: 700 }}>
+                                    <div style={{ background: '#f5f3ff', border: '1px solid #e0e7ff', padding: '14px 18px', borderRadius: '10px', color: '#4c1d95', fontSize: '0.9rem', fontWeight: 700 }}>
                                       &ldquo;{currentEvidence.scientificKnowledge}&rdquo;
                                     </div>
                                   </div>
 
-                                  <div style={{ background: '#ecfdf5', border: '1px solid #a7f3d0', padding: '14px 16px', borderRadius: '10px' }}>
+                                  <div style={{ background: '#ecfdf5', border: '1px solid #a7f3d0', padding: '16px', borderRadius: '10px' }}>
                                     <strong style={{ color: '#065f46', fontSize: '0.75rem', textTransform: 'uppercase', display: 'block', marginBottom: '4px' }}>
                                       📦 EXACT EVIDENCE PACKAGE (GIVE / SHOW THIS):
                                     </strong>
-                                    <p style={{ color: '#064e3b', fontSize: '0.85rem', margin: 0, fontWeight: 600, lineHeight: 1.4 }}>
+                                    <p style={{ color: '#064e3b', fontSize: '0.9rem', margin: 0, fontWeight: 700, lineHeight: 1.5 }}>
                                       {currentEvidence.exactEvidencePackage}
                                     </p>
                                   </div>
 
-                                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '12px', fontSize: '0.8rem' }}>
-                                    <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', padding: '12px', borderRadius: '8px' }}>
+                                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '12px', fontSize: '0.85rem' }}>
+                                    <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', padding: '14px', borderRadius: '10px' }}>
                                       <strong style={{ color: '#475569', display: 'block', marginBottom: '4px' }}>👩‍🔬 Student Work with Evidence:</strong>
                                       <p style={{ color: '#1e293b', margin: 0, lineHeight: 1.4 }}>{currentEvidence.studentWork}</p>
                                     </div>
 
-                                    <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', padding: '12px', borderRadius: '8px' }}>
+                                    <div style={{ background: '#f8fafc', border: '1px solid #e2e8f0', padding: '14px', borderRadius: '10px' }}>
                                       <strong style={{ color: '#b45309', display: 'block', marginBottom: '4px' }}>🔄 Required Group Action:</strong>
                                       <p style={{ color: '#1e293b', margin: 0, lineHeight: 1.4 }}>{currentEvidence.requiredGroupAction}</p>
                                     </div>
                                   </div>
 
                                   {/* Differentiated Questions */}
-                                  <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '12px' }}>
-                                    <strong style={{ fontSize: '0.75rem', color: '#5c2483', textTransform: 'uppercase', display: 'block', marginBottom: '8px' }}>
+                                  <div style={{ borderTop: '1px solid #e2e8f0', paddingTop: '16px' }}>
+                                    <strong style={{ fontSize: '0.8rem', color: '#5c2483', textTransform: 'uppercase', display: 'block', marginBottom: '10px' }}>
                                       ❓ Differentiated Questioning Levels:
                                     </strong>
 
-                                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '8px', fontSize: '0.75rem' }}>
-                                      <div style={{ background: '#eff6ff', border: '1px solid #bfdbfe', padding: '10px', borderRadius: '8px' }}>
-                                        <strong style={{ color: '#1e40af', display: 'block', marginBottom: '2px' }}>1. Slow Down:</strong>
-                                        <p style={{ color: '#1e3a8a', margin: 0, lineHeight: 1.3 }}>{currentEvidence.questions.slowDown}</p>
+                                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '10px', fontSize: '0.8rem' }}>
+                                      <div style={{ background: '#eff6ff', border: '1px solid #bfdbfe', padding: '12px', borderRadius: '10px' }}>
+                                        <strong style={{ color: '#1e40af', display: 'block', marginBottom: '4px' }}>1. Slow Down / Build Understanding:</strong>
+                                        <p style={{ color: '#1e3a8a', margin: 0, lineHeight: 1.4 }}>{currentEvidence.questions.slowDown}</p>
                                       </div>
 
-                                      <div style={{ background: '#faf5ff', border: '1px solid #e9d5ff', padding: '10px', borderRadius: '8px' }}>
-                                        <strong style={{ color: '#6b21a8', display: 'block', marginBottom: '2px' }}>2. Core Reasoning:</strong>
-                                        <p style={{ color: '#581c87', margin: 0, lineHeight: 1.3 }}>{currentEvidence.questions.coreReasoning}</p>
+                                      <div style={{ background: '#faf5ff', border: '1px solid #e9d5ff', padding: '12px', borderRadius: '10px' }}>
+                                        <strong style={{ color: '#6b21a8', display: 'block', marginBottom: '4px' }}>2. Core Reasoning:</strong>
+                                        <p style={{ color: '#581c87', margin: 0, lineHeight: 1.4 }}>{currentEvidence.questions.coreReasoning}</p>
                                       </div>
 
-                                      <div style={{ background: '#fffbeb', border: '1px solid #fde68a', padding: '10px', borderRadius: '8px' }}>
-                                        <strong style={{ color: '#92400e', display: 'block', marginBottom: '2px' }}>3. Challenge / Extend:</strong>
-                                        <p style={{ color: '#78350f', margin: 0, lineHeight: 1.3 }}>{currentEvidence.questions.challengeExtend}</p>
+                                      <div style={{ background: '#fffbeb', border: '1px solid #fde68a', padding: '12px', borderRadius: '10px' }}>
+                                        <strong style={{ color: '#92400e', display: 'block', marginBottom: '4px' }}>3. Challenge / Extend:</strong>
+                                        <p style={{ color: '#78350f', margin: 0, lineHeight: 1.4 }}>{currentEvidence.questions.challengeExtend}</p>
                                       </div>
                                     </div>
                                   </div>
@@ -634,14 +678,40 @@ export default function CurriculumViewer() {
                               </div>
                             )}
 
-                            {/* TAB 3: CHECKLIST */}
+                            {/* TAB 4: CONSOLIDATION & TRANSFER */}
+                            {activeTab === 'consolidation' && (
+                              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                                <div style={{ background: 'linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%)', border: '1px solid #a7f3d0', padding: '20px', borderRadius: '12px' }}>
+                                  <span style={{ background: '#059669', color: '#ffffff', fontSize: '0.7rem', fontWeight: 900, padding: '3px 10px', borderRadius: '12px', textTransform: 'uppercase' }}>
+                                    SCIENTIFIC CONSOLIDATION ({lesson.consolidation.duration})
+                                  </span>
+                                  <h4 style={{ fontSize: '1.1rem', fontWeight: 900, color: '#064e3b', margin: '10px 0 8px 0', fontFamily: "'Outfit', sans-serif" }}>
+                                    How the Facilitator Formalizes the Concept & Vocabulary:
+                                  </h4>
+                                  <p style={{ fontSize: '0.95rem', fontWeight: 700, color: '#065f46', margin: 0, background: '#ffffff', padding: '16px', borderRadius: '10px', border: '1px solid #6ee7b7', lineHeight: 1.5 }}>
+                                    {lesson.consolidation.content}
+                                  </p>
+                                </div>
+
+                                <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', padding: '20px', borderRadius: '12px' }}>
+                                  <strong style={{ color: '#5c2483', fontSize: '0.8rem', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>
+                                    🎓 9. Individual Transfer Assessment
+                                  </strong>
+                                  <p style={{ fontSize: '0.9rem', color: '#1e293b', margin: 0, fontWeight: 500, lineHeight: 1.5 }}>
+                                    {lesson.individualTransferAssessment}
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+
+                            {/* TAB 5: CHECKLIST */}
                             {activeTab === 'checklist' && (
-                              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '16px' }}>
-                                <strong style={{ fontSize: '0.8rem', color: '#5c2483', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>
+                              <div style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '20px' }}>
+                                <strong style={{ fontSize: '0.85rem', color: '#5c2483', textTransform: 'uppercase', display: 'block', marginBottom: '14px' }}>
                                   📋 Facilitator Evidence Checklist (Lesson {lesson.lessonNumber}):
                                 </strong>
 
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                                   {lesson.facilitatorChecklist.map((item, idx) => {
                                     const isChecked = !!checkedItems[`${lesson.id}-${idx}`];
                                     return (
@@ -651,19 +721,19 @@ export default function CurriculumViewer() {
                                         style={{
                                           display: 'flex',
                                           alignItems: 'center',
-                                          gap: '10px',
-                                          fontSize: '0.8rem',
+                                          gap: '12px',
+                                          fontSize: '0.85rem',
                                           color: isChecked ? '#94a3b8' : '#1e293b',
                                           textDecoration: isChecked ? 'line-through' : 'none',
                                           cursor: 'pointer',
-                                          padding: '6px 10px',
+                                          padding: '10px 14px',
                                           background: isChecked ? '#f8fafc' : '#ffffff',
-                                          borderRadius: '6px',
-                                          border: '1px solid #f1f5f9'
+                                          borderRadius: '8px',
+                                          border: '1px solid #e2e8f0'
                                         }}
                                       >
-                                        <input type="checkbox" checked={isChecked} readOnly style={{ accentColor: '#5c2483' }} />
-                                        <span>{item}</span>
+                                        <input type="checkbox" checked={isChecked} readOnly style={{ accentColor: '#5c2483', width: '16px', height: '16px' }} />
+                                        <span style={{ fontWeight: 600 }}>{item}</span>
                                       </label>
                                     );
                                   })}
