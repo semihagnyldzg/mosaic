@@ -68,11 +68,12 @@ export interface CurriculumMeta {
 
 export const CURRICULUM_META: CurriculumMeta = {
   title: "KINDERGARTEN SCIENCE",
-  subtitle: "Clear Scientific Evidence-Release Curriculum (Teacher-Ready Edition)",
+  subtitle: "Clear Scientific Evidence-Release Curriculum (Detailed Facilitator Playbook Edition)",
   grade: "Kindergarten (K)",
   subject: "Science & Engineering",
   totalLessons: 36,
   totalProjects: 5,
+  playbookIncluded: true,
   nonNegotiableRule: "For every lesson, first identify the scientific knowledge that would normally be delivered as direct instruction. Then convert that knowledge into concrete, inspectable Evidence 1–2–3 packages. Facilitator releases knowledge at planned moments while students DO science.",
   clarityRule: "Every lesson includes an exact, short problem/task script the facilitator can say aloud. Children should immediately know what they are trying to organize, build, test, figure out, compare, or prove.",
   evidenceDefinition: "Evidence must be something students can inspect or produce: real objects, side-by-side observations, before/after images, a short data table, a repeated demonstration, a material test, a movement test, a model, an information card, or a new design constraint.",
